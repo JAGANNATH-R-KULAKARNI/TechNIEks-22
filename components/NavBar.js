@@ -67,7 +67,6 @@ const NavBarUI = (props) => {
             >
               TechNIEks'22
             </Typography>
-
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
                 size="large"
@@ -85,6 +84,7 @@ const NavBarUI = (props) => {
               >
                 {props.code == 0 ? <MenuIcon /> : <ArrowBackIosIcon />}
               </IconButton>
+
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorElNav}
@@ -154,6 +154,16 @@ const NavBarUI = (props) => {
                 </Button>
               ))}
             </Box>
+
+            <Button
+              variant="contained"
+              style={{ backgroundColor: c.c3 }}
+              onClick={() => {
+                router.push("/who_r_u");
+              }}
+            >
+              LogIn
+            </Button>
           </Toolbar>
         </Container>
       </AppBar>
