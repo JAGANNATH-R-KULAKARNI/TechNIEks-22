@@ -1,0 +1,16 @@
+.footer {
+}
+
+.footer:hover {
+  color: #f84464;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.linkedinIcon {
+}
+
+.linkedinIcon:hover {
+  cursor: pointer;
+  color: "blue";
+}
