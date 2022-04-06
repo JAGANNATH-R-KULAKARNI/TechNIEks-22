@@ -1,0 +1,148 @@
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../../styles/Home.module.css";
+import React, { useEffect } from "react";
+import axios from "axios";
+import Grid from "@mui/material/Grid";
+import ButtonUI from "./Button";
+import Paper from "@mui/material/Paper";
+import { useRouter } from "next/router";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import DetailsUI from "./Details";
+import DetailsUI2 from "./Details2";
+import * as c from "../../utils/Colors";
+
+export default function Cart() {
+  const router = useRouter();
+  const m1 = useMediaQuery("(min-width:430px)");
+  const m2 = useMediaQuery("(min-width:700px)");
+  const m3 = useMediaQuery("(min-width:1000px)");
+  const m4 = useMediaQuery("(min-width:1300px)");
+  const m5 = useMediaQuery("(min-width:1700px)");
+
+  if (m1)
+    return (
+      <div style={{ paddingLeft: "5%", paddingRight: "5%" }}>
+        <br />
+        <br />
+
+        <Grid container spacing={2}>
+          <Grid item xs={12} style={{ maxHeight: "600px" }}>
+            <br />
+            <br />
+            <br />
+            <br />
+            <div style={{ marginTop: "-100px" }}>
+              <DetailsUI />
+            </div>
+          </Grid>
+          <br />
+          <Grid
+            item
+            xs={12}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Paper
+              style={{ width: "25%", height: "250px", marginTop: "0px" }}
+              elevation={1}
+            >
+              <div style={{ padding: "5%", textAlign: "center" }}>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <div>
+                    <p style={{ fontSize: "20px" }}> Total Tickets </p>
+                    <p
+                      style={{
+                        fontSize: "40px",
+                        marginTop: "-20px",
+                        color: c.c1,
+                      }}
+                    >
+                      {0}{" "}
+                    </p>
+                  </div>
+                  <div style={{ paddingLeft: "110px" }}>
+                    <p style={{ fontSize: "20px" }}> Total Amount </p>
+                    <p
+                      style={{
+                        fontSize: "40px",
+                        marginTop: "-20px",
+                        color: c.c1,
+                      }}
+                    >
+                      {0}{" "}
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  style={{ marginTop: "-20px" }}
+                  //   onClick={() => router.push(cartLen > 0 ? "/payment" : "/")}
+                >
+                  <ButtonUI text="Book Now" />
+                </div>
+              </div>
+            </Paper>
+          </Grid>
+        </Grid>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+    );
+
+  return (
+    <div>
+      <br />
+      <br />
+      <div style={{ marginTop: "-70px" }}>
+        <DetailsUI2 />
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          paddingLeft: "5%",
+          paddingRight: "5%",
+        }}
+      >
+        <Paper
+          style={{
+            width: "100%",
+            height: "200px",
+            marginTop: "0px",
+          }}
+          elevation={3}
+        >
+          <div style={{ padding: "3%", textAlign: "center" }}>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div>
+                <p style={{ fontSize: "18px" }}> Total Tickets </p>
+                <p style={{ fontSize: "30px", marginTop: "-20px" }}>{0} </p>
+              </div>
+              <div style={{ paddingLeft: "15%" }}>
+                <p style={{ fontSize: "18px" }}> Total Amount</p>
+                <p style={{ fontSize: "30px", marginTop: "-20px" }}>₹ {0} </p>
+              </div>
+            </div>
+
+            <div
+              style={{ marginTop: "-10px" }}
+              //   onClick={() => router.push(cartLen > 0 ? "/payment" : "/")}
+            >
+              <ButtonUI text="Book Now" />
+            </div>
+          </div>
+        </Paper>
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,26 @@
+.btn {
+  position: relative;
+  display: block;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #222539;
+  padding: 20px 80px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 6px black;
+}
+
+.btn:hover {
+  top: 2px;
+  box-shadow: 0 4px #222539;
+}
+
+.btn:active {
+  top: 6px;
+  box-shadow: 0 0 #222539;
+}
