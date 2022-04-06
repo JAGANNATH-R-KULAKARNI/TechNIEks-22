@@ -30,7 +30,7 @@ import absoluteUrl from "next-absolute-url";
 
 const theme = createTheme();
 
-export default function Details() {
+export default function Details(props) {
   const m1 = useMediaQuery("(min-width:600px)");
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -62,8 +62,12 @@ export default function Details() {
           >
             <ConfirmationNumberIcon />
           </Avatar>
+          <Typography component="h1" variant="h4">
+            {props.ticket && props.ticket.name}
+          </Typography>
+
           <Typography component="h1" variant="h5">
-            Sign up
+            ₹ {props.ticket && props.ticket.price}
           </Typography>
           <Box
             component="form"
@@ -76,7 +80,7 @@ export default function Details() {
                 variant="outlined"
                 style={{
                   color: c.c1,
-                  minWidth: m1 ? "370px" : "90%",
+                  minWidth: m1 ? "370px" : "125%",
                 }}
                 sx={{
                   input: {
@@ -96,17 +100,130 @@ export default function Details() {
                 }}
               >
                 <InputLabel htmlFor="outlined-adornment-password">
-                  Email
+                  Name
                 </InputLabel>
                 <OutlinedInput
                   id="emailSignUp"
-                  type={"email"}
+                  type={"name"}
                   //   value={email}
                   //   onChange={(e) => {
                   //     setEmail(e.target.value);
                   //   }}
-                  label="Email"
-                  placeholder="xyz@gmail.com"
+                  label="name"
+                  placeholder="Benedict Prajwal"
+                  sx={{
+                    input: {
+                      color: c.c3,
+                    },
+                    "& .MuiOutlinedInput-root": {
+                      "& > fieldset": {
+                        borderColor: c.c3,
+                      },
+                    },
+                    "& .MuiOutlinedInput-root:hover": {
+                      "& > fieldset": {
+                        borderColor: c.c3,
+                      },
+                    },
+                    "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
+                  }}
+                />
+              </FormControl>
+            </div>
+            <div style={{ height: "10px" }}></div>
+
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <FormControl
+                variant="outlined"
+                style={{
+                  color: c.c1,
+                  minWidth: m1 ? "370px" : "125%",
+                }}
+                sx={{
+                  input: {
+                    color: c.c3,
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& > fieldset": {
+                      borderColor: c.c1,
+                    },
+                  },
+                  "& .MuiOutlinedInput-root:hover": {
+                    "& > fieldset": {
+                      borderColor: c.c1,
+                    },
+                  },
+                  "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
+                }}
+              >
+                <InputLabel htmlFor="outlined-adornment-password">
+                  USN
+                </InputLabel>
+                <OutlinedInput
+                  id="emailSignUp"
+                  type={"name"}
+                  //   value={email}
+                  //   onChange={(e) => {
+                  //     setEmail(e.target.value);
+                  //   }}
+                  label="name"
+                  placeholder="4NI19IS***"
+                  sx={{
+                    input: {
+                      color: c.c3,
+                    },
+                    "& .MuiOutlinedInput-root": {
+                      "& > fieldset": {
+                        borderColor: c.c3,
+                      },
+                    },
+                    "& .MuiOutlinedInput-root:hover": {
+                      "& > fieldset": {
+                        borderColor: c.c3,
+                      },
+                    },
+                    "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
+                  }}
+                />
+              </FormControl>
+            </div>
+            <div style={{ height: "10px" }}></div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <FormControl
+                variant="outlined"
+                style={{
+                  color: c.c1,
+                  minWidth: m1 ? "370px" : "125%",
+                }}
+                sx={{
+                  input: {
+                    color: c.c3,
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& > fieldset": {
+                      borderColor: c.c1,
+                    },
+                  },
+                  "& .MuiOutlinedInput-root:hover": {
+                    "& > fieldset": {
+                      borderColor: c.c1,
+                    },
+                  },
+                  "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
+                }}
+              >
+                <InputLabel htmlFor="outlined-adornment-password">
+                  Tickets
+                </InputLabel>
+                <OutlinedInput
+                  id="emailSignUp"
+                  type="number"
+                  //   value={email}
+                  //   onChange={(e) => {
+                  //     setEmail(e.target.value);
+                  //   }}
+                  label="Tickets"
+                  placeholder="Number Of Tickets"
                   sx={{
                     input: {
                       color: c.c3,
@@ -144,6 +261,7 @@ export default function Details() {
                 />
               </Grid>
             </Grid>
+            <br />
             {/* <Button
               type="submit"
               fullWidth

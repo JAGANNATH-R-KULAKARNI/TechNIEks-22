@@ -17,12 +17,15 @@ import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import * as c from "../../utils/Colors";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { useRouter } from "next/router";
+import { borderColor } from "@mui/system";
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const theme = createTheme();
 
-export default function Tickets() {
+export default function Tickets(props) {
+  const router = useRouter();
   const m1 = useMediaQuery("(min-width:600px)");
 
   return (
@@ -44,43 +47,85 @@ export default function Tickets() {
       <main>
         <Container>
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <CardMedia
-                    component="img"
+            {props.events &&
+              props.events.map((card) => (
+                <Grid item key={card} xs={12} sm={6} md={4}>
+                  <Card
                     sx={{
-                      marginTop: "-210px",
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
                     }}
-                    image="https://source.unsplash.com/random"
-                    alt="random"
-                  />
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading (₹ 30)
-                    </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe
-                      the content.
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button
-                      variant="contained"
-                      style={{ width: "100%", backgroundColor: c.c1 }}
-                    >
-                      Book Now
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
+                  >
+                    <CardMedia
+                      component="img"
+                      sx={{
+                        // marginTop: "-210px",
+                        maxHeight: "200px",
+                      }}
+                      image={card.image}
+                      alt="random"
+                    />
+                    <CardContent sx={{ flexGrow: 1 }}>
+                      {/* <Typography gutterBottom variant="h5" component="h2">
+                    
+                      </Typography> */}
+                      <div style={{ display: "flex" }}>
+                        <Typography
+                          style={{ width: "50%", textAlign: "left" }}
+                          gutterBottom
+                          variant="h5"
+                          component="h2"
+                        >
+                          {card.name}
+                        </Typography>
+                        <Typography
+                          style={{ width: "50%", textAlign: "right" }}
+                          gutterBottom
+                          variant="h5"
+                          component="h2"
+                        >
+                          ₹ {card.price}
+                        </Typography>
+                      </div>
+                      <div style={{ display: "flex" }}>
+                        <Typography style={{ width: "50%" }}>
+                          {" "}
+                          {card.date}
+                        </Typography>
+                        <Typography style={{ width: "50%" }}>
+                          {card.timings}
+                        </Typography>
+                      </div>
+                      <br />
+                      <Typography
+                        style={{
+                          textAlign: "center",
+                          borderStyle: "outset",
+                          borderColor: c.c3,
+                          borderRadius: "5%",
+                        }}
+                      >
+                        <i>{card.description}</i>
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Button
+                        variant="contained"
+                        style={{ width: "100%", backgroundColor: c.c1 }}
+                        onClick={() =>
+                          router.push({
+                            pathname: "/book",
+                            query: { id: card.id },
+                          })
+                        }
+                      >
+                        Book Now
+                      </Button>
+                    </CardActions>
+                  </Card>
+                </Grid>
+              ))}
           </Grid>
         </Container>
       </main>

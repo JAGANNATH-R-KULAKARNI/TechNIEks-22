@@ -12,7 +12,7 @@ import DetailsUI from "./Details";
 import DetailsUI2 from "./Details2";
 import * as c from "../../utils/Colors";
 
-export default function Cart() {
+export default function Booking(props) {
   const router = useRouter();
   const m1 = useMediaQuery("(min-width:430px)");
   const m2 = useMediaQuery("(min-width:700px)");
@@ -33,7 +33,7 @@ export default function Cart() {
             <br />
             <br />
             <div style={{ marginTop: "-100px" }}>
-              <DetailsUI />
+              <DetailsUI ticket={props.ticket} />
             </div>
           </Grid>
           <br />
@@ -103,8 +103,8 @@ export default function Cart() {
     <div>
       <br />
       <br />
-      <div style={{ marginTop: "-70px" }}>
-        <DetailsUI2 />
+      <div style={{ marginTop: "-100px" }}>
+        <DetailsUI2 ticket={props.ticket} />
       </div>
       <div
         style={{

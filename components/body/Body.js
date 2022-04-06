@@ -9,7 +9,7 @@ export default function Body() {
   const router = useRouter();
 
   const bookTickerts = () => {
-    router.push("/book");
+    router.push("/events");
   };
 
   return (

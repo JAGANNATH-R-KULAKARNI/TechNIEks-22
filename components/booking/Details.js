@@ -30,7 +30,7 @@ import absoluteUrl from "next-absolute-url";
 
 const theme = createTheme();
 
-export default function Details() {
+export default function Details(props) {
   const m1 = useMediaQuery("(min-width:600px)");
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -62,9 +62,14 @@ export default function Details() {
           >
             <ConfirmationNumberIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
+          <Typography component="h1" variant="h3">
+            {props.ticket && props.ticket.name}
           </Typography>
+
+          <Typography component="h1" variant="h4">
+            ₹ {props.ticket && props.ticket.price}
+          </Typography>
+          <br />
           <Box
             component="form"
             noValidate
@@ -101,17 +106,17 @@ export default function Details() {
                   }}
                 >
                   <InputLabel htmlFor="outlined-adornment-password">
-                    Email
+                    Name
                   </InputLabel>
                   <OutlinedInput
                     id="emailSignUp"
-                    type={"email"}
+                    type="name"
                     //   value={email}
                     //   onChange={(e) => {
                     //     setEmail(e.target.value);
                     //   }}
-                    label="Email"
-                    placeholder="xyz@gmail.com"
+                    label="Name"
+                    placeholder="Jagannath R K"
                     sx={{
                       input: {
                         color: c.c3,
@@ -180,17 +185,17 @@ export default function Details() {
                     }}
                   >
                     <InputLabel htmlFor="outlined-adornment-password">
-                      Email
+                      USN
                     </InputLabel>
                     <OutlinedInput
                       id="emailSignUp"
-                      type={"email"}
+                      type="name"
                       //   value={email}
                       //   onChange={(e) => {
                       //     setEmail(e.target.value);
                       //   }}
-                      label="Email"
-                      placeholder="xyz@gmail.com"
+                      label="USN"
+                      placeholder="4NI19IS***"
                       sx={{
                         input: {
                           color: c.c3,
@@ -227,6 +232,87 @@ export default function Details() {
                   </FormControl>
                 </div>
               </div>
+              <br />
+              <br />
+              <br />
+              <div>
+                <div
+                  style={{
+                    paddingLeft: "8%",
+                  }}
+                >
+                  <FormControl
+                    variant="outlined"
+                    style={{
+                      color: c.c1,
+                      minWidth: m1 ? "370px" : "90%",
+                    }}
+                    sx={{
+                      input: {
+                        color: c.c3,
+                      },
+                      "& .MuiOutlinedInput-root": {
+                        "& > fieldset": {
+                          borderColor: c.c3,
+                        },
+                      },
+                      "& .MuiOutlinedInput-root:hover": {
+                        "& > fieldset": {
+                          borderColor: c.c1,
+                        },
+                      },
+                      "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
+                    }}
+                  >
+                    <InputLabel htmlFor="outlined-adornment-password">
+                      Tickets
+                    </InputLabel>
+                    <OutlinedInput
+                      id="eqssmsqaiwswqp"
+                      type="number"
+                      //   value={email}
+                      //   onChange={(e) => {
+                      //     setEmail(e.target.value);
+                      //   }}
+                      label="Number"
+                      placeholder="Number Of Tickets"
+                      sx={{
+                        input: {
+                          color: c.c3,
+                        },
+                        borderColor: c.c3,
+                        "& .MuiOutlinedInput-root": {
+                          "& > fieldset": {
+                            borderColor: c.c3,
+                          },
+                        },
+                        "& .MuiOutlinedInput-root:hover": {
+                          "& > fieldset": {
+                            borderColor: c.c1,
+                          },
+                        },
+                        "& .MuiFormLabel-root": {
+                          color: c.c3,
+                          fontWeight: 100,
+                        },
+                        "& .MuiFormLabel-root&:hover": {
+                          color: c.c3,
+                          fontWeight: 100,
+                        },
+                        "& label.Mui-focused": {
+                          color: c.c3,
+                        },
+                        "& .MuiOutlinedInput-root": {
+                          "&.Mui-focused fieldset": {
+                            borderColor: c.c3,
+                          },
+                        },
+                      }}
+                    />
+                  </FormControl>
+                </div>
+              </div>
+
               <Grid
                 item
                 xs={12}

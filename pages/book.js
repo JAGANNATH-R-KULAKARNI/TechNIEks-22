@@ -8,15 +8,36 @@ import { supabase } from "../utils/SupabaseClient";
 import React from "react";
 import { useRouter } from "next/router";
 import BookingUI from "../components/booking/Booking";
+import { withRouter } from "next/router";
 
-export default function BookTicket() {
+function BookTicket(props) {
   const m1 = useMediaQuery("(min-width:600px)");
   const [status, setStatus] = React.useState(false);
+  const [ticket, setTicket] = React.useState(null);
   const router = useRouter();
 
   React.useEffect(() => {
     fetchTheProfile();
+    fetchTicketDetails();
   }, []);
+
+  async function fetchTicketDetails() {
+    const { data, error } = await supabase
+      .from("events")
+      .select("*")
+      .eq("id", props.router.query.id);
+
+    if (data) {
+      console.log("ticket");
+      console.log(data);
+      setTicket(data[0]);
+    }
+
+    if (error) {
+      alert("Some Error Occurred :(, Try again later");
+      router.push("/events");
+    }
+  }
 
   async function fetchTheProfile() {
     const data = await supabase.auth.user();
@@ -37,11 +58,13 @@ export default function BookTicket() {
   return (
     <div>
       <NavBar code={0} logOut={logOut} status={status} />
-      <BookingUI />
+      <BookingUI ticket={ticket} />
       <Footer />
     </div>
   );
 }
+
+export default withRouter(BookTicket);
 
 export async function getServerSideProps({ req }) {
   const { user } = await supabase.auth.api.getUserByCookie(req);
