@@ -67,7 +67,7 @@ export default function Details(props) {
           </Typography>
 
           <Typography component="h1" variant="h4">
-            ₹ {props.ticket && props.ticket.price}
+            ₹ {props.ticket && props.ticket.price} / person
           </Typography>
           <br />
           <Box
@@ -111,10 +111,10 @@ export default function Details(props) {
                   <OutlinedInput
                     id="emailSignUp"
                     type="name"
-                    //   value={email}
-                    //   onChange={(e) => {
-                    //     setEmail(e.target.value);
-                    //   }}
+                    value={props.name}
+                    onChange={(e) => {
+                      props.setName(e.target.value);
+                    }}
                     label="Name"
                     placeholder="Jagannath R K"
                     sx={{
@@ -190,10 +190,10 @@ export default function Details(props) {
                     <OutlinedInput
                       id="emailSignUp"
                       type="name"
-                      //   value={email}
-                      //   onChange={(e) => {
-                      //     setEmail(e.target.value);
-                      //   }}
+                      value={props.usn}
+                      onChange={(e) => {
+                        props.setUsn(e.target.value);
+                      }}
                       label="USN"
                       placeholder="4NI19IS***"
                       sx={{
@@ -270,10 +270,10 @@ export default function Details(props) {
                     <OutlinedInput
                       id="eqssmsqaiwswqp"
                       type="number"
-                      //   value={email}
-                      //   onChange={(e) => {
-                      //     setEmail(e.target.value);
-                      //   }}
+                      value={props.no}
+                      onChange={(e) => {
+                        if (e.target.value >= 1) props.setNo(e.target.value);
+                      }}
                       label="Number"
                       placeholder="Number Of Tickets"
                       sx={{
@@ -324,6 +324,8 @@ export default function Details(props) {
                       value="allowExtraEmails"
                       color="primary"
                       style={{ color: c.c1 }}
+                      value={props.enjoy}
+                      onChange={props.setEnjoy}
                     />
                   }
                   label="I will enjoy TeckNIEks'22"

@@ -67,7 +67,7 @@ export default function Details(props) {
           </Typography>
 
           <Typography component="h1" variant="h5">
-            ₹ {props.ticket && props.ticket.price}
+            ₹ {props.ticket && props.ticket.price} / person
           </Typography>
           <Box
             component="form"
@@ -104,11 +104,11 @@ export default function Details(props) {
                 </InputLabel>
                 <OutlinedInput
                   id="emailSignUp"
-                  type={"name"}
-                  //   value={email}
-                  //   onChange={(e) => {
-                  //     setEmail(e.target.value);
-                  //   }}
+                  type="name"
+                  value={props.name}
+                  onChange={(e) => {
+                    props.setName(e.target.value);
+                  }}
                   label="name"
                   placeholder="Benedict Prajwal"
                   sx={{
@@ -162,10 +162,10 @@ export default function Details(props) {
                 <OutlinedInput
                   id="emailSignUp"
                   type={"name"}
-                  //   value={email}
-                  //   onChange={(e) => {
-                  //     setEmail(e.target.value);
-                  //   }}
+                  value={props.usn}
+                  onChange={(e) => {
+                    props.setUsn(e.target.value);
+                  }}
                   label="name"
                   placeholder="4NI19IS***"
                   sx={{
@@ -218,10 +218,12 @@ export default function Details(props) {
                 <OutlinedInput
                   id="emailSignUp"
                   type="number"
-                  //   value={email}
-                  //   onChange={(e) => {
-                  //     setEmail(e.target.value);
-                  //   }}
+                  value={props.no}
+                  onChange={(e) => {
+                    if (e.target.value.length > 0 && e.target.value < 1)
+                      props.setNo(1);
+                    else props.setNo(e.target.value);
+                  }}
                   label="Tickets"
                   placeholder="Number Of Tickets"
                   sx={{
@@ -252,9 +254,10 @@ export default function Details(props) {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      value="allowExtraEmails"
                       color="primary"
                       style={{ color: c.c1 }}
+                      value={props.enjoy}
+                      onChange={props.setEnjoy}
                     />
                   }
                   label="I will enjoy TeckNIEks'22"
@@ -262,14 +265,6 @@ export default function Details(props) {
               </Grid>
             </Grid>
             <br />
-            {/* <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign Up
-            </Button> */}
           </Box>
         </Box>
       </Container>

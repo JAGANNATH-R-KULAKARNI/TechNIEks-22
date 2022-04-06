@@ -16,6 +16,12 @@ function BookTicket(props) {
   const [ticket, setTicket] = React.useState(null);
   const router = useRouter();
 
+  const [name, setName] = React.useState("");
+  const [usn, setUSN] = React.useState("");
+  const [no, setNo] = React.useState(1);
+  const [enjoy, setEnjoy] = React.useState(false);
+  const [totalAmount, setTotalAmount] = React.useState();
+
   React.useEffect(() => {
     fetchTheProfile();
     fetchTicketDetails();
@@ -31,6 +37,7 @@ function BookTicket(props) {
       console.log("ticket");
       console.log(data);
       setTicket(data[0]);
+      setTotalAmount(data[0].price * no);
     }
 
     if (error) {
@@ -58,7 +65,18 @@ function BookTicket(props) {
   return (
     <div>
       <NavBar code={0} logOut={logOut} status={status} />
-      <BookingUI ticket={ticket} />
+      <BookingUI
+        ticket={ticket}
+        name={name}
+        usn={usn}
+        no={no}
+        enjoy={enjoy}
+        totalAmount={totalAmount}
+        setName={setName}
+        setUsn={setUSN}
+        setNo={setNo}
+        setEnjoy={setEnjoy}
+      />
       <Footer />
     </div>
   );

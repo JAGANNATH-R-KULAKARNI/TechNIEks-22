@@ -32,8 +32,18 @@ export default function Booking(props) {
             <br />
             <br />
             <br />
-            <div style={{ marginTop: "-100px" }}>
-              <DetailsUI ticket={props.ticket} />
+            <div style={{ marginTop: "-130px" }}>
+              <DetailsUI
+                ticket={props.ticket}
+                name={props.name}
+                usn={props.usn}
+                no={props.no}
+                enjoy={props.enjoy}
+                setName={props.setName}
+                setUsn={props.setUsn}
+                setNo={props.setNo}
+                setEnjoy={props.setEnjoy}
+              />
             </div>
           </Grid>
           <br />
@@ -60,7 +70,7 @@ export default function Booking(props) {
                         color: c.c1,
                       }}
                     >
-                      {0}{" "}
+                      {props.no}{" "}
                     </p>
                   </div>
                   <div style={{ paddingLeft: "110px" }}>
@@ -72,13 +82,13 @@ export default function Booking(props) {
                         color: c.c1,
                       }}
                     >
-                      {0}{" "}
+                      ₹ {props.ticket ? props.ticket.price * props.no : 0}{" "}
                     </p>
                   </div>
                 </div>
 
                 <div
-                  style={{ marginTop: "-20px" }}
+                  style={{ marginTop: "-25px" }}
                   //   onClick={() => router.push(cartLen > 0 ? "/payment" : "/")}
                 >
                   <ButtonUI text="Book Now" />
@@ -92,10 +102,6 @@ export default function Booking(props) {
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
       </div>
     );
 
@@ -104,7 +110,17 @@ export default function Booking(props) {
       <br />
       <br />
       <div style={{ marginTop: "-100px" }}>
-        <DetailsUI2 ticket={props.ticket} />
+        <DetailsUI2
+          ticket={props.ticket}
+          name={props.name}
+          usn={props.usn}
+          no={props.no}
+          enjoy={props.enjoy}
+          setName={props.setName}
+          setUsn={props.setUsn}
+          setNo={props.setNo}
+          setEnjoy={props.setEnjoy}
+        />
       </div>
       <div
         style={{
@@ -126,11 +142,17 @@ export default function Booking(props) {
             <div style={{ display: "flex", justifyContent: "center" }}>
               <div>
                 <p style={{ fontSize: "18px" }}> Total Tickets </p>
-                <p style={{ fontSize: "30px", marginTop: "-20px" }}>{0} </p>
+                <p style={{ fontSize: "30px", marginTop: "-20px" }}>
+                  {" "}
+                  {props.no}{" "}
+                </p>
               </div>
               <div style={{ paddingLeft: "15%" }}>
                 <p style={{ fontSize: "18px" }}> Total Amount</p>
-                <p style={{ fontSize: "30px", marginTop: "-20px" }}>₹ {0} </p>
+                <p style={{ fontSize: "30px", marginTop: "-20px" }}>
+                  {" "}
+                  ₹ {props.ticket ? props.ticket.price * props.no : 0}{" "}
+                </p>
               </div>
             </div>
 
@@ -143,6 +165,8 @@ export default function Booking(props) {
           </div>
         </Paper>
       </div>
+      <br />
+      <br />
     </div>
   );
 }
