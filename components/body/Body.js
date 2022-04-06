@@ -13,15 +13,19 @@ export default function Body() {
   };
 
   return (
-    <div style={{ marginTop: m1 ? "50px" : "-50px" }}>
-      <ButtonUI
-        text="Book Now "
-        wid={m1 ? 700 : 300}
-        maxwid={m1 ? 700 : "90%"}
-        hei={m1 ? 100 : 60}
-        col={c.c1}
-        clicked={bookTickerts}
-      />
+    <div>
+      <div style={{ height: !m1 ? "40px" : "0px" }}></div>
+
+      <div style={{ marginTop: m1 ? "50px" : "-50px" }}>
+        <ButtonUI
+          text="Book Now "
+          wid={m1 ? 700 : 300}
+          maxwid={m1 ? 700 : "90%"}
+          hei={m1 ? 100 : 60}
+          col={c.c1}
+          clicked={bookTickerts}
+        />
+      </div>
     </div>
   );
 }

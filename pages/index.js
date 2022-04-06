@@ -6,16 +6,72 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Body from "../components/body/Body";
+import { supabase } from "../utils/SupabaseClient";
+import React from "react";
+import Router from "next/router";
 
-export default function Home() {
-  const m1 = useMediaQuery("(min-width:600px)");
+export default function Home(props) {
+  const [status, setStatus] = React.useState(false);
+
+  React.useEffect(() => {
+    const { data: authListener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        LoginChangeHandler(event, session);
+
+        if (event === "SIGNED_IN") {
+          setStatus(true);
+        }
+        if (event === "SIGNED_OUT") {
+          setStatus(false);
+        }
+      }
+    );
+    checkUser();
+
+    Router.push("/home");
+    return () => {
+      authListener.unsubscribe();
+    };
+  }, []);
+  async function checkUser() {
+    const user = await supabase.auth.user();
+    if (user) {
+      setStatus(true);
+      return;
+    }
+
+    setStatus(false);
+  }
+
+  async function LoginChangeHandler(event, session) {
+    await fetch("/api/auth", {
+      method: "POST",
+      headers: new Headers({ "Content-Type": "application/json" }),
+      credentials: "same-origin",
+      body: JSON.stringify({ event, session }),
+    })
+      .then((u) => {
+        checkUser();
+      })
+      .catch((u) => {
+        checkUser();
+      });
+  }
+  async function fetchTheProfile() {
+    const data = await supabase.auth.user();
+
+    setStatus(data ? true : false);
+  }
+
+  async function logOut() {
+    await supabase.auth.signOut();
+    setStatus(false);
+  }
 
   return (
     <div>
-      <NavBar code={0} />
-
+      <NavBar code={0} logOut={logOut} status={status} />
       <SHeader />
-      <div style={{ height: !m1 ? "40px" : "0px" }}></div>
       <Body />
       <div style={{ height: "100px" }}></div>
       <Footer />

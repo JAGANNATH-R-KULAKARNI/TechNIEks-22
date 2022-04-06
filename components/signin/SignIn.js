@@ -70,12 +70,12 @@ export default function SignUp() {
     const { error, data } = await supabase.auth.signIn(
       {
         email,
-      },
-      {
-        redirectTo:
-          window.location.href.substr(0, window.location.href.length - 8) +
-          "/book",
       }
+      // {
+      //   redirectTo:
+      //     window.location.href.substr(0, window.location.href.length - 8) +
+      //     "/book",
+      // }
     );
 
     if (error) {

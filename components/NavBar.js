@@ -63,7 +63,7 @@ const NavBarUI = (props) => {
                 fontSize: "30px",
               }}
               className={styles2.hoverr}
-              onClick={() => router.push("/")}
+              onClick={() => router.push("/home")}
             >
               TechNIEks'22
             </Typography>
@@ -125,7 +125,7 @@ const NavBarUI = (props) => {
                 marginLeft: "-13%",
               }}
               className={styles2.hoverr}
-              onClick={() => router.push("/")}
+              onClick={() => router.push("/home")}
             >
               TechNIEks'22
             </Typography>
@@ -158,11 +158,15 @@ const NavBarUI = (props) => {
             <Button
               variant="contained"
               style={{ backgroundColor: c.c3 }}
-              onClick={() => {
-                router.push("/who_r_u");
-              }}
+              onClick={
+                props.status
+                  ? props.logOut
+                  : () => {
+                      router.push("/who_r_u");
+                    }
+              }
             >
-              LogIn
+              {props.status ? "Log Out" : "Log In"}
             </Button>
           </Toolbar>
         </Container>
