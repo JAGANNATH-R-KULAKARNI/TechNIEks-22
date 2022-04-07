@@ -11,6 +11,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import DetailsUI from "./Details";
 import DetailsUI2 from "./Details2";
 import * as c from "../../utils/Colors";
+import RazorPayButtonUI from "./RazorPay";
 
 export default function Booking(props) {
   const router = useRouter();
@@ -91,7 +92,13 @@ export default function Booking(props) {
                   style={{ marginTop: "-25px" }}
                   //   onClick={() => router.push(cartLen > 0 ? "/payment" : "/")}
                 >
-                  <ButtonUI text="Book Now" />
+                  <RazorPayButtonUI
+                    amount={props.ticket ? props.ticket.price * props.no : 0}
+                    name={props.name}
+                    usn={props.usn}
+                    email={props.email}
+                    ticket={props.ticket}
+                  />
                 </div>
               </div>
             </Paper>
@@ -160,7 +167,13 @@ export default function Booking(props) {
               style={{ marginTop: "-10px" }}
               //   onClick={() => router.push(cartLen > 0 ? "/payment" : "/")}
             >
-              <ButtonUI text="Book Now" />
+              <RazorPayButtonUI
+                amount={props.ticket ? props.ticket.price * props.no : 0}
+                name={props.name}
+                usn={props.usn}
+                email={props.email}
+                ticket={props.ticket}
+              />
             </div>
           </div>
         </Paper>

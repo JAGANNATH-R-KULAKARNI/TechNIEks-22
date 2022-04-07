@@ -78,6 +78,11 @@ export default function SignUp() {
       // }
     );
 
+    if (data) {
+      console.log("data here");
+      console.log(data);
+    }
+
     if (error) {
       messageAlert("Something Went Wrong", "error");
       setLoading(false);

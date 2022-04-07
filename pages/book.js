@@ -14,6 +14,7 @@ function BookTicket(props) {
   const m1 = useMediaQuery("(min-width:600px)");
   const [status, setStatus] = React.useState(false);
   const [ticket, setTicket] = React.useState(null);
+  const [email, setEmail] = React.useState(null);
   const router = useRouter();
 
   const [name, setName] = React.useState("");
@@ -51,6 +52,12 @@ function BookTicket(props) {
 
     setStatus(data ? true : false);
 
+    if (data) {
+      console.log("user details - book.js");
+      console.log(data);
+      setEmail(data.email);
+    }
+
     if (!data) {
       router.push("/who_r_u");
     }
@@ -70,6 +77,7 @@ function BookTicket(props) {
         name={name}
         usn={usn}
         no={no}
+        email={email}
         enjoy={enjoy}
         totalAmount={totalAmount}
         setName={setName}
