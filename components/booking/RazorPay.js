@@ -3,10 +3,11 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { supabase } from "../../utils/supabaseClient";
+import { supabase } from "../../utils/SupabaseClient";
 import { useRouter } from "next/router";
 import * as c from "../../utils/Colors";
 import ButtonUI from "./Button";
+import { PortraitSharp } from "@mui/icons-material";
 
 const RazorPayButton = (props) => {
   const theme = createTheme();
@@ -27,14 +28,42 @@ const RazorPayButton = (props) => {
     });
   }
 
-  const paymentSuccessful = async () => {
-    alert("Payment successful");
-    router.push({
-      pathname: "/status",
-      query: {
-        status: "Payment Successful",
+  const paymentSuccessful = async (id, order_id) => {
+    console.log("payment successful");
+    console.log(id);
+    console.log(order_id);
+    console.log(props.amount);
+    console.log(props.no);
+    console.log(props.usn);
+    console.log(props.name);
+    console.log(props.email);
+    console.log(props.ticket);
+    const { data, error } = await supabase.from("payments").insert([
+      {
+        payment_id: id,
+        order_id: order_id,
+        name: props.name,
+        usn: props.usn,
+        nooftickets: props.no,
+        amountpaid: props.amount,
+        email: props.email,
+        ticket_id: props.ticket.id,
+        ticketprice: props.ticket.price,
       },
-    });
+    ]);
+
+    if (data) {
+      router.push({
+        pathname: "/success",
+        query: {
+          status: 1,
+        },
+      });
+    }
+
+    if (error) {
+      alert("Somethin went wrong, Please contact the organizers");
+    }
   };
 
   const displayRazorPay = async () => {
@@ -48,7 +77,7 @@ const RazorPayButton = (props) => {
       return;
     }
 
-    if (props.ticket <= 0) {
+    if (props.amount <= 0) {
       alert("Buy atleast one ticket");
       return;
     }
@@ -95,13 +124,15 @@ const RazorPayButton = (props) => {
         };
         const result = await axios.post("/api/verify", data);
         if (result["data"]["msg"] === "success") {
-          paymentSuccessful();
+          paymentSuccessful(
+            response.razorpay_payment_id,
+            response.razorpay_order_id
+          );
         } else {
-          alert("Payment Failed");
           router.push({
-            pathname: "/status",
+            pathname: "/failure",
             query: {
-              status: "Payment failed",
+              status: 1,
             },
           });
         }

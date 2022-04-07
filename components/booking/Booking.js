@@ -98,6 +98,7 @@ export default function Booking(props) {
                     usn={props.usn}
                     email={props.email}
                     ticket={props.ticket}
+                    no={props.no}
                   />
                 </div>
               </div>
@@ -172,6 +173,7 @@ export default function Booking(props) {
                 name={props.name}
                 usn={props.usn}
                 email={props.email}
+                no={props.no}
                 ticket={props.ticket}
               />
             </div>

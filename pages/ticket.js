@@ -7,15 +7,35 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { supabase } from "../utils/SupabaseClient";
 import React from "react";
 import { useRouter } from "next/router";
+import MyTicketsUI from "../components/tickets/MyTickets";
 
 export default function Ticket() {
   const m1 = useMediaQuery("(min-width:600px)");
   const [status, setStatus] = React.useState(false);
+  const [tickets, setTickets] = React.useState([]);
   const router = useRouter();
 
   React.useEffect(() => {
     fetchTheProfile();
+    fetchTickets();
   }, []);
+
+  async function fetchTickets() {
+    const userData = await supabase.auth.user();
+
+    if (userData) {
+      const { data, error } = await supabase
+        .from("payments")
+        .select(`*,events(*)`)
+        .eq("email", userData.email);
+
+      if (data) {
+        console.log("tickets here");
+        console.log(data);
+        setTickets(data);
+      }
+    }
+  }
 
   async function fetchTheProfile() {
     const data = await supabase.auth.user();
@@ -36,7 +56,7 @@ export default function Ticket() {
   return (
     <div>
       <NavBar code={0} logOut={logOut} status={status} />
-      <h1>Ticket Download</h1>
+      <MyTicketsUI tickets={tickets} />
       <Footer />
     </div>
   );
