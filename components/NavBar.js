@@ -30,22 +30,15 @@ const NavBarUI = (props) => {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
   return (
     <div>
       <AppBar
-        position="static"
+        position="fixed"
         elevation={0}
         style={{
           backgroundColor: c.c1,
@@ -171,6 +164,7 @@ const NavBarUI = (props) => {
           </Toolbar>
         </Container>
       </AppBar>
+      <div style={{ height: "50px" }}></div>
     </div>
   );
 };

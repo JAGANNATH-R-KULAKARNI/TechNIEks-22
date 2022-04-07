@@ -3,7 +3,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { supabase } from "../utils/SupabaseClient";
 import React from "react";
-import { SettingsPowerOutlined } from "@mui/icons-material";
+import { Router, SettingsPowerOutlined } from "@mui/icons-material";
+import Head from "next/head";
+import NextNProgress from "nextjs-progressbar";
+import * as c from "../utils/Colors";
 
 function MyApp({ Component, pageProps }) {
   const [status, setStatus] = React.useState(false);
@@ -51,10 +54,11 @@ function MyApp({ Component, pageProps }) {
       });
   }
 
-  return status ? (
-    <Component {...pageProps} status={status} />
-  ) : (
-    <Component {...pageProps} status={status} />
+  return (
+    <div>
+      <NextNProgress color={c.c3} />
+      <Component {...pageProps} status={status} />
+    </div>
   );
 }
 
