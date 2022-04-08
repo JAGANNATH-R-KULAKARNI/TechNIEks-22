@@ -171,7 +171,9 @@ function Footer() {
                 fontWeight: "bold",
               }}
             >
-              Gear Up Your Child's Growth<br></br>With Robotics
+              ಸುಭಕೃತು Subhakritu
+              <br />
+              2022
             </h1>
             <div style={{ height: "50px" }}></div>
           </div>
