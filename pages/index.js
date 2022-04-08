@@ -1,10 +1,6 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import SHeader from "../components/headers/Slides";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import Body from "../components/body/Body";
 import { supabase } from "../utils/SupabaseClient";
 import React from "react";
@@ -20,15 +16,16 @@ export default function Home(props) {
 
         if (event === "SIGNED_IN") {
           setStatus(true);
+          Router.push("/events");
         }
         if (event === "SIGNED_OUT") {
           setStatus(false);
+          Router.push("/home");
         }
       }
     );
     checkUser();
-
-    Router.push("/events");
+    Router.push("/home");
     return () => {
       authListener.unsubscribe();
     };
@@ -57,11 +54,11 @@ export default function Home(props) {
         checkUser();
       });
   }
-  async function fetchTheProfile() {
-    const data = await supabase.auth.user();
+  // async function fetchTheProfile() {
+  //   const data = await supabase.auth.user();
 
-    setStatus(data ? true : false);
-  }
+  //   setStatus(data ? true : false);
+  // }
 
   async function logOut() {
     await supabase.auth.signOut();

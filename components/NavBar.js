@@ -7,9 +7,9 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
+
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
+
 import MenuItem from "@mui/material/MenuItem";
 import * as c from "../utils/Colors";
 import styles from "../styles/NavBar.module.css";
@@ -23,8 +23,7 @@ const ids = ["events", "ticket", "about"];
 
 const NavBarUI = (props) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const m1 = useMediaQuery("(min-width:600px)");
+
   const router = useRouter();
 
   const handleOpenNavMenu = (event) => {

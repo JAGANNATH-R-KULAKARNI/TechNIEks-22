@@ -1,10 +1,7 @@
 import "../styles/globals.css";
-import { useState, useEffect } from "react";
-import Link from "next/link";
+import { useEffect } from "react";
 import { supabase } from "../utils/SupabaseClient";
 import React from "react";
-import { Router, SettingsPowerOutlined } from "@mui/icons-material";
-import Head from "next/head";
 import NextNProgress from "nextjs-progressbar";
 import * as c from "../utils/Colors";
 

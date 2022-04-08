@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { Swiper } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import styles from "../styles/Footer1.module.css";

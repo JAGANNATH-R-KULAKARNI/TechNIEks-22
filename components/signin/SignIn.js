@@ -2,11 +2,6 @@ import * as React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
@@ -14,18 +9,15 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import * as c from "../../utils/Colors";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { makeStyles } from "@material-ui/core/styles";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
-import { SettingsSystemDaydreamOutlined } from "@mui/icons-material";
 import { supabase } from "../../utils/SupabaseClient";
 import MuiAlert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 import CircularProgress from "@mui/material/CircularProgress";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { useRouter } from "next/router";
-import absoluteUrl from "next-absolute-url";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -34,8 +26,6 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 const theme = createTheme();
 
 export default function SignUp() {
-  const router = useRouter();
-  //const { origin } = absoluteUrl(req);
   const m1 = useMediaQuery("(min-width:600px)");
   const [email, setEmail] = React.useState("");
   const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;

@@ -5,7 +5,6 @@ import CardUI2 from "./Card2";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
-import SwiperCore, { Pagination } from "swiper/core";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 const data = [
@@ -28,10 +27,7 @@ const data = [
 ];
 export default function StartingComponent() {
   const m1 = useMediaQuery("(min-width:430px)");
-  const m2 = useMediaQuery("(min-width:700px)");
-  const m3 = useMediaQuery("(min-width:1000px)");
-  const m4 = useMediaQuery("(min-width:1300px)");
-  const m5 = useMediaQuery("(min-width:1700px)");
+
   return (
     <div>
       <div

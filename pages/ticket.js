@@ -1,16 +1,11 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import { supabase } from "../utils/SupabaseClient";
 import React from "react";
 import { useRouter } from "next/router";
 import MyTicketsUI from "../components/tickets/MyTickets";
 
 export default function Ticket() {
-  const m1 = useMediaQuery("(min-width:600px)");
   const [status, setStatus] = React.useState(false);
   const [tickets, setTickets] = React.useState([]);
   const router = useRouter();
@@ -27,7 +22,8 @@ export default function Ticket() {
       const { data, error } = await supabase
         .from("payments")
         .select(`*,events(*)`)
-        .eq("email", userData.email);
+        .eq("email", userData.email)
+        .order("created_at", { ascending: false });
 
       if (data) {
         setTickets(data);

@@ -1,10 +1,5 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../../styles/Home.module.css";
 import React, { useEffect } from "react";
-import axios from "axios";
 import Grid from "@mui/material/Grid";
-import ButtonUI from "./Button";
 import Paper from "@mui/material/Paper";
 import { useRouter } from "next/router";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -14,12 +9,7 @@ import * as c from "../../utils/Colors";
 import RazorPayButtonUI from "./RazorPay";
 
 export default function Booking(props) {
-  const router = useRouter();
   const m1 = useMediaQuery("(min-width:430px)");
-  const m2 = useMediaQuery("(min-width:700px)");
-  const m3 = useMediaQuery("(min-width:1000px)");
-  const m4 = useMediaQuery("(min-width:1300px)");
-  const m5 = useMediaQuery("(min-width:1700px)");
 
   if (m1)
     return (

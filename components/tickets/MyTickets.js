@@ -1,19 +1,13 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
-import CameraIcon from "@mui/icons-material/PhotoCamera";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import * as c from "../../utils/Colors";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -28,29 +22,28 @@ import domtoimage from "dom-to-image";
 const theme = createTheme();
 
 export default function Tickets(props) {
-  const router = useRouter();
   const m1 = useMediaQuery("(min-width:600px)");
   const { Canvas } = useQRCode();
   const [glitch, setGlitch] = React.useState(false);
 
-  const generateTicket = (id) => {
-    const doc = new jsPDF();
+  // const generateTicket = (id) => {
+  //   const doc = new jsPDF();
 
-    //get table html
-    const pdfTable = document.getElementById(id);
-    //html to pdf format
-    var html = htmlToPdfmake(pdfTable.innerHTML);
+  //   //get table html
+  //   const pdfTable = document.getElementById(id);
+  //   //html to pdf format
+  //   var html = htmlToPdfmake(pdfTable.innerHTML);
 
-    const documentDefinition = { content: html };
-    pdfMake.vfs = pdfFonts.pdfMake.vfs;
-    pdfMake.createPdf(documentDefinition).open();
-  };
+  //   const documentDefinition = { content: html };
+  //   pdfMake.vfs = pdfFonts.pdfMake.vfs;
+  //   pdfMake.createPdf(documentDefinition).open();
+  // };
 
-  const generatePdf = (i) => {
-    const doc = new jsPDF("portrait", "pt", "a4", "true");
-    doc.addImage(i, "JPEG", 10, 30, 360, 640);
-    doc.save("Invoice.pdf");
-  };
+  // const generatePdf = (i) => {
+  //   const doc = new jsPDF("portrait", "pt", "a4", "true");
+  //   doc.addImage(i, "JPEG", 10, 30, 360, 640);
+  //   doc.save("Invoice.pdf");
+  // };
 
   const generateJpeg = (id, name, usn) => {
     setGlitch(true);

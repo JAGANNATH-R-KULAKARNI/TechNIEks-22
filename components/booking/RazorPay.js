@@ -1,19 +1,16 @@
 import axios from "axios";
 import * as React from "react";
-import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { supabase } from "../../utils/SupabaseClient";
 import { useRouter } from "next/router";
 import * as c from "../../utils/Colors";
 import ButtonUI from "./Button";
-import { PortraitSharp } from "@mui/icons-material";
 
 const RazorPayButton = (props) => {
   const theme = createTheme();
   const router = useRouter();
-  const matches = useMediaQuery("(min-width:650px)");
-  const { details } = props;
+
   function loadScript(src) {
     return new Promise((resolve) => {
       const script = document.createElement("script");

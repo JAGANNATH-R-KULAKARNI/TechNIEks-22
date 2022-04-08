@@ -1,26 +1,11 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
-import * as c from "../utils/Colors";
 import styles from "../styles/Footer.module.css";
-import Link from "next/link";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Footer2 from "./Footer4";
 
 function Footer() {
   const m1 = useMediaQuery("(min-width:430px)");
-  const m2 = useMediaQuery("(min-width:700px)");
-  const m3 = useMediaQuery("(min-width:1000px)");
-  const m4 = useMediaQuery("(min-width:1300px)");
-  const m5 = useMediaQuery("(min-width:1700px)");
-
-  const colm2 = ["Creater", "Terms & Conditions", "Privacy Policy"];
-  const colm3 = [
-    "Jagannath R Kulakarni",
-    "jagannathrkulakarni.171845@gmail.com",
-    "(+91) 9353739401",
-    "Office - Bannur Ring road",
-  ];
 
   return (
     <div>
@@ -49,7 +34,10 @@ function Footer() {
               <h3 style={{ fontSize: m1 ? "20px" : "15px" }}>About</h3>
               <p style={{ fontSize: m1 ? "15px" : "10px" }}>
                 The annual techno-cultural fest at The National Institute of
-                Engineering, Mysore
+                Engineering, Mysore The New Year Subhakritu promises a period of
+                joy and celebrations unlike the past two years Sarvari and Plava
+                where people faced the Corona pandemic and loss of life. Let's
+                celebrate with TechNIEks'22
               </p>
             </div>
           </Grid>
@@ -69,6 +57,8 @@ function Footer() {
                 <li className={styles.footer}>{"Creater"}</li>
                 <li className={styles.footer}>{"Terms & Conditions"}</li>
                 <li className={styles.footer}>{"Privacy Policy"}</li>
+                <li className={styles.footer}>{"FAQ's"}</li>
+                <li className={styles.footer}>{"About"}</li>
               </ul>
             </div>
           </Grid>
@@ -93,11 +83,11 @@ function Footer() {
                   {" "}
                   {"Team Details"}
                 </h3>
-                <li className={styles.footer}>Need To Fill</li>
-                <li>Someemail@gmail.com</li>
-
-                <li>(+91) 9282020328</li>
-                <li>NIE Mysore</li>
+                <li className={styles.footer}>Prajwal Benedict</li>
+                <li>Lohith C</li>
+                <li>Bharat </li>
+                <li>Niraj Sharma</li>
+                <li>Jagannath R Kulakarni</li>
               </ul>
             </div>
           </Grid>

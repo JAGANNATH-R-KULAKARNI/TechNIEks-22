@@ -1,6 +1,3 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import useMediaQuery from "@mui/material/useMediaQuery";

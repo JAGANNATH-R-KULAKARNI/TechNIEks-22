@@ -1,8 +1,5 @@
-import { useState } from "react";
 import styles from "../styles/Watch.module.css";
-import Image from "next/image";
 import * as React from "react";
-import ButtonUI from "./Button";
 
 function Video(props) {
   return (
