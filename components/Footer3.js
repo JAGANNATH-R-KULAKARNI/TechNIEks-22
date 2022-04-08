@@ -112,7 +112,7 @@ function Footer() {
                     color: "black",
                   }}
                 >
-                  Copyright© TechNIEks'22
+                  Copyright© TechNIEks 22
                 </a>
               </h4>
             </div>
