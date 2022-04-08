@@ -45,6 +45,7 @@ export default function Details(props) {
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
+        <br />
         <Box
           sx={{
             marginTop: 8,
@@ -62,11 +63,11 @@ export default function Details(props) {
           >
             <ConfirmationNumberIcon />
           </Avatar>
-          <Typography component="h1" variant="h4">
+          <Typography component="h1" variant="h5">
             {props.ticket && props.ticket.name}
           </Typography>
 
-          <Typography component="h1" variant="h5">
+          <Typography component="h4" variant="h6">
             ₹ {props.ticket && props.ticket.price} / person
           </Typography>
           <Box
@@ -88,12 +89,12 @@ export default function Details(props) {
                   },
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
-                      borderColor: c.c1,
+                      borderColor: c.c3,
                     },
                   },
                   "& .MuiOutlinedInput-root:hover": {
                     "& > fieldset": {
-                      borderColor: c.c1,
+                      borderColor: c.c3,
                     },
                   },
                   "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
@@ -103,7 +104,7 @@ export default function Details(props) {
                   Name
                 </InputLabel>
                 <OutlinedInput
-                  id="emailSignUp"
+                  id="namebro"
                   type="name"
                   value={props.name}
                   onChange={(e) => {
@@ -145,12 +146,12 @@ export default function Details(props) {
                   },
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
-                      borderColor: c.c1,
+                      borderColor: c.c3,
                     },
                   },
                   "& .MuiOutlinedInput-root:hover": {
                     "& > fieldset": {
-                      borderColor: c.c1,
+                      borderColor: c.c3,
                     },
                   },
                   "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
@@ -160,7 +161,7 @@ export default function Details(props) {
                   USN
                 </InputLabel>
                 <OutlinedInput
-                  id="emailSignUp"
+                  id="usnbro"
                   type={"name"}
                   value={props.usn}
                   onChange={(e) => {
@@ -201,12 +202,12 @@ export default function Details(props) {
                   },
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
-                      borderColor: c.c1,
+                      borderColor: c.c3,
                     },
                   },
                   "& .MuiOutlinedInput-root:hover": {
                     "& > fieldset": {
-                      borderColor: c.c1,
+                      borderColor: c.c3,
                     },
                   },
                   "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
@@ -216,7 +217,7 @@ export default function Details(props) {
                   Tickets
                 </InputLabel>
                 <OutlinedInput
-                  id="emailSignUp"
+                  id="ticketsbro"
                   type="number"
                   value={props.no}
                   onChange={(e) => {

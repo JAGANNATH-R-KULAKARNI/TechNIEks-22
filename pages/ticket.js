@@ -34,6 +34,11 @@ export default function Ticket() {
         console.log(data);
         setTickets(data);
       }
+
+      if (error) {
+        console.log("its an error");
+        console.log(error);
+      }
     }
   }
 

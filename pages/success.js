@@ -25,9 +25,9 @@ function Success(props) {
   React.useEffect(() => {
     fetchTheProfile();
 
-    if (!props.router.query.status) {
-      router.push("/home");
-    }
+    // if (!props.router.query.status) {
+    //   router.push("/home");
+    // }
   }, []);
 
   async function fetchTheProfile() {
@@ -75,7 +75,7 @@ function Success(props) {
           </svg>
 
           <Button variant="contained" style={{ backgroundColor: c.c3 }}>
-            <Link href="/events"> Continue</Link>
+            <Link href="/ticket"> Continue</Link>
           </Button>
         </Paper>
       </Box>

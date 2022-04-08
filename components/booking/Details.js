@@ -62,11 +62,15 @@ export default function Details(props) {
           >
             <ConfirmationNumberIcon />
           </Avatar>
-          <Typography component="h1" variant="h3">
+          <Typography
+            component="h1"
+            variant="h4"
+            style={{ width: "100%", textAlign: "center" }}
+          >
             {props.ticket && props.ticket.name}
           </Typography>
 
-          <Typography component="h1" variant="h4">
+          <Typography component="h1" variant="h5">
             ₹ {props.ticket && props.ticket.price} / person
           </Typography>
           <br />
@@ -109,7 +113,7 @@ export default function Details(props) {
                     Name
                   </InputLabel>
                   <OutlinedInput
-                    id="emailSignUp"
+                    id="namebro"
                     type="name"
                     value={props.name}
                     onChange={(e) => {
@@ -188,7 +192,7 @@ export default function Details(props) {
                       USN
                     </InputLabel>
                     <OutlinedInput
-                      id="emailSignUp"
+                      id="usnbro"
                       type="name"
                       value={props.usn}
                       onChange={(e) => {
@@ -268,7 +272,7 @@ export default function Details(props) {
                       Tickets
                     </InputLabel>
                     <OutlinedInput
-                      id="eqssmsqaiwswqp"
+                      id="ticketsbro"
                       type="number"
                       value={props.no}
                       onChange={(e) => {

@@ -29,15 +29,6 @@ const RazorPayButton = (props) => {
   }
 
   const paymentSuccessful = async (id, order_id) => {
-    console.log("payment successful");
-    console.log(id);
-    console.log(order_id);
-    console.log(props.amount);
-    console.log(props.no);
-    console.log(props.usn);
-    console.log(props.name);
-    console.log(props.email);
-    console.log(props.ticket);
     const { data, error } = await supabase.from("payments").insert([
       {
         payment_id: id,
@@ -53,6 +44,29 @@ const RazorPayButton = (props) => {
     ]);
 
     if (data) {
+      try {
+        const data = await supabase.auth.user();
+
+        await axios
+          .post("/api/sendemail", {
+            email: data.email,
+            name: props.name,
+            usn: props.usn,
+            no: props.no,
+            amount: props.amount,
+            id: id,
+            order_id: order_id,
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      } catch (err) {
+        console.log(err);
+      }
+
       router.push({
         pathname: "/success",
         query: {
@@ -124,7 +138,7 @@ const RazorPayButton = (props) => {
         };
         const result = await axios.post("/api/verify", data);
         if (result["data"]["msg"] === "success") {
-          paymentSuccessful(
+          await paymentSuccessful(
             response.razorpay_payment_id,
             response.razorpay_order_id
           );

@@ -5,7 +5,7 @@ import styles from "../styles/Footer.module.css";
 import Link from "next/link";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Footer2 from "./Footer4";
+import Footer2 from "./Footer2";
 
 function Footer() {
   const m1 = useMediaQuery("(min-width:430px)");
