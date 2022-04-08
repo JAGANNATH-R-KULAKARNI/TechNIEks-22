@@ -22,7 +22,6 @@ function Footer() {
           justifyContent: "center",
           paddingLeft: m1 ? "10%" : "0%",
           paddingRight: "10%",
-          // backgroundColor: c.c1,
           // color: c.c3,
         }}
       >
