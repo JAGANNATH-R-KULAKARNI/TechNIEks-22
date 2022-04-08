@@ -312,7 +312,6 @@ export default function Details(props) {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      value="allowExtraEmails"
                       color="primary"
                       style={{ color: c.c1 }}
                       value={props.enjoy}

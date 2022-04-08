@@ -57,7 +57,7 @@ const NavBarUI = (props) => {
               className={styles2.hoverr}
               onClick={() => router.push("/home")}
             >
-              TechNIEks'22
+              TechNIEks 22
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
@@ -119,7 +119,7 @@ const NavBarUI = (props) => {
               className={styles2.hoverr}
               onClick={() => router.push("/home")}
             >
-              TechNIEks'22
+              TechNIEks 22
             </Typography>
             <Box
               sx={{
