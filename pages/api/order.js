@@ -16,7 +16,6 @@ const createOrder = async ({ amount, name, usn, email }) => {
 
     const order = await instance.orders.create(options);
     if (!order) {
-      console.log("Order creation failed", res.body);
       return res.status(500).send("Order Creation Failed");
     }
 
@@ -25,14 +24,12 @@ const createOrder = async ({ amount, name, usn, email }) => {
       receipt: receipt,
     };
   } catch (error) {
-    console.log("error", error);
     throw new Error("Error creating order", error.messgae);
   }
 };
 
 const handler = async (req, res) => {
   if (req.method === "POST") {
-    console.log(req.body);
     const { amount, name, usn, email } = req.body;
     const { order, receipt } = await createOrder({
       amount,

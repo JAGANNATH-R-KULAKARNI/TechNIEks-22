@@ -78,7 +78,6 @@ export default function Tickets(props) {
         setTimeout(() => {
           setGlitch(false);
         }, 700);
-        console.log(err);
       });
   };
   return (

@@ -62,15 +62,9 @@ const RazorPayButton = (props) => {
             id: id,
             order_id: order_id,
           })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-      } catch (err) {
-        console.log(err);
-      }
+          .then(function (response) {})
+          .catch(function (error) {});
+      } catch (err) {}
 
       props.messageAlertForPayments(0);
 
@@ -126,7 +120,7 @@ const RazorPayButton = (props) => {
 
     if (!result) {
       alert("Sorry, We are experiencing technical Issue");
-      console.log("Order creation failed");
+
       props.messageAlert("Payment failed", "error", 3000);
       return;
     }

@@ -25,9 +25,9 @@ function Success(props) {
   React.useEffect(() => {
     fetchTheProfile();
 
-    // if (!props.router.query.status) {
-    //   router.push("/home");
-    // }
+    if (!props.router.query.status) {
+      router.push("/home");
+    }
   }, []);
 
   async function fetchTheProfile() {

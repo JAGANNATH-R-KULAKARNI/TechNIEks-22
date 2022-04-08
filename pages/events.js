@@ -29,8 +29,6 @@ export default function About() {
     const { data, error } = await supabase.from("events").select("*");
 
     if (data) {
-      console.log("data - events");
-      console.log(data);
       setEvents(data);
     }
 

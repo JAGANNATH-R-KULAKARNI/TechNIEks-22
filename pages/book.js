@@ -55,8 +55,6 @@ function BookTicket(props) {
       .eq("id", props.router.query.id);
 
     if (data) {
-      console.log("ticket");
-      console.log(data);
       setTicket(data[0]);
       setTotalAmount(data[0].price * no);
     }
@@ -81,8 +79,6 @@ function BookTicket(props) {
     setStatus(data ? true : false);
 
     if (data) {
-      console.log("user details - book.js");
-      console.log(data);
       setEmail(data.email);
     }
 

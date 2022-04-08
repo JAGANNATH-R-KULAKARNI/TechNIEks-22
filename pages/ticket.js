@@ -23,9 +23,6 @@ export default function Ticket() {
   async function fetchTickets() {
     const userData = await supabase.auth.user();
 
-    console.log("user data bro");
-    console.log(userData);
-
     if (userData) {
       const { data, error } = await supabase
         .from("payments")
@@ -33,14 +30,10 @@ export default function Ticket() {
         .eq("email", userData.email);
 
       if (data) {
-        console.log("tickets here");
-        console.log(data);
         setTickets(data);
       }
 
       if (error) {
-        console.log("its an error");
-        console.log(error);
       }
     }
   }

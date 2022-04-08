@@ -45,8 +45,6 @@ handler.post(async (req, res) => {
     html: message.replace(/\r\n/g, "<br />"),
   };
 
-  console.log("99999999999999999999999999999999999999999999");
-  console.log(process.env.SENDGRID_API);
   mail
     .send(info)
     .then(() => {

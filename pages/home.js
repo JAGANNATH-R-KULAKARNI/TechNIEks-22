@@ -12,6 +12,7 @@ import Router from "next/router";
 
 export default function Home(props) {
   const [status, setStatus] = React.useState(false);
+  const m1 = useMediaQuery("(min-width:600px)");
 
   React.useEffect(() => {
     fetchTheProfile();
@@ -33,7 +34,7 @@ export default function Home(props) {
       <NavBar code={0} logOut={logOut} status={status} />
       <SHeader />
       <Body />
-      <div style={{ height: "100px" }}></div>
+      <div style={{ height: m1 ? "100px" : "0PX" }}></div>
       <Footer />
     </div>
   );
