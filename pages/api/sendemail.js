@@ -18,7 +18,7 @@ handler.post(async (req, res) => {
   ${data.no} tickets ${data.no == 1 ? "has" : "have"} been booked for ₹ ${
     data.amount
   }\r\n\n\n
-
+  Enjoy your show\r\n\n\n
 
 
   Ticket_ID : ${data.order_id}\r\n\n\n
