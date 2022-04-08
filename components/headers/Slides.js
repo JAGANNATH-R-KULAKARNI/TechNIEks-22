@@ -19,7 +19,7 @@ const data = [
   },
   {
     name: "Fashion",
-    url: "./images/fashion.jpg",
+    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-CP97csBJhunIQeTKIaeoc17LcAR50wx2ow&usqp=CAU",
   },
   {
     name: "Concert",

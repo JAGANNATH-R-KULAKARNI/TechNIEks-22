@@ -75,13 +75,20 @@ function Success(props) {
           </svg>
 
           <Button variant="contained" style={{ backgroundColor: c.c3 }}>
-            <Link href="/ticket"> Continue</Link>
+            <Link href="/ticket"> Print The Ticket</Link>
           </Button>
         </Paper>
       </Box>
       <br />
       <br />
-
+      {!matches ? (
+        <div>
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
+      ) : null}
       <Footer />
     </div>
   );

@@ -88,10 +88,7 @@ export default function Booking(props) {
                   </div>
                 </div>
 
-                <div
-                  style={{ marginTop: "-25px" }}
-                  //   onClick={() => router.push(cartLen > 0 ? "/payment" : "/")}
-                >
+                <div style={{ marginTop: "-25px" }}>
                   <RazorPayButtonUI
                     amount={props.ticket ? props.ticket.price * props.no : 0}
                     name={props.name}
@@ -99,6 +96,8 @@ export default function Booking(props) {
                     email={props.email}
                     ticket={props.ticket}
                     no={props.no}
+                    messageAlertForPayments={props.messageAlertForPayments}
+                    messageAlert={props.messageAlert}
                   />
                 </div>
               </div>
@@ -164,10 +163,7 @@ export default function Booking(props) {
               </div>
             </div>
 
-            <div
-              style={{ marginTop: "-10px" }}
-              //   onClick={() => router.push(cartLen > 0 ? "/payment" : "/")}
-            >
+            <div style={{ marginTop: "-10px" }}>
               <RazorPayButtonUI
                 amount={props.ticket ? props.ticket.price * props.no : 0}
                 name={props.name}
@@ -175,6 +171,8 @@ export default function Booking(props) {
                 email={props.email}
                 no={props.no}
                 ticket={props.ticket}
+                messageAlertForPayments={props.messageAlertForPayments}
+                messageAlert={props.messageAlert}
               />
             </div>
           </div>

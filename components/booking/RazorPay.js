@@ -29,6 +29,10 @@ const RazorPayButton = (props) => {
   }
 
   const paymentSuccessful = async (id, order_id) => {
+    const userData = await supabase.auth.user();
+
+    if (!userData) return;
+
     const { data, error } = await supabase.from("payments").insert([
       {
         payment_id: id,
@@ -40,6 +44,7 @@ const RazorPayButton = (props) => {
         email: props.email,
         ticket_id: props.ticket.id,
         ticketprice: props.ticket.price,
+        user_id: userData.id,
       },
     ]);
 
@@ -67,6 +72,8 @@ const RazorPayButton = (props) => {
         console.log(err);
       }
 
+      props.messageAlertForPayments(0);
+
       router.push({
         pathname: "/success",
         query: {
@@ -82,20 +89,24 @@ const RazorPayButton = (props) => {
 
   const displayRazorPay = async () => {
     if (props.name.length < 5) {
-      alert("Name should be atleast 5 characters long");
+      props.messageAlert(
+        "Name should be atleast 5 characters long",
+        "error",
+        3000
+      );
       return;
     }
 
     if (props.usn.length == 0) {
-      alert("USN is required");
+      props.messageAlert("USN is required", "error", 3000);
       return;
     }
 
     if (props.amount <= 0) {
-      alert("Buy atleast one ticket");
+      props.messageAlert("Buy atleast one ticket", "error", 3000);
       return;
     }
-
+    //   props.messageAlertForPayments(1);
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
     );
@@ -116,6 +127,7 @@ const RazorPayButton = (props) => {
     if (!result) {
       alert("Sorry, We are experiencing technical Issue");
       console.log("Order creation failed");
+      props.messageAlert("Payment failed", "error", 3000);
       return;
     }
 
@@ -138,6 +150,7 @@ const RazorPayButton = (props) => {
         };
         const result = await axios.post("/api/verify", data);
         if (result["data"]["msg"] === "success") {
+          props.messageAlertForPayments(1);
           await paymentSuccessful(
             response.razorpay_payment_id,
             response.razorpay_order_id

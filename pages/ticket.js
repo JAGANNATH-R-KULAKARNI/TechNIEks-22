@@ -23,6 +23,9 @@ export default function Ticket() {
   async function fetchTickets() {
     const userData = await supabase.auth.user();
 
+    console.log("user data bro");
+    console.log(userData);
+
     if (userData) {
       const { data, error } = await supabase
         .from("payments")
@@ -61,7 +64,17 @@ export default function Ticket() {
   return (
     <div>
       <NavBar code={0} logOut={logOut} status={status} />
+
       <MyTicketsUI tickets={tickets} />
+      {tickets.length > 0 ? null : (
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <img
+            style={{ width: "50%", height: "auto" }}
+            src="https://shop.myfelt-europe.com/skin/frontend/rwd/myfelt-2018/images/cart-noitem-mobile.gif"
+          />
+        </div>
+      )}
+      {tickets.length > 0 ? null : <div style={{ height: "130px" }}></div>}
       <Footer />
     </div>
   );

@@ -9,12 +9,21 @@ import React from "react";
 import { useRouter } from "next/router";
 import BookingUI from "../components/booking/Booking";
 import { withRouter } from "next/router";
+import MuiAlert from "@mui/material/Alert";
+import Snackbar from "@mui/material/Snackbar";
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 function BookTicket(props) {
   const m1 = useMediaQuery("(min-width:600px)");
   const [status, setStatus] = React.useState(false);
   const [ticket, setTicket] = React.useState(null);
   const [email, setEmail] = React.useState(null);
+  const [openAlert, setOpenAlert] = React.useState(false);
+  const [alertType, setAlertType] = React.useState("success");
+  const [alertMsg, setAlert] = React.useState(null);
   const router = useRouter();
 
   const [name, setName] = React.useState("");
@@ -22,6 +31,17 @@ function BookTicket(props) {
   const [no, setNo] = React.useState(1);
   const [enjoy, setEnjoy] = React.useState(false);
   const [totalAmount, setTotalAmount] = React.useState();
+
+  const messageAlert = async (msg, type, t) => {
+    setOpenAlert(true);
+    setAlert(msg);
+    setAlertType(type);
+    setTimeout(() => {
+      setOpenAlert(false);
+      setAlert(null);
+    }, t);
+    return;
+  };
 
   React.useEffect(() => {
     fetchTheProfile();
@@ -42,8 +62,16 @@ function BookTicket(props) {
     }
 
     if (error) {
-      alert("Some Error Occurred :(, Try again later");
+      messageAlert("Some Error Occurred :(, Try again later", "error", 4000);
       router.push("/events");
+    }
+  }
+
+  async function messageAlertForPayments(code) {
+    if (code) messageAlert("Loading.....", "success", 1000000);
+    else {
+      setOpenAlert(false);
+      setAlert(null);
     }
   }
 
@@ -72,6 +100,26 @@ function BookTicket(props) {
   return (
     <div>
       <NavBar code={0} logOut={logOut} status={status} />
+      <Snackbar
+        open={openAlert}
+        autoHideDuration={3000}
+        onClose={() => setOpenAlert(false)}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        style={{
+          width: m1 ? "20%" : "90%",
+          paddingLeft: m1 ? "0%" : "10%",
+          textAlign: "center",
+          paddingTop: m1 ? "3%" : "14%",
+        }}
+      >
+        <Alert
+          onClose={() => setOpenAlert(false)}
+          severity={alertType}
+          sx={{ width: "100%", textAlign: "center" }}
+        >
+          {!m1 ? <p style={{ fontSize: "10px" }}>{alertMsg}</p> : alertMsg}
+        </Alert>
+      </Snackbar>
       <BookingUI
         ticket={ticket}
         name={name}
@@ -84,6 +132,8 @@ function BookTicket(props) {
         setUsn={setUSN}
         setNo={setNo}
         setEnjoy={setEnjoy}
+        messageAlertForPayments={messageAlertForPayments}
+        messageAlert={messageAlert}
       />
       <Footer />
     </div>

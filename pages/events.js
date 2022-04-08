@@ -49,6 +49,15 @@ export default function About() {
     <div>
       <NavBar code={0} logOut={logOut} status={status} />
       <TicketsUI events={events} />
+      {events.length > 0 ? null : (
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <img
+            style={{ width: "50%", height: "auto" }}
+            src="https://shop.myfelt-europe.com/skin/frontend/rwd/myfelt-2018/images/cart-noitem-mobile.gif"
+          />
+        </div>
+      )}
+      {events.length > 0 ? null : <div style={{ height: "130px" }}></div>}
       <Footer />
     </div>
   );
