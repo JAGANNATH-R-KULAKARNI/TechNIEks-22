@@ -4,6 +4,7 @@ import { supabase } from "../utils/SupabaseClient";
 import React from "react";
 import NextNProgress from "nextjs-progressbar";
 import * as c from "../utils/Colors";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   const [status, setStatus] = React.useState(false);
@@ -53,6 +54,10 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <div>
+      <Head>
+        <title>TechNIEks 22</title>
+      </Head>
+
       <NextNProgress color={c.c3} />
       <Component {...pageProps} status={status} />
     </div>

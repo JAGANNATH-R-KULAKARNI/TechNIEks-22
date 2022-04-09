@@ -45,7 +45,7 @@ handler.post(async (req, res) => {
     html: message.replace(/\r\n/g, "<br />"),
   };
 
-  mail
+  await mail
     .send(info)
     .then(() => {
       return res.send({ message: "email sent" });
