@@ -167,7 +167,7 @@ export default function SignUp() {
           <Box component="form" noValidate sx={{ mt: 3 }}>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <img
-                src="https://media.giphy.com/media/xTiTnoUnHxVaaVNWhO/giphy.gif"
+                src="/images/google.gif"
                 alt="Google"
                 style={{ width: "200px", height: "100px" }}
               />
