@@ -86,15 +86,18 @@ export default function SignUp() {
           provider: "google",
         }
         // {
-        //   redirectTo: "http://localhost:3000/book?id=2",
+        //   redirectTo:
+        //     "https://www.linkedin.com/in/jagannath-r-kulakarni-a465841a7/",
         // }
       );
       if (error) throw error;
 
       if (user) {
-        router.push("/about");
-
-        // router.reload(window.location.pathname);
+        console.log("user details");
+        console.log(user);
+        alert("here");
+        // router.push("/events");
+        router.reload(window.location.pathname);
       }
     } catch (error) {
       console.error(error.error_description || error.message);
