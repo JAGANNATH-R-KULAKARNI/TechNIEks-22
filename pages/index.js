@@ -10,25 +10,25 @@ export default function Home(props) {
   const [status, setStatus] = React.useState(false);
 
   React.useEffect(() => {
-    // const { data: authListener } = supabase.auth.onAuthStateChange(
-    //   (event, session) => {
-    //     LoginChangeHandler(event, session);
+    const { data: authListener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        LoginChangeHandler(event, session);
 
-    //     if (event === "SIGNED_IN") {
-    //       setStatus(true);
-    //       Router.push("/events");
-    //     }
-    //     if (event === "SIGNED_OUT") {
-    //       setStatus(false);
-    //       Router.push("/home");
-    //     }
-    //   }
-    // );
-    // checkUser();
-    Router.push("/home");
-    // return () => {
-    //   authListener.unsubscribe();
-    // };
+        if (event === "SIGNED_IN") {
+          setStatus(true);
+          Router.push("/events");
+        }
+        if (event === "SIGNED_OUT") {
+          setStatus(false);
+          Router.push("/home");
+        }
+      }
+    );
+    checkUser();
+    fetchTheProfile();
+    return () => {
+      authListener.unsubscribe();
+    };
   }, []);
   async function checkUser() {
     const user = await supabase.auth.user();
@@ -54,11 +54,11 @@ export default function Home(props) {
         checkUser();
       });
   }
-  // async function fetchTheProfile() {
-  //   const data = await supabase.auth.user();
+  async function fetchTheProfile() {
+    const data = await supabase.auth.user();
 
-  //   setStatus(data ? true : false);
-  // }
+    setStatus(data ? true : false);
+  }
 
   async function logOut() {
     await supabase.auth.signOut();
