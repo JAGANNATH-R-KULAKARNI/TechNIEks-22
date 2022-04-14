@@ -4,18 +4,21 @@ import { supabase } from "../utils/SupabaseClient";
 import React from "react";
 import { useRouter } from "next/router";
 import MyTicketsUI from "../components/tickets/MyTickets";
-import useSWR, { unstable_serialize } from "swr";
+import useSWR from "swr";
 
 export default function Ticket() {
   const [status, setStatus] = React.useState(false);
   const [tickets, setTickets] = React.useState([]);
   const router = useRouter();
-  const { ticketCache, errorCache } = useSWR("", fetchTickets);
-
-  React.useEffect(() => {
-    fetchTheProfile();
-    fetchTickets();
-  }, []);
+  const { ticketCache, errorCache } = useSWR("payments", fetchTickets);
+  const { profileCache, errorProfileCache } = useSWR(
+    "profile",
+    fetchTheProfile
+  );
+  // React.useEffect(() => {
+  //   fetchTheProfile();
+  //   fetchTickets();
+  // }, []);
 
   async function fetchTickets() {
     const userData = await supabase.auth.user();

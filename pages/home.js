@@ -5,14 +5,19 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Body from "../components/body/Body";
 import { supabase } from "../utils/SupabaseClient";
 import React from "react";
+import useSWR from "swr";
 
 export default function Home(props) {
   const [status, setStatus] = React.useState(false);
   const m1 = useMediaQuery("(min-width:600px)");
+  const { profileCacheHome, errorProfileCacheHome } = useSWR(
+    "profileHome",
+    fetchTheProfile
+  );
 
-  React.useEffect(() => {
-    fetchTheProfile();
-  }, []);
+  // React.useEffect(() => {
+  //   fetchTheProfile();
+  // }, []);
 
   async function fetchTheProfile() {
     const data = await supabase.auth.user();

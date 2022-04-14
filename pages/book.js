@@ -8,6 +8,7 @@ import BookingUI from "../components/booking/Booking";
 import { withRouter } from "next/router";
 import MuiAlert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
+import useSWR from "swr";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -29,6 +30,9 @@ function BookTicket(props) {
   const [enjoy, setEnjoy] = React.useState(false);
   const [totalAmount, setTotalAmount] = React.useState();
 
+  const { dataEvents: errorEvents } = useSWR("eventBook", fetchTicketDetails);
+  const { dataProfile: errorProfile } = useSWR("profileBook", fetchTheProfile);
+
   const messageAlert = async (msg, type, t) => {
     setOpenAlert(true);
     setAlert(msg);
@@ -40,10 +44,10 @@ function BookTicket(props) {
     return;
   };
 
-  React.useEffect(() => {
-    fetchTheProfile();
-    fetchTicketDetails();
-  }, []);
+  // React.useEffect(() => {
+  //   fetchTheProfile();
+  //   fetchTicketDetails();
+  // }, []);
 
   async function fetchTicketDetails() {
     const { data, error } = await supabase

@@ -11,14 +11,19 @@ import Footer from "../components/Footer";
 import * as c from "../utils/Colors";
 import { useRouter } from "next/router";
 import { supabase } from "../utils/SupabaseClient";
+import useSWR from "swr";
 
 function Failure(props) {
   const matches = useMediaQuery("(min-width:450px)");
   const router = useRouter();
   const [status, setStatus] = React.useState(false);
+  const { profileCacheFailure, errorProfileCacheFailure } = useSWR(
+    "profileFailure",
+    fetchTheProfile
+  );
 
   React.useEffect(() => {
-    fetchTheProfile();
+    // fetchTheProfile();
 
     if (!props.router.query.status) {
       router.push("/home");

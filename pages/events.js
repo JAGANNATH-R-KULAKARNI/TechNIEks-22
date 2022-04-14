@@ -5,17 +5,23 @@ import { supabase } from "../utils/SupabaseClient";
 import React from "react";
 import TicketsUI from "../components/booking/Tickets";
 import { useRouter } from "next/router";
+import useSWR from "swr";
 
 export default function About() {
   const m1 = useMediaQuery("(min-width:600px)");
   const [status, setStatus] = React.useState(false);
   const [events, setEvents] = React.useState([]);
   const router = useRouter();
+  const { dataEvents: errorEvents } = useSWR("events", fetchEvents);
+  const { dataProfile: errorProfile } = useSWR(
+    "profileEvents",
+    fetchTheProfile
+  );
 
-  React.useEffect(() => {
-    fetchTheProfile();
-    fetchEvents();
-  }, []);
+  // React.useEffect(() => {
+  //   fetchTheProfile();
+  //   fetchEvents();
+  // }, []);
 
   async function fetchTheProfile() {
     const data = await supabase.auth.user();
@@ -24,7 +30,7 @@ export default function About() {
 
   async function fetchEvents() {
     const { data, error } = await supabase.from("events").select("*");
-
+    console.log("fetch events");
     if (data) {
       setEvents(data);
     }
