@@ -25,7 +25,7 @@ export default function Home(props) {
     //   }
     // );
     // checkUser();
-    Router.push("/home");
+    Router.push("/events");
     // return () => {
     //   authListener.unsubscribe();
     // };
