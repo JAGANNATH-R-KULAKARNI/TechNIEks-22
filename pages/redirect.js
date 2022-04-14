@@ -29,6 +29,7 @@ export default function Home(props) {
     // return () => {
     //   authListener.unsubscribe();
     // };
+    //
   }, []);
   async function checkUser() {
     const user = await supabase.auth.user();
