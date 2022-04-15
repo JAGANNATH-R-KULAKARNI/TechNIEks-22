@@ -28,6 +28,7 @@ function Footer() {
               display: "flex",
               justifyContent: m1 ? "center" : "left",
               paddingLeft: m1 ? "0%" : "12%",
+              fontFamily: "Bungee",
             }}
           >
             <div>
@@ -41,6 +42,7 @@ function Footer() {
                   fontSize: m1 ? "15px" : "10px",
                   lineHeight: 1.7,
                   wordSpacing: m1 ? "5px" : "3px",
+                  fontFamily: "Bungee",
                 }}
               >
                 The annual techno-cultural fest at The National Institute of
@@ -63,6 +65,7 @@ function Footer() {
                   fontSize: m1 ? "15px" : "10px",
                   lineHeight: 1.7,
                   wordSpacing: m1 ? "5px" : "3px",
+                  fontFamily: "Bungee",
                 }}
               >
                 <h3
@@ -95,6 +98,7 @@ function Footer() {
                   fontSize: m1 ? "15px" : "10px",
                   lineHeight: 1.7,
                   wordSpacing: m1 ? "5px" : "3px",
+                  fontFamily: "Bungee",
                 }}
               >
                 <h3
