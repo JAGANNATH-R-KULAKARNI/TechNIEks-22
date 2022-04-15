@@ -76,6 +76,9 @@ function MyApp({ Component, pageProps }) {
       <div className={styles.firefly}></div>
       <div className={styles.firefly}></div>
       <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div>
       <Component {...pageProps} status={status} />
     </div>
   );
