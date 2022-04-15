@@ -40,10 +40,12 @@ const NavBarUI = (props) => {
         position="fixed"
         elevation={0}
         style={{
-          backgroundColor: c.c1,
+          background: "transparent",
+          boxShadow: "none",
         }}
+        color="transparent"
       >
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" style={{ zIndex: -1, color: "white" }}>
           <Toolbar disableGutters>
             <Typography
               variant="h6"
@@ -53,6 +55,7 @@ const NavBarUI = (props) => {
                 mr: 2,
                 display: { xs: "none", md: "flex" },
                 fontSize: "30px",
+                fontFamily: "Bungee",
               }}
               className={styles2.hoverr}
               onClick={() => router.push("/home")}
@@ -102,7 +105,16 @@ const NavBarUI = (props) => {
                       router.push(`/${ids[index]}`);
                     }}
                   >
-                    <Typography textAlign="center">{page}</Typography>
+                    <p
+                      textAlign="center"
+                      style={{
+                        fontFamily: "Bungee",
+                        color: c.c1,
+                        fontSize: "13px",
+                      }}
+                    >
+                      {page}
+                    </p>
                   </MenuItem>
                 ))}
               </Menu>
@@ -115,6 +127,8 @@ const NavBarUI = (props) => {
                 flexGrow: 1,
                 display: { xs: "flex", md: "none" },
                 marginLeft: "-13%",
+                fontFamily: "Bungee",
+                fontSize: "20px",
               }}
               className={styles2.hoverr}
               onClick={() => router.push("/home")}
@@ -139,8 +153,10 @@ const NavBarUI = (props) => {
                     color: "white",
                     display: "block",
                     paddingLeft: "2%",
+                    fontFamily: "Bungee",
                   }}
-                  className={styles.underr}
+                  //    className={styles.underr}
+                  className={styles2.hoverr}
                 >
                   {page}
                 </Button>
@@ -149,7 +165,7 @@ const NavBarUI = (props) => {
 
             <Button
               variant="contained"
-              style={{ backgroundColor: c.c3 }}
+              style={{ backgroundColor: c.c4, fontFamily: "Bungee" }}
               onClick={
                 props.status
                   ? props.logOut

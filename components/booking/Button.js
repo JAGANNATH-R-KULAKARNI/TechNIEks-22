@@ -1,4 +1,5 @@
 import classes from "../../styles/Button2.module.css";
+import * as c from "../../utils/Colors";
 
 function AButton(props) {
   return (
@@ -10,6 +11,7 @@ function AButton(props) {
       <button
         className={classes.btn}
         onClick={props.clicked ? props.clicked : null}
+        style={{ backgroundColor: c.c3, fontFamily: "Bungee" }}
       >
         {props.text ? props.text : null}
       </button>

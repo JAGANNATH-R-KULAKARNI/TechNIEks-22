@@ -7,7 +7,7 @@ export default function WhoRU() {
   const m1 = useMediaQuery("(min-width:600px)");
 
   return (
-    <div>
+    <div style={{ backgroundColor: "#000000", color: "white" }}>
       <NavBar code={1} />
       <div style={{ marginTop: !m1 ? "-20px" : "100px" }}>
         <SignInUI />

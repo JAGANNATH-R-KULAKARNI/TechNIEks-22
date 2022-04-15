@@ -11,19 +11,19 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const images = [
   {
     label: "Books",
-    imgPath: "./images/2.jpg",
+    imgPath: "./images/2.webp",
   },
   {
     label: "Instruments",
-    imgPath: "./images/1.png",
+    imgPath: "./images/1.webp",
   },
   {
     label: "PDF",
-    imgPath: "./images/3.png",
+    imgPath: "./images/3.webp",
   },
   {
     label: "Code",
-    imgPath: "./images/4.jpg",
+    imgPath: "./images/4.webp",
   },
 ];
 

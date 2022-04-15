@@ -1,0 +1,27 @@
+.heading {
+  position: relative;
+  font-size: 6em;
+  letter-spacing: 20px;
+  color: white;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, white);
+  line-height: 0.7em;
+  outline: none;
+  animation: animate 5s linear infinite alternate-reverse;
+}
+@keyframes animate {
+  0% {
+    color: white;
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 5px white, 0 0 20px white, 0 0 40px white, 0 0 80px white,
+      0 0 160px white;
+  }
+  /* 100% {
+    text-shadow: 0 0 5px white, 0 0 20px cyan, 0 0 40px cyan, 0 0 80px cyan,
+      0 0 160px cyan;
+  } */
+}

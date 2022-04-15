@@ -1,5 +1,4 @@
 import * as React from "react";
-import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 
 export default function BasicButtons(props) {
@@ -13,6 +12,7 @@ export default function BasicButtons(props) {
         height: props.height,
         fontSize: props.size,
         borderColor: props.color,
+        fontFamily: "Bungee",
       }}
       onClick={() => (props.handler ? props.handler(props.data) : null)}
     >

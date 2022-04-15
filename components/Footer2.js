@@ -3,15 +3,20 @@ import Image from "next/image";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import styles from "../styles/Footer1.module.css";
+import * as c from "../utils/Colors";
+import Body from "./body/Body";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function Footer() {
+  const m1 = useMediaQuery("(min-width:430px)");
+
   return (
     <div>
       <div className={styles.container}>
         <div className={styles.contents_why}>
           <div className={styles.img_conatiner}>
             <Image
-              src="/images/man.png"
+              src="/images/man.webp"
               alt=""
               height="350px"
               width="300px"
@@ -73,7 +78,7 @@ function Footer() {
           </div>
           <div className={styles.img_conatiner}>
             <Image
-              src="/images/ball.png"
+              src="/images/ball.webp"
               alt=""
               height="400px"
               width="300px"
@@ -83,7 +88,7 @@ function Footer() {
         <div className={styles.contents_why}>
           <div className={styles.img_conatiner}>
             <Image
-              src="/images/fash.png"
+              src="/images/fash.webp"
               alt=""
               height="300px"
               width="350px"
@@ -137,7 +142,7 @@ function Footer() {
           </div>
           <div className={styles.img_conatiner}>
             <Image
-              src="/images/concer.png"
+              src="/images/concer.webp"
               alt=""
               height="400px"
               width="300px"
@@ -145,17 +150,18 @@ function Footer() {
           </div>
         </div>
         {/* ---------------------------- */}
-        <div className={styles.contents_top}>
+        <div className={styles.contents_top} style={{ backgroundColor: c.c4 }}>
           <div className={styles.img_container}>
             <div
               className={styles.img_absolute}
               style={{ marginTop: "-150px" }}
             >
               <Image
-                src="/images/dance2.png"
+                src="/images/dance2.webp"
                 alt=""
-                height="512px"
-                width="450px"
+                height="602px"
+                width="500px"
+                style={{ height: "500px", width: "auto" }}
               ></Image>
             </div>
           </div>
@@ -168,13 +174,18 @@ function Footer() {
                 letterSpacing: "3px",
                 fontSize: 38,
                 fontWeight: "bold",
+                fontFamily: "Bungee",
               }}
             >
-              ಸುಭಕೃತು Subhakritu
+              ಶುಭಕೃತ್ Subhakritu
               <br />
               2022
+              <br />
+              <div style={{ marginLeft: m1 ? "-20px" : "0px" }}>
+                <Body />
+              </div>
             </h1>
-            <div style={{ height: "50px" }}></div>
+            <div style={{ height: "10px" }}></div>
           </div>
         </div>
         <br />

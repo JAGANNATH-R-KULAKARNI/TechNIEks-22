@@ -10,11 +10,13 @@ function Footer() {
 
   return (
     <div>
-      <Video
-        heading="ಸುಭಕೃತು 2022"
-        img="/images/subha.png"
-        src="https://youtube.be/embed/YR9iyeWNF58?rel=0"
-      />
+      <div>
+        <Video
+          heading="ಶುಭಕೃತ್ 2022"
+          img="/images/subha.webp"
+          src="https://youtube.be/embed/YR9iyeWNF58?rel=0"
+        />
+      </div>
       <Footer2 />
       <div
         style={{
@@ -36,7 +38,11 @@ function Footer() {
             }}
           >
             <div>
-              <h3 style={{ fontSize: m1 ? "20px" : "15px" }}>About</h3>
+              <h3
+                style={{ fontSize: m1 ? "23px" : "15px", fontFamily: "Bungee" }}
+              >
+                About
+              </h3>
               <p style={{ fontSize: m1 ? "15px" : "10px" }}>
                 The annual techno-cultural fest at The National Institute of
                 Engineering, Mysore The New Year Subhakritu promises a period of
@@ -58,7 +64,15 @@ function Footer() {
                   fontSize: m1 ? "15px" : "10px",
                 }}
               >
-                <h3 style={{ fontSize: m1 ? "20px" : "15px" }}> Legal Info</h3>
+                <h3
+                  style={{
+                    fontSize: m1 ? "23px" : "15px",
+                    fontFamily: "Bungee",
+                  }}
+                >
+                  {" "}
+                  Legal Info
+                </h3>
                 <li className={styles.footer}>{"Creater"}</li>
                 <li className={styles.footer}>{"Terms & Conditions"}</li>
                 <li className={styles.footer}>{"Privacy Policy"}</li>
@@ -82,17 +96,53 @@ function Footer() {
               >
                 <h3
                   style={{
-                    fontSize: m1 ? "20px" : "15px",
+                    fontSize: m1 ? "23px" : "15px",
+                    fontFamily: "Bungee",
                   }}
                 >
                   {" "}
                   {"Team Details"}
                 </h3>
-                <li className={styles.footer}>Prajwal Benedict</li>
-                <li>Lohith C</li>
-                <li>Bharat </li>
-                <li>Niraj Sharma</li>
-                <li>Jagannath R Kulakarni</li>
+                <a
+                  href="https://www.linkedin.com/in/prajwal-benedict-a-048511186/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  <li className={styles.footer}>Prajwal Benedict</li>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/jagannath-r-kulakarni-a465841a7/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  <li className={styles.footer}>Jagannath R Kulakarni</li>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/prajwal-benedict-a-048511186/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  <li className={styles.footer}>Vishaka </li>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/niraj-sharma-5538801a7/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  <li className={styles.footer}>Niraj Sharma</li>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/lohith-c-12358b1a7/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  <li className={styles.footer}>Lohith C</li>
+                </a>
               </ul>
             </div>
           </Grid>
@@ -108,7 +158,8 @@ function Footer() {
                     textDecoration: "none",
                     fontWeight: "lighter",
                     fontSize: m1 ? "15px" : "12px",
-                    color: "black",
+                    color: "white",
+                    fontFamily: "Bungee",
                   }}
                 >
                   Copyright© TechNIEks 22

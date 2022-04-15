@@ -6,11 +6,14 @@ import React from "react";
 import TicketsUI from "../components/booking/Tickets";
 import { useRouter } from "next/router";
 import useSWR from "swr";
+import * as c from "../utils/Colors";
 
 export default function About() {
   const m1 = useMediaQuery("(min-width:600px)");
   const [status, setStatus] = React.useState(false);
   const [events, setEvents] = React.useState([]);
+  const [gotit, setGotit] = React.useState(false);
+
   const router = useRouter();
   const { dataEvents: errorEvents } = useSWR("events", fetchEvents);
   const { dataProfile: errorProfile } = useSWR(
@@ -33,6 +36,7 @@ export default function About() {
     console.log("fetch events");
     if (data) {
       setEvents(data);
+      setGotit(true);
     }
 
     if (error) {
@@ -47,15 +51,18 @@ export default function About() {
   }
 
   return (
-    <div>
+    <div style={{ backgroundColor: c.c1, color: c.c2 }}>
       <NavBar code={0} logOut={logOut} status={status} />
       <TicketsUI events={events} />
       {events.length > 0 ? null : (
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <img
-            style={{ width: "50%", height: "auto" }}
-            src="https://shop.myfelt-europe.com/skin/frontend/rwd/myfelt-2018/images/cart-noitem-mobile.gif"
-          />
+        <div
+          style={{ display: "flex", justifyContent: "center", height: "500px" }}
+        >
+          <h1
+            style={{ paddingTop: m1 ? "200px" : "60px", textAlign: "center" }}
+          >
+            {gotit ? "No Events" : "Loading..."}
+          </h1>
         </div>
       )}
       {events.length > 0 ? null : <div style={{ height: "130px" }}></div>}

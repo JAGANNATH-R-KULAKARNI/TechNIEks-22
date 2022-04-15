@@ -5,6 +5,7 @@ import React from "react";
 import NextNProgress from "nextjs-progressbar";
 import * as c from "../utils/Colors";
 import Head from "next/head";
+import styles from "../styles/Flies.module.css";
 
 function MyApp({ Component, pageProps }) {
   const [status, setStatus] = React.useState(false);
@@ -56,9 +57,25 @@ function MyApp({ Component, pageProps }) {
     <div>
       <Head>
         <title>TechNIEks 22</title>
+        <link
+          rel="stylesheet"
+          href="https://www.w3schools.com/w3css/4/w3.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple"
+        />
       </Head>
 
       <NextNProgress color={c.c3} />
+      <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div>
       <Component {...pageProps} status={status} />
     </div>
   );

@@ -5,11 +5,18 @@ import React from "react";
 import { useRouter } from "next/router";
 import MyTicketsUI from "../components/tickets/MyTickets";
 import useSWR from "swr";
+import Skeleton from "@mui/material/Skeleton";
+import * as c from "../utils/Colors";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Ticket() {
   const [status, setStatus] = React.useState(false);
   const [tickets, setTickets] = React.useState([]);
+  const [gotit, setGotit] = React.useState(false);
+
   const router = useRouter();
+  const m1 = useMediaQuery("(min-width:600px)");
+
   const { ticketCache, errorCache } = useSWR("payments", fetchTickets);
   const { profileCache, errorProfileCache } = useSWR(
     "profile",
@@ -32,9 +39,11 @@ export default function Ticket() {
 
       if (data) {
         setTickets(data);
+        setGotit(true);
       }
 
       if (error) {
+        setGotit(true);
       }
     }
   }
@@ -56,16 +65,20 @@ export default function Ticket() {
   }
 
   return (
-    <div>
+    <div style={{ backgroundColor: "#000000", color: "white" }}>
       <NavBar code={0} logOut={logOut} status={status} />
 
       <MyTicketsUI tickets={tickets} />
+
       {tickets.length > 0 ? null : (
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <img
-            style={{ width: "50%", height: "auto" }}
-            src="https://shop.myfelt-europe.com/skin/frontend/rwd/myfelt-2018/images/cart-noitem-mobile.gif"
-          />
+        <div
+          style={{ display: "flex", justifyContent: "center", height: "500px" }}
+        >
+          <h1
+            style={{ paddingTop: m1 ? "200px" : "60px", textAlign: "center" }}
+          >
+            {gotit ? "No Tickets" : "Loading..."}
+          </h1>
         </div>
       )}
       {tickets.length > 0 ? null : <div style={{ height: "130px" }}></div>}

@@ -16,6 +16,7 @@ function AButton(props) {
           height: `${props.hei}px`,
           backgroundColor: props.col,
           maxWidth: props.maxwid,
+          fontFamily: "Bungee",
         }}
       >
         {props.text ? props.text : null}

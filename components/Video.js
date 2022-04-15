@@ -1,18 +1,28 @@
 import styles from "../styles/Watch.module.css";
 import * as React from "react";
+import styles2 from "../styles/Text.module.css";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function Video(props) {
+  const m1 = useMediaQuery("(min-width:430px)");
+
   return (
     <>
       <h1
         variant="h4"
         component="div"
         gutterBottom
-        className={styles.title}
+        // className={styles.title}
+        // style={{
+        //   textShadow: "2px 0",
+        //   letterSpacing: "2px",
+        //   fontWeight: "bold",
+        // }}
+        // className={styles2.heading}
         style={{
-          textShadow: "2px 0",
-          letterSpacing: "2px",
-          fontWeight: "bold",
+          fontSize: m1 ? "80px" : "40px",
+          textAlign: "center",
+          fontFamily: "Bungee",
         }}
       >
         {props.heading}
@@ -24,7 +34,6 @@ function Video(props) {
       <br />
       <div className={styles.outer}>
         <div className={styles.desc}>
-          <br />
           <p
             className={styles.text}
             style={{

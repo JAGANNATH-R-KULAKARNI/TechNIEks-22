@@ -14,7 +14,7 @@ const data = [
   },
   {
     name: "Sports",
-    url: "./images/sports.jpg",
+    url: "./images/sports.webp",
   },
   {
     name: "Fashion",
@@ -22,7 +22,7 @@ const data = [
   },
   {
     name: "Concert",
-    url: "./images/concert.jpg",
+    url: "./images/concert.webp",
   },
 ];
 export default function StartingComponent() {

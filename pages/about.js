@@ -23,7 +23,7 @@ export default function About() {
   }
 
   return (
-    <div>
+    <div style={{ backgroundColor: "#000000", color: "white" }}>
       <NavBar code={0} logOut={logOut} status={status} />
 
       <Footer />

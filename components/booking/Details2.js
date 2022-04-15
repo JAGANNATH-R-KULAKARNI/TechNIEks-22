@@ -40,7 +40,7 @@ export default function Details(props) {
             sx={{
               m: 1,
               bgcolor: "secondary.main",
-              backgroundColor: c.c3,
+              backgroundColor: c.c4,
             }}
           >
             <ConfirmationNumberIcon />
@@ -67,19 +67,19 @@ export default function Details(props) {
                 }}
                 sx={{
                   input: {
-                    color: c.c3,
+                    color: c.c4,
                   },
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
-                      borderColor: c.c3,
+                      borderColor: c.c4,
                     },
                   },
                   "& .MuiOutlinedInput-root:hover": {
                     "& > fieldset": {
-                      borderColor: c.c3,
+                      borderColor: c.c2,
                     },
                   },
-                  "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
+                  "& .MuiFormLabel-root": { color: c.c4, fontWeight: 100 },
                 }}
               >
                 <InputLabel htmlFor="outlined-adornment-password">
@@ -93,22 +93,38 @@ export default function Details(props) {
                     props.setName(e.target.value);
                   }}
                   label="name"
-                  placeholder="Benedict Prajwal"
+                  placeholder="Jagannath R Kulakarni"
                   sx={{
                     input: {
-                      color: c.c3,
+                      color: c.c2,
                     },
+                    borderColor: c.c4,
                     "& .MuiOutlinedInput-root": {
                       "& > fieldset": {
-                        borderColor: c.c3,
+                        borderColor: c.c4,
                       },
                     },
                     "& .MuiOutlinedInput-root:hover": {
                       "& > fieldset": {
-                        borderColor: c.c3,
+                        borderColor: c.c2,
                       },
                     },
-                    "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
+                    "& .MuiFormLabel-root": {
+                      color: c.c4,
+                      fontWeight: 100,
+                    },
+                    "& .MuiFormLabel-root&:hover": {
+                      color: c.c4,
+                      fontWeight: 100,
+                    },
+                    "& label.Mui-focused": {
+                      color: c.c4,
+                    },
+                    "& .MuiOutlinedInput-root": {
+                      "&.Mui-focused fieldset": {
+                        borderColor: c.c4,
+                      },
+                    },
                   }}
                 />
               </FormControl>
@@ -124,19 +140,19 @@ export default function Details(props) {
                 }}
                 sx={{
                   input: {
-                    color: c.c3,
+                    color: c.c4,
                   },
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
-                      borderColor: c.c3,
+                      borderColor: c.c4,
                     },
                   },
                   "& .MuiOutlinedInput-root:hover": {
                     "& > fieldset": {
-                      borderColor: c.c3,
+                      borderColor: c.c2,
                     },
                   },
-                  "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
+                  "& .MuiFormLabel-root": { color: c.c4, fontWeight: 100 },
                 }}
               >
                 <InputLabel htmlFor="outlined-adornment-password">
@@ -153,19 +169,35 @@ export default function Details(props) {
                   placeholder="4NI19IS***"
                   sx={{
                     input: {
-                      color: c.c3,
+                      color: c.c2,
                     },
+                    borderColor: c.c4,
                     "& .MuiOutlinedInput-root": {
                       "& > fieldset": {
-                        borderColor: c.c3,
+                        borderColor: c.c4,
                       },
                     },
                     "& .MuiOutlinedInput-root:hover": {
                       "& > fieldset": {
-                        borderColor: c.c3,
+                        borderColor: c.c2,
                       },
                     },
-                    "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
+                    "& .MuiFormLabel-root": {
+                      color: c.c4,
+                      fontWeight: 100,
+                    },
+                    "& .MuiFormLabel-root&:hover": {
+                      color: c.c4,
+                      fontWeight: 100,
+                    },
+                    "& label.Mui-focused": {
+                      color: c.c4,
+                    },
+                    "& .MuiOutlinedInput-root": {
+                      "&.Mui-focused fieldset": {
+                        borderColor: c.c4,
+                      },
+                    },
                   }}
                 />
               </FormControl>
@@ -180,19 +212,19 @@ export default function Details(props) {
                 }}
                 sx={{
                   input: {
-                    color: c.c3,
+                    color: c.c4,
                   },
                   "& .MuiOutlinedInput-root": {
                     "& > fieldset": {
-                      borderColor: c.c3,
+                      borderColor: c.c4,
                     },
                   },
                   "& .MuiOutlinedInput-root:hover": {
                     "& > fieldset": {
-                      borderColor: c.c3,
+                      borderColor: c.c2,
                     },
                   },
-                  "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
+                  "& .MuiFormLabel-root": { color: c.c4, fontWeight: 100 },
                 }}
               >
                 <InputLabel htmlFor="outlined-adornment-password">
@@ -211,19 +243,35 @@ export default function Details(props) {
                   placeholder="Number Of Tickets"
                   sx={{
                     input: {
-                      color: c.c3,
+                      color: c.c2,
                     },
+                    borderColor: c.c4,
                     "& .MuiOutlinedInput-root": {
                       "& > fieldset": {
-                        borderColor: c.c3,
+                        borderColor: c.c4,
                       },
                     },
                     "& .MuiOutlinedInput-root:hover": {
                       "& > fieldset": {
-                        borderColor: c.c3,
+                        borderColor: c.c2,
                       },
                     },
-                    "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
+                    "& .MuiFormLabel-root": {
+                      color: c.c4,
+                      fontWeight: 100,
+                    },
+                    "& .MuiFormLabel-root&:hover": {
+                      color: c.c4,
+                      fontWeight: 100,
+                    },
+                    "& label.Mui-focused": {
+                      color: c.c4,
+                    },
+                    "& .MuiOutlinedInput-root": {
+                      "&.Mui-focused fieldset": {
+                        borderColor: c.c4,
+                      },
+                    },
                   }}
                 />
               </FormControl>
@@ -238,7 +286,7 @@ export default function Details(props) {
                   control={
                     <Checkbox
                       color="primary"
-                      style={{ color: c.c1 }}
+                      style={{ color: c.c4 }}
                       value={props.enjoy}
                       onChange={props.setEnjoy}
                     />

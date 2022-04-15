@@ -3,15 +3,16 @@ import Image from "next/image";
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import styles from "../styles/Footer1.module.css";
+import * as c from "../utils/Colors";
 
 function Footer() {
   return (
     <div className={styles.container}>
-      <div className={styles.contents_top}>
+      <div className={styles.contents_top} style={{ backgroundColor: c.c4 }}>
         <div className={styles.img_container}>
           <div className={styles.img_absolute} style={{ marginTop: "-150px" }}>
             <Image
-              src="/images/dance2.png"
+              src="/images/dance2.webp"
               alt=""
               height="512px"
               width="450px"
@@ -27,9 +28,10 @@ function Footer() {
               letterSpacing: "3px",
               fontSize: 38,
               fontWeight: "bold",
+              fontFamily: "Bungee",
             }}
           >
-            ಸುಭಕೃತು Subhakritu
+            ಶುಭಕೃತ್ Shubhakritu
             <br />
             2022
           </h1>

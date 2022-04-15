@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import { useRouter } from "next/router";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import DetailsUI from "./Details";
 import DetailsUI2 from "./Details2";
@@ -47,7 +46,12 @@ export default function Booking(props) {
             }}
           >
             <Paper
-              style={{ width: "25%", height: "250px", marginTop: "0px" }}
+              style={{
+                width: "25%",
+                height: "250px",
+                marginTop: "0px",
+                borderRadius: "100px",
+              }}
               elevation={1}
             >
               <div style={{ padding: "5%", textAlign: "center" }}>
@@ -58,7 +62,7 @@ export default function Booking(props) {
                       style={{
                         fontSize: "40px",
                         marginTop: "-20px",
-                        color: c.c1,
+                        color: c.c3,
                       }}
                     >
                       {props.no}{" "}
@@ -70,7 +74,7 @@ export default function Booking(props) {
                       style={{
                         fontSize: "40px",
                         marginTop: "-20px",
-                        color: c.c1,
+                        color: c.c3,
                       }}
                     >
                       ₹ {props.ticket ? props.ticket.price * props.no : 0}{" "}
@@ -130,8 +134,9 @@ export default function Booking(props) {
         <Paper
           style={{
             width: "100%",
-            height: "200px",
+            height: "220px",
             marginTop: "0px",
+            borderRadius: "70px",
           }}
           elevation={3}
         >
@@ -139,21 +144,25 @@ export default function Booking(props) {
             <div style={{ display: "flex", justifyContent: "center" }}>
               <div>
                 <p style={{ fontSize: "18px" }}> Total Tickets </p>
-                <p style={{ fontSize: "30px", marginTop: "-20px" }}>
+                <p
+                  style={{ fontSize: "30px", marginTop: "-20px", color: c.c3 }}
+                >
                   {" "}
                   {props.no}{" "}
                 </p>
               </div>
               <div style={{ paddingLeft: "15%" }}>
                 <p style={{ fontSize: "18px" }}> Total Amount</p>
-                <p style={{ fontSize: "30px", marginTop: "-20px" }}>
+                <p
+                  style={{ fontSize: "30px", marginTop: "-20px", color: c.c3 }}
+                >
                   {" "}
                   ₹ {props.ticket ? props.ticket.price * props.no : 0}{" "}
                 </p>
               </div>
             </div>
 
-            <div style={{ marginTop: "-10px" }}>
+            <div style={{ marginTop: "-20px" }}>
               <RazorPayButtonUI
                 amount={props.ticket ? props.ticket.price * props.no : 0}
                 name={props.name}
@@ -165,9 +174,12 @@ export default function Booking(props) {
                 messageAlert={props.messageAlert}
               />
             </div>
+            <br />
           </div>
         </Paper>
       </div>
+      <br />
+      <br />
       <br />
       <br />
     </div>

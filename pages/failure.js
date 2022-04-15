@@ -42,7 +42,7 @@ function Failure(props) {
   }
 
   return (
-    <div id="success">
+    <div id="failure" style={{ backgroundColor: "#000000", color: "white" }}>
       <Navbar code={0} logOut={logOut} status={status} />
       <Box style={{ textAlign: "center", paddingTop: "1%" }}>
         <Paper
@@ -51,10 +51,12 @@ function Failure(props) {
             width: matches ? "400px" : "80%",
             height: "100%",
             margin: "auto",
+            backgroundColor: "#000000",
+            color: "white",
           }}
         >
           <br />
-          <h1>Payment Unsuccessful</h1>
+          <h1 style={{ fontFamily: "Bungee" }}>Payment Unsuccessful</h1>
           <svg
             className={styles.checkmark}
             xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +76,10 @@ function Failure(props) {
             />
           </svg>
 
-          <Button variant="contained" style={{ backgroundColor: c.c3 }}>
+          <Button
+            variant="contained"
+            style={{ backgroundColor: c.c4, fontFamily: "Bungee" }}
+          >
             <Link href="/events"> Continue</Link>
           </Button>
         </Paper>

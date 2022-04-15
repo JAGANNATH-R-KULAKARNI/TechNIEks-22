@@ -1,12 +1,9 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
-import IconButton from "@mui/material/IconButton";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ButtonUI from "./Button";
 import * as c from "../../utils/Colors";
-import { useRouter } from "next/router";
 
 export default function ReviewCard(props) {
   const m1 = useMediaQuery("(min-width:430px)");

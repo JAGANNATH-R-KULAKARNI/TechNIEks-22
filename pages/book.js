@@ -95,7 +95,9 @@ function BookTicket(props) {
   }
 
   return (
-    <div>
+    <div
+      style={{ backgroundColor: "#000000", color: "white", minWidth: "100%" }}
+    >
       <NavBar code={0} logOut={logOut} status={status} />
       <Snackbar
         open={openAlert}
@@ -112,7 +114,7 @@ function BookTicket(props) {
         <Alert
           onClose={() => setOpenAlert(false)}
           severity={alertType}
-          sx={{ width: "100%", textAlign: "center" }}
+          sx={{ width: "100%", textAlign: "center", fontFamily: "Bungee" }}
         >
           {!m1 ? <p style={{ fontSize: "10px" }}>{alertMsg}</p> : alertMsg}
         </Alert>

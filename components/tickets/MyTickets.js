@@ -11,12 +11,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import * as c from "../../utils/Colors";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { useRouter } from "next/router";
 import { useQRCode } from "next-qrcode";
-import jsPDF from "jspdf";
-import pdfMake from "pdfmake";
-import pdfFonts from "pdfmake/build/vfs_fonts";
-import htmlToPdfmake from "html-to-pdfmake";
 import domtoimage from "dom-to-image";
 
 const theme = createTheme();
@@ -77,18 +72,21 @@ export default function Tickets(props) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div style={{ height: "10px" }}></div>
+      {m1 ? <br /> : null}
       <div style={{ display: "flex", justifyContent: "center" }}>
         <h1
           style={{
             textAlight: "center",
             fontSize: m1 || glitch ? "50px" : "35px",
-            color: c.c3,
+            color: c.c2,
+            fontFamily: "Bungee",
           }}
         >
           My Tickets
         </h1>
       </div>
-
+      <br />
+      {m1 ? <br /> : null}
       <main>
         <Container>
           <Grid container spacing={4}>
@@ -107,6 +105,10 @@ export default function Tickets(props) {
                       height: "100%",
                       display: "flex",
                       flexDirection: "column",
+                      backgroundColor: c.c1,
+                      color: c.c2,
+                      border: "solid 5px white",
+                      borderRadius: "100px",
                     }}
                   >
                     <CardMedia
@@ -144,7 +146,7 @@ export default function Tickets(props) {
                             scale: 4,
                             width: 160,
                             color: {
-                              dark: c.c3,
+                              dark: c.c1,
                               light: c.c2,
                             },
                           }}
@@ -159,6 +161,7 @@ export default function Tickets(props) {
                           textAlign: "center",
                           marginTop: "-25px",
                           fontSize: "30px",
+                          fontFamily: "Bungee",
                         }}
                         gutterBottom
                         variant="h5"
@@ -168,12 +171,17 @@ export default function Tickets(props) {
                       </Typography>
                       <div style={{ display: "flex" }}>
                         <Typography
-                          style={{ width: "50%", textAlign: "left" }}
+                          style={{
+                            width: "50%",
+                            textAlign: "left",
+                            fontFamily: "Bungee",
+                          }}
                           gutterBottom
                           variant="h5"
                           component="h2"
                         >
-                          {card.nooftickets} Tickets
+                          {card.nooftickets}{" "}
+                          {card.nooftickets > 1 ? "Tickets" : "Ticket"}
                         </Typography>
                         <Typography
                           style={{ width: "50%", textAlign: "right" }}
@@ -189,8 +197,9 @@ export default function Tickets(props) {
                         style={{
                           textAlign: "center",
                           borderStyle: "outset",
-                          borderColor: c.c3,
+                          borderColor: c.c4,
                           borderRadius: "5%",
+                          backgroundColor: c.c1,
                         }}
                       >
                         <div
@@ -199,10 +208,20 @@ export default function Tickets(props) {
                             justifyContent: "center",
                           }}
                         >
-                          <i style={{ width: "50%", fontSize: "17px" }}>
+                          <i
+                            style={{
+                              width: "50%",
+                              fontSize: "17px",
+                            }}
+                          >
                             <b> {card.name} </b>
                           </i>
-                          <i style={{ width: "50%", fontSize: "17px" }}>
+                          <i
+                            style={{
+                              width: "50%",
+                              fontSize: "17px",
+                            }}
+                          >
                             <b> {card.usn} </b>
                           </i>
                         </div>
@@ -245,7 +264,11 @@ export default function Tickets(props) {
                     <CardActions>
                       <Button
                         variant="contained"
-                        style={{ width: "100%", backgroundColor: c.c1 }}
+                        style={{
+                          width: "100%",
+                          backgroundColor: c.c4,
+                          fontFamily: "Bungee",
+                        }}
                         onClick={() => {
                           generateJpeg(
                             `${card.name + index}`,

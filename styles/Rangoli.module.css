@@ -1,0 +1,20 @@
+.rangoli {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  transition: 0.3s color ease-in, 0.3s transform ease-in;
+  box-sizing: border-box;
+  animation: rotation 50s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

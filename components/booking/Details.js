@@ -44,7 +44,7 @@ export default function Details(props) {
             sx={{
               m: 1,
               bgcolor: "secondary.main",
-              backgroundColor: c.c3,
+              backgroundColor: c.c4,
             }}
           >
             <ConfirmationNumberIcon />
@@ -52,12 +52,16 @@ export default function Details(props) {
           <Typography
             component="h1"
             variant="h4"
-            style={{ width: "100%", textAlign: "center" }}
+            style={{ width: "100%", textAlign: "center", fontFamily: "Bungee" }}
           >
             {props.ticket && props.ticket.name}
           </Typography>
 
-          <Typography component="h1" variant="h5">
+          <Typography
+            component="h1"
+            variant="h5"
+            style={{ fontFamily: "Bungee" }}
+          >
             ₹ {props.ticket && props.ticket.price} / person
           </Typography>
           <br />
@@ -76,27 +80,31 @@ export default function Details(props) {
                 <FormControl
                   variant="outlined"
                   style={{
-                    color: c.c1,
+                    color: c.c4,
                     minWidth: m1 ? "370px" : "100%",
                   }}
                   sx={{
                     input: {
-                      color: c.c3,
+                      color: c.c4,
                     },
                     "& .MuiOutlinedInput-root": {
                       "& > fieldset": {
-                        borderColor: c.c3,
+                        borderColor: c.c4,
                       },
                     },
                     "& .MuiOutlinedInput-root:hover": {
                       "& > fieldset": {
-                        borderColor: c.c1,
+                        borderColor: c.c2,
                       },
                     },
-                    "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
+                    "& .MuiFormLabel-root": { color: c.c4, fontWeight: 100 },
+                    fontFamily: "Bungee",
                   }}
                 >
-                  <InputLabel htmlFor="outlined-adornment-password">
+                  <InputLabel
+                    htmlFor="outlined-adornment-password"
+                    style={{ fontFamily: "Bungee" }}
+                  >
                     Name
                   </InputLabel>
                   <OutlinedInput
@@ -109,34 +117,35 @@ export default function Details(props) {
                     label="Name"
                     placeholder="Jagannath R K"
                     sx={{
+                      fontFamily: "Bungee",
                       input: {
-                        color: c.c3,
+                        color: c.c2,
                       },
-                      borderColor: c.c3,
+                      borderColor: c.c4,
                       "& .MuiOutlinedInput-root": {
                         "& > fieldset": {
-                          borderColor: c.c3,
+                          borderColor: c.c4,
                         },
                       },
                       "& .MuiOutlinedInput-root:hover": {
                         "& > fieldset": {
-                          borderColor: c.c1,
+                          borderColor: c.c2,
                         },
                       },
                       "& .MuiFormLabel-root": {
-                        color: c.c3,
+                        color: c.c4,
                         fontWeight: 100,
                       },
                       "& .MuiFormLabel-root&:hover": {
-                        color: c.c3,
+                        color: c.c4,
                         fontWeight: 100,
                       },
                       "& label.Mui-focused": {
-                        color: c.c3,
+                        color: c.c4,
                       },
                       "& .MuiOutlinedInput-root": {
                         "&.Mui-focused fieldset": {
-                          borderColor: c.c3,
+                          borderColor: c.c4,
                         },
                       },
                     }}
@@ -157,25 +166,30 @@ export default function Details(props) {
                     style={{
                       color: c.c1,
                       minWidth: m1 ? "370px" : "90%",
+                      fontFamily: "Bungee",
                     }}
                     sx={{
                       input: {
-                        color: c.c3,
+                        color: c.c4,
                       },
                       "& .MuiOutlinedInput-root": {
                         "& > fieldset": {
-                          borderColor: c.c3,
+                          borderColor: c.c4,
                         },
                       },
                       "& .MuiOutlinedInput-root:hover": {
                         "& > fieldset": {
-                          borderColor: c.c1,
+                          borderColor: c.c2,
                         },
                       },
-                      "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
+                      "& .MuiFormLabel-root": { color: c.c4, fontWeight: 100 },
+                      fontFamily: "Bungee",
                     }}
                   >
-                    <InputLabel htmlFor="outlined-adornment-password">
+                    <InputLabel
+                      htmlFor="outlined-adornment-password"
+                      style={{ fontFamily: "Bungee" }}
+                    >
                       USN
                     </InputLabel>
                     <OutlinedInput
@@ -188,34 +202,35 @@ export default function Details(props) {
                       label="USN"
                       placeholder="4NI19IS***"
                       sx={{
+                        fontFamily: "Bungee",
                         input: {
-                          color: c.c3,
+                          color: c.c2,
                         },
-                        borderColor: c.c3,
+                        borderColor: c.c4,
                         "& .MuiOutlinedInput-root": {
                           "& > fieldset": {
-                            borderColor: c.c3,
+                            borderColor: c.c4,
                           },
                         },
                         "& .MuiOutlinedInput-root:hover": {
                           "& > fieldset": {
-                            borderColor: c.c1,
+                            borderColor: c.c2,
                           },
                         },
                         "& .MuiFormLabel-root": {
-                          color: c.c3,
+                          color: c.c4,
                           fontWeight: 100,
                         },
                         "& .MuiFormLabel-root&:hover": {
-                          color: c.c3,
+                          color: c.c4,
                           fontWeight: 100,
                         },
                         "& label.Mui-focused": {
-                          color: c.c3,
+                          color: c.c4,
                         },
                         "& .MuiOutlinedInput-root": {
                           "&.Mui-focused fieldset": {
-                            borderColor: c.c3,
+                            borderColor: c.c4,
                           },
                         },
                       }}
@@ -237,25 +252,30 @@ export default function Details(props) {
                     style={{
                       color: c.c1,
                       minWidth: m1 ? "370px" : "90%",
+                      fontFamily: "Bungee",
                     }}
                     sx={{
+                      fontFamily: "Bungee",
                       input: {
-                        color: c.c3,
+                        color: c.c4,
                       },
                       "& .MuiOutlinedInput-root": {
                         "& > fieldset": {
-                          borderColor: c.c3,
+                          borderColor: c.c4,
                         },
                       },
                       "& .MuiOutlinedInput-root:hover": {
                         "& > fieldset": {
-                          borderColor: c.c1,
+                          borderColor: c.c2,
                         },
                       },
-                      "& .MuiFormLabel-root": { color: c.c3, fontWeight: 100 },
+                      "& .MuiFormLabel-root": { color: c.c4, fontWeight: 100 },
                     }}
                   >
-                    <InputLabel htmlFor="outlined-adornment-password">
+                    <InputLabel
+                      htmlFor="outlined-adornment-password"
+                      style={{ fontFamily: "Bungee" }}
+                    >
                       Tickets
                     </InputLabel>
                     <OutlinedInput
@@ -268,34 +288,35 @@ export default function Details(props) {
                       label="Number"
                       placeholder="Number Of Tickets"
                       sx={{
+                        fontFamily: "Bungee",
                         input: {
-                          color: c.c3,
+                          color: c.c2,
                         },
-                        borderColor: c.c3,
+                        borderColor: c.c4,
                         "& .MuiOutlinedInput-root": {
                           "& > fieldset": {
-                            borderColor: c.c3,
+                            borderColor: c.c4,
                           },
                         },
                         "& .MuiOutlinedInput-root:hover": {
                           "& > fieldset": {
-                            borderColor: c.c1,
+                            borderColor: c.c2,
                           },
                         },
                         "& .MuiFormLabel-root": {
-                          color: c.c3,
+                          color: c.c4,
                           fontWeight: 100,
                         },
                         "& .MuiFormLabel-root&:hover": {
-                          color: c.c3,
+                          color: c.c4,
                           fontWeight: 100,
                         },
                         "& label.Mui-focused": {
-                          color: c.c3,
+                          color: c.c4,
                         },
                         "& .MuiOutlinedInput-root": {
                           "&.Mui-focused fieldset": {
-                            borderColor: c.c3,
+                            borderColor: c.c4,
                           },
                         },
                       }}
@@ -313,12 +334,16 @@ export default function Details(props) {
                   control={
                     <Checkbox
                       color="primary"
-                      style={{ color: c.c1 }}
+                      style={{ color: c.c4, fontFamily: "Bungee" }}
                       value={props.enjoy}
                       onChange={props.setEnjoy}
                     />
                   }
-                  label="I will enjoy TeckNIEks'22"
+                  label={
+                    <p style={{ fontFamily: "Bungee" }}>
+                      I will enjoy TeckNIEks 22
+                    </p>
+                  }
                 />
               </Grid>
             </Grid>

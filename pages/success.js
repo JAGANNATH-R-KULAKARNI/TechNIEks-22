@@ -43,19 +43,27 @@ function Success(props) {
   }
 
   return (
-    <div id="success">
+    <div id="success" style={{ backgroundColor: "#000000", color: "white" }}>
       <Navbar code={0} logOut={logOut} status={status} />
-      <Box style={{ textAlign: "center", paddingTop: "1%" }}>
+      <Box
+        style={{
+          textAlign: "center",
+          paddingTop: "1%",
+        }}
+      >
         <Paper
           elevation={0}
           style={{
             width: matches ? "400px" : "80%",
             height: "100%",
             margin: "auto",
+            backgroundColor: "#000000",
+            color: "white",
+            fontFamily: "Bungee",
           }}
         >
           <br />
-          <h1>Payment Successful</h1>
+          <h1 style={{ fontFamily: "Bungee" }}>Payment Successful</h1>
           <svg
             className={styles.checkmark}
             xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +83,10 @@ function Success(props) {
             />
           </svg>
 
-          <Button variant="contained" style={{ backgroundColor: c.c3 }}>
+          <Button
+            variant="contained"
+            style={{ backgroundColor: c.c3, fontFamily: "Bungee" }}
+          >
             <Link href="/ticket"> Print The Ticket</Link>
           </Button>
         </Paper>

@@ -9,15 +9,11 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import * as c from "../../utils/Colors";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
 import { supabase } from "../../utils/SupabaseClient";
 import MuiAlert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 import CircularProgress from "@mui/material/CircularProgress";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { useRouter } from "next/router";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -131,11 +127,12 @@ export default function SignUp() {
             <Alert
               onClose={() => setOpenAlert(false)}
               severity={alertType}
-              sx={{ width: "100%", textAlign: "center" }}
+              sx={{ width: "100%", textAlign: "center", fontFamily: "Bungee" }}
             >
               {!m1 ? <p style={{ fontSize: "10px" }}>{alertMsg}</p> : alertMsg}
             </Alert>
           </Snackbar>
+          <br />
           {loading ? (
             <div>
               {sent ? (
@@ -155,42 +152,48 @@ export default function SignUp() {
               sx={{
                 m: 1,
                 bgcolor: "secondary.main",
-                backgroundColor: c.c3,
+                backgroundColor: c.c4,
               }}
             >
               <LockOutlinedIcon />
             </Avatar>
           )}
-
-          <Typography component={m1 ? "h1" : "h3"} variant={m1 ? "h5" : "h6"}>
+          <Typography
+            component={m1 ? "h1" : "h3"}
+            variant={m1 ? "h5" : "h6"}
+            style={{ fontFamily: "Bungee" }}
+          >
             {loading == false && sent == false && "Sign Up/In"}
             {sent && "Check Your Email"}
           </Typography>
           {/* {m1 ? <br /> : null} */}
           <Box component="form" noValidate sx={{ mt: 3 }}>
-            <div style={{ display: "flex", justifyContent: "center" }}>
+            {/* <div style={{ display: "flex", justifyContent: "center" }}>
               <img
-                src="/images/google.gif"
+                src="/images/google.webp"
                 alt="Google"
                 style={{ width: "200px", height: "100px" }}
               />
-            </div>
+            </div> */}
             <Button
               fullWidth
               variant="contained"
               sx={{
                 mt: 3,
                 mb: 2,
-                backgroundColor: c.c3,
+                backgroundColor: c.c4,
                 "&:hover": {
-                  backgroundColor: c.c3,
+                  backgroundColor: c.c4,
                 },
+                fontFamily: "Bungee",
               }}
               onClick={signInWithGoogle}
             >
               Sign In with Google
             </Button>
           </Box>
+          <br />
+          <br />
         </Box>
       </Container>
     </ThemeProvider>

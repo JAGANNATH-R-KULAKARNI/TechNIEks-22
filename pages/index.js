@@ -1,13 +1,18 @@
-import SHeader from "../components/headers/Slides";
+import SHeader from "../components/headers/Rangoli";
 import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer3";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import Body from "../components/body/Body";
 import { supabase } from "../utils/SupabaseClient";
 import React from "react";
+import useSWR from "swr";
+import styles from "../styles/Flies.module.css";
+import { useRouter } from "next/router";
 import Router from "next/router";
 
 export default function Home(props) {
   const [status, setStatus] = React.useState(false);
+  const m1 = useMediaQuery("(min-width:600px)");
 
   React.useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
@@ -25,6 +30,7 @@ export default function Home(props) {
       }
     );
     checkUser();
+    Router.push("/home");
     fetchTheProfile();
     return () => {
       authListener.unsubscribe();
@@ -66,11 +72,21 @@ export default function Home(props) {
   }
 
   return (
-    <div>
+    <div
+      style={{ backgroundColor: "#000000", color: "white" }}
+      // className="w3-xlarge font-effect-shadow-multiple"
+    >
       <NavBar code={0} logOut={logOut} status={status} />
-      <SHeader />
-      <Body />
-      <div style={{ height: "100px" }}></div>
+      <div style={{ height: m1 ? "100px" : "40px" }}></div>
+      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+        <div style={{ mwidth: "25%" }}></div>
+        <div style={{ maxWidth: "50%" }}>
+          <SHeader />
+        </div>
+        <div style={{ mwidth: "25%" }}></div>
+      </div>
+      {/* <Body /> */}
+      <div style={{ height: m1 ? "20px" : "0px" }}></div>
       <Footer />
     </div>
   );

@@ -1,7 +1,6 @@
 import axios from "axios";
 import * as React from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import { supabase } from "../../utils/SupabaseClient";
 import { useRouter } from "next/router";
 import * as c from "../../utils/Colors";
@@ -128,8 +127,8 @@ const RazorPayButton = (props) => {
       key: key_id,
       amount: amount.toString(),
       currency: currency,
-      name: "TechNIEks'22",
-      description: "TechNIEks'22 event payment system",
+      name: "ಶುಭಕೃತ್",
+      description: "TechNIEks'22 Ticket Booking",
       //image: { logo },
       order_id: id,
       handler: async function (response) {
@@ -169,7 +168,8 @@ const RazorPayButton = (props) => {
         address: "TechNIEks'22",
       },
       theme: {
-        color: c.c3,
+        color: c.c4,
+        fontFamily: "Bungee",
       },
     };
 
