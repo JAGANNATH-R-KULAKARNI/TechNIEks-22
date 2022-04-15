@@ -43,7 +43,13 @@ function Footer() {
               >
                 About
               </h3>
-              <p style={{ fontSize: m1 ? "15px" : "10px" }}>
+              <p
+                style={{
+                  fontSize: m1 ? "15px" : "10px",
+                  lineHeight: 1.7,
+                  wordSpacing: m1 ? "5px" : "3px",
+                }}
+              >
                 The annual techno-cultural fest at The National Institute of
                 Engineering, Mysore The New Year Subhakritu promises a period of
                 joy and celebrations unlike the past two years Sarvari and Plava
@@ -62,6 +68,8 @@ function Footer() {
                 style={{
                   listStyleType: "none",
                   fontSize: m1 ? "15px" : "10px",
+                  lineHeight: 1.7,
+                  wordSpacing: m1 ? "5px" : "3px",
                 }}
               >
                 <h3
@@ -74,7 +82,7 @@ function Footer() {
                   Legal Info
                 </h3>
                 <li className={styles.footer}>{"Creater"}</li>
-                <li className={styles.footer}>{"Terms & Conditions"}</li>
+                <li className={styles.footer}>{"Info"}</li>
                 <li className={styles.footer}>{"Privacy Policy"}</li>
                 <li className={styles.footer}>{"FAQ's"}</li>
                 <li className={styles.footer}>{"About"}</li>
@@ -92,6 +100,8 @@ function Footer() {
                 style={{
                   listStyleType: "none",
                   fontSize: m1 ? "15px" : "10px",
+                  lineHeight: 1.7,
+                  wordSpacing: m1 ? "5px" : "3px",
                 }}
               >
                 <h3
@@ -109,7 +119,7 @@ function Footer() {
                   rel="noreferrer"
                 >
                   {" "}
-                  <li className={styles.footer}>Prajwal Benedict</li>
+                  <li className={styles.footer}>Prajwal Benedict </li>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/jagannath-r-kulakarni-a465841a7/"
@@ -117,15 +127,15 @@ function Footer() {
                   rel="noreferrer"
                 >
                   {" "}
-                  <li className={styles.footer}>Jagannath R Kulakarni</li>
+                  <li className={styles.footer}>Jagannath R K</li>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/prajwal-benedict-a-048511186/"
+                  href="https://www.linkedin.com/in/vishakha-v-4825b4163/"
                   target="_blank"
                   rel="noreferrer"
                 >
                   {" "}
-                  <li className={styles.footer}>Vishaka </li>
+                  <li className={styles.footer}>Vishakha V </li>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/niraj-sharma-5538801a7/"

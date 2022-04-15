@@ -38,14 +38,15 @@ const NavBarUI = (props) => {
     <div>
       <AppBar
         position="fixed"
-        elevation={0}
         style={{
-          background: "transparent",
+          // background: "transparent",
           boxShadow: "none",
+          zIndex: 9999,
+          backgroundColor: c.c1,
         }}
-        color="transparent"
+        // color="transparent"
       >
-        <Container maxWidth="xl" style={{ zIndex: -1, color: "white" }}>
+        <Container maxWidth="xl" style={{ zIndex: 888, color: "white" }}>
           <Toolbar disableGutters>
             <Typography
               variant="h6"

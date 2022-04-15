@@ -35,7 +35,7 @@ function Footer() {
               Dance
             </h1>
             <br />
-            <p style={{ lineHeight: 1.5 }}>
+            <p style={{ lineHeight: 1.7, wordSpacing: "5px" }}>
               Competitive dance is a popular, widespread sport in which
               competitors perform dances in any of several permitted dance
               styles—such as acro, ballet, contemporary, jazz, hip-hop, lyrical,
@@ -58,7 +58,7 @@ function Footer() {
               Sports
             </h1>
             <br />
-            <p style={{ lineHeight: 1.5 }}>
+            <p style={{ lineHeight: 1.7, wordSpacing: "5px" }}>
               a contest held to determine the best athletes and teams and
               greatest achievements in sports, to improve athletic skills, and
               to popularize physical culture and sports. Sports competitions
@@ -68,12 +68,7 @@ function Footer() {
               friendship and mutual understanding among athletes of different
               countries. World sports competitions include the Olympic Games,
               the World Student Games, world championships and world cups, and
-              specialized Olympiads, for example, in chess. They also include
-              continental championships, cups, and national games and
-              competitions. Competitions may be held in a single sport or in
-              various sports, for example in the Olympic Games, World Student
-              Games, and Spartakiads, including Spartakiads of Friendly Armies
-              and Spartakiads of the Peoples of the USSR.
+              specialized Olympiads, for example, in chess.
             </p>
           </div>
           <div className={styles.img_conatiner}>
@@ -107,7 +102,7 @@ function Footer() {
               Fashion
             </h1>
             <br />
-            <p style={{ lineHeight: 1.5 }}>
+            <p style={{ lineHeight: 1.7, wordSpacing: "5px" }}>
               For young fashion designers above all, now more than ever, it is
               important to take advantage of all the opportunities made
               available at an international level and this is where fashion
@@ -133,7 +128,7 @@ function Footer() {
               Concert
             </h1>
             <br />
-            <p style={{ lineHeight: 1.5 }}>
+            <p style={{ lineHeight: 1.7, wordSpacing: "5px" }}>
               The definition of a concert is a live musical performance or
               mutual agreement. An example of a concert is a venue where you can
               listen to your favorite musician. An example of a concert is two
@@ -177,7 +172,7 @@ function Footer() {
                 fontFamily: "Bungee",
               }}
             >
-              ಶುಭಕೃತ್ Subhakritu
+              ಶುಭಕೃತ್ Shubhakritu
               <br />
               2022
               <br />

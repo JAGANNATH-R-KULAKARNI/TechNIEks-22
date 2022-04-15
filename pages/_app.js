@@ -66,7 +66,6 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple"
         />
       </Head>
-
       <NextNProgress color={c.c3} />
       <div className={styles.firefly}></div>
       <div className={styles.firefly}></div>
@@ -76,9 +75,17 @@ function MyApp({ Component, pageProps }) {
       <div className={styles.firefly}></div>
       <div className={styles.firefly}></div>
       <div className={styles.firefly}></div>
+      {/* <div className={styles.firefly}></div>
       <div className={styles.firefly}></div>
       <div className={styles.firefly}></div>
       <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div>{" "}
+      <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div>
+      <div className={styles.firefly}></div> */}
       <Component {...pageProps} status={status} />
     </div>
   );

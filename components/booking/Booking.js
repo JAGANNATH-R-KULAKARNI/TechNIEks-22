@@ -50,7 +50,7 @@ export default function Booking(props) {
                 width: "25%",
                 height: "250px",
                 marginTop: "0px",
-                borderRadius: "100px",
+                borderRadius: "75px",
               }}
               elevation={1}
             >

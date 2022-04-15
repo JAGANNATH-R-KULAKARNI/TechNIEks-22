@@ -30,7 +30,7 @@ export default function Home(props) {
       style={{ backgroundColor: "#000000", color: "white", minWidth: "100%" }}
     >
       <NavBar code={0} logOut={logOut} status={status} />
-      <div style={{ height: m1 ? "100px" : "40px" }}></div>
+      <div style={{ height: m1 ? "40px" : "40px" }}></div>
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <div style={{ mwidth: "25%" }}></div>
         <div style={{ maxWidth: "50%" }}>

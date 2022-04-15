@@ -2,8 +2,8 @@
   position: relative;
   left: 0;
   top: 0;
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 450px;
   padding: 20px;
   transition: 0.3s color ease-in, 0.3s transform ease-in;
   box-sizing: border-box;

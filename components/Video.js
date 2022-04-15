@@ -37,18 +37,21 @@ function Video(props) {
           <p
             className={styles.text}
             style={{
-              lineHeight: 1.5,
               display: "flex",
               justifyContent: "center",
+              lineHeight: 1.7,
+              wordSpacing: "5px",
             }}
           >
-            The New Year Subhakritu promises a period of joy and celebrations
-            unlike the past two years Sarvari and Plava where people faced the
-            Corona pandemic and loss of life. This year is best for performing
-            auspicious events like weddings, construction of new homes,
-            housewarming etc. People born in this subhakritu year will be
-            principled ones. trying to do good to others. They will also learn
-            many sciences and live long.
+            <i>
+              “ The New Year Subhakritu promises a period of joy and
+              celebrations unlike the past two years Sarvari and Plava where
+              people faced the Corona pandemic and loss of life. This year is
+              best for performing auspicious events like weddings, construction
+              of new homes, housewarming etc. People born in this subhakritu
+              year will be principled ones. trying to do good to others. They
+              will also learn many sciences and live long.”
+            </i>
           </p>
         </div>
         <div className={styles.container}>
