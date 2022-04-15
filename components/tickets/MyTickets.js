@@ -277,7 +277,7 @@ export default function Tickets(props) {
                           );
                         }}
                       >
-                        {glitch ? "ಸುಭಕೃತು 2022" : "Print It"}
+                        {glitch ? "ಶುಭಕೃತ್ 2022" : "Print It"}
                       </Button>
                     </CardActions>
                   </Card>

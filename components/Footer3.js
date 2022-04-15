@@ -4,9 +4,17 @@ import styles from "../styles/Footer.module.css";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Footer2 from "./Footer2";
 import Video from "./Video";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import { Route } from "@mui/icons-material";
+import { useRouter } from "next/router";
 
 function Footer() {
   const m1 = useMediaQuery("(min-width:430px)");
+  const router = useRouter();
 
   return (
     <div>
@@ -85,11 +93,37 @@ function Footer() {
                   {" "}
                   Legal Info
                 </h3>
-                <li className={styles.footer}>{"Creater"}</li>
-                <li className={styles.footer}>{"Info"}</li>
-                <li className={styles.footer}>{"Privacy Policy"}</li>
-                <li className={styles.footer}>{"FAQ's"}</li>
-                <li className={styles.footer}>{"About"}</li>
+                <li
+                  className={styles.footer}
+                  onClick={() => router.push("/info/creaters")}
+                >
+                  {"Creaters"}
+                </li>
+                <li
+                  className={styles.footer}
+                  style={{ fontSize: m1 ? "15px" : "9px" }}
+                  onClick={() => router.push("/info/terms&conditions")}
+                >
+                  {"Terms & Conditions"}
+                </li>
+                <li
+                  className={styles.footer}
+                  onClick={() => router.push("/info/privacy_policies")}
+                >
+                  {"Privacy Policy"}
+                </li>
+                <li
+                  className={styles.footer}
+                  onClick={() => router.push("/info/faqs")}
+                >
+                  {"FAQ's"}
+                </li>
+                <li
+                  className={styles.footer}
+                  onClick={() => router.push("/about")}
+                >
+                  {"About"}
+                </li>
               </ul>
             </div>
           </Grid>
@@ -116,7 +150,7 @@ function Footer() {
                   }}
                 >
                   {" "}
-                  {"Team Details"}
+                  {"Designers"}
                 </h3>
                 <a
                   href="https://www.linkedin.com/in/prajwal-benedict-a-048511186/"
@@ -161,25 +195,122 @@ function Footer() {
               </ul>
             </div>
           </Grid>
-          <Grid item xs={12}>
-            <div style={{ display: "flex", paddingLeft: m1 ? "0%" : "12%" }}>
-              <h4 className={styles.footer}>
-                <a
-                  href="https://nie.ac.in/"
-                  passHref={true}
-                  rel="noreferrer"
-                  target="_blank"
+          <Grid
+            item
+            xs={12}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                paddingLeft: m1 ? "0%" : "10%",
+              }}
+            >
+              <div>
+                <div
                   style={{
-                    textDecoration: "none",
-                    fontWeight: "lighter",
-                    fontSize: m1 ? "15px" : "12px",
-                    color: "white",
-                    fontFamily: "Bungee",
+                    display: "flex",
+                    justifyContent: "center",
+                    marginLeft: "-10px",
                   }}
                 >
-                  Copyright© TechNIEks 22
-                </a>
-              </h4>
+                  <a
+                    href="https://www.instagram.com/technieks2020/?hl=en"
+                    passHref={true}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <InstagramIcon
+                      style={{
+                        fontSize: m1 ? "50px" : "30px",
+                        paddingLeft: "10px",
+                      }}
+                      className={styles.footer}
+                    />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/jagannath-r-kulakarni-a465841a7/"
+                    passHref={true}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <LinkedInIcon
+                      style={{
+                        fontSize: m1 ? "50px" : "30px",
+                        paddingLeft: "10px",
+                      }}
+                      className={styles.footer}
+                    />
+                  </a>
+                  <a
+                    href="https://www.youtube.com/channel/UC0Ky30GAIfdtGccczVNUIqA"
+                    passHref={true}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <YouTubeIcon
+                      style={{
+                        fontSize: m1 ? "50px" : "30px",
+                        paddingLeft: "10px",
+                      }}
+                      className={styles.footer}
+                    />
+                  </a>{" "}
+                  <a
+                    href="https://twitter.com/technieks"
+                    passHref={true}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <TwitterIcon
+                      style={{
+                        fontSize: m1 ? "50px" : "30px",
+                        paddingLeft: "10px",
+                      }}
+                      className={styles.footer}
+                    />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/techNIEks/"
+                    passHref={true}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <FacebookIcon
+                      style={{
+                        fontSize: m1 ? "50px" : "30px",
+                        paddingLeft: "10px",
+                      }}
+                      className={styles.footer}
+                    />
+                  </a>
+                </div>
+                <h4
+                  className={styles.footer}
+                  style={{ marginTop: m1 ? "0px" : "-7px" }}
+                >
+                  <a
+                    href="https://nie.ac.in/"
+                    passHref={true}
+                    rel="noreferrer"
+                    target="_blank"
+                    style={{
+                      textDecoration: "none",
+                      fontWeight: "lighter",
+                      fontSize: m1 ? "15px" : "12px",
+                      color: "white",
+                      fontFamily: "Bungee",
+                    }}
+                    className={styles.footer}
+                  >
+                    Copyright© TechNIEks 22
+                  </a>
+                </h4>
+              </div>
             </div>
           </Grid>
         </Grid>

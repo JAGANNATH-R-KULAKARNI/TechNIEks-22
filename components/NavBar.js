@@ -7,13 +7,9 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-
 import Button from "@mui/material/Button";
-
 import MenuItem from "@mui/material/MenuItem";
 import * as c from "../utils/Colors";
-import styles from "../styles/NavBar.module.css";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useRouter } from "next/router";
 import styles2 from "../styles/Hover.module.css";
