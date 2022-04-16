@@ -5,6 +5,7 @@ import React from "react";
 import styles from "../../styles/Creaters.module.css";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import * as c from "../../utils/Colors";
+import CardUI from "../../components/creater";
 
 export default function Creaters() {
   const [status, setStatus] = React.useState(false);
@@ -39,28 +40,47 @@ export default function Creaters() {
       >
         Website Designers
       </h1>
+      <br />
 
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <img
-          src="/images/jagannath.jpeg"
-          style={{ width: "10%", minWidth: "10%", height: "auto" }}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          paddingLeft: m1 ? "6" : "10%",
+          paddingRight: m1 ? "6" : "10%",
+        }}
+      >
+        <CardUI
+          link="/images/niraj.svg"
+          name="Niraj Sharma"
+          code={1}
+          quote="I’m smiling because I have no idea what’s going on."
         />
-        <img
-          src="/images/lohith.jpeg"
-          style={{ width: "10%", height: "auto" }}
+        <CardUI
+          link="/images/prajwal_1.svg"
+          name="Prajwal Benedict"
+          code={2}
+          quote="My Father gave me the greatest gift anyone could ever give to a person, He believed in me"
         />
-        <img
-          src="/images/vishakha.jpeg"
-          style={{ width: "10%", height: "auto" }}
+        <CardUI
+          link="/images/jagannath.svg"
+          name="Jagannath R K"
+          code={3}
+          quote="If life were predictable
+It would cease to be life
+And be without flavor"
         />
-        <img
-          src="/images/prajwal.jpeg"
-          style={{ width: "10%", height: "auto", borderRadius: "50%" }}
+        <CardUI
+          link="/images/lohith.svg"
+          name="Lohith C"
+          code={4}
+          quote="No Pen, No Paper, still drawing attention"
         />
-        <img
-          src="/images/prajwl.jpeg"
-          alt="niraj"
-          style={{ width: "10%", height: "auto", borderRadius: "50%" }}
+        <CardUI
+          link="/images/vishakha.svg"
+          name="Vishakha V"
+          code={5}
+          quote="Honesty is the best policy, but insanity is a better defense."
         />
       </div>
       <div style={{ height: "120px" }}></div>
