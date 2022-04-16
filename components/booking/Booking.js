@@ -51,30 +51,39 @@ export default function Booking(props) {
                 height: "250px",
                 marginTop: "0px",
                 borderRadius: "75px",
+                fontFamily: "Bungee",
               }}
               elevation={1}
             >
               <div style={{ padding: "5%", textAlign: "center" }}>
                 <div style={{ display: "flex", justifyContent: "center" }}>
                   <div>
-                    <p style={{ fontSize: "20px" }}> Total Tickets </p>
+                    <p style={{ fontSize: "20px", fontFamily: "Bungee" }}>
+                      {" "}
+                      Total Tickets{" "}
+                    </p>
                     <p
                       style={{
                         fontSize: "40px",
                         marginTop: "-20px",
                         color: c.c3,
+                        fontFamily: "Bungee",
                       }}
                     >
                       {props.no}{" "}
                     </p>
                   </div>
                   <div style={{ paddingLeft: "110px" }}>
-                    <p style={{ fontSize: "20px" }}> Total Amount </p>
+                    <p style={{ fontSize: "20px", fontFamily: "Bungee" }}>
+                      {" "}
+                      Total Amount{" "}
+                    </p>
                     <p
                       style={{
                         fontSize: "40px",
                         marginTop: "-20px",
                         color: c.c3,
+                        fontFamily: "Bungee",
                       }}
                     >
                       ₹ {props.ticket ? props.ticket.price * props.no : 0}{" "}
@@ -137,24 +146,41 @@ export default function Booking(props) {
             height: "220px",
             marginTop: "0px",
             borderRadius: "70px",
+            fontFamily: "Bungee",
           }}
           elevation={3}
         >
           <div style={{ padding: "3%", textAlign: "center" }}>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <div>
-                <p style={{ fontSize: "18px" }}> Total Tickets </p>
+                <p style={{ fontSize: "18px", fontFamily: "Bungee" }}>
+                  {" "}
+                  Total Tickets{" "}
+                </p>
                 <p
-                  style={{ fontSize: "30px", marginTop: "-20px", color: c.c3 }}
+                  style={{
+                    fontSize: "30px",
+                    marginTop: "-20px",
+                    color: c.c3,
+                    fontFamily: "Bungee",
+                  }}
                 >
                   {" "}
                   {props.no}{" "}
                 </p>
               </div>
               <div style={{ paddingLeft: "15%" }}>
-                <p style={{ fontSize: "18px" }}> Total Amount</p>
+                <p style={{ fontSize: "18px", fontFamily: "Bungee" }}>
+                  {" "}
+                  Total Amount
+                </p>
                 <p
-                  style={{ fontSize: "30px", marginTop: "-20px", color: c.c3 }}
+                  style={{
+                    fontSize: "30px",
+                    marginTop: "-20px",
+                    color: c.c3,
+                    fontFamily: "Bungee",
+                  }}
                 >
                   {" "}
                   ₹ {props.ticket ? props.ticket.price * props.no : 0}{" "}
