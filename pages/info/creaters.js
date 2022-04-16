@@ -55,12 +55,16 @@ export default function Creaters() {
           name="Niraj Sharma"
           code={1}
           quote="I’m smiling because I have no idea what’s going on."
+          insta="https://www.instagram.com/niraj_s_sharma/?hl=en"
+          linked="https://www.linkedin.com/in/niraj-sharma-5538801a7/"
         />
         <CardUI
           link="/images/prajwal_1.svg"
           name="Prajwal Benedict"
           code={2}
           quote="My Father gave me the greatest gift anyone could ever give to a person, He believed in me"
+          insta="https://www.instagram.com/benedictprajwal/?hl=en"
+          linked="https://www.linkedin.com/in/prajwal-benedict-a-048511186/"
         />
         <CardUI
           link="/images/jagannath.svg"
@@ -69,18 +73,24 @@ export default function Creaters() {
           quote="If life were predictable
 It would cease to be life
 And be without flavor"
+          insta="https://www.instagram.com/coder446/?hl=en"
+          linked="https://www.linkedin.com/in/jagannath-r-kulakarni-a465841a7/"
         />
         <CardUI
           link="/images/lohith.svg"
           name="Lohith C"
           code={4}
           quote="No Pen, No Paper, still drawing attention"
+          insta="https://www.instagram.com/lohith_channaiah/?hl=en"
+          linked="https://www.linkedin.com/in/lohith-c-12358b1a7/"
         />
         <CardUI
           link="/images/vishakha.svg"
           name="Vishakha V"
           code={5}
           quote="Honesty is the best policy, but insanity is a better defense."
+          insta="https://www.instagram.com/vishakhavenugopal/?hl=en"
+          linked="https://www.linkedin.com/in/vishakha-v-4825b4163/"
         />
       </div>
       <div style={{ height: "120px" }}></div>

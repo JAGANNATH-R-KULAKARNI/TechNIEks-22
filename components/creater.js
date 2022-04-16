@@ -18,6 +18,7 @@ export default function CarddBro(props) {
       sx={{
         maxWidth: 300,
         minWidth: m1 ? 300 : "20%",
+        maxHeight: m1 ? 560 : 465,
         borderTopLeftRadius: props.code == 1 ? "100px" : "0px",
         borderBottomLeftRadius: props.code == 1 ? "50px" : "0px",
         borderTopRightRadius: props.code == 5 ? "100px" : "0px",
@@ -27,33 +28,37 @@ export default function CarddBro(props) {
       <CardMedia
         component="img"
         alt="green iguana"
-        height="400"
+        height={m1 ? "400" : "360"}
         width="auto"
         image={props.link}
       />
       <CardContent>
-        <Typography
-          gutterBottom
-          variant="h5"
-          component="div"
-          style={{ fontFamily: "inherit" }}
-        >
-          {props.name}
-        </Typography>
-        <Typography
-          variant="body2"
-          color="text.secondary"
-          style={{
-            fontFamily: "italic",
-            fontWeight: 900,
-            maxHeight: "50px",
-            minHeight: "50px",
-          }}
-        >
-          <b style={{ fontSize: "15px" }}>“ </b>
-          <i>{props.quote}</i>
-          <b style={{ fontSize: "15px" }}> ”</b>
-        </Typography>
+        {m1 ? (
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            style={{ fontFamily: "inherit" }}
+          >
+            {props.name}
+          </Typography>
+        ) : null}
+        {m1 ? (
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            style={{
+              fontFamily: "italic",
+              fontWeight: 900,
+              maxHeight: "50px",
+              minHeight: "50px",
+            }}
+          >
+            <b style={{ fontSize: "15px" }}>“ </b>
+            <i>{props.quote}</i>
+            <b style={{ fontSize: "15px" }}> ”</b>
+          </Typography>
+        ) : null}
         <div
           style={{
             display: m1 ? "flex" : "block",
@@ -61,14 +66,28 @@ export default function CarddBro(props) {
             bottom: 0,
           }}
         >
-          <LinkedInIcon
-            style={{ fontSize: "35px" }}
-            className={styles.footer}
-          />
-          <InstagramIcon
-            style={{ fontSize: "35px" }}
-            className={styles.footer}
-          />
+          <a
+            href={props.linked}
+            passHref={true}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <LinkedInIcon
+              style={{ fontSize: "35px" }}
+              className={styles.footer}
+            />
+          </a>
+          <a
+            href={props.insta}
+            passHref={true}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <InstagramIcon
+              style={{ fontSize: "35px" }}
+              className={styles.footer}
+            />
+          </a>
         </div>
       </CardContent>
     </Card>
