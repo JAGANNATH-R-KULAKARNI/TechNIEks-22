@@ -118,9 +118,9 @@ function Footer() {
                 </li>
                 <li
                   className={styles.footer}
-                  onClick={() => router.push("/info/faqs")}
+                  onClick={() => router.push("/info/refunds")}
                 >
-                  {"FAQ's"}
+                  {"Refunds"}
                 </li>
                 <li
                   className={styles.footer}

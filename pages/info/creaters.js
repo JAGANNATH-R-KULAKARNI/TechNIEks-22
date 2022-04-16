@@ -32,13 +32,14 @@ export default function Creaters() {
       <h1
         style={{
           textAlign: "center",
-          fontSize: m1 ? "50px" : "35px",
-          color: c.c2,
+          fontSize: m1 ? "50px" : "23px",
+          color: c.c4,
           fontFamily: "Bungee",
         }}
       >
         Website Designers
       </h1>
+
       <div style={{ display: "flex", justifyContent: "center" }}>
         <img
           src="/images/jagannath.jpeg"

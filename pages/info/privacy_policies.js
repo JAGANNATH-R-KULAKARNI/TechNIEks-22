@@ -6,7 +6,7 @@ import styles from "../../styles/Creaters.module.css";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import * as c from "../../utils/Colors";
 
-export default function TermasAndConditions() {
+export default function PrivacyPolicies() {
   const [status, setStatus] = React.useState(false);
   const m1 = useMediaQuery("(min-width:600px)");
 
@@ -236,7 +236,7 @@ export default function TermasAndConditions() {
           <p>
             If you would like to: access, correct, amend or delete any personal
             information we have about you, register a complaint, or simply want
-            more information contact our team at
+            more information then contact our team at
             <i
               style={{
                 fontFamily: "sans-serif",
@@ -245,15 +245,32 @@ export default function TermasAndConditions() {
                 textDecoration: "underline",
               }}
             >
-              jagannathrkulakarni.171845@gmail.com
+              technieks22@gmail.com
             </i>
           </p>
           <br />
-          <h3
-            style={{ textAlign: "center", fontFamily: "inherit", color: c.c4 }}
-          >
-            This policy is effective as of Apr 2022.
-          </h3>
+          {m1 ? (
+            <h3
+              style={{
+                textAlign: "left",
+                fontFamily: "inherit",
+                color: c.c4,
+              }}
+            >
+              This policy is effective as of Apr 2022 to August 2022
+            </h3>
+          ) : (
+            <h6
+              style={{
+                textAlign: "left",
+                fontFamily: "inherit",
+                color: c.c4,
+                fontSize: "12px",
+              }}
+            >
+              This policy is effective as of Apr 2022 to August 2022
+            </h6>
+          )}
         </div>
       </div>
 
