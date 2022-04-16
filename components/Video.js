@@ -50,7 +50,7 @@ function Video(props) {
               best for performing auspicious events like weddings, construction
               of new homes, housewarming etc. People born in this subhakritu
               year will be principled ones. trying to do good to others. They
-              will also learn many sciences and live long.”
+              will also learn many sciences and live long. ”
             </i>
           </p>
         </div>
