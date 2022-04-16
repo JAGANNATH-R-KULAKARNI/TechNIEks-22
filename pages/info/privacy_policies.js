@@ -248,6 +248,14 @@ export default function PrivacyPolicies() {
               technieks22@gmail.com
             </i>
           </p>
+          or
+          <ul>
+            <li>(91+) 9353739401</li>
+            <li>(91+) 8088546585</li>
+            <li>(91+) 7204933863</li>
+            <li>(91+) 8722889927</li>
+            <li>(91+) 6361724765</li>
+          </ul>
           <br />
           {m1 ? (
             <h3

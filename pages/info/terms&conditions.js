@@ -63,15 +63,19 @@ export default function TermasAndConditions() {
           <p>
             TechNIEks website is operated by{" "}
             <i style={{ textDecoration: "underline" }}>Jagannath R Kulakarni</i>
+            ,
             <i style={{ textDecoration: "underline", paddingLeft: "10px" }}>
               Prajwal Benedict
             </i>
+            ,
             <i style={{ textDecoration: "underline", paddingLeft: "10px" }}>
               Vishkha V
             </i>
+            ,
             <i style={{ textDecoration: "underline", paddingLeft: "10px" }}>
               Niraj Sharma
             </i>
+            ,
             <i style={{ textDecoration: "underline", paddingLeft: "10px" }}>
               Lohith C
             </i>
@@ -221,7 +225,6 @@ export default function TermasAndConditions() {
             new features and/or services shall also be subject to these Terms of
             Service.
           </p>
-
           <div style={{ height: m1 ? "3px" : "1px" }}></div>
           <h3
             style={{
@@ -299,6 +302,14 @@ export default function TermasAndConditions() {
               technieks22@gmail.com
             </i>
           </p>
+          or
+          <ul>
+            <li>(91+) 9353739401</li>
+            <li>(91+) 8088546585</li>
+            <li>(91+) 7204933863</li>
+            <li>(91+) 8722889927</li>
+            <li>(91+) 6361724765</li>
+          </ul>
           <br />
           {m1 ? (
             <h3

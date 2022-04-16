@@ -97,12 +97,7 @@ function Footer() {
                   {" "}
                   Legal Info
                 </h3>
-                <li
-                  className={styles.footer}
-                  onClick={() => router.push("/info/creaters")}
-                >
-                  {"Creaters"}
-                </li>
+
                 <li
                   className={styles.footer}
                   style={{ fontSize: m1 ? "15px" : "9px" }}
@@ -127,6 +122,12 @@ function Footer() {
                   onClick={() => router.push("/about")}
                 >
                   {"About"}
+                </li>
+                <li
+                  className={styles.footer}
+                  onClick={() => router.push("/info/creaters")}
+                >
+                  {"Creaters"}
                 </li>
               </ul>
             </div>
@@ -318,6 +319,20 @@ function Footer() {
             </div>
           </Grid>
         </Grid>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: m1 ? "-20px" : "-15px",
+          paddingLeft: "10%",
+          paddingRight: "10%",
+        }}
+      >
+        <p style={{ textAlign: "center", fontSize: m1 ? "15px" : "10px" }}>
+          <i style={{ color: c.c3, paddingRight: "10px" }}> address : </i>{" "}
+          Mananthavadi Rd, Vidyaranyapura, Mysuru, Karnataka 570008
+        </p>
       </div>
     </div>
   );
