@@ -61,7 +61,7 @@ export default function PrivacyPolicies() {
             Consent
           </h3>
           <p>
-            Your privacy is important to us. It is TechNIEks's policy to respect
+            Your privacy is important to us. It is TechNIEks s policy to respect
             your privacy regarding any information we may collect from you
             across our website, TechNIEks, and other sites we own and operate.
           </p>
@@ -182,7 +182,7 @@ export default function PrivacyPolicies() {
             computer, to improve your experience. This page describes what
             information they gather, how we use it and why we sometimes need to
             store these cookies. We will also share how you can prevent these
-            cookies from being stored however this may downgrade or 'break'
+            cookies from being stored however this may downgrade or break
             certain elements of the sites functionality.
           </p>
           <p>
@@ -219,8 +219,8 @@ export default function PrivacyPolicies() {
           </h3>
           <p>
             Hopefully that has clarified things for you and as was previously
-            mentioned if there is something that you aren't sure whether you
-            need or not it's usually safer to leave cookies enabled in case it
+            mentioned if there is something that you aren t sure whether you
+            need or not it s usually safer to leave cookies enabled in case it
             does interact with one of the features you use on our site.
           </p>
           <div style={{ height: m1 ? "3px" : "1px" }}></div>

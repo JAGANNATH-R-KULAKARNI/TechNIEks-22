@@ -162,7 +162,7 @@ export default function TermasAndConditions() {
             Accuracy of materials
           </h3>
           <p>
-            The materials appearing on TechNIEks's website could include
+            The materials appearing on TechNIEks s website could include
             technical, typographical, or photographic errors. TechNIEks does not
             warrant that any of the materials on its website are accurate,
             complete or current. TechNIEks may make changes to the materials
