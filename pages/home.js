@@ -27,32 +27,25 @@ export default function Home(props) {
 
   return (
     <div
-      style={{ backgroundColor: "#000000", color: "white", minWidth: "100%" }}
+      style={{
+        backgroundColor: "#000000",
+        color: "white",
+        minWidth: "100%",
+        // backgroundImage: "url(" + "/images/moon.jpg" + ")",
+        // backgroundPosition: "center",
+        // backgroundSize: "cover",
+        // backgroundRepeat: "no-repeat",
+      }}
     >
       <NavBar code={0} logOut={logOut} status={status} />
       <div style={{ height: m1 ? "40px" : "40px" }}></div>
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-        <div style={{ mwidth: "25%" }}></div>
-        {/* <div style={{ maxWidth: "50%" }}>
+        <div style={{ miwidth: "25%" }}></div>
+        <div style={{ maxWidth: "50%" }}>
           <SHeader />
-        </div> */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            minWidth: "100%",
-          }}
-        >
-          <img
-            src="https://i.gifer.com/51Gq.gif"
-            style={{
-              width: m1 ? "460px" : "400px",
-              height: "auto",
-              marginTop: m1 ? "0px" : "-30px",
-            }}
-          />
         </div>
-        <div style={{ mwidth: "25%" }}></div>
+
+        <div style={{ miwidth: "25%" }}></div>
       </div>
       <div style={{ height: m1 ? "20px" : "0px" }}></div>
       <Footer />
