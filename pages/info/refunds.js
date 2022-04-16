@@ -37,14 +37,14 @@ export default function Refunds() {
           fontFamily: "Bungee",
         }}
       >
-        Refunds & Cancellations
+        Refunds
       </h1>
       <div
         style={{
           display: "flex",
           justifyContent: "center",
-          paddingLeft: m1 ? "20%" : "15%",
-          paddingRight: m1 ? "20%" : "15%",
+          paddingLeft: m1 ? "20%" : "10%",
+          paddingRight: m1 ? "20%" : "10%",
           fontSize: m1 ? "15px" : "10px",
           wordSpacing: m1 ? "5px" : "4px",
           lineHeight: 1.7,
