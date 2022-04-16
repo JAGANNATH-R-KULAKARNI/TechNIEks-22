@@ -40,7 +40,7 @@ export default function About() {
     }
 
     if (error) {
-      alert("Some Error Occurred :(, Try again later");
+      // alert("Some Error Occurred :(, Try again later");
       router.push("/home");
     }
   }

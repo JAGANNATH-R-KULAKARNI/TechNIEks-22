@@ -6,7 +6,7 @@ import styles from "../../styles/Creaters.module.css";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import * as c from "../../utils/Colors";
 
-export default function About() {
+export default function Creaters() {
   const [status, setStatus] = React.useState(false);
   const m1 = useMediaQuery("(min-width:600px)");
 

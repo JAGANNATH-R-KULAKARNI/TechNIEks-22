@@ -11,6 +11,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Route } from "@mui/icons-material";
 import { useRouter } from "next/router";
+import * as c from "../utils/Colors";
 
 function Footer() {
   const m1 = useMediaQuery("(min-width:430px)");
@@ -49,7 +50,10 @@ function Footer() {
           >
             <div>
               <h3
-                style={{ fontSize: m1 ? "23px" : "15px", fontFamily: "Bungee" }}
+                style={{
+                  fontSize: m1 ? "23px" : "15px",
+                  fontFamily: "Bungee",
+                }}
               >
                 About
               </h3>
