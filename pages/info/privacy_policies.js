@@ -26,7 +26,17 @@ export default function PrivacyPolicies() {
   }
 
   return (
-    <div style={{ backgroundColor: "#000000", color: "white" }}>
+    <div
+      style={{
+        backgroundColor: "#000000",
+        color: "white",
+        backgroundImage: "url(" + "../images/back.jpg" + ")",
+        backgroundPosition: "center",
+        backgroundSize: "700px 500px",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <NavBar code={0} logOut={logOut} status={status} />
       <div style={{ height: "10px" }}></div>
       <h1

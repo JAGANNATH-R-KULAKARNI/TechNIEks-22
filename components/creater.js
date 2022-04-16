@@ -16,8 +16,8 @@ export default function CarddBro(props) {
   return (
     <Card
       sx={{
-        maxWidth: 300,
-        minWidth: m1 ? 300 : "20%",
+        maxWidth: 250,
+        minWidth: m1 ? 250 : "20%",
         maxHeight: m1 ? 560 : 465,
         borderTopLeftRadius: props.code == 1 ? "100px" : "0px",
         borderBottomLeftRadius: props.code == 1 ? "50px" : "0px",

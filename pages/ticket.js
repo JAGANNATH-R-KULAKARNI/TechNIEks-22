@@ -65,7 +65,17 @@ export default function Ticket() {
   }
 
   return (
-    <div style={{ backgroundColor: "#000000", color: "white" }}>
+    <div
+      style={{
+        backgroundColor: "#000000",
+        color: "white",
+        backgroundImage: "url(" + "/images/back.jpg" + ")",
+        backgroundPosition: "center",
+        backgroundSize: "700px 500px",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <NavBar code={0} logOut={logOut} status={status} />
 
       <MyTicketsUI tickets={tickets} />

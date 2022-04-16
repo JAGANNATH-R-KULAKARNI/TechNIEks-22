@@ -51,7 +51,17 @@ export default function About() {
   }
 
   return (
-    <div style={{ backgroundColor: c.c1, color: c.c2 }}>
+    <div
+      style={{
+        backgroundColor: c.c1,
+        color: c.c2,
+        backgroundImage: "url(" + "/images/back.jpg" + ")",
+        backgroundPosition: "center",
+        backgroundSize: "700px 500px",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <NavBar code={0} logOut={logOut} status={status} />
       <TicketsUI events={events} />
       {events.length > 0 ? null : (

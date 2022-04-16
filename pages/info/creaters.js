@@ -27,7 +27,17 @@ export default function Creaters() {
   }
 
   return (
-    <div style={{ backgroundColor: "#000000", color: "white" }}>
+    <div
+      style={{
+        backgroundColor: "#000000",
+        color: "white",
+        backgroundImage: "url(" + "../images/back.jpg" + ")",
+        backgroundPosition: "center",
+        backgroundSize: "700px 500px",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <NavBar code={0} logOut={logOut} status={status} />
       <div style={{ height: "10px" }}></div>
       <h1
@@ -60,9 +70,9 @@ export default function Creaters() {
         />
         <CardUI
           link="/images/prajwal_1.svg"
-          name="Prajwal Benedict"
+          name="Prajwal B"
           code={2}
-          quote="My Father gave me the greatest gift anyone could ever give to a person, He believed in me"
+          quote="The way to get started is to quit talking and begin doing"
           insta="https://www.instagram.com/benedictprajwal/?hl=en"
           linked="https://www.linkedin.com/in/prajwal-benedict-a-048511186/"
         />

@@ -329,7 +329,13 @@ function Footer() {
           paddingRight: "10%",
         }}
       >
-        <p style={{ textAlign: "center", fontSize: m1 ? "15px" : "10px" }}>
+        <p
+          style={{
+            textAlign: "center",
+            fontSize: m1 ? "15px" : "10px",
+            fontFamily: "inherit",
+          }}
+        >
           <i style={{ color: c.c3, paddingRight: "10px" }}> address : </i>{" "}
           Mananthavadi Rd, Vidyaranyapura, Mysuru, Karnataka 570008
         </p>

@@ -6,6 +6,7 @@ import React from "react";
 
 export default function About() {
   const [status, setStatus] = React.useState(false);
+  const m1 = useMediaQuery("(min-width:600px)");
 
   React.useEffect(() => {
     fetchTheProfile();
@@ -23,9 +24,19 @@ export default function About() {
   }
 
   return (
-    <div style={{ backgroundColor: "#000000", color: "white" }}>
+    <div
+      style={{
+        backgroundColor: "#000000",
+        color: "white",
+        backgroundImage: "url(" + "/images/back.jpg" + ")",
+        backgroundPosition: "center",
+        backgroundSize: "700px 500px",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <NavBar code={0} logOut={logOut} status={status} />
-
+      <div style={{ marginTop: m1 ? "34%" : "100%" }}></div>
       <Footer />
     </div>
   );

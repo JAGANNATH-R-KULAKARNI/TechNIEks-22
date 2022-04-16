@@ -96,7 +96,16 @@ function BookTicket(props) {
 
   return (
     <div
-      style={{ backgroundColor: "#000000", color: "white", minWidth: "100%" }}
+      style={{
+        backgroundColor: "#000000",
+        color: "white",
+        minWidth: "100%",
+        backgroundImage: "url(" + "/images/back.jpg" + ")",
+        backgroundPosition: "center",
+        backgroundSize: "700px 500px",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
     >
       <NavBar code={0} logOut={logOut} status={status} />
       <Snackbar
