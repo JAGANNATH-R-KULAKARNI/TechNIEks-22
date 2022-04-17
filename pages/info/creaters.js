@@ -91,7 +91,7 @@ And be without flavor"
           link="/images/lohith.svg"
           name="Lohith C"
           code={4}
-          quote="No Pen, No Paper, still drawing attention"
+          quote="No one is you and that is your power"
           insta="https://www.instagram.com/lohith_channaiah/?hl=en"
           linked="https://www.linkedin.com/in/lohith-c-12358b1a7/"
         />
