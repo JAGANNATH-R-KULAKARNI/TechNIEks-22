@@ -35,6 +35,7 @@ export default function Refunds() {
         backgroundSize: "700px 500px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
+        scrollBehavior: "smooth",
       }}
     >
       <NavBar code={0} logOut={logOut} status={status} />

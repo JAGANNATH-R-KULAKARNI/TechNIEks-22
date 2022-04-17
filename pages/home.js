@@ -5,10 +5,16 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { supabase } from "../utils/SupabaseClient";
 import React from "react";
 import useSWR from "swr";
+import Scroller from "../components/scroller";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home(props) {
   const [status, setStatus] = React.useState(false);
   const m1 = useMediaQuery("(min-width:600px)");
+
   const { profileCacheHome, errorProfileCacheHome } = useSWR(
     "profileHome",
     fetchTheProfile
@@ -33,9 +39,10 @@ export default function Home(props) {
         minWidth: "100%",
         backgroundImage: "url(" + "/images/back.jpg" + ")",
         backgroundPosition: "center",
-        backgroundSize: "700px 500px",
+        backgroundSize: m1 ? "700px 500px" : "700px 500px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
+        scrollBehavior: "smooth",
       }}
     >
       <NavBar code={0} logOut={logOut} status={status} />

@@ -52,6 +52,7 @@ function Failure(props) {
         backgroundSize: "700px 500px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
+        scrollBehavior: "smooth",
       }}
     >
       <Navbar code={0} logOut={logOut} status={status} />

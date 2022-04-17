@@ -81,6 +81,7 @@ export default function Home(props) {
         backgroundSize: "700px 500px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
+        scrollBehavior: "smooth",
       }}
       // className="w3-xlarge font-effect-shadow-multiple"
     >
