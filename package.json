@@ -25,6 +25,7 @@
     "bcrypt": "^5.0.1",
     "cloudinary-react": "^1.7.0",
     "crypto": "^1.0.1",
+    "dat.gui": "^0.7.9",
     "dom-to-image": "^2.6.0",
     "firebase": "^9.6.2",
     "gsap": "^3.10.3",

@@ -49,7 +49,7 @@ export default function Home(props) {
       <div style={{ height: m1 ? "40px" : "40px" }}></div>
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <div style={{ miwidth: "25%" }}></div>
-        <div style={{ maxWidth: "50%" }}>{/* <SHeader /> */}</div>
+        <div style={{ maxWidth: "50%" }}></div>
         <div style={{ marginTop: m1 ? "30%" : "100%" }}></div>
         <div style={{ miwidth: "25%" }}></div>
       </div>

@@ -66,7 +66,7 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple"
         />
       </Head>
-      <NextNProgress color={c.c3} />
+      <NextNProgress color={c.c3} startPosition={0.6} height={10} />
       <div className={styles.firefly}></div>
       <div className={styles.firefly}></div>
       <div className={styles.firefly}></div>

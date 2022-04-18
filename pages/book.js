@@ -9,6 +9,7 @@ import { withRouter } from "next/router";
 import MuiAlert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 import useSWR from "swr";
+import DontCloseUI from "../components/booking/DontClose";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -29,6 +30,7 @@ function BookTicket(props) {
   const [no, setNo] = React.useState(1);
   const [enjoy, setEnjoy] = React.useState(false);
   const [totalAmount, setTotalAmount] = React.useState();
+  const [successTab, setSuccessTab] = React.useState(false);
 
   const { dataEvents: errorEvents } = useSWR("eventBook", fetchTicketDetails);
   const { dataProfile: errorProfile } = useSWR("profileBook", fetchTheProfile);
@@ -67,8 +69,10 @@ function BookTicket(props) {
   }
 
   async function messageAlertForPayments(code) {
-    if (code) messageAlert("Loading.....", "success", 1000000);
-    else {
+    if (code) {
+      // messageAlert("Please don't exit.....", "success", 1000000);
+      setSuccessTab(true);
+    } else {
       setOpenAlert(false);
       setAlert(null);
     }
@@ -129,6 +133,7 @@ function BookTicket(props) {
           {!m1 ? <p style={{ fontSize: "10px" }}>{alertMsg}</p> : alertMsg}
         </Alert>
       </Snackbar>
+      {successTab ? <DontCloseUI /> : null}
       <BookingUI
         ticket={ticket}
         name={name}
