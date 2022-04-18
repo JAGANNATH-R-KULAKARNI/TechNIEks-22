@@ -9,6 +9,11 @@ import RazorPayButtonUI from "./RazorPay";
 
 export default function Booking(props) {
   const m1 = useMediaQuery("(min-width:430px)");
+  const [loading, setLoading] = React.useState(false);
+
+  const setTheLoading = (status) => {
+    setLoading(status);
+  };
 
   if (m1)
     return (
@@ -198,6 +203,8 @@ export default function Booking(props) {
                 ticket={props.ticket}
                 messageAlertForPayments={props.messageAlertForPayments}
                 messageAlert={props.messageAlert}
+                loading={loading}
+                setTheLoading={setTheLoading}
               />
             </div>
             <br />

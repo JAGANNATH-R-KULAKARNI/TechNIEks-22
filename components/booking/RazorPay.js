@@ -9,6 +9,7 @@ import ButtonUI from "./Button";
 const RazorPayButton = (props) => {
   const theme = createTheme();
   const router = useRouter();
+  const [loading, setLoading] = React.useState(false);
 
   function loadScript(src) {
     return new Promise((resolve) => {
@@ -97,6 +98,7 @@ const RazorPayButton = (props) => {
       return;
     }
     //   props.messageAlertForPayments(1);
+    setLoading(true);
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
     );
@@ -120,7 +122,7 @@ const RazorPayButton = (props) => {
       props.messageAlert("Payment failed", "error", 3000);
       return;
     }
-
+    setLoading(false);
     const { amount, id, currency, key_id, receipt } = result.data;
 
     const options = {
@@ -180,7 +182,7 @@ const RazorPayButton = (props) => {
   return (
     <ThemeProvider theme={theme}>
       <div onClick={displayRazorPay}>
-        <ButtonUI text={`Pay ₹ ${props.amount}`} />
+        <ButtonUI text={loading ? "Loading..." : `Pay ₹ ${props.amount}`} />
       </div>
     </ThemeProvider>
   );
