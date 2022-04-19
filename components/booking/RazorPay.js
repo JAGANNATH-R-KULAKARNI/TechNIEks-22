@@ -80,9 +80,9 @@ const RazorPayButton = (props) => {
   };
 
   const displayRazorPay = async () => {
-    if (props.name.length < 5) {
+    if (props.name.length < 4) {
       props.messageAlert(
-        "Name should be atleast 5 characters long",
+        "Name should be atleast 4 characters long",
         "error",
         3000
       );

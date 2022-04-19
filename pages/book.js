@@ -50,10 +50,19 @@ function BookTicket(props) {
     return;
   };
 
-  // React.useEffect(() => {
-  //   fetchTheProfile();
-  //   fetchTicketDetails();
-  // }, []);
+  React.useEffect(() => {
+    fetchTheProfile();
+    fetchTicketDetails(email);
+
+    if (email) {
+      if (/nie.ac.in$/.test(email)) {
+        setThisCollege(true);
+      } else {
+        setTotalAmount(ticket.price_ * no);
+        setThisCollege(false);
+      }
+    }
+  }, []);
 
   async function fetchTicketDetails(email) {
     if (email) {
