@@ -35,6 +35,7 @@ function BookTicket(props) {
   const [totalAmount, setTotalAmount] = React.useState();
   const [successTab, setSuccessTab] = React.useState(false);
   const [now, setNow] = React.useState(false);
+  const [locked, setLocked] = React.useState(false);
 
   const { dataEvents: errorEvents } = useSWR("eventBook", fetchTicketDetails);
   const { dataProfile: errorProfile } = useSWR("profileBook", fetchTheProfile);
@@ -53,15 +54,6 @@ function BookTicket(props) {
   React.useEffect(() => {
     fetchTheProfile();
     fetchTicketDetails(email);
-
-    if (email) {
-      if (/nie.ac.in$/.test(email)) {
-        setThisCollege(true);
-      } else {
-        setTotalAmount(ticket.price_ * no);
-        setThisCollege(false);
-      }
-    }
   }, []);
 
   async function fetchTicketDetails(email) {
@@ -74,18 +66,21 @@ function BookTicket(props) {
       if (data) {
         if (/nie.ac.in$/.test(email)) {
           setThisCollege(true);
+          setTicket(data[0]);
+          setTotalAmount(data[0].price * no);
+          setNow(true);
         } else {
-          data[0] = {
-            price: data[0].price_o,
-          };
-          setThisCollege(false);
+          if (!locked) {
+            data[0] = {
+              price: data[0].price_o,
+            };
+            setLocked(true);
+            setThisCollege(false);
+            setTicket(data[0]);
+            setTotalAmount(data[0].price * no);
+            setNow(true);
+          }
         }
-
-        console.log("here bro");
-        console.log(data);
-        setTicket(data[0]);
-        setTotalAmount(data[0].price * no);
-        setNow(true);
       }
 
       if (error) {
