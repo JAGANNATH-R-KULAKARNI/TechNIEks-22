@@ -13,7 +13,8 @@ import Router from "next/router";
 export default function Home(props) {
   const [status, setStatus] = React.useState(false);
   const m1 = useMediaQuery("(min-width:600px)");
-
+  const router = useRouter();
+  
   React.useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
       (event, session) => {
@@ -69,6 +70,7 @@ export default function Home(props) {
   async function logOut() {
     await supabase.auth.signOut();
     setStatus(false);
+    router.reload(window.location.pathname);
   }
 
   return (

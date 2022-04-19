@@ -14,6 +14,9 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 const theme = createTheme();
 
@@ -225,86 +228,72 @@ export default function Details(props) {
               </FormControl>
             </div>
             <div style={{ height: "10px" }}></div>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <FormControl
-                variant="outlined"
+            <br />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                minWidth: "90%",
+                maxWidth: "90%",
+              }}
+            >
+              <div
                 style={{
-                  color: c.c1,
-                  minWidth: m1 ? "370px" : "100%",
-                  fontFamily: "Bungee",
-                }}
-                sx={{
-                  input: {
-                    color: c.c4,
-                    fontFamily: "Bungee",
-                  },
-                  "& .MuiOutlinedInput-root": {
-                    "& > fieldset": {
-                      borderColor: c.c4,
-                    },
-                  },
-                  "& .MuiOutlinedInput-root:hover": {
-                    "& > fieldset": {
-                      borderColor: c.c2,
-                    },
-                  },
-                  "& .MuiFormLabel-root": { color: c.c4, fontWeight: 100 },
-                  fontFamily: "Bungee",
+                  display: "flex",
+                  justifyContent: "center",
                 }}
               >
-                <InputLabel
-                  htmlFor="outlined-adornment-password"
-                  style={{ fontFamily: "Bungee" }}
+                <Fab
+                  color="primary"
+                  aria-label="add"
+                  style={{ backgroundColor: c.c3 }}
+                  onClick={() => {
+                    if (props.no > 1) props.setNo(props.no - 1);
+                  }}
+                  size="medium"
                 >
-                  Tickets
-                </InputLabel>
-                <OutlinedInput
-                  id="ticketsbro"
-                  type="number"
-                  value={props.no}
-                  onChange={(e) => {
-                    if (e.target.value.length > 0 && e.target.value < 1)
-                      props.setNo(1);
-                    else props.setNo(e.target.value);
+                  <RemoveIcon />
+                </Fab>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <div>
+                    <h4
+                      style={{
+                        color: c.c2,
+                        fontFamily: "Bungee",
+                        paddingLeft: "30px",
+                        paddingRight: "30px",
+                        marginTop: "5px",
+                        textAlign: "center",
+                      }}
+                    >
+                      {`${props.no}`}
+                    </h4>
+                    <h4
+                      style={{
+                        color: c.c2,
+                        fontFamily: "Bungee",
+                        paddingLeft: "30px",
+                        paddingRight: "30px",
+                        textAlign: "center",
+                      }}
+                    >
+                      {`Ticket${props.no > 1 ? "s" : ""}`}
+                    </h4>
+                  </div>
+                </div>
+
+                <Fab
+                  color="primary"
+                  aria-label="add"
+                  style={{ backgroundColor: c.c3 }}
+                  onClick={() => {
+                    props.setNo(props.no + 1);
                   }}
-                  label="Tickets"
-                  placeholder="Number Of Tickets"
-                  sx={{
-                    input: {
-                      color: c.c2,
-                      fontFamily: "Bungee",
-                    },
-                    borderColor: c.c4,
-                    "& .MuiOutlinedInput-root": {
-                      "& > fieldset": {
-                        borderColor: c.c4,
-                      },
-                    },
-                    "& .MuiOutlinedInput-root:hover": {
-                      "& > fieldset": {
-                        borderColor: c.c2,
-                      },
-                    },
-                    "& .MuiFormLabel-root": {
-                      color: c.c4,
-                      fontWeight: 100,
-                    },
-                    "& .MuiFormLabel-root&:hover": {
-                      color: c.c4,
-                      fontWeight: 100,
-                    },
-                    "& label.Mui-focused": {
-                      color: c.c4,
-                    },
-                    "& .MuiOutlinedInput-root": {
-                      "&.Mui-focused fieldset": {
-                        borderColor: c.c4,
-                      },
-                    },
-                    fontFamily: "Bungee",
-                  }}
-                />
-              </FormControl>
+                  size="medium"
+                >
+                  <AddIcon />
+                </Fab>
+              </div>
             </div>
             <Grid container spacing={2}>
               <Grid

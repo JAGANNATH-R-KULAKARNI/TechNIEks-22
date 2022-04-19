@@ -6,10 +6,12 @@ import styles from "../../styles/Creaters.module.css";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import * as c from "../../utils/Colors";
 import CardUI from "../../components/creater";
+import { useRouter } from "next/router";
 
 export default function Creaters() {
   const [status, setStatus] = React.useState(false);
   const m1 = useMediaQuery("(min-width:600px)");
+ const router = useRouter();
 
   React.useEffect(() => {
     fetchTheProfile();
@@ -24,6 +26,7 @@ export default function Creaters() {
   async function logOut() {
     await supabase.auth.signOut();
     setStatus(false);
+    router.reload(window.location.pathname);
   }
 
   return (

@@ -84,6 +84,8 @@ function BookTicket(props) {
     setStatus(data ? true : false);
 
     if (data) {
+      console.log("data");
+      console.log(data);
       setEmail(data.email);
     }
 
@@ -134,21 +136,23 @@ function BookTicket(props) {
         </Alert>
       </Snackbar>
       {successTab ? <DontCloseUI /> : null}
-      <BookingUI
-        ticket={ticket}
-        name={name}
-        usn={usn}
-        no={no}
-        email={email}
-        enjoy={enjoy}
-        totalAmount={totalAmount}
-        setName={setName}
-        setUsn={setUSN}
-        setNo={setNo}
-        setEnjoy={setEnjoy}
-        messageAlertForPayments={messageAlertForPayments}
-        messageAlert={messageAlert}
-      />
+      {email ? (
+        <BookingUI
+          ticket={ticket}
+          name={name}
+          usn={usn}
+          no={no}
+          email={email}
+          enjoy={enjoy}
+          totalAmount={totalAmount}
+          setName={setName}
+          setUsn={setUSN}
+          setNo={setNo}
+          setEnjoy={setEnjoy}
+          messageAlertForPayments={messageAlertForPayments}
+          messageAlert={messageAlert}
+        />
+      ) : null}
       <Footer />
     </div>
   );

@@ -3,10 +3,12 @@ import Footer from "../components/Footer3";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { supabase } from "../utils/SupabaseClient";
 import React from "react";
+import { useRouter } from "next/router";
 
 export default function About() {
   const [status, setStatus] = React.useState(false);
   const m1 = useMediaQuery("(min-width:600px)");
+  const router = useRouter();
 
   React.useEffect(() => {
     fetchTheProfile();
@@ -21,6 +23,7 @@ export default function About() {
   async function logOut() {
     await supabase.auth.signOut();
     setStatus(false);
+    router.reload(window.location.pathname);
   }
 
   return (

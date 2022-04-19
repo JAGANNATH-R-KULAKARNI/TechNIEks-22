@@ -43,6 +43,7 @@
     "next-qrcode": "^2.0.0",
     "nextjs-progressbar": "^0.0.14",
     "node-sass": "^6.0.1",
+    "nookies": "^2.5.2",
     "nprogress": "^0.2.0",
     "pdfmake": "^0.2.5",
     "razorpay": "^2.8.1",

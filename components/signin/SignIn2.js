@@ -80,11 +80,10 @@ export default function SignUp() {
       const { user, session, error } = await supabase.auth.signIn(
         {
           provider: "google",
+        },
+        {
+          redirectTo: "https://www.amazon.in/",
         }
-        // {
-        //   redirectTo:
-        //     "https://www.linkedin.com/in/jagannath-r-kulakarni-a465841a7/",
-        // }
       );
       if (error) throw error;
 

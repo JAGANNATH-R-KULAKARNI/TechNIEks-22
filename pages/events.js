@@ -48,6 +48,7 @@ export default function About() {
   async function logOut() {
     await supabase.auth.signOut();
     setStatus(false);
+    router.reload(window.location.pathname);
   }
 
   return (

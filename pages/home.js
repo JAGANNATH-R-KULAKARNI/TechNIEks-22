@@ -9,11 +9,14 @@ import Scroller from "../components/scroller";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { useRouter } from "next/router";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home(props) {
   const [status, setStatus] = React.useState(false);
   const m1 = useMediaQuery("(min-width:600px)");
+  const router = useRouter();
 
   const { profileCacheHome, errorProfileCacheHome } = useSWR(
     "profileHome",
@@ -29,6 +32,7 @@ export default function Home(props) {
   async function logOut() {
     await supabase.auth.signOut();
     setStatus(false);
+    router.reload(window.location.pathname);
   }
 
   return (

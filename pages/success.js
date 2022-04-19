@@ -40,6 +40,7 @@ function Success(props) {
   async function logOut() {
     await supabase.auth.signOut();
     setStatus(false);
+     router.push("/home");
   }
 
   return (
