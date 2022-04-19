@@ -35,13 +35,14 @@ const RazorPayButton = (props) => {
         payment_id: id,
         order_id: order_id,
         name: props.name,
-        usn: props.usn,
+        usn: props.thisCollege ? props.usn : null,
         nooftickets: props.no,
         amountpaid: props.amount,
         email: props.email,
         ticket_id: props.ticket.id,
         ticketprice: props.ticket.price,
         user_id: userData.id,
+        college: props.thisCollege ? null : props.usn,
       },
     ]);
 
@@ -89,7 +90,12 @@ const RazorPayButton = (props) => {
     }
 
     if (props.usn.length == 0) {
-      props.messageAlert("USN is required", "error", 3000);
+      props.messageAlert(
+        props.thisCollege ? "USN is required" : "College Name is required",
+        "error",
+        3000
+      );
+
       return;
     }
 

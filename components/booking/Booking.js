@@ -38,6 +38,7 @@ export default function Booking(props) {
                 setUsn={props.setUsn}
                 setNo={props.setNo}
                 setEnjoy={props.setEnjoy}
+                thisCollege={props.thisCollege}
               />
             </div>
           </Grid>
@@ -135,6 +136,7 @@ export default function Booking(props) {
           setUsn={props.setUsn}
           setNo={props.setNo}
           setEnjoy={props.setEnjoy}
+          thisCollege={props.thisCollege}
         />
       </div>
       <div
@@ -205,6 +207,7 @@ export default function Booking(props) {
                 messageAlert={props.messageAlert}
                 loading={loading}
                 setTheLoading={setTheLoading}
+                thisCollege={props.thisCollege}
               />
             </div>
             <br />

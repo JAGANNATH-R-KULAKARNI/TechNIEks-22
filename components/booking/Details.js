@@ -193,7 +193,7 @@ export default function Details(props) {
                       htmlFor="outlined-adornment-password"
                       style={{ fontFamily: "Bungee" }}
                     >
-                      USN
+                      {props.thisCollege ? "USN" : "College"}
                     </InputLabel>
                     <OutlinedInput
                       id="usnbro"
@@ -203,7 +203,9 @@ export default function Details(props) {
                         props.setUsn(e.target.value);
                       }}
                       label="USN"
-                      placeholder="4NI19IS***"
+                      placeholder={
+                        props.thisCollege ? "4NI19IS***" : "JC College"
+                      }
                       sx={{
                         fontFamily: "Bungee",
                         input: {
@@ -259,16 +261,18 @@ export default function Details(props) {
                     justifyContent: "center",
                   }}
                 >
-                  <Fab
-                    color="primary"
-                    aria-label="add"
-                    style={{ backgroundColor: c.c3 }}
-                    onClick={() => {
-                      if (props.no > 1) props.setNo(props.no - 1);
-                    }}
-                  >
-                    <RemoveIcon />
-                  </Fab>
+                  {props.thisCollege ? (
+                    <Fab
+                      color="primary"
+                      aria-label="add"
+                      style={{ backgroundColor: c.c3 }}
+                      onClick={() => {
+                        if (props.no > 1) props.setNo(props.no - 1);
+                      }}
+                    >
+                      <RemoveIcon />
+                    </Fab>
+                  ) : null}
                   <h2
                     style={{
                       color: c.c2,
@@ -280,16 +284,18 @@ export default function Details(props) {
                   >
                     {`${props.no} Ticket${props.no > 1 ? "s" : ""}`}
                   </h2>
-                  <Fab
-                    color="primary"
-                    aria-label="add"
-                    style={{ backgroundColor: c.c3 }}
-                    onClick={() => {
-                      props.setNo(props.no + 1);
-                    }}
-                  >
-                    <AddIcon />
-                  </Fab>
+                  {props.thisCollege ? (
+                    <Fab
+                      color="primary"
+                      aria-label="add"
+                      style={{ backgroundColor: c.c3 }}
+                      onClick={() => {
+                        props.setNo(props.no + 1);
+                      }}
+                    >
+                      <AddIcon />
+                    </Fab>
+                  ) : null}
                 </div>
               </div>
               <Grid

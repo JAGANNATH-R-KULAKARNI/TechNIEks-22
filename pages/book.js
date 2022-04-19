@@ -10,6 +10,7 @@ import MuiAlert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 import useSWR from "swr";
 import DontCloseUI from "../components/booking/DontClose";
+import * as c from "../utils/Colors";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -23,6 +24,8 @@ function BookTicket(props) {
   const [openAlert, setOpenAlert] = React.useState(false);
   const [alertType, setAlertType] = React.useState("success");
   const [alertMsg, setAlert] = React.useState(null);
+  const [thisCollege, setThisCollege] = React.useState(true);
+
   const router = useRouter();
 
   const [name, setName] = React.useState("");
@@ -31,6 +34,7 @@ function BookTicket(props) {
   const [enjoy, setEnjoy] = React.useState(false);
   const [totalAmount, setTotalAmount] = React.useState();
   const [successTab, setSuccessTab] = React.useState(false);
+  const [now, setNow] = React.useState(false);
 
   const { dataEvents: errorEvents } = useSWR("eventBook", fetchTicketDetails);
   const { dataProfile: errorProfile } = useSWR("profileBook", fetchTheProfile);
@@ -51,20 +55,34 @@ function BookTicket(props) {
   //   fetchTicketDetails();
   // }, []);
 
-  async function fetchTicketDetails() {
-    const { data, error } = await supabase
-      .from("events")
-      .select("*")
-      .eq("id", props.router.query.id);
+  async function fetchTicketDetails(email) {
+    if (email) {
+      const { data, error } = await supabase
+        .from("events")
+        .select("*")
+        .eq("id", props.router.query.id);
 
-    if (data) {
-      setTicket(data[0]);
-      setTotalAmount(data[0].price * no);
-    }
+      if (data) {
+        if (/nie.ac.in$/.test(email)) {
+          setThisCollege(true);
+        } else {
+          data[0] = {
+            price: data[0].price_o,
+          };
+          setThisCollege(false);
+        }
 
-    if (error) {
-      messageAlert("Some Error Occurred :(, Try again later", "error", 4000);
-      router.push("/events");
+        console.log("here bro");
+        console.log(data);
+        setTicket(data[0]);
+        setTotalAmount(data[0].price * no);
+        setNow(true);
+      }
+
+      if (error) {
+        messageAlert("Some Error Occurred :(, Try again later", "error", 4000);
+        router.push("/events");
+      }
     }
   }
 
@@ -87,6 +105,7 @@ function BookTicket(props) {
       console.log("data");
       console.log(data);
       setEmail(data.email);
+      fetchTicketDetails(data.email);
     }
 
     if (!data) {
@@ -136,7 +155,7 @@ function BookTicket(props) {
         </Alert>
       </Snackbar>
       {successTab ? <DontCloseUI /> : null}
-      {email ? (
+      {email && now ? (
         <BookingUI
           ticket={ticket}
           name={name}
@@ -151,8 +170,13 @@ function BookTicket(props) {
           setEnjoy={setEnjoy}
           messageAlertForPayments={messageAlertForPayments}
           messageAlert={messageAlert}
+          thisCollege={thisCollege}
         />
-      ) : null}
+      ) : (
+        <div style={{ display: "flex", justifyContent: "center", color: c.c2 }}>
+          <h1 style={{ paddingTop: m1 ? "10%" : "20%" }}>Loading...</h1>
+        </div>
+      )}
       <Footer />
     </div>
   );

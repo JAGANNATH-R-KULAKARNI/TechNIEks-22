@@ -73,8 +73,8 @@ export default function Tickets(props) {
                       <div style={{ display: "flex" }}>
                         <Typography
                           style={{
-                            width: "50%",
-                            textAlign: "left",
+                            width: "100%",
+                            textAlign: "center",
                             fontFamily: "Bungee",
                           }}
                           gutterBottom
@@ -83,7 +83,7 @@ export default function Tickets(props) {
                         >
                           {card.name}
                         </Typography>
-                        <Typography
+                        {/* <Typography
                           style={{
                             width: "50%",
                             textAlign: "right",
@@ -93,7 +93,7 @@ export default function Tickets(props) {
                           component="h2"
                         >
                           ₹ {card.price}
-                        </Typography>
+                        </Typography> */}
                       </div>
                       <div style={{ display: "flex" }}>
                         <Typography style={{ width: "50%" }}>

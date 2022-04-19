@@ -179,7 +179,7 @@ export default function Details(props) {
                   htmlFor="outlined-adornment-password"
                   style={{ fontFamily: "Bungee" }}
                 >
-                  USN
+                  {props.thisCollege ? "USN" : "College"}
                 </InputLabel>
                 <OutlinedInput
                   id="usnbro"
@@ -189,7 +189,7 @@ export default function Details(props) {
                     props.setUsn(e.target.value);
                   }}
                   label="name"
-                  placeholder="4NI19IS***"
+                  placeholder={props.thisCollege ? "4NI19IS***" : "JC College"}
                   sx={{
                     input: {
                       color: c.c2,
@@ -243,17 +243,19 @@ export default function Details(props) {
                   justifyContent: "center",
                 }}
               >
-                <Fab
-                  color="primary"
-                  aria-label="add"
-                  style={{ backgroundColor: c.c3 }}
-                  onClick={() => {
-                    if (props.no > 1) props.setNo(props.no - 1);
-                  }}
-                  size="medium"
-                >
-                  <RemoveIcon />
-                </Fab>
+                {props.thisCollege ? (
+                  <Fab
+                    color="primary"
+                    aria-label="add"
+                    style={{ backgroundColor: c.c3 }}
+                    onClick={() => {
+                      if (props.no > 1) props.setNo(props.no - 1);
+                    }}
+                    size="medium"
+                  >
+                    <RemoveIcon />
+                  </Fab>
+                ) : null}
                 <div style={{ display: "flex", justifyContent: "center" }}>
                   <div>
                     <h4
@@ -282,17 +284,19 @@ export default function Details(props) {
                   </div>
                 </div>
 
-                <Fab
-                  color="primary"
-                  aria-label="add"
-                  style={{ backgroundColor: c.c3 }}
-                  onClick={() => {
-                    props.setNo(props.no + 1);
-                  }}
-                  size="medium"
-                >
-                  <AddIcon />
-                </Fab>
+                {props.thisCollege ? (
+                  <Fab
+                    color="primary"
+                    aria-label="add"
+                    style={{ backgroundColor: c.c3 }}
+                    onClick={() => {
+                      props.setNo(props.no + 1);
+                    }}
+                    size="medium"
+                  >
+                    <AddIcon />
+                  </Fab>
+                ) : null}
               </div>
             </div>
             <Grid container spacing={2}>
