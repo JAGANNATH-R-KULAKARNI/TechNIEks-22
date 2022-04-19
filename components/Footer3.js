@@ -158,14 +158,6 @@ function Footer() {
                   {"Designers"}
                 </h3>
                 <a
-                  href="https://www.linkedin.com/in/prajwal-benedict-a-048511186/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {" "}
-                  <li className={styles.footer}>Prajwal Benedict </li>
-                </a>
-                <a
                   href="https://www.linkedin.com/in/jagannath-r-kulakarni-a465841a7/"
                   target="_blank"
                   rel="noreferrer"
@@ -173,6 +165,15 @@ function Footer() {
                   {" "}
                   <li className={styles.footer}>Jagannath R K</li>
                 </a>
+                <a
+                  href="https://www.linkedin.com/in/prajwal-benedict-a-048511186/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  <li className={styles.footer}>Prajwal Benedict </li>
+                </a>
+
                 <a
                   href="https://www.linkedin.com/in/vishakha-v-4825b4163/"
                   target="_blank"
@@ -333,7 +334,7 @@ function Footer() {
           style={{
             textAlign: "center",
             fontSize: m1 ? "15px" : "10px",
-            fontFamily: "inherit",
+            fontFamily: "Bungee",
           }}
         >
           <i style={{ color: c.c3, paddingRight: "10px" }}> address : </i>{" "}
