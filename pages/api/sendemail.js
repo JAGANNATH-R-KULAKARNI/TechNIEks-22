@@ -18,12 +18,11 @@ handler.post(async (req, res) => {
   ${data.no} tickets ${data.no == 1 ? "has" : "have"} been booked for ₹ ${
     data.amount
   }\r\n\n\n
-  Enjoy your show\r\n\n\n
+  Enjoy the "${data.show}"\r\n\n\n
 
 
   Ticket_ID : ${data.order_id}\r\n\n\n
   Payment_ID : ${data.id}\r\n
-  Ticket_ID : ${data.order_id}\r\n\n\n
 
 
 
@@ -31,8 +30,12 @@ handler.post(async (req, res) => {
 
          HAVE FUN ! \r\n\r\n\r\n
        
-        App Creaters - Benedict Prajwal, Niraj Sharman, Lohith C, Jagannath R K \r\n
-        Follow us on www.linkedin.com/in/jagannath-r-kulakarni-a465841a7 (LinkedIn)
+        If you did not recieve the ticket pls contact\r\n
+        Jagannath R K (9353739401)\r\n
+        Vishakha V (6361724765)\r\n
+        Benedict Prajwal (8088546585)\r\n
+        Niraj Sharma (8722889927)\r\n
+        Lohith C (7204933863)\r\n
   `;
 
   const info = {

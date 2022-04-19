@@ -72,6 +72,7 @@ const RazorPayButton = (props) => {
             amount: props.amount,
             id: id,
             order_id: order_id,
+            show: props.ticket.name,
           })
           .then(function (response) {})
           .catch(function (error) {});
