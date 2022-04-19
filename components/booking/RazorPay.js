@@ -35,7 +35,7 @@ const RazorPayButton = (props) => {
         payment_id: id,
         order_id: order_id,
         name: props.name,
-        usn: props.thisCollege ? props.usn : null,
+        usn: props.usn,
         nooftickets: props.no,
         amountpaid: props.amount,
         email: props.email,
@@ -75,7 +75,11 @@ const RazorPayButton = (props) => {
     }
 
     if (error) {
-      alert("Somethin went wrong, Please contact the organizers");
+      props.messageAlert(
+        "Something went wrong, Please contact us at technieks22@gmail.com. Sorry for the inconvenience",
+        "error",
+        3000
+      );
     }
   };
 
