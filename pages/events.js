@@ -21,10 +21,10 @@ export default function About() {
     fetchTheProfile
   );
 
-  // React.useEffect(() => {
-  //   fetchTheProfile();
-  //   fetchEvents();
-  // }, []);
+  React.useEffect(() => {
+    fetchTheProfile();
+    fetchEvents();
+  }, []);
 
   async function fetchTheProfile() {
     const data = await supabase.auth.user();

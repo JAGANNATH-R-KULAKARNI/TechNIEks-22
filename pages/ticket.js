@@ -13,6 +13,7 @@ export default function Ticket() {
   const [status, setStatus] = React.useState(false);
   const [tickets, setTickets] = React.useState([]);
   const [gotit, setGotit] = React.useState(false);
+  const [thisCollege, setThisCollege] = React.useState(false);
 
   const router = useRouter();
   const m1 = useMediaQuery("(min-width:600px)");
@@ -56,6 +57,14 @@ export default function Ticket() {
     if (!data) {
       router.push("/who_r_u");
     }
+
+    if (data) {
+      if (/nie.ac.in$/.test(data.email)) {
+        setThisCollege(true);
+      } else {
+        setThisCollege(false);
+      }
+    }
   }
 
   async function logOut() {
@@ -79,7 +88,7 @@ export default function Ticket() {
     >
       <NavBar code={0} logOut={logOut} status={status} />
 
-      <MyTicketsUI tickets={tickets} />
+      <MyTicketsUI tickets={tickets} thisCollege={thisCollege} />
 
       {tickets.length > 0 ? null : (
         <div

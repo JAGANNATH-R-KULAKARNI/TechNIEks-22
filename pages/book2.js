@@ -10,6 +10,7 @@ import MuiAlert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 import useSWR from "swr";
 import DontCloseUI from "../components/booking/DontClose";
+import * as c from "../utils/Colors";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -23,9 +24,9 @@ function BookTicket(props) {
   const [openAlert, setOpenAlert] = React.useState(false);
   const [alertType, setAlertType] = React.useState("success");
   const [alertMsg, setAlert] = React.useState(null);
-  const [price, setPrice] = React.useState(null);
+  const [thisCollege, setThisCollege] = React.useState(true);
+
   const router = useRouter();
-  const [thisCollege, setThisCollege] = React.useState(false);
 
   const [name, setName] = React.useState("");
   const [usn, setUSN] = React.useState("");
@@ -33,7 +34,8 @@ function BookTicket(props) {
   const [enjoy, setEnjoy] = React.useState(false);
   const [totalAmount, setTotalAmount] = React.useState();
   const [successTab, setSuccessTab] = React.useState(false);
-  const [loading, setLoading] = React.useState(true);
+  const [now, setNow] = React.useState(false);
+  const [locked, setLocked] = React.useState(false);
 
   const { dataEvents: errorEvents } = useSWR("eventBook", fetchTicketDetails);
   const { dataProfile: errorProfile } = useSWR("profileBook", fetchTheProfile);
@@ -49,42 +51,38 @@ function BookTicket(props) {
     return;
   };
 
-  // React.useEffect(() => {
-  //   fetchTheProfile();
-  //   fetchTicketDetails();
-  // }, []);
+  React.useEffect(() => {
+    fetchTheProfile();
+    fetchTicketDetails();
+  }, []);
 
   async function fetchTicketDetails() {
     const user = await supabase.auth.user();
-    // alert("here1");
-    setStatus(user ? true : false);
 
-    if (!user) {
-      alert("ok");
-      router.push("/who_r_u");
-    }
-
-    if (user) {
-      //   alert("here2");
-      setEmail(user.email);
-
+    if (user.email) {
       const { data, error } = await supabase
         .from("events")
         .select("*")
         .eq("id", props.router.query.id);
 
       if (data) {
-        // alert("here3");
+        console.log(data);
+        console.log(props.router.query.id);
         if (/nie.ac.in$/.test(user.email)) {
-          setPrice(data[0].price);
           setThisCollege(true);
+          setTicket(data[0]);
+          setTotalAmount(data[0].price * no);
+          setNow(true);
         } else {
+          data[0] = {
+            price: data[0].price_o,
+          };
+          setLocked(true);
           setThisCollege(false);
-          setPrice(data[0].price_o);
+          setTicket(data[0]);
+          setTotalAmount(data[0].price * no);
+          setNow(true);
         }
-        setTicket(data[0]);
-        setTotalAmount(data[0].price * no);
-        setLoading(false);
       }
 
       if (error) {
@@ -160,18 +158,7 @@ function BookTicket(props) {
         </Alert>
       </Snackbar>
       {successTab ? <DontCloseUI /> : null}
-      {loading ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            minHeight: "300px",
-          }}
-        >
-          <h1 style={{ paddingTop: m1 ? "10%" : "35%" }}>Loading...</h1>
-        </div>
-      ) : null}
-      {price ? (
+      {email && now ? (
         <BookingUI
           ticket={ticket}
           name={name}
@@ -187,9 +174,12 @@ function BookTicket(props) {
           messageAlertForPayments={messageAlertForPayments}
           messageAlert={messageAlert}
           thisCollege={thisCollege}
-          price={price}
         />
-      ) : null}
+      ) : (
+        <div style={{ display: "flex", justifyContent: "center", color: c.c2 }}>
+          <h1 style={{ paddingTop: m1 ? "10%" : "20%" }}>Loading...</h1>
+        </div>
+      )}
       <Footer />
     </div>
   );

@@ -65,7 +65,7 @@ export default function Details(props) {
             variant="h5"
             style={{ fontFamily: "Bungee" }}
           >
-            ₹ {props.ticket && props.ticket.price} / person
+            ₹ {props.ticket && props.price} / person
           </Typography>
           <br />
           <Box

@@ -39,6 +39,7 @@ export default function Booking(props) {
                 setNo={props.setNo}
                 setEnjoy={props.setEnjoy}
                 thisCollege={props.thisCollege}
+                price={props.price}
               />
             </div>
           </Grid>
@@ -92,14 +93,14 @@ export default function Booking(props) {
                         fontFamily: "Bungee",
                       }}
                     >
-                      ₹ {props.ticket ? props.ticket.price * props.no : 0}{" "}
+                      ₹ {props.ticket ? props.price * props.no : 0}{" "}
                     </p>
                   </div>
                 </div>
 
                 <div style={{ marginTop: "-25px" }}>
                   <RazorPayButtonUI
-                    amount={props.ticket ? props.ticket.price * props.no : 0}
+                    amount={props.ticket ? props.price * props.no : 0}
                     name={props.name}
                     usn={props.usn}
                     email={props.email}
@@ -107,6 +108,7 @@ export default function Booking(props) {
                     no={props.no}
                     messageAlertForPayments={props.messageAlertForPayments}
                     messageAlert={props.messageAlert}
+                    price={props.price}
                   />
                 </div>
               </div>
@@ -137,6 +139,7 @@ export default function Booking(props) {
           setNo={props.setNo}
           setEnjoy={props.setEnjoy}
           thisCollege={props.thisCollege}
+          price={props.price}
         />
       </div>
       <div
@@ -190,14 +193,14 @@ export default function Booking(props) {
                   }}
                 >
                   {" "}
-                  ₹ {props.ticket ? props.ticket.price * props.no : 0}{" "}
+                  ₹ {props.ticket ? props.price * props.no : 0}{" "}
                 </p>
               </div>
             </div>
 
             <div style={{ marginTop: "-20px" }}>
               <RazorPayButtonUI
-                amount={props.ticket ? props.ticket.price * props.no : 0}
+                amount={props.ticket ? props.price * props.no : 0}
                 name={props.name}
                 usn={props.usn}
                 email={props.email}
@@ -208,6 +211,7 @@ export default function Booking(props) {
                 loading={loading}
                 setTheLoading={setTheLoading}
                 thisCollege={props.thisCollege}
+                price={props.price}
               />
             </div>
             <br />

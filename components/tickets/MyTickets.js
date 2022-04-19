@@ -197,7 +197,7 @@ export default function Tickets(props) {
                         style={{
                           textAlign: "center",
                           borderStyle: "outset",
-                          borderColor: c.c4,
+                          borderColor: props.thisCollege ? c.c4 : c.c3,
                           borderRadius: "5%",
                           backgroundColor: c.c1,
                         }}
@@ -266,7 +266,7 @@ export default function Tickets(props) {
                         variant="contained"
                         style={{
                           width: "100%",
-                          backgroundColor: c.c4,
+                          backgroundColor: props.thisCollege ? c.c4 : c.c3,
                           fontFamily: "Bungee",
                         }}
                         onClick={() => {

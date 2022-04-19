@@ -30,6 +30,19 @@ const RazorPayButton = (props) => {
 
     if (!userData) return;
 
+    const lol = {
+      payment_id: id,
+      order_id: order_id,
+      name: props.name,
+      usn: props.usn,
+      nooftickets: props.no,
+      amountpaid: props.amount,
+      email: props.email,
+      ticket_id: props.ticket.id,
+      ticketprice: props.price,
+      user_id: userData.id,
+      college: props.usn,
+    };
     const { data, error } = await supabase.from("payments").insert([
       {
         payment_id: id,
@@ -40,7 +53,7 @@ const RazorPayButton = (props) => {
         amountpaid: props.amount,
         email: props.email,
         ticket_id: props.ticket.id,
-        ticketprice: props.ticket.price,
+        ticketprice: props.price,
         user_id: userData.id,
         college: props.usn,
       },
@@ -75,10 +88,13 @@ const RazorPayButton = (props) => {
     }
 
     if (error) {
+      alert("here");
+      console.log(error);
+      console.log(lol);
       props.messageAlert(
         "Something went wrong, Please contact us at technieks22@gmail.com. Sorry for the inconvenience",
         "error",
-        3000
+        15000
       );
     }
   };
