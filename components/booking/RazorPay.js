@@ -42,7 +42,7 @@ const RazorPayButton = (props) => {
         ticket_id: props.ticket.id,
         ticketprice: props.ticket.price,
         user_id: userData.id,
-        college: props.thisCollege ? null : props.usn,
+        college: props.usn,
       },
     ]);
 
