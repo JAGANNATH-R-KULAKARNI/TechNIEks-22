@@ -56,9 +56,9 @@ export default function Events() {
       style={{
         backgroundColor: c.c1,
         color: c.c2,
-        backgroundImage: "url(" + "/images/back.jpg" + ")",
-        backgroundPosition: "center",
-        backgroundSize: "700px 500px",
+        backgroundImage: "url(" + "/images/heart.gif" + ")",
+        backgroundPosition: "center 50px",
+        backgroundSize: m1 ? "300px 500px" : "300px 500px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
         scrollBehavior: "smooth",

@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 export default function PrivacyPolicies() {
   const [status, setStatus] = React.useState(false);
   const m1 = useMediaQuery("(min-width:600px)");
- const router = useRouter();
+  const router = useRouter();
 
   React.useEffect(() => {
     fetchTheProfile();
@@ -33,9 +33,9 @@ export default function PrivacyPolicies() {
       style={{
         backgroundColor: "#000000",
         color: "white",
-        backgroundImage: "url(" + "../images/back.jpg" + ")",
-        backgroundPosition: "center",
-        backgroundSize: "700px 500px",
+        backgroundImage: "url(" + "/images/heart.gif" + ")",
+        backgroundPosition: "center 50px",
+        backgroundSize: m1 ? "300px 500px" : "300px 500px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
         scrollBehavior: "smooth",

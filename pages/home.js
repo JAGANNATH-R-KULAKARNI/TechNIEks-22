@@ -41,8 +41,8 @@ export default function Home(props) {
         backgroundColor: "#000000",
         color: "white",
         minWidth: "100%",
-        backgroundImage: "url(" + "/images/heart.gif" + ")",
-        backgroundPosition: "center",
+      backgroundImage: "url(" + "/images/heart.gif" + ")",
+        backgroundPosition: "center 50px",
         backgroundSize: m1 ? "300px 500px" : "300px 500px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
@@ -50,7 +50,7 @@ export default function Home(props) {
       }}
     >
       <NavBar code={0} logOut={logOut} status={status} />
-      <div style={{ height: m1 ? "40px" : "40px" }}></div>
+      <div style={{ height: m1 ? "40px" : "120px" }}></div>
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <div style={{ miwidth: "25%" }}></div>
         <div style={{ maxWidth: "50%" }}></div>
