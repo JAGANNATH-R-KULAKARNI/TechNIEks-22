@@ -40,7 +40,7 @@ function Success(props) {
   async function logOut() {
     await supabase.auth.signOut();
     setStatus(false);
-     router.push("/home");
+    router.push("/home");
   }
 
   return (
@@ -49,9 +49,9 @@ function Success(props) {
       style={{
         backgroundColor: "#000000",
         color: "white",
-          backgroundImage: "url(" + "/images/heart.gif" + ")",
+        backgroundImage: "url(" + "/images/heart.gif" + ")",
         backgroundPosition: "center 50px",
-        backgroundSize: m1 ? "300px 500px" : "300px 500px",
+        backgroundSize: matches ? "300px 500px" : "300px 500px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
         scrollBehavior: "smooth",
