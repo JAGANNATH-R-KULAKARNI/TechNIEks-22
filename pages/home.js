@@ -43,7 +43,7 @@ export default function Home(props) {
         minWidth: "100%",
         backgroundImage: "url(" + "/images/heart.gif" + ")",
         backgroundPosition: "center",
-        backgroundSize: m1 ? "100% 100%" : "700px 500px",
+        backgroundSize: m1 ? "300px 500px" : "300px 500px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
         scrollBehavior: "smooth",
