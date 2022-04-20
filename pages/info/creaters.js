@@ -53,7 +53,7 @@ export default function Creaters() {
     },
     {
       name: "Lohith C",
-      des1: "Database Administrator",
+      des1: "Database Engineer",
       des2: "Marketing Manager",
     },
   ];
@@ -131,7 +131,7 @@ And be without flavor"
           quote="No one is you and that itself is your power"
           insta="https://www.instagram.com/lohith_channaiah/?hl=en"
           linked="https://www.linkedin.com/in/lohith-c-12358b1a7/"
-          des1="Database Administrator"
+          des1="Database Engineer"
           des2="Marketing Manager"
         />
         <CardUI
