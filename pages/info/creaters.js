@@ -7,11 +7,12 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import * as c from "../../utils/Colors";
 import CardUI from "../../components/creater";
 import { useRouter } from "next/router";
+import Paper from "@mui/material/Paper";
 
 export default function Creaters() {
   const [status, setStatus] = React.useState(false);
   const m1 = useMediaQuery("(min-width:600px)");
- const router = useRouter();
+  const router = useRouter();
 
   React.useEffect(() => {
     fetchTheProfile();
@@ -29,6 +30,33 @@ export default function Creaters() {
     router.reload(window.location.pathname);
   }
 
+  const des = [
+    {
+      name: "Jagannath R Kulakarni",
+      des1: "Team Captain",
+      des2: "Software Developer",
+    },
+    {
+      name: "Vishakha V",
+      des1: "Product QA Tester",
+      des2: "Project Manager",
+    },
+    {
+      name: "Prajwal Benedict A",
+      des1: "UI/UX Designer",
+      des2: "Site Reliability Engineer",
+    },
+    {
+      name: "Niraj Sharma",
+      des1: "Cloud Engineer",
+      des2: "Buisness Analyst",
+    },
+    {
+      name: "Lohith C",
+      des1: "Database Administrator",
+      des2: "Marketing Manager",
+    },
+  ];
   return (
     <div
       style={{
@@ -71,6 +99,8 @@ export default function Creaters() {
           quote="I’m smiling because I have no idea what’s going on."
           insta="https://www.instagram.com/niraj_s_sharma/?hl=en"
           linked="https://www.linkedin.com/in/niraj-sharma-5538801a7/"
+          des1="Cloud Engineer"
+          des2="Buisness Analyst"
         />
         <CardUI
           link="/images/prajwal_1.svg"
@@ -79,6 +109,8 @@ export default function Creaters() {
           quote="The way to get started is to quit talking and begin doing"
           insta="https://www.instagram.com/benedictprajwal/?hl=en"
           linked="https://www.linkedin.com/in/prajwal-benedict-a-048511186/"
+          des1="UI/UX Designer"
+          des2="Site Reliability Engineer"
         />
         <CardUI
           link="/images/jagannath.svg"
@@ -89,6 +121,8 @@ It would cease to be life
 And be without flavor"
           insta="https://www.instagram.com/coder446/?hl=en"
           linked="https://www.linkedin.com/in/jagannath-r-kulakarni-a465841a7/"
+          des1="Software Developer"
+          des2="Team Captain"
         />
         <CardUI
           link="/images/lohith.svg"
@@ -97,6 +131,8 @@ And be without flavor"
           quote="No one is you and that itself is your power"
           insta="https://www.instagram.com/lohith_channaiah/?hl=en"
           linked="https://www.linkedin.com/in/lohith-c-12358b1a7/"
+          des1="Database Administrator"
+          des2="Marketing Manager"
         />
         <CardUI
           link="/images/vishakha.svg"
@@ -105,8 +141,76 @@ And be without flavor"
           quote="Honesty is the best policy, but insanity is a better defense."
           insta="https://www.instagram.com/vishakhavenugopal/?hl=en"
           linked="https://www.linkedin.com/in/vishakha-v-4825b4163/"
+          des1="Product QA Tester"
+          des2="Project Manager"
         />
       </div>
+      {m1 ? null : (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            paddingTop: "20px",
+          }}
+        >
+          <div style={{ width: "100%" }}>
+            {des &&
+              des.map((item) => {
+                return (
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      width: "100%",
+                      paddingTop: "20px",
+                    }}
+                    key={item}
+                  >
+                    <Paper
+                      style={{
+                        height: "100px",
+                        minWidth: "80%",
+                        backgroundColor: "white",
+                        borderRadius: "20px",
+                      }}
+                    >
+                      <p
+                        style={{
+                          color: "black",
+                          fontSize: "16px",
+                          textAlign: "center",
+                          color: c.c3,
+                        }}
+                      >
+                        {item.name}
+                      </p>
+                      <p
+                        style={{
+                          color: "black",
+                          fontSize: "14px",
+                          textAlign: "center",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        <i>{`${item.des1} &`}</i>
+                      </p>
+                      <p
+                        style={{
+                          color: "black",
+                          fontSize: "14px",
+                          textAlign: "center",
+                          marginTop: "-10px",
+                        }}
+                      >
+                        <i>{`${item.des2}`}</i>
+                      </p>
+                    </Paper>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+      )}
       <div style={{ height: "120px" }}></div>
       <Footer />
     </div>
