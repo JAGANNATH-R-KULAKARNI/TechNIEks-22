@@ -8,14 +8,12 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import * as c from "../utils/Colors";
 
-export default function Events() {
+export default function Contact() {
   const m1 = useMediaQuery("(min-width:600px)");
   const [status, setStatus] = React.useState(false);
-  const [events, setEvents] = React.useState([]);
-  const [gotit, setGotit] = React.useState(false);
 
   const router = useRouter();
-  const { dataEvents: errorEvents } = useSWR("events", fetchEvents);
+
   const { dataProfile: errorProfile } = useSWR(
     "profileEvents",
     fetchTheProfile
@@ -23,26 +21,11 @@ export default function Events() {
 
   React.useEffect(() => {
     fetchTheProfile();
-    fetchEvents();
   }, []);
 
   async function fetchTheProfile() {
     const data = await supabase.auth.user();
     setStatus(data ? true : false);
-  }
-
-  async function fetchEvents() {
-    const { data, error } = await supabase.from("events").select("*");
-    console.log("fetch events");
-    if (data) {
-      setEvents(data);
-      setGotit(true);
-    }
-
-    if (error) {
-      // alert("Some Error Occurred :(, Try again later");
-      router.push("/home");
-    }
   }
 
   async function logOut() {
@@ -65,19 +48,21 @@ export default function Events() {
       }}
     >
       <NavBar code={0} logOut={logOut} status={status} />
-      <TicketsUI events={events} />
-      {events.length > 0 ? null : (
-        <div
-          style={{ display: "flex", justifyContent: "center", height: "500px" }}
+      <div style={{ height: "10px" }}></div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <h1
+          style={{
+            textAlight: "center",
+            fontSize: m1 ? "50px" : "35px",
+            color: c.c2,
+            fontFamily: "Bungee",
+          }}
         >
-          <h1
-            style={{ paddingTop: m1 ? "200px" : "60px", textAlign: "center" }}
-          >
-            {gotit ? "No Events" : "Loading..."}
-          </h1>
-        </div>
-      )}
-      {events.length > 0 ? null : <div style={{ height: "130px" }}></div>}
+          Contact Us
+        </h1>
+      </div>
+      <br />
+      <p style={{ textAlign: "center" }}>Illi Design madu maccha</p>
       <Footer />
     </div>
   );

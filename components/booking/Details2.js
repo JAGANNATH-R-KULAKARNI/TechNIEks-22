@@ -258,7 +258,7 @@ export default function Details(props) {
                 ) : null}
                 <div style={{ display: "flex", justifyContent: "center" }}>
                   <div>
-                    <h4
+                    <h2
                       style={{
                         color: c.c2,
                         fontFamily: "Bungee",
@@ -269,7 +269,7 @@ export default function Details(props) {
                       }}
                     >
                       {`${props.no}`}
-                    </h4>
+                    </h2>
                     <h4
                       style={{
                         color: c.c2,

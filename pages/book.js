@@ -56,11 +56,9 @@ function BookTicket(props) {
 
   async function fetchTicketDetails() {
     const user = await supabase.auth.user();
-    // alert("here1");
     setStatus(user ? true : false);
 
     if (!user) {
-      alert("ok");
       router.push("/who_r_u");
     }
 
