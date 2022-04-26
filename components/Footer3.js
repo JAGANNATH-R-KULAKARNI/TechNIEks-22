@@ -175,7 +175,7 @@ function Footer() {
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/in/vishakha-v-4825b4163/"
+                  href="https://vishakha-portfolio.vercel.app/"
                   target="_blank"
                   rel="noreferrer"
                 >

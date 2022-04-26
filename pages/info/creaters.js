@@ -143,7 +143,7 @@ And be without flavor"
           code={5}
           quote="Honesty is the best policy, but insanity is a better defense."
           insta="https://www.instagram.com/vishakhavenugopal/?hl=en"
-          linked="https://www.linkedin.com/in/vishakha-v-4825b4163/"
+          linked="https://vishakha-portfolio.vercel.app/"
           des1="Product QA Tester"
           des2="Project Manager"
         />
