@@ -261,7 +261,7 @@ export default function Details(props) {
                     justifyContent: "center",
                   }}
                 >
-                  {props.thisCollege ? (
+                  {!props.thisCollege ? (
                     <Fab
                       color="primary"
                       aria-label="add"
@@ -284,7 +284,7 @@ export default function Details(props) {
                   >
                     {`${props.no} Ticket${props.no > 1 ? "s" : ""}`}
                   </h2>
-                  {props.thisCollege ? (
+                  {!props.thisCollege ? (
                     <Fab
                       color="primary"
                       aria-label="add"
