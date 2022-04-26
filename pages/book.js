@@ -128,14 +128,14 @@ function BookTicket(props) {
         backgroundColor: "#000000",
         color: "white",
         minWidth: "100%",
-        backgroundImage:
-          "url(" +
-          "https://render.fineartamerica.com/images/rendered/default/print/6/8/break/images/artworkimages/medium/2/a-traditional-south-indian-lamp-by-chandrachoodan-gopalakrishnan.jpg" +
-          ")",
-        backgroundPosition: m1 ? "center 50px" : "center 80px",
-        backgroundSize: m1 ? "445px 600px" : "260px 350px",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
+        // backgroundImage:
+        //   "url(" +
+        //   "https://render.fineartamerica.com/images/rendered/default/print/6/8/break/images/artworkimages/medium/2/a-traditional-south-indian-lamp-by-chandrachoodan-gopalakrishnan.jpg" +
+        //   ")",
+        // backgroundPosition: m1 ? "center 50px" : "center 80px",
+        // backgroundSize: m1 ? "445px 600px" : "260px 350px",
+        // backgroundRepeat: "no-repeat",
+        // backgroundAttachment: "fixed",
         scrollBehavior: "smooth",
       }}
     >
