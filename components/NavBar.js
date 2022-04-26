@@ -41,6 +41,7 @@ const NavBarUI = (props) => {
           // backgroundColor: c.c1,
         }}
         color="transparent"
+        id="navbarbro"
       >
         <Container maxWidth="xl" style={{ zIndex: 888, color: "white" }}>
           <Toolbar disableGutters>

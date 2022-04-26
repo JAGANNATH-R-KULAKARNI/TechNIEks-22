@@ -54,6 +54,18 @@ function MyApp({ Component, pageProps }) {
       });
   }
 
+  const changeIt = () => {
+    const ok = document.getElementById("navbarbro");
+    var heightvro = window.scrollY;
+    if (heightvro > 400) ok.style.backgroundColor = "#000000";
+    else ok.style.backgroundColor = "";
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", changeIt);
+    return () => window.removeEventListener("scroll", changeIt);
+  }, []);
+
   return (
     <div>
       <Head>
