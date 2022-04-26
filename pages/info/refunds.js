@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 export default function Refunds() {
   const [status, setStatus] = React.useState(false);
   const m1 = useMediaQuery("(min-width:600px)");
- const router = useRouter();
+  const router = useRouter();
 
   React.useEffect(() => {
     fetchTheProfile();
@@ -33,9 +33,12 @@ export default function Refunds() {
       style={{
         backgroundColor: "#000000",
         color: "white",
-       backgroundImage: "url(" + "/images/heart.gif" + ")",
-        backgroundPosition: "center 50px",
-        backgroundSize: m1 ? "300px 500px" : "300px 500px",
+        backgroundImage:
+          "url(" +
+          "https://render.fineartamerica.com/images/rendered/default/print/6/8/break/images/artworkimages/medium/2/a-traditional-south-indian-lamp-by-chandrachoodan-gopalakrishnan.jpg" +
+          ")",
+        backgroundPosition: m1 ? "center 50px" : "center 80px",
+        backgroundSize: m1 ? "445px 600px" : "260px 350px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
         scrollBehavior: "smooth",

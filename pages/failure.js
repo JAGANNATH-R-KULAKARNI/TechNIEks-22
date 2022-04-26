@@ -48,11 +48,7 @@ function Failure(props) {
       style={{
         backgroundColor: "#000000",
         color: "white",
-        backgroundImage: "url(" + "/images/heart.gif" + ")",
-        backgroundPosition: "center 50px",
-        backgroundSize: matches ? "300px 500px" : "300px 500px",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
+
         scrollBehavior: "smooth",
       }}
     >

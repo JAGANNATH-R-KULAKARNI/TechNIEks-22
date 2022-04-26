@@ -5,7 +5,8 @@ import React from "react";
 import NextNProgress from "nextjs-progressbar";
 import * as c from "../utils/Colors";
 import Head from "next/head";
-import styles from "../styles/Flies.module.css";
+// import styles from "../styles/Flies.module.css";
+import styles from "../styles/Back1.module.css";
 
 function MyApp({ Component, pageProps }) {
   const [status, setStatus] = React.useState(false);

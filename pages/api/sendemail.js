@@ -8,16 +8,20 @@ const handler = nc();
 
 handler.post(async (req, res) => {
   const data = req.body;
+  let message;
 
-  const message = `
+  if (data.otherMessage) {
+    message = "we wiil contact you";
+  } else {
+    message = `
   Hello "${data.name}",\r\n\n
   Welcome to "TechNIEks22"\r\n\n\n
 
 
   Your ticket booking has been confirmed \r\n\n\n
   ${data.no} tickets ${data.no == 1 ? "has" : "have"} been booked for ₹ ${
-    data.amount
-  }\r\n\n\n
+      data.amount
+    }\r\n\n\n
   Enjoy the "${data.show}"\r\n\n\n
 
 
@@ -37,6 +41,7 @@ handler.post(async (req, res) => {
         Niraj Sharma (8722889927)\r\n
         Lohith C (7204933863)\r\n
   `;
+  }
 
   const info = {
     to: `${data.email}`,
