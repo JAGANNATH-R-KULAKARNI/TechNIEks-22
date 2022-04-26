@@ -14,7 +14,7 @@ import { supabase } from "../utils/SupabaseClient";
 import useSWR from "swr";
 
 function Success(props) {
-  const matches = useMediaQuery("(min-width:450px)");
+  const m1 = useMediaQuery("(min-width:450px)");
   const router = useRouter();
   const { profileCacheSuccess, errorProfileCacheSuccess } = useSWR(
     "profileSuccess",
@@ -27,7 +27,7 @@ function Success(props) {
     // fetchTheProfile();
 
     if (!props.router.query.status) {
-      // router.push("/home");
+      router.push("/home");
     }
   }, []);
 
@@ -49,11 +49,12 @@ function Success(props) {
       style={{
         backgroundColor: "#000000",
         color: "white",
-        // backgroundImage: "url(" + "/images/heart.gif" + ")",
-        // backgroundPosition: "center 50px",
-        // backgroundSize: matches ? "300px 500px" : "300px 500px",
-        // backgroundRepeat: "no-repeat",
-        // backgroundAttachment: "fixed",
+        minWidth: "100%",
+        backgroundImage: "url(/images/deepa2.png)",
+        backgroundPosition: m1 ? "center 80px" : "center 100px",
+        backgroundSize: m1 ? "442px 499px" : "260px 293px",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
         scrollBehavior: "smooth",
       }}
     >
@@ -64,13 +65,13 @@ function Success(props) {
           paddingTop: "1%",
         }}
       >
-        <Paper
-          elevation={0}
+        <div
+          // elevation={0}
           style={{
-            width: matches ? "400px" : "80%",
+            width: m1 ? "400px" : "80%",
             height: "100%",
             margin: "auto",
-            backgroundColor: "#000000",
+            // backgroundColor: "#000000",
             color: "white",
             fontFamily: "Bungee",
           }}
@@ -102,11 +103,11 @@ function Success(props) {
           >
             <Link href="/ticket"> Print The Ticket</Link>
           </Button>
-        </Paper>
+        </div>
       </Box>
       <br />
       <br />
-      {!matches ? (
+      {!m1 ? (
         <div>
           <br />
           <br />

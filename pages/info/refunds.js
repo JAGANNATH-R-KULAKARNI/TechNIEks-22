@@ -33,12 +33,9 @@ export default function Refunds() {
       style={{
         backgroundColor: "#000000",
         color: "white",
-        backgroundImage:
-          "url(" +
-          "https://render.fineartamerica.com/images/rendered/default/print/6/8/break/images/artworkimages/medium/2/a-traditional-south-indian-lamp-by-chandrachoodan-gopalakrishnan.jpg" +
-          ")",
-        backgroundPosition: m1 ? "center 50px" : "center 80px",
-        backgroundSize: m1 ? "445px 600px" : "260px 350px",
+        backgroundImage: "url(/images/deepa2.png)",
+        backgroundPosition: m1 ? "center 80px" : "center 100px",
+        backgroundSize: m1 ? "442px 499px" : "260px 293px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
         scrollBehavior: "smooth",

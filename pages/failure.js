@@ -14,7 +14,7 @@ import { supabase } from "../utils/SupabaseClient";
 import useSWR from "swr";
 
 function Failure(props) {
-  const matches = useMediaQuery("(min-width:450px)");
+  const m1 = useMediaQuery("(min-width:450px)");
   const router = useRouter();
   const [status, setStatus] = React.useState(false);
   const { profileCacheFailure, errorProfileCacheFailure } = useSWR(
@@ -48,19 +48,24 @@ function Failure(props) {
       style={{
         backgroundColor: "#000000",
         color: "white",
-
+        minWidth: "100%",
+        backgroundImage: "url(/images/deepa2.png)",
+        backgroundPosition: m1 ? "center 80px" : "center 100px",
+        backgroundSize: m1 ? "442px 499px" : "260px 293px",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
         scrollBehavior: "smooth",
       }}
     >
       <Navbar code={0} logOut={logOut} status={status} />
       <Box style={{ textAlign: "center", paddingTop: "1%" }}>
-        <Paper
-          elevation={0}
+        <div
+          // elevation={0}
           style={{
-            width: matches ? "400px" : "80%",
+            width: m1 ? "400px" : "80%",
             height: "100%",
             margin: "auto",
-            backgroundColor: "#000000",
+            // backgroundColor: "#000000",
             color: "white",
           }}
         >
@@ -91,7 +96,7 @@ function Failure(props) {
           >
             <Link href="/events"> Continue</Link>
           </Button>
-        </Paper>
+        </div>
       </Box>
       <br />
       <br />

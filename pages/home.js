@@ -41,19 +41,21 @@ export default function Home(props) {
         backgroundColor: "#000000",
         color: "white",
         minWidth: "100%",
-        backgroundImage:
-          "url(" +
-          "https://render.fineartamerica.com/images/rendered/default/print/6/8/break/images/artworkimages/medium/2/a-traditional-south-indian-lamp-by-chandrachoodan-gopalakrishnan.jpg" +
-          ")",
-        backgroundPosition: m1 ? "center 50px" : "center 80px",
-        backgroundSize: m1 ? "445px 600px" : "260px 350px",
+        backgroundImage: "url(/images/deepa.png)",
+        backgroundPosition: m1 ? "center 80px" : "center 100px",
+        backgroundSize: m1 ? "442px 499px" : "260px 293px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
         scrollBehavior: "smooth",
       }}
     >
       <NavBar code={0} logOut={logOut} status={status} />
-      <div style={{ height: m1 ? "40px" : "-50px" }}></div>
+      <div
+        style={{
+          height: m1 ? "40px" : "-50px",
+          marginTop: m1 ? "0px" : "-50px",
+        }}
+      ></div>
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <div style={{ miwidth: "25%" }}></div>
         <div style={{ maxWidth: "50%" }}></div>
