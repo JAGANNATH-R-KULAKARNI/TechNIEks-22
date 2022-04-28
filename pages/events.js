@@ -26,6 +26,12 @@ export default function Events() {
     fetchEvents();
   }, []);
 
+  React.useEffect(() => {
+    setInterval(function () {
+      fetchTheProfile();
+    }, 1000);
+  }, []);
+
   async function fetchTheProfile() {
     const data = await supabase.auth.user();
     setStatus(data ? true : false);
