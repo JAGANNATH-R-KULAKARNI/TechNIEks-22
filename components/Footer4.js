@@ -31,7 +31,7 @@ function Footer() {
               fontFamily: "Bungee",
             }}
           >
-            ಶುಭಕೃತ್ Shubhakritu
+            ಶುಭಕೃತ್ Shubhakrit
             <br />
             2022
           </h1>
