@@ -35,7 +35,7 @@ export default function Creaters() {
   const des = [
     {
       name: "Jagannath R Kulakarni",
-      des1: "Team Captain",
+      des1: "Team Lead",
       des2: "Software Developer",
     },
     {
@@ -123,8 +123,8 @@ It would cease to be life
 And be without flavor"
           insta="https://www.instagram.com/coder446/?hl=en"
           linked="https://www.linkedin.com/in/jagannath-r-kulakarni-a465841a7/"
-          des1="Software Developer"
-          des2="Team Captain"
+          des1="Team Lead"
+          des2="Software Developer"
         />
         <CardUI
           link="/images/lohith.svg"
