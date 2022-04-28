@@ -7,6 +7,7 @@ import TicketsUI from "../components/booking/Tickets";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import * as c from "../utils/Colors";
+import Cookies from "js-cookie";
 
 export default function Events() {
   const m1 = useMediaQuery("(min-width:600px)");
@@ -35,6 +36,12 @@ export default function Events() {
   async function fetchTheProfile() {
     const data = await supabase.auth.user();
     setStatus(data ? true : false);
+
+    if (data && Cookies.get("whichroute")) {
+      const coo = Cookies.get("whichroute");
+      Cookies.remove("whichroute");
+      router.push(coo);
+    }
   }
 
   async function fetchEvents() {
@@ -71,7 +78,7 @@ export default function Events() {
       }}
     >
       <NavBar code={0} logOut={logOut} status={status} />
-      <TicketsUI events={events} />
+      <TicketsUI events={events} status={status} />
       {events.length > 0 ? null : (
         <div
           style={{ display: "flex", justifyContent: "center", height: "500px" }}

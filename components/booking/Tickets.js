@@ -13,6 +13,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import * as c from "../../utils/Colors";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useRouter } from "next/router";
+import Cookies from "js-cookie";
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -124,12 +125,20 @@ export default function Tickets(props) {
                           backgroundColor: c.c4,
                           fontFamily: "Bungee",
                         }}
-                        onClick={() =>
+                        onClick={() => {
+                          if (!props.status) {
+                            document.cookie = `whichroute=/book?id=${
+                              card.id
+                            }; expires=${new Date(9999, 0, 1).toUTCString()}`;
+                          } else {
+                            Cookies.remove("whichroute");
+                          }
+
                           router.push({
                             pathname: "/book",
                             query: { id: card.id },
-                          })
-                        }
+                          });
+                        }}
                       >
                         Book Now
                       </Button>

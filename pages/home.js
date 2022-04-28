@@ -5,14 +5,10 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { supabase } from "../utils/SupabaseClient";
 import React from "react";
 import useSWR from "swr";
-import Scroller from "../components/scroller";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useRouter } from "next/router";
-import { init } from "aos";
-import { destroyCookie } from "nookies";
-import Cookies from "js-cookie";
 
 gsap.registerPlugin(ScrollTrigger);
 
