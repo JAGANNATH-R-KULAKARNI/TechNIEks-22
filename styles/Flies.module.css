@@ -2,8 +2,8 @@
   position: fixed;
   left: 50%;
   top: 50%;
-  width: 20px;
-  height: 20px;
+  width: 100px;
+  height: 100px;
   margin: -0.2vw 0 0 9.8vw;
   animation: ease 100s alternate infinite;
   pointer-events: none;
@@ -12,8 +12,8 @@
 .firefly::after {
   content: "";
   position: absolute;
-  width: 200%;
-  height: 200%;
+  width: 1000%;
+  height: 1000%;
   border-radius: 50%;
   transform-origin: -10vw;
 }
