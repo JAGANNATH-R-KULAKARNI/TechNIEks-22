@@ -1,0 +1,151 @@
+.outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.outer .desc {
+  width: 400px;
+  max-width: 85vw;
+  margin: 0 50px 0;
+  text-align: center;
+}
+
+.desc .text {
+  display: none;
+}
+
+.video_iframe {
+  height: 300px;
+  width: 500px;
+  max-width: 90vw;
+  border-radius: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("/assets/fonts/Sora-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Arciform";
+  src: url("/assets/Arciform.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Arial Rounded MT Bold";
+  src: url("/assets/ARLRDBD 2.ttf") format("truetype");
+}
+
+.title {
+  font-weight: 400;
+  text-align: center;
+  margin: 40px 0 10px 0;
+  font-family: "Arial Rounded MT Bold";
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card_img {
+  cursor: pointer;
+  height: auto;
+  width: 500px;
+  max-width: 90vw;
+  border-radius: 30px;
+}
+
+.playBtn_container {
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #222539;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.playBtn_container i {
+  color: white;
+  font-size: 20px;
+}
+
+.video_container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.video_container::after {
+  /* padding-top: 56.25%; */
+  display: block;
+  content: "";
+}
+
+.video_container iframe {
+  position: relative;
+  height: 300px;
+  width: 500px;
+  max-width: 90vw;
+  border-radius: 30px;
+  top: 0;
+  left: 0;
+}
+
+.btn {
+  width: 150px;
+  align-self: center;
+  margin: 20px;
+  background: #ffcc00;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border-color: white;
+  font-family: "Sora";
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  background: #ffcc00;
+}
+
+.a {
+  text-align: center;
+  cursor: pointer;
+  font-family: "Sora";
+}
+
+@media screen and (min-width: 800px) {
+  .outer {
+    flex-direction: row;
+  }
+  .outer .desc {
+    text-align: start;
+  }
+
+  .desc .text {
+    display: block;
+  }
+  .card_img {
+    max-width: 50vw;
+  }
+}

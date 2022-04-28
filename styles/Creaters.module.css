@@ -1,0 +1,28 @@
+/* body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(to right, #ff0080, #ff8c00, #40e0d0);
+} */
+.profiles {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.profiles {
+  max-width: 70em;
+  margin: 0 auto;
+  padding: 0 2em;
+  justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .profiles {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .profiles a {
+    width: 50%;
+  }
+}

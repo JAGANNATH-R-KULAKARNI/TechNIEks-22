@@ -1,0 +1,8 @@
+.hoverr {
+}
+
+.hoverr:hover {
+  cursor: pointer;
+  zoom: 1.01;
+  color: #f84464;
+}
