@@ -29,7 +29,7 @@ export default function Events() {
   React.useEffect(() => {
     setInterval(function () {
       fetchTheProfile();
-    }, 1000);
+    }, 100);
   }, []);
 
   async function fetchTheProfile() {

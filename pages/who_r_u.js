@@ -16,6 +16,12 @@ export default function WhoRU() {
     fetchTheProfile
   );
 
+  React.useEffect(() => {
+    setInterval(function () {
+      fetchTheProfile();
+    }, 100);
+  }, []);
+
   async function fetchTheProfile() {
     const data = await supabase.auth.user();
 

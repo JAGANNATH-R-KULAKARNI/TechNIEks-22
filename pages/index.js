@@ -47,6 +47,12 @@ export default function Home(props) {
     setStatus(false);
   }
 
+  React.useEffect(() => {
+    setInterval(function () {
+      fetchTheProfile();
+    }, 100);
+  }, []);
+
   async function LoginChangeHandler(event, session) {
     await fetch("/api/auth", {
       method: "POST",

@@ -29,8 +29,9 @@ export default function Home(props) {
   React.useEffect(() => {
     setInterval(function () {
       fetchTheProfile();
-    }, 1000);
+    }, 100);
   }, []);
+
   async function fetchTheProfile() {
     const data = await supabase.auth.user();
 

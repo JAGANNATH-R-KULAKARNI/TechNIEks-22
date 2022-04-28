@@ -30,6 +30,12 @@ function Failure(props) {
     }
   }, []);
 
+  React.useEffect(() => {
+    setInterval(function () {
+      fetchTheProfile();
+    }, 100);
+  }, []);
+
   async function fetchTheProfile() {
     const data = await supabase.auth.user();
 

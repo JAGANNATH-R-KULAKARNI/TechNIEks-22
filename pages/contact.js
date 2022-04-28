@@ -20,7 +20,9 @@ export default function Contact() {
   );
 
   React.useEffect(() => {
-    fetchTheProfile();
+    setInterval(function () {
+      fetchTheProfile();
+    }, 100);
   }, []);
 
   async function fetchTheProfile() {

@@ -13,7 +13,9 @@ export default function Refunds() {
   const router = useRouter();
 
   React.useEffect(() => {
-    fetchTheProfile();
+    setInterval(function () {
+      fetchTheProfile();
+    }, 100);
   }, []);
 
   async function fetchTheProfile() {

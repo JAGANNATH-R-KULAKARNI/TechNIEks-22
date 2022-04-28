@@ -27,6 +27,11 @@ export default function Ticket() {
   //   fetchTheProfile();
   //   fetchTickets();
   // }, []);
+  React.useEffect(() => {
+    setInterval(function () {
+      fetchTheProfile();
+    }, 100);
+  }, []);
 
   async function fetchTickets() {
     const userData = await supabase.auth.user();

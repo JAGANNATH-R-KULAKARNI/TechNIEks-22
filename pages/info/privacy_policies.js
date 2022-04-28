@@ -11,11 +11,11 @@ export default function PrivacyPolicies() {
   const [status, setStatus] = React.useState(false);
   const m1 = useMediaQuery("(min-width:600px)");
   const router = useRouter();
-
   React.useEffect(() => {
-    fetchTheProfile();
+    setInterval(function () {
+      fetchTheProfile();
+    }, 100);
   }, []);
-
   async function fetchTheProfile() {
     const data = await supabase.auth.user();
 

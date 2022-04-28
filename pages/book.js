@@ -54,6 +54,12 @@ function BookTicket(props) {
   //   fetchTicketDetails();
   // }, []);
 
+  React.useEffect(() => {
+    setInterval(function () {
+      fetchTheProfile();
+    }, 100);
+  }, []);
+
   async function fetchTicketDetails() {
     const user = await supabase.auth.user();
     setStatus(user ? true : false);
