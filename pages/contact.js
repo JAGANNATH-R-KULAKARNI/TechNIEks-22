@@ -41,12 +41,9 @@ export default function Contact() {
       style={{
         backgroundColor: c.c1,
         color: c.c2,
-        backgroundImage:
-          "url(" +
-          "https://render.fineartamerica.com/images/rendered/default/print/6/8/break/images/artworkimages/medium/2/a-traditional-south-indian-lamp-by-chandrachoodan-gopalakrishnan.jpg" +
-          ")",
-        backgroundPosition: m1 ? "center 50px" : "center 80px",
-        backgroundSize: m1 ? "445px 600px" : "260px 350px",
+        backgroundImage: "url(/images/logo.png)",
+        backgroundPosition: m1 ? "center 80px" : "center 85px",
+        backgroundSize: m1 ? "450px 450px" : "250px 250px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
         scrollBehavior: "smooth",

@@ -47,7 +47,7 @@ export default function Tickets(props) {
       .toJpeg(document.getElementById(id), {
         quality: 1,
         width: m1 ? 425 : 393,
-        height: 600,
+        height: 650,
         bgcolor: "white",
       })
       .then(function (dataUrl) {
@@ -203,10 +203,12 @@ export default function Tickets(props) {
                         }}
                       >
                         <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "center",
-                          }}
+                          style={
+                            {
+                              // display: "flex",
+                              // justifyContent: "center",
+                            }
+                          }
                         >
                           <i
                             style={{
@@ -216,10 +218,11 @@ export default function Tickets(props) {
                           >
                             <b> {card.name} </b>
                           </i>
+                          <br />
                           <i
                             style={{
                               width: "50%",
-                              fontSize: "17px",
+                              fontSize: "13px",
                             }}
                           >
                             <b> {card.usn} </b>
@@ -277,7 +280,7 @@ export default function Tickets(props) {
                           );
                         }}
                       >
-                        {glitch ? "ಶುಭಕೃತ್ 2022" : "Print It"}
+                        {glitch ? "ತ್ರಾಯಾಗ್ನಿ 2022" : "Print It"}
                       </Button>
                     </CardActions>
                   </Card>

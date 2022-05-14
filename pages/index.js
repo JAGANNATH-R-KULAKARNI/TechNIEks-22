@@ -84,9 +84,9 @@ export default function Home(props) {
       style={{
         backgroundColor: "#000000",
         color: "white",
-        backgroundImage: "url(/images/deepa.png)",
-        backgroundPosition: m1 ? "center 80px" : "center 100px",
-        backgroundSize: m1 ? "442px 499px" : "260px 293px",
+        backgroundImage: "url(/images/logo.png)",
+        backgroundPosition: m1 ? "center 80px" : "center 85px",
+        backgroundSize: m1 ? "450px 450px" : "250px 250px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
         scrollBehavior: "smooth",

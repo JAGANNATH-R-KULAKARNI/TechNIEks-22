@@ -49,7 +49,7 @@ export default function Home(props) {
         color: "white",
         minWidth: "100%",
         backgroundImage: "url(/images/logo.png)",
-        backgroundPosition: m1 ? "center 80px" : "center 100px",
+        backgroundPosition: m1 ? "center 80px" : "center 85px",
         backgroundSize: m1 ? "450px 450px" : "250px 250px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",

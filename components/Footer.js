@@ -53,9 +53,9 @@ function Footer() {
                 }}
               >
                 The annual techno-cultural fest at The National Institute of
-                Engineering, Mysore The New Year Subhakritu promises a period of
-                joy and celebrations unlike the past two years Sarvari and Plava
-                where people faced the Corona pandemic and loss of life. Let us
+                Engineering, Mysore Trayagnie promises a period of joy and
+                celebrations unlike the past two years Sarvari and Plava where
+                people faced the Corona pandemic and loss of life. Let us
                 celebrate with TechNIEks 22
               </p>
             </div>

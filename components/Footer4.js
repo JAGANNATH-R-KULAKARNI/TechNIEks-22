@@ -31,7 +31,7 @@ function Footer() {
               fontFamily: "Bungee",
             }}
           >
-            ಶುಭಕೃತ್ Shubhakrit
+            ತ್ರಾಯಾಗ್ನಿ Trayagnie
             <br />
             2022
           </h1>

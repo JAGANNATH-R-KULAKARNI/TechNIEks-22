@@ -21,7 +21,7 @@ function Footer() {
     <div>
       <div>
         <Video
-          heading="ಶುಭಕೃತ್ 2022"
+          heading="ತ್ರಾಯಾಗ್ನಿ 2022"
           img="/images/subha.webp"
           src="https://youtube.be/embed/YR9iyeWNF58?rel=0"
         />
@@ -66,7 +66,7 @@ function Footer() {
                 }}
               >
                 The annual techno-cultural fest at The National Institute of
-                Engineering, Mysore The New Year Subhakritu promises a period of
+                Engineering, Mysore The New Year Trayagnie promises a period of
                 joy and celebrations unlike the past two years Sarvari and Plava
                 where people faced the Corona pandemic and loss of life. Let us
                 celebrate with TechNIEks 22
