@@ -12,7 +12,7 @@ function Footer() {
         <div className={styles.img_container}>
           <div className={styles.img_absolute} style={{ marginTop: "-150px" }}>
             <Image
-              src="/images/dance2.webp"
+              src="/images/cg.gif"
               alt=""
               height="512px"
               width="450px"
@@ -31,7 +31,7 @@ function Footer() {
               fontFamily: "Bungee",
             }}
           >
-            ತ್ರಾಯಾಗ್ನಿ Trayagnie
+            ತ್ರಯಾಗ್ನಿ Trayagnie
             <br />
             2022
           </h1>

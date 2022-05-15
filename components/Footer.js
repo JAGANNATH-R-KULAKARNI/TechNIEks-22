@@ -52,11 +52,12 @@ function Footer() {
                   fontFamily: "Bungee",
                 }}
               >
-                The annual techno-cultural fest at The National Institute of
-                Engineering, Mysore Trayagnie promises a period of joy and
-                celebrations unlike the past two years Sarvari and Plava where
-                people faced the Corona pandemic and loss of life. Let us
-                celebrate with TechNIEks 22
+                The marathon was one of the original modern Olympic events in 1896. 
+                In honor of this legendary sport National Institute of Engineering conducts Marathon every year as part of techNIEks 
+                techno- cultural fest. The marathon is usually conducted for a cause (last year data) and this year its been 
+                conducted to empower the distressed women. After 3 long years the Cyclothon is back with full force and is being 
+                conducted on the same day. Whatever proceeds we obtain from the event would be donated to Shaktidhama founded by 
+                Puneet Raj Kumar
               </p>
             </div>
           </Grid>

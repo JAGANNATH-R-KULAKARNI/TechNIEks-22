@@ -32,15 +32,13 @@ function Footer() {
                 fontWeight: "bold",
               }}
             >
-              Dance
+              Marathon
             </h1>
             <br />
             <p style={{ lineHeight: 1.7, wordSpacing: "5px" }}>
-              Competitive dance is a popular, widespread sport in which
-              competitors perform dances in any of several permitted dance
-              styles—such as acro, ballet, contemporary, jazz, hip-hop, lyrical,
-              modern, musical theatre, tap, and improv—before a common group of
-              judges
+            The marathon was one of the original modern Olympic events in 1896. 
+            In honor of this legendary sport National Institute of Engineering conducts Marathon every year as part of techNIEks techno- cultural fest. The marathon is usually conducted for a 
+            cause (last year data) and this year its been conducted to empower the distressed women. Whatever proceeds we obtain from the marathon would be donated to Shaktidhama founded by Puneet Raj Kumar
             </p>
           </div>
         </div>
@@ -55,20 +53,14 @@ function Footer() {
                 fontWeight: "bold",
               }}
             >
-              Sports
+              Cyclothon
             </h1>
             <br />
             <p style={{ lineHeight: 1.7, wordSpacing: "5px" }}>
-              a contest held to determine the best athletes and teams and
-              greatest achievements in sports, to improve athletic skills, and
-              to popularize physical culture and sports. Sports competitions
-              provide an opportunity to evaluate objectively the sports
-              organizations, coaches, athletes, and officials. International
-              sports competitions are an important means of strengthening
-              friendship and mutual understanding among athletes of different
-              countries. World sports competitions include the Olympic Games,
-              the World Student Games, world championships and world cups, and
-              specialized Olympiads, for example, in chess.
+            Cyclothon is a sporting event, that aims to highlight fitness, health, charity and fun 
+            at the same time. Cyclists can showcase their skills to the fullest.After 3 long years the Cyclothon is back with full force and is being 
+            conducted on the same day as the marathon. Whatever proceeds we obtain from the event would be donated to
+             Shaktidhama founded by Puneet Raj Kumar.    
             </p>
           </div>
           <div className={styles.img_conatiner}>
@@ -80,70 +72,9 @@ function Footer() {
             ></Image>
           </div>
         </div>
-        <div className={styles.contents_why}>
-          <div className={styles.img_conatiner}>
-            <Image
-              src="/images/fash.webp"
-              alt=""
-              height="300px"
-              width="350px"
-            ></Image>
-          </div>
-          <div className={styles.desc}>
-            <h1
-              style={{
-                margin: "10px 0",
-                textShadow: "2px 0",
-                letterSpacing: "2px",
-                fontSize: 34,
-                fontWeight: "bold",
-              }}
-            >
-              Fashion
-            </h1>
-            <br />
-            <p style={{ lineHeight: 1.7, wordSpacing: "5px" }}>
-              For young fashion designers above all, now more than ever, it is
-              important to take advantage of all the opportunities made
-              available at an international level and this is where fashion
-              contests come into play. Precisely for this reason, we have
-              decided to gather the most important international fashion
-              competitions, creating a detailed calendar of the events, dates
-              and the prestigious fashion prizes.
-            </p>
-          </div>
-        </div>
+        
         {/* ---------------------------- */}
-        <div className={styles.contents_why}>
-          <div className={styles.desc}>
-            <h1
-              style={{
-                margin: "10px 0",
-                textShadow: "2px 0",
-                letterSpacing: "2px",
-                fontSize: 34,
-                fontWeight: "bold",
-              }}
-            >
-              Concert
-            </h1>
-            <br />
-            <p style={{ lineHeight: 1.7, wordSpacing: "5px" }}>
-              The definition of a concert is a live musical performance or
-              mutual agreement. An example of a concert is a venue where you can
-              listen to your favorite musician. An example of a concert is two
-              people agreeing on the best way to handle a difficult situation.
-            </p>
-          </div>
-          <div className={styles.img_conatiner}>
-            <Image
-              src="/images/concer.webp"
-              alt=""
-              height="400px"
-              width="300px"
-            ></Image>
-          </div>
-        </div>
+        
         {/* ---------------------------- */}
         <div className={styles.contents_top} style={{ backgroundColor: c.c4 }}>
           <div className={styles.img_container}>
@@ -152,7 +83,7 @@ function Footer() {
               style={{ marginTop: "-150px" }}
             >
               <Image
-                src="/images/dance2.webp"
+                src="/images/cg.gif"
                 alt=""
                 height="602px"
                 width="500px"
@@ -172,7 +103,7 @@ function Footer() {
                 fontFamily: "Bungee",
               }}
             >
-              ತ್ರಾಯಾಗ್ನಿ Trayagnie
+              ತ್ರಯಾಗ್ನಿ Trayagnie
               <br />
               2022
               <br />
