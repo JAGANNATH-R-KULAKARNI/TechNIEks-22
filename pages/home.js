@@ -1,4 +1,3 @@
-import SHeader from "../components/headers/Rangoli";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer3";
 import useMediaQuery from "@mui/material/useMediaQuery";
