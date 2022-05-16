@@ -54,7 +54,7 @@ export default function Booking(props) {
           >
             <Paper
               style={{
-                width: "25%",
+                width: "29%",
                 height: "250px",
                 marginTop: "0px",
                 borderRadius: "75px",
