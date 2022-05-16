@@ -14,8 +14,8 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useRouter } from "next/router";
 import styles2 from "../styles/Hover.module.css";
 
-const pages = ["Book Tickets", "My Tickets", "About"];
-const ids = ["events", "ticket", "about"];
+const pages = ["Marathon", "Cultural", "My Tickets"];
+const ids = ["sports", "events", "ticket"];
 
 const NavBarUI = (props) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

@@ -8,7 +8,11 @@ export default function Body() {
   const m1 = useMediaQuery("(min-width:600px)");
   const router = useRouter();
 
-  const bookTickerts = () => {
+  const bookTickets = () => {
+    router.push("/sports");
+  };
+
+  const bookTickets2 = () => {
     router.push("/events");
   };
 
@@ -16,14 +20,27 @@ export default function Body() {
     <div>
       <div style={{ height: !m1 ? "40px" : "0px" }}></div>
 
-      <div style={{ marginTop: m1 ? "10px" : "-50px" }}>
+      <div
+        style={{
+          marginTop: m1 ? "10px" : "-50px",
+          display: m1 ? "flex" : "block",
+        }}
+      >
         <ButtonUI
-          text="Book Now "
+          text="Marathon"
           wid={m1 ? 200 : 300}
           maxwid={m1 ? 200 : "90%"}
           hei={m1 ? 50 : 60}
           col={c.c3}
-          clicked={bookTickerts}
+          clicked={bookTickets}
+        />
+        <ButtonUI
+          text="Cultural"
+          wid={m1 ? 200 : 300}
+          maxwid={m1 ? 200 : "90%"}
+          hei={m1 ? 50 : 60}
+          col={c.c3}
+          clicked={bookTickets2}
         />
       </div>
     </div>

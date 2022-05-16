@@ -25,7 +25,7 @@ export default function Booking(props) {
             <img
               src={props.ticket.image}
               alt={props.name}
-              style={{ width: "200px", height: "auto", borderRadius: "50%" }}
+              style={{ height: "150px", width: "auto", borderRadius: "50%" }}
             />
           </div>
         ) : null}
@@ -71,7 +71,7 @@ export default function Booking(props) {
                 marginTop: "0px",
                 borderRadius: "75px",
                 fontFamily: "Bungee",
-                marginTop: props.ticket.type == 1 ? "60px" : "0px",
+                marginTop: props.ticket.type == 1 ? "120px" : "0px",
               }}
               elevation={1}
             >

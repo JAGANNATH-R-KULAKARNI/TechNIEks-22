@@ -115,6 +115,7 @@ export default function Tickets(props) {
                       component="img"
                       sx={{
                         maxHeight: "180px",
+                        minHeight: "180px",
                       }}
                       image={card.events.image}
                       alt="random"
@@ -131,12 +132,13 @@ export default function Tickets(props) {
                       >
                         <Canvas
                           text={
+                            card.id +
+                            " | " +
                             card.name +
                             " | " +
                             card.events.name +
                             " |  " +
-                            card.nooftickets +
-                            " Tickets"
+                            card.nooftickets
                           }
                           options={{
                             type: "image/jpeg",
@@ -225,7 +227,13 @@ export default function Tickets(props) {
                               fontSize: "13px",
                             }}
                           >
-                            <b> {card.usn} </b>
+                            <b> {card.usn} </b>{" "}
+                            <b
+                              style={{ paddingLeft: "100px", fontSize: "20px" }}
+                            >
+                              {" "}
+                              ID : {card.id}
+                            </b>
                           </i>
                         </div>
                         <div

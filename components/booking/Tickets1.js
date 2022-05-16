@@ -64,6 +64,7 @@ export default function Tickets(props) {
                       sx={{
                         // marginTop: "-210px",
                         maxHeight: "200px",
+                        minHeight: "200px",
                       }}
                       image={card.image}
                       alt="random"
