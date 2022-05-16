@@ -1,5 +1,5 @@
 import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer3";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { supabase } from "../utils/SupabaseClient";
 import React from "react";

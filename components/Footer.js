@@ -46,10 +46,11 @@ function Footer() {
               </h3>
               <p
                 style={{
-                  fontSize: m1 ? "15px" : "10px",
+                  fontSize: m1 ? "10px" : "10px",
                   lineHeight: 1.7,
                   wordSpacing: m1 ? "5px" : "3px",
-                  fontFamily: "Bungee",
+
+                  fontStyle: "italic",
                 }}
               >
                 The marathon was one of the original modern Olympic events in
