@@ -136,7 +136,7 @@ export default function Tickets(props) {
 
                           router.push({
                             pathname: "/book",
-                            query: { id: card.id },
+                            query: { id: card.id, type: card.type },
                           });
                         }}
                       >

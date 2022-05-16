@@ -11,7 +11,7 @@ handler.post(async (req, res) => {
   let message;
 
   if (data.otherMessage) {
-    message = "we wiil contact you";
+    message = "we will contact you";
   } else {
     message = `
   Hello "${data.name}",\r\n\n

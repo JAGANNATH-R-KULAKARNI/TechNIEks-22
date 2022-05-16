@@ -26,6 +26,8 @@ function BookTicket(props) {
   const [price, setPrice] = React.useState(null);
   const router = useRouter();
   const [thisCollege, setThisCollege] = React.useState(false);
+  const [shirt, setShirt] = React.useState("L");
+  const [category, setCategory] = React.useState("Female");
 
   const [name, setName] = React.useState("");
   const [usn, setUSN] = React.useState("");
@@ -55,6 +57,7 @@ function BookTicket(props) {
   // }, []);
 
   React.useEffect(() => {
+    // alert(props.router.query.type);
     setInterval(function () {
       fetchTheProfile();
     }, 100);
@@ -134,7 +137,7 @@ function BookTicket(props) {
         backgroundColor: "#000000",
         color: "white",
         minWidth: "100%",
-        // backgroundImage: "url(/images/logo4.png)",
+        // backgroundImage: `url(${ticket.image})`,
         // backgroundPosition: m1 ? "center 80px" : "center 85px",
         // backgroundSize: m1 ? "450px 450px" : "250px 250px",
         backgroundRepeat: "no-repeat",
@@ -192,6 +195,10 @@ function BookTicket(props) {
           messageAlert={messageAlert}
           thisCollege={thisCollege}
           price={price}
+          shirt={shirt}
+          setShirt={setShirt}
+          category={category}
+          setCategory={setCategory}
         />
       ) : null}
       <Footer />

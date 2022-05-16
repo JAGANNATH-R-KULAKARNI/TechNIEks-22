@@ -39,7 +39,7 @@ export default function Details(props) {
             alignItems: "center",
           }}
         >
-          <Avatar
+          {/* <Avatar
             sx={{
               m: 1,
               bgcolor: "secondary.main",
@@ -47,7 +47,7 @@ export default function Details(props) {
             }}
           >
             <ConfirmationNumberIcon />
-          </Avatar>
+          </Avatar> */}
           <Typography
             component="h1"
             variant="h5"
@@ -189,7 +189,7 @@ export default function Details(props) {
                     props.setUsn(e.target.value);
                   }}
                   label="name"
-                  placeholder={props.thisCollege ? "4NI19IS***" : "JC College"}
+                  placeholder={props.thisCollege ? "4NI19IS***" : "NIE College"}
                   sx={{
                     input: {
                       color: c.c2,

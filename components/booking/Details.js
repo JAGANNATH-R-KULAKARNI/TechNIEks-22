@@ -17,6 +17,7 @@ import FormControl from "@mui/material/FormControl";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import Radio from "@mui/material/Radio";
 
 const theme = createTheme();
 
@@ -43,7 +44,7 @@ export default function Details(props) {
             alignItems: "center",
           }}
         >
-          <Avatar
+          {/* <Avatar
             sx={{
               m: 1,
               bgcolor: "secondary.main",
@@ -51,7 +52,7 @@ export default function Details(props) {
             }}
           >
             <ConfirmationNumberIcon />
-          </Avatar>
+          </Avatar> */}
           <Typography
             component="h1"
             variant="h4"
@@ -204,7 +205,7 @@ export default function Details(props) {
                       }}
                       label="USN"
                       placeholder={
-                        props.thisCollege ? "4NI19IS***" : "JC College"
+                        props.thisCollege ? "4NI19IS***" : "NIE College"
                       }
                       sx={{
                         fontFamily: "Bungee",
@@ -247,7 +248,81 @@ export default function Details(props) {
               <br />
               <br />
               <br />
-
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  minWidth: "100%",
+                }}
+              >
+                <div>
+                  <Typography
+                    component="h1"
+                    variant="h5"
+                    style={{
+                      fontFamily: "Bungee",
+                      textAlign: "center",
+                    }}
+                  >
+                    T-Shirt Size
+                  </Typography>
+                  <br />
+                  <FormControlLabel
+                    value="female"
+                    control={<Radio style={{ color: c.c4 }} />}
+                    label="Female"
+                    style={{
+                      padding: "10px",
+                      border: "2px solid white",
+                      borderRadius: "30px",
+                      paddingRight: "15px",
+                      cursor: "",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.cursor = "pointer";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.cursor = "";
+                    }}
+                  />{" "}
+                  <FormControlLabel
+                    value="female"
+                    control={<Radio />}
+                    label="Female"
+                    style={{ padding: "10px" }}
+                  />
+                  <br />
+                  <FormControlLabel
+                    value="female"
+                    control={<Radio />}
+                    label="Female"
+                    style={{ padding: "10px" }}
+                  />{" "}
+                  <FormControlLabel
+                    value="female"
+                    control={<Radio />}
+                    label="Female"
+                    style={{ padding: "10px" }}
+                  />
+                  <br />{" "}
+                  <FormControlLabel
+                    value="female"
+                    control={<Radio />}
+                    label="Female"
+                    style={{ padding: "10px" }}
+                  />{" "}
+                  <FormControlLabel
+                    value="female"
+                    control={<Radio />}
+                    label="Female"
+                    style={{ padding: "10px" }}
+                  />
+                  <br />
+                </div>
+              </div>
+              <br />
+              <br />
+              <br />
               <div
                 style={{
                   display: "flex",
