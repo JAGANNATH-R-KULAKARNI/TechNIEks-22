@@ -28,9 +28,9 @@ export default function Events() {
   }, []);
 
   React.useEffect(() => {
-    setInterval(function () {
-      fetchTheProfile();
-    }, 100);
+    // setInterval(function () {
+    fetchTheProfile();
+    // }, 100);
   }, []);
 
   async function fetchTheProfile() {
