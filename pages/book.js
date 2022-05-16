@@ -37,7 +37,7 @@ function BookTicket(props) {
   const [successTab, setSuccessTab] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
 
-  const { dataEvents: errorEvents } = useSWR("eventBook", fetchTicketDetails);
+  // const { dataEvents: errorEvents } = useSWR("eventBook", fetchTicketDetails);
   const { dataProfile: errorProfile } = useSWR("profileBook", fetchTheProfile);
 
   const messageAlert = async (msg, type, t) => {
@@ -62,6 +62,11 @@ function BookTicket(props) {
     //
     // }, 100);
     fetchTheProfile();
+
+    console.log("ok here it is");
+    console.log(JSON.parse(props.router.query.datab));
+
+    // alert("here");
   }, []);
 
   async function fetchTicketDetails() {
@@ -119,6 +124,17 @@ function BookTicket(props) {
 
     if (data) {
       setEmail(data.email);
+      const temp = JSON.parse(props.router.query.datab);
+      if (/nie.ac.in$/.test(data.email)) {
+        setPrice(temp.price);
+        setThisCollege(true);
+      } else {
+        setThisCollege(false);
+        setPrice(temp.price_o);
+      }
+      setTicket(temp);
+      setTotalAmount(temp.price * no);
+      setLoading(false);
     }
 
     if (!data) {

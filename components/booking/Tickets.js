@@ -140,7 +140,11 @@ export default function Tickets(props) {
 
                           router.push({
                             pathname: "/book",
-                            query: { id: card.id, type: card.type },
+                            query: {
+                              id: card.id,
+                              type: card.type,
+                              datab: JSON.stringify(card),
+                            },
                           });
                         }}
                       >

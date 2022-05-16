@@ -37,11 +37,11 @@ export default function Events() {
     const data = await supabase.auth.user();
     setStatus(data ? true : false);
 
-    if (data && Cookies.get("whichroute")) {
-      const coo = Cookies.get("whichroute");
-      Cookies.remove("whichroute");
-      router.push(coo);
-    }
+    // if (data && Cookies.get("whichroute")) {
+    //   const coo = Cookies.get("whichroute");
+    //   Cookies.remove("whichroute");
+    //   router.push(coo);
+    // }
   }
 
   async function fetchEvents() {
