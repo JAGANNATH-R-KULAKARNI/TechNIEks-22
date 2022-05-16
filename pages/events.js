@@ -45,7 +45,10 @@ export default function Events() {
   }
 
   async function fetchEvents() {
-    const { data, error } = await supabase.from("events").select("*");
+    const { data, error } = await supabase
+      .from("events")
+      .select("*")
+      .eq("type", 0);
     console.log("fetch events");
     if (data) {
       setEvents(data);

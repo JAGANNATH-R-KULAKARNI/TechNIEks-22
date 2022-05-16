@@ -56,6 +56,8 @@ const RazorPayButton = (props) => {
         ticketprice: props.price,
         user_id: userData.id,
         college: props.usn,
+        shirt: props.ticket.type == 1 ? props.shirt : "Not Applicable",
+        category: props.ticket.type == 1 ? props.category : "Not Applicable",
       },
     ]);
 

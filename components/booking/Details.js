@@ -18,11 +18,18 @@ import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import Radio from "@mui/material/Radio";
+import Button from "@mui/material/Button";
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import ShareIcon from "@mui/icons-material/Share";
+import { Share } from "@mui/icons-material";
+import ModalUI from "./Dialog";
 
 const theme = createTheme();
 
 export default function Details(props) {
   const m1 = useMediaQuery("(min-width:600px)");
+  const [modal, modalStatus] = React.useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -34,6 +41,9 @@ export default function Details(props) {
 
   return (
     <ThemeProvider theme={theme}>
+      {modal ? (
+        <ModalUI modalStatus={modalStatus} ticket={props.ticket} />
+      ) : null}
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -68,6 +78,32 @@ export default function Details(props) {
           >
             ₹ {props.ticket && props.price} / person
           </Typography>
+          <br />
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              variant="contained"
+              endIcon={<ShareIcon />}
+              style={{ backgroundColor: c.c3 }}
+              onClick={() => {
+                navigator.clipboard.writeText(window.location.href);
+                alert("Link is Copied To Clipboard");
+              }}
+            >
+              Share
+            </Button>
+            <div style={{ width: "30px" }}></div>
+            <Button
+              variant="contained"
+              endIcon={<AutoStoriesIcon />}
+              style={{ backgroundColor: c.c3 }}
+              onClick={() => {
+                modalStatus(true);
+              }}
+            >
+              Details
+            </Button>
+          </div>
+
           <br />
           <Box
             component="form"
@@ -552,8 +588,14 @@ export default function Details(props) {
                 </div>
               ) : null}
               <br />
-              <br />
-              <br />
+
+              {props.ticket.type == 1 ? (
+                <div>
+                  {" "}
+                  <br />
+                  <br />
+                </div>
+              ) : null}
               <div
                 style={{
                   display: "flex",

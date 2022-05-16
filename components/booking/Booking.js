@@ -122,6 +122,8 @@ export default function Booking(props) {
                     messageAlertForPayments={props.messageAlertForPayments}
                     messageAlert={props.messageAlert}
                     price={props.price}
+                    shirt={props.shirt}
+                    category={props.category}
                   />
                 </div>
               </div>
@@ -162,6 +164,10 @@ export default function Booking(props) {
           setEnjoy={props.setEnjoy}
           thisCollege={props.thisCollege}
           price={props.price}
+          shirt={props.shirt}
+          setShirt={props.setShirt}
+          category={props.category}
+          setCategory={props.setCategory}
         />
       </div>
       <div
@@ -235,9 +241,7 @@ export default function Booking(props) {
                 thisCollege={props.thisCollege}
                 price={props.price}
                 shirt={props.shirt}
-                setShirt={props.setShirt}
                 category={props.category}
-                setCategory={props.setCategory}
               />
             </div>
             <br />

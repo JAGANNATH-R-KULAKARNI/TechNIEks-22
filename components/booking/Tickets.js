@@ -112,6 +112,9 @@ export default function Tickets(props) {
                           borderStyle: "outset",
                           borderColor: c.c4,
                           borderRadius: "5%",
+                          maxHeight: "127px",
+                          overflow: "hidden",
+                          padding: "5px",
                         }}
                       >
                         <i>{card.description}</i>

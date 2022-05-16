@@ -49,6 +49,7 @@ export default function Events() {
       .from("events")
       .select("*")
       .eq("type", 1);
+
     console.log("fetch events");
     if (data) {
       setEvents(data);
