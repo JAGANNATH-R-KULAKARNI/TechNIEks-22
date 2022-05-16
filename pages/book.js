@@ -27,7 +27,7 @@ function BookTicket(props) {
   const router = useRouter();
   const [thisCollege, setThisCollege] = React.useState(false);
   const [shirt, setShirt] = React.useState("L");
-  const [category, setCategory] = React.useState("Female");
+  const [category, setCategory] = React.useState("female");
 
   const [name, setName] = React.useState("");
   const [usn, setUSN] = React.useState("");
@@ -178,7 +178,7 @@ function BookTicket(props) {
           <h1 style={{ paddingTop: m1 ? "10%" : "35%" }}>Loading...</h1>
         </div>
       ) : null}
-      {price ? (
+      {price && ticket ? (
         <BookingUI
           ticket={ticket}
           name={name}

@@ -248,78 +248,309 @@ export default function Details(props) {
               <br />
               <br />
               <br />
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  minWidth: "100%",
-                }}
-              >
-                <div>
-                  <Typography
-                    component="h1"
-                    variant="h5"
+              {props.ticket && props.ticket.type == 1 ? (
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginLeft: "50px",
+                  }}
+                >
+                  <div
                     style={{
-                      fontFamily: "Bungee",
-                      textAlign: "center",
+                      display: "flex",
+                      justifyContent: "center",
+                      minWidth: "100%",
                     }}
                   >
-                    T-Shirt Size
-                  </Typography>
-                  <br />
-                  <FormControlLabel
-                    value="female"
-                    control={<Radio style={{ color: c.c4 }} />}
-                    label="Female"
+                    <div>
+                      <Typography
+                        component="h1"
+                        variant="h5"
+                        style={{
+                          fontFamily: "Bungee",
+                          textAlign: "center",
+                        }}
+                      >
+                        T-Shirt Size
+                      </Typography>
+                      <br />
+                      <div style={{ marginLeft: "40px" }}>
+                        <FormControlLabel
+                          control={<Radio style={{ color: "white" }} />}
+                          label={
+                            <p
+                              style={{
+                                fontFamily: "Bungee",
+                                fontSize: "14px",
+                                color: "white",
+                              }}
+                            >
+                              Small
+                            </p>
+                          }
+                          checked={props.shirt == "S" ? true : false}
+                          onChange={(e) => {
+                            props.setShirt("S");
+                          }}
+                          style={{
+                            minWidth: "140px",
+                            backgroundColor:
+                              props.shirt == "S" ? c.c4 : "black",
+                            color: props.shirt == "S" ? "black" : "white",
+                            paddingRight: "10px",
+                            borderRadius: "20px",
+                          }}
+                        />
+                        <FormControlLabel
+                          control={<Radio style={{ color: "white" }} />}
+                          label={
+                            <p
+                              style={{
+                                fontFamily: "Bungee",
+                                fontSize: "14px",
+                                color: "white",
+                              }}
+                            >
+                              Medium
+                            </p>
+                          }
+                          checked={props.shirt == "M" ? true : false}
+                          onChange={(e) => {
+                            props.setShirt("M");
+                          }}
+                          style={{
+                            minWidth: "140px",
+                            backgroundColor:
+                              props.shirt == "M" ? c.c4 : "black",
+                            color: props.shirt == "M" ? "black" : "white",
+                            paddingRight: "10px",
+                            borderRadius: "20px",
+                          }}
+                        />
+                        <br />
+                        <FormControlLabel
+                          control={<Radio style={{ color: "white" }} />}
+                          label={
+                            <p
+                              style={{
+                                fontFamily: "Bungee",
+                                fontSize: "14px",
+                                color: "white",
+                              }}
+                            >
+                              Large
+                            </p>
+                          }
+                          checked={props.shirt == "L" ? true : false}
+                          onChange={(e) => {
+                            props.setShirt("L");
+                          }}
+                          style={{
+                            minWidth: "140px",
+                            backgroundColor:
+                              props.shirt == "L" ? c.c4 : "black",
+                            color: props.shirt == "L" ? "black" : "white",
+                            paddingRight: "10px",
+                            borderRadius: "20px",
+                          }}
+                        />
+                        <FormControlLabel
+                          control={<Radio style={{ color: "white" }} />}
+                          label={
+                            <p
+                              style={{
+                                fontFamily: "Bungee",
+                                fontSize: "14px",
+                                color: "white",
+                              }}
+                            >
+                              X Large
+                            </p>
+                          }
+                          checked={props.shirt == "XL" ? true : false}
+                          onChange={(e) => {
+                            props.setShirt("XL");
+                          }}
+                          style={{
+                            minWidth: "140px",
+                            backgroundColor:
+                              props.shirt == "XL" ? c.c4 : "black",
+                            color: props.shirt == "XL" ? "black" : "white",
+                            paddingRight: "10px",
+                            borderRadius: "20px",
+                          }}
+                        />
+                        <br />{" "}
+                        <FormControlLabel
+                          control={<Radio style={{ color: "white" }} />}
+                          label={
+                            <p
+                              style={{
+                                fontFamily: "Bungee",
+                                fontSize: "14px",
+                                color: "white",
+                              }}
+                            >
+                              XX Large
+                            </p>
+                          }
+                          checked={props.shirt == "XXL" ? true : false}
+                          onChange={(e) => {
+                            props.setShirt("XXL");
+                          }}
+                          style={{
+                            minWidth: "140px",
+                            backgroundColor:
+                              props.shirt == "XXL" ? c.c4 : "black",
+                            color: props.shirt == "XXL" ? "black" : "white",
+                            paddingRight: "10px",
+                            borderRadius: "20px",
+                          }}
+                        />
+                        <FormControlLabel
+                          control={<Radio style={{ color: "white" }} />}
+                          label={
+                            <p
+                              style={{
+                                fontFamily: "Bungee",
+                                fontSize: "14px",
+                                color: "white",
+                              }}
+                            >
+                              XXX Large
+                            </p>
+                          }
+                          checked={props.shirt == "XXXL" ? true : false}
+                          onChange={(e) => {
+                            props.setShirt("XXXL");
+                          }}
+                          style={{
+                            minWidth: "140px",
+                            backgroundColor:
+                              props.shirt == "XXXL" ? c.c4 : "black",
+                            color: props.shirt == "XXXL" ? "black" : "white",
+                            paddingRight: "10px",
+                            borderRadius: "20px",
+                          }}
+                        />
+                      </div>
+                      <br />
+                    </div>
+                  </div>
+                  <div
                     style={{
-                      padding: "10px",
-                      border: "2px solid white",
-                      borderRadius: "30px",
-                      paddingRight: "15px",
-                      cursor: "",
+                      display: "flex",
+                      justifyContent: "center",
+                      minWidth: "100%",
                     }}
-                    onMouseEnter={(e) => {
-                      e.target.style.cursor = "pointer";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.cursor = "";
-                    }}
-                  />{" "}
-                  <FormControlLabel
-                    value="female"
-                    control={<Radio />}
-                    label="Female"
-                    style={{ padding: "10px" }}
-                  />
-                  <br />
-                  <FormControlLabel
-                    value="female"
-                    control={<Radio />}
-                    label="Female"
-                    style={{ padding: "10px" }}
-                  />{" "}
-                  <FormControlLabel
-                    value="female"
-                    control={<Radio />}
-                    label="Female"
-                    style={{ padding: "10px" }}
-                  />
-                  <br />{" "}
-                  <FormControlLabel
-                    value="female"
-                    control={<Radio />}
-                    label="Female"
-                    style={{ padding: "10px" }}
-                  />{" "}
-                  <FormControlLabel
-                    value="female"
-                    control={<Radio />}
-                    label="Female"
-                    style={{ padding: "10px" }}
-                  />
-                  <br />
+                  >
+                    <div>
+                      <Typography
+                        component="h1"
+                        variant="h5"
+                        style={{
+                          fontFamily: "Bungee",
+                          textAlign: "center",
+                        }}
+                      >
+                        Category
+                      </Typography>
+                      <br />
+                      <div style={{ marginLeft: "40px" }}>
+                        <FormControlLabel
+                          control={<Radio style={{ color: "white" }} />}
+                          label={
+                            <p
+                              style={{
+                                fontFamily: "Bungee",
+                                fontSize: "14px",
+                                color: "white",
+                              }}
+                            >
+                              Female
+                            </p>
+                          }
+                          checked={props.category == "female" ? true : false}
+                          onChange={(e) => {
+                            props.setCategory("female");
+                          }}
+                          style={{
+                            minWidth: "140px",
+                            backgroundColor:
+                              props.category == "female" ? c.c4 : "black",
+                            color:
+                              props.category == "female" ? "black" : "white",
+                            paddingRight: "10px",
+                            borderRadius: "20px",
+                          }}
+                        />
+                        <br />
+                        <FormControlLabel
+                          control={<Radio style={{ color: "white" }} />}
+                          label={
+                            <p
+                              style={{
+                                fontFamily: "Bungee",
+                                fontSize: "14px",
+                                color: "white",
+                              }}
+                            >
+                              Male
+                            </p>
+                          }
+                          checked={props.category == "male" ? true : false}
+                          onChange={(e) => {
+                            props.setCategory("male");
+                          }}
+                          style={{
+                            minWidth: "140px",
+                            backgroundColor:
+                              props.category == "male" ? c.c4 : "black",
+                            color: props.category == "male" ? "black" : "white",
+                            paddingRight: "10px",
+                            borderRadius: "20px",
+                          }}
+                        />
+                        <br />
+
+                        <div
+                          style={{ display: "flex", justifyContent: "center" }}
+                        >
+                          <FormControlLabel
+                            control={<Radio style={{ color: "white" }} />}
+                            label={
+                              <p
+                                style={{
+                                  fontFamily: "Bungee",
+                                  fontSize: "14px",
+                                  color: "white",
+                                }}
+                              >
+                                Veteren
+                              </p>
+                            }
+                            checked={props.category == "veteren" ? true : false}
+                            onChange={(e) => {
+                              props.setCategory("veteren");
+                            }}
+                            style={{
+                              minWidth: "140px",
+                              backgroundColor:
+                                props.category == "veteren" ? c.c4 : "black",
+                              color:
+                                props.category == "veteren" ? "black" : "white",
+                              paddingRight: "10px",
+                              borderRadius: "20px",
+                            }}
+                          />
+                        </div>
+                      </div>
+                      <br />
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ) : null}
               <br />
               <br />
               <br />
@@ -328,6 +559,8 @@ export default function Details(props) {
                   display: "flex",
                   justifyContent: "center",
                   minWidth: m1 ? "400px" : "90%",
+                  marginTop: props.ticket.type == 1 ? "20px" : "0px",
+                  marginLeft: props.ticket.type == 1 ? "10px" : "0px",
                 }}
               >
                 <div
