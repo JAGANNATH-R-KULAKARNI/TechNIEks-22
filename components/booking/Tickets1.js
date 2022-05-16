@@ -142,7 +142,7 @@ export default function Tickets(props) {
                           }
 
                           router.push({
-                            pathname: "/book",
+                            pathname: "/book1",
                             query: { id: card.id, type: card.type },
                           });
                         }}

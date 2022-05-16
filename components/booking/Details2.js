@@ -109,8 +109,8 @@ export default function Details(props) {
                 display: "flex",
                 justifyContent: "center",
                 maxWidth: "100%",
-                paddingLeft: props.ticket.type == 1 ? "5%" : "0%",
-                paddingRight: props.ticket.type == 1 ? "5%" : "0%",
+                paddingLeft: props.type == 1 ? "5%" : "0%",
+                paddingRight: props.type == 1 ? "5%" : "0%",
               }}
             >
               <FormControl
@@ -197,8 +197,8 @@ export default function Details(props) {
                 display: "flex",
                 justifyContent: "center",
                 maxWidth: "100%",
-                paddingLeft: props.ticket.type == 1 ? "5%" : "0%",
-                paddingRight: props.ticket.type == 1 ? "5%" : "0%",
+                paddingLeft: props.type == 1 ? "5%" : "0%",
+                paddingRight: props.type == 1 ? "5%" : "0%",
               }}
             >
               <FormControl
@@ -280,7 +280,7 @@ export default function Details(props) {
             </div>
             <div style={{ height: "10px" }}></div>
             <br />
-            {props.ticket && props.ticket.type == 1 ? (
+            {props.type == 1 ? (
               <div
                 style={
                   {

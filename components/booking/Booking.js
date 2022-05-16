@@ -52,6 +52,7 @@ export default function Booking(props) {
                 setShirt={props.setShirt}
                 category={props.category}
                 setCategory={props.setCategory}
+                type={props.type}
               />
             </div>
           </Grid>
@@ -71,7 +72,7 @@ export default function Booking(props) {
                 marginTop: "0px",
                 borderRadius: "75px",
                 fontFamily: "Bungee",
-                marginTop: props.ticket.type == 1 ? "120px" : "0px",
+                marginTop: props.type == 1 ? "120px" : "0px",
               }}
               elevation={1}
             >
@@ -168,6 +169,7 @@ export default function Booking(props) {
           setShirt={props.setShirt}
           category={props.category}
           setCategory={props.setCategory}
+          type={props.type}
         />
       </div>
       <div

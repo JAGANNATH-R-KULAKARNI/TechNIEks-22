@@ -284,7 +284,7 @@ export default function Details(props) {
               <br />
               <br />
               <br />
-              {props.ticket && props.ticket.type == 1 ? (
+              {props.type == 1 ? (
                 <div
                   style={{
                     display: "flex",
@@ -589,7 +589,7 @@ export default function Details(props) {
               ) : null}
               <br />
 
-              {props.ticket.type == 1 ? (
+              {props.type == 1 ? (
                 <div>
                   {" "}
                   <br />
@@ -601,8 +601,8 @@ export default function Details(props) {
                   display: "flex",
                   justifyContent: "center",
                   minWidth: m1 ? "400px" : "90%",
-                  marginTop: props.ticket.type == 1 ? "20px" : "0px",
-                  marginLeft: props.ticket.type == 1 ? "10px" : "0px",
+                  marginTop: props.type == 1 ? "20px" : "0px",
+                  marginLeft: props.type == 1 ? "10px" : "0px",
                 }}
               >
                 <div
