@@ -47,7 +47,7 @@ export default function Home(props) {
         backgroundColor: "#000000",
         color: "white",
         minWidth: "100%",
-        backgroundImage: "url(/images/hom.gif)",
+        backgroundImage: "url(/images/tatata.gif)",
         backgroundPosition: m1 ? "center 80px" : "center 85px",
         backgroundSize: m1 ? "600px 450px" : "400px 300px",
         backgroundRepeat: "no-repeat",

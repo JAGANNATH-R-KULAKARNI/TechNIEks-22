@@ -148,6 +148,7 @@ export default function Tickets(props) {
                             query: {
                               id: card.id,
                               type: card.type,
+                              data: JSON.stringify(card),
                             },
                           });
                         }}

@@ -10,6 +10,7 @@ import MuiAlert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 import useSWR from "swr";
 import DontCloseUI from "../components/booking/DontClose";
+import CheckOutUI from "../components/booking2/Checkout";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -37,7 +38,7 @@ function BookTicket(props) {
   const [successTab, setSuccessTab] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
 
-  const { dataEvents: errorEvents } = useSWR("eventBook", fetchTicketDetails);
+  // const { dataEvents: errorEvents } = useSWR("eventBook", fetchTicketDetails);
   const { dataProfile: errorProfile } = useSWR("profileBook", fetchTheProfile);
 
   const messageAlert = async (msg, type, t) => {
@@ -57,15 +58,9 @@ function BookTicket(props) {
   // }, []);
 
   React.useEffect(() => {
-    // alert(props.router.query.type);
     setInterval(function () {
       fetchTheProfile();
     }, 100);
-
-    // console.log("ok here it is");
-    // console.log(JSON.parse(props.router.query.datab));
-
-    // alert("here");
   }, []);
 
   async function fetchTicketDetails() {
@@ -123,17 +118,17 @@ function BookTicket(props) {
 
     if (data) {
       setEmail(data.email);
-      // const temp = JSON.parse(props.router.query.datab);
-      // if (/nie.ac.in$/.test(data.email)) {
-      //   setPrice(temp.price);
-      //   setThisCollege(true);
-      // } else {
-      //   setThisCollege(false);
-      //   setPrice(temp.price_o);
-      // }
-      // setTicket(temp);
-      // setTotalAmount(temp.price * no);
-      // setLoading(false);
+      const temp = JSON.parse(props.router.query.data);
+      if (/nie.ac.in$/.test(data.email)) {
+        setPrice(temp.price);
+        setThisCollege(true);
+      } else {
+        setThisCollege(false);
+        setPrice(temp.price_o);
+      }
+      setTicket(temp);
+      setTotalAmount(temp.price * no);
+      setLoading(false);
     }
 
     if (!data) {
@@ -218,6 +213,34 @@ function BookTicket(props) {
           type={0}
         />
       ) : null} */}
+      {ticket ? (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            paddingLeft: "2%",
+            paddingRight: "2%",
+          }}
+        >
+          {" "}
+          <CheckOutUI
+            ticket={ticket}
+            name={name}
+            usn={usn}
+            no={no}
+            email={email}
+            totalAmount={totalAmount}
+            setName={setName}
+            setUsn={setUSN}
+            setNo={setNo}
+            messageAlertForPayments={messageAlertForPayments}
+            messageAlert={messageAlert}
+            thisCollege={thisCollege}
+            price={price}
+          />
+        </div>
+      ) : null}
+      {m1 ? <br /> : null}
       <Footer />
     </div>
   );
