@@ -194,7 +194,7 @@ function BookTicket(props) {
           <h1 style={{ paddingTop: m1 ? "10%" : "35%" }}>Loading...</h1>
         </div>
       ) : null}
-      {price && ticket ? (
+      {/* {price && ticket ? (
         <BookingUI
           ticket={ticket}
           name={name}
@@ -217,7 +217,7 @@ function BookTicket(props) {
           setCategory={setCategory}
           type={0}
         />
-      ) : null}
+      ) : null} */}
       <Footer />
     </div>
   );
