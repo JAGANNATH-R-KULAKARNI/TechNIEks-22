@@ -15,7 +15,7 @@ function AButton(props) {
         className={classes.btn}
         onClick={props.clicked ? props.clicked : null}
         style={{
-          backgroundColor: c.c3,
+          backgroundColor: "#C76177",
           fontFamily: "Bungee",
           width: m1 ? "400px" : "80%",
         }}
