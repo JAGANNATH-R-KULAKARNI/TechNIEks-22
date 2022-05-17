@@ -86,9 +86,9 @@ function BookTicket(props) {
         .eq("id", Cookies.get("techniekseventid"));
 
       if (data) {
-        if (data[0].type == 1) {
-          router.push("/sports");
-        }
+        // if (data[0].type == 1) {
+        //   router.push("/sports");
+        // }
 
         if (/nie.ac.in$/.test(user.email)) {
           setPrice(data[0].price);
