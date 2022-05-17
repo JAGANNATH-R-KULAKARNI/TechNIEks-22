@@ -147,8 +147,8 @@ export default function Tickets(props) {
                             pathname: "/book",
                             query: {
                               id: card.id,
-                              type: card.type,
-                              data: JSON.stringify(card),
+                              // type: card.type,
+                              // data: JSON.stringify(card),
                             },
                           });
                         }}
