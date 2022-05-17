@@ -91,7 +91,6 @@ const RazorPayButton = (props) => {
     }
 
     if (error) {
-      alert("here");
       console.log(error);
       console.log(lol);
       props.messageAlert(

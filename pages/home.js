@@ -43,9 +43,12 @@ export default function Home(props) {
 
   const changeLogo = () => {
     const ok = document.getElementById("benki");
-    var heightvro = window.scrollY;
-    if (heightvro > 80) ok.style.backgroundImage = "url(/images/logo3.png)";
-    else ok.style.backgroundImage = "url(/images/logo.png)";
+
+    if (ok) {
+      var heightvro = window.scrollY;
+      if (heightvro > 80) ok.style.backgroundImage = "url(/images/logo3.png)";
+      else ok.style.backgroundImage = "url(/images/logo.png)";
+    }
   };
 
   React.useEffect(() => {
@@ -54,11 +57,15 @@ export default function Home(props) {
   }, []);
 
   React.useEffect(() => {
-    setTimeout(() => {
-      const ok = document.getElementById("benki");
-      ok.style.backgroundImage = "url(/images/logo.png)";
-      // ok.style.backgroundSize = m1 ? "550px 550px" : "250px 250px";
-    }, 10000);
+    try {
+      setTimeout(() => {
+        const ok = document.getElementById("benki");
+
+        if (ok) ok.style.backgroundImage = "url(/images/logo.png)";
+      }, 10000);
+    } catch (err) {
+      console.log("scroll error home page");
+    }
   }, []);
   return (
     <div

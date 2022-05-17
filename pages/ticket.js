@@ -75,7 +75,7 @@ export default function Ticket() {
   async function logOut() {
     await supabase.auth.signOut();
     setStatus(false);
-    router.push("/who_r_u");
+    router.reload(window.location.pathname);
   }
 
   return (

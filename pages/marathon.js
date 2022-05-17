@@ -42,10 +42,13 @@ export default function Events() {
 
   const changeIt = () => {
     const ok = document.getElementById("marathon_page");
-    var heightvro = window.scrollY;
-    if (heightvro > 150)
-      ok.style.backgroundImage = "url(/images/marathon3.png)";
-    else ok.style.backgroundImage = "url(/images/marathon.png)";
+
+    if (ok) {
+      var heightvro = window.scrollY;
+      if (heightvro > 150)
+        ok.style.backgroundImage = "url(/images/marathon3.png)";
+      else ok.style.backgroundImage = "url(/images/marathon.png)";
+    }
   };
 
   React.useEffect(() => {

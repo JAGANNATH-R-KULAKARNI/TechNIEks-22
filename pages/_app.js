@@ -56,9 +56,12 @@ function MyApp({ Component, pageProps }) {
 
   const changeIt = () => {
     const ok = document.getElementById("navbarbro");
-    var heightvro = window.scrollY;
-    if (heightvro > 0) ok.style.backgroundColor = "#000000";
-    else ok.style.backgroundColor = "";
+
+    if (ok) {
+      var heightvro = window.scrollY;
+      if (heightvro > 0) ok.style.backgroundColor = "#000000";
+      else ok.style.backgroundColor = "";
+    }
   };
 
   React.useEffect(() => {

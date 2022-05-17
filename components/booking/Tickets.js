@@ -86,17 +86,6 @@ export default function Tickets(props) {
                         >
                           {card.name}
                         </Typography>
-                        {/* <Typography
-                          style={{
-                            width: "50%",
-                            textAlign: "right",
-                          }}
-                          gutterBottom
-                          variant="h5"
-                          component="h2"
-                        >
-                          ₹ {card.price}
-                        </Typography> */}
                       </div>
                       <div style={{ display: "flex" }}>
                         <Typography style={{ width: "50%" }}>
@@ -135,20 +124,15 @@ export default function Tickets(props) {
                           if (card.open == 0) {
                             return;
                           }
-                          if (!props.status) {
-                            document.cookie = `whichroute=/book?id=${
-                              card.id
-                            }; expires=${new Date(9999, 0, 1).toUTCString()}`;
-                          } else {
-                            Cookies.remove("whichroute");
-                          }
+
+                          document.cookie = `techniekseventid=${
+                            card.id
+                          }; expires=${new Date(9999, 0, 1).toUTCString()}`;
 
                           router.push({
                             pathname: "/book",
                             query: {
                               id: card.id,
-                              // type: card.type,
-                              // data: JSON.stringify(card),
                             },
                           });
                         }}

@@ -10,6 +10,7 @@ import MuiAlert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 import useSWR from "swr";
 import DontCloseUI from "../components/booking/DontClose";
+import Cookies from "js-cookie";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -51,22 +52,22 @@ function BookTicket(props) {
     return;
   };
 
-  // React.useEffect(() => {
-  //   fetchTheProfile();
-  //   fetchTicketDetails();
-  // }, []);
-
   React.useEffect(() => {
-    // alert(props.router.query.type);
     setInterval(function () {
       fetchTheProfile();
+      fetchTicketDetails();
     }, 100);
-
-    // console.log("ok here it is");
-    // console.log(JSON.parse(props.router.query.datab));
-
-    // alert("here");
   }, []);
+
+  React.useEffect(() => {
+    if (router.isReady) {
+      console.log("lets see");
+      console.log(router.query["id"]);
+      document.cookie = `techniekseventid=${
+        router.query["id"]
+      }; expires=${new Date(9999, 0, 1).toUTCString()}`;
+    }
+  }, [router.isReady]);
 
   async function fetchTicketDetails() {
     const user = await supabase.auth.user();
@@ -77,16 +78,14 @@ function BookTicket(props) {
     }
 
     if (user) {
-      //   alert("here2");
       setEmail(user.email);
 
       const { data, error } = await supabase
         .from("events")
         .select("*")
-        .eq("id", props.router.query.id);
+        .eq("id", Cookies.get("techniekseventid"));
 
       if (data) {
-        // alert("here3");
         if (data[0].type == 1) {
           router.push("/sports");
         }
@@ -112,7 +111,6 @@ function BookTicket(props) {
 
   async function messageAlertForPayments(code) {
     if (code) {
-      // messageAlert("Please don't exit.....", "success", 1000000);
       setSuccessTab(true);
     } else {
       setOpenAlert(false);
@@ -148,7 +146,7 @@ function BookTicket(props) {
   async function logOut() {
     await supabase.auth.signOut();
     setStatus(false);
-    router.push("/who_r_u");
+    router.reload(window.location.pathname);
   }
 
   return (

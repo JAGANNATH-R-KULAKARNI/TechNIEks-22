@@ -28,18 +28,7 @@ export default function Tickets(props) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div style={{ height: "10px" }}></div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        {/* <h1
-          style={{
-            textAlight: "center",
-            fontSize: m1 ? "50px" : "35px",
-            color: c.c2,
-            fontFamily: "Bungee",
-          }}
-        >
-          Marathon
-        </h1> */}
-      </div>
+      <div style={{ display: "flex", justifyContent: "center" }}></div>
       <br />
       <div style={{ height: m1 ? "500px" : "300px" }}></div>
       <main>
@@ -71,9 +60,6 @@ export default function Tickets(props) {
                       alt="random"
                     />
                     <CardContent sx={{ flexGrow: 1 }}>
-                      {/* <Typography gutterBottom variant="h5" component="h2">
-                    
-                      </Typography> */}
                       <div style={{ display: "flex" }}>
                         <Typography
                           style={{
@@ -87,17 +73,6 @@ export default function Tickets(props) {
                         >
                           {card.name}
                         </Typography>
-                        {/* <Typography
-                          style={{
-                            width: "50%",
-                            textAlign: "right",
-                          }}
-                          gutterBottom
-                          variant="h5"
-                          component="h2"
-                        >
-                          ₹ {card.price}
-                        </Typography> */}
                       </div>
                       <div style={{ display: "flex" }}>
                         <Typography style={{ width: "50%" }}>
@@ -139,17 +114,12 @@ export default function Tickets(props) {
                             return;
                           }
 
-                          if (!props.status) {
-                            document.cookie = `whichroute=/book?id=${
-                              card.id
-                            }; expires=${new Date(9999, 0, 1).toUTCString()}`;
-                          } else {
-                            Cookies.remove("whichroute");
-                          }
-
+                          document.cookie = `techniekseventid=${
+                            card.id
+                          }; expires=${new Date(9999, 0, 1).toUTCString()}`;
                           router.push({
                             pathname: "/book1",
-                            query: { id: card.id, type: card.type },
+                            query: { id: card.id },
                           });
                         }}
                       >
