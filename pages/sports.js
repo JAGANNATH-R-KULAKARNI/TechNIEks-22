@@ -33,6 +33,19 @@ export default function Events() {
     }, 100);
   }, []);
 
+  const changeIt = () => {
+    const ok = document.getElementById("sports_page");
+    var heightvro = window.scrollY;
+    if (heightvro > 150)
+      ok.style.backgroundImage = "url(/images/marathon3.png)";
+    else ok.style.backgroundImage = "url(/images/marathon.png)";
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", changeIt);
+    return () => window.removeEventListener("scroll", changeIt);
+  }, []);
+
   async function fetchTheProfile() {
     const data = await supabase.auth.user();
     setStatus(data ? true : false);
@@ -80,6 +93,7 @@ export default function Events() {
         backgroundAttachment: "fixed",
         scrollBehavior: "smooth",
       }}
+      id="sports_page"
     >
       <NavBar code={0} logOut={logOut} status={status} />
 
