@@ -14,6 +14,7 @@ import * as c from "../../utils/Colors";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
+import InfoIcon from "@mui/icons-material/Info";
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -132,7 +133,12 @@ export default function Tickets(props) {
                           backgroundColor: c.c4,
                           fontFamily: "Bungee",
                         }}
+                        startIcon={card.open == 0 ? <InfoIcon /> : null}
                         onClick={() => {
+                          if (card.open == 0) {
+                            return;
+                          }
+
                           if (!props.status) {
                             document.cookie = `whichroute=/book?id=${
                               card.id
@@ -147,7 +153,7 @@ export default function Tickets(props) {
                           });
                         }}
                       >
-                        Book Now
+                        {card.open ? "Book Now" : "Coming Soon"}
                       </Button>
                     </CardActions>
                   </Card>
