@@ -20,7 +20,7 @@ export default function Booking(props) {
       <div style={{ paddingLeft: "5%", paddingRight: "5%" }}>
         <br />
         <br />
-        {props.ticket ? (
+        {/* {props.ticket ? (
           <div style={{ display: "flex", justifyContent: "center" }}>
             <img
               src={props.ticket.image}
@@ -28,7 +28,7 @@ export default function Booking(props) {
               style={{ height: "150px", width: "auto", borderRadius: "50%" }}
             />
           </div>
-        ) : null}
+        ) : null} */}
         <Grid container spacing={2}>
           <Grid item xs={12} style={{ maxHeight: "600px" }}>
             <br />
