@@ -223,7 +223,7 @@ function BookTicket(props) {
           }}
         >
           {" "}
-          <CheckOutUI
+          {/* <CheckOutUI
             ticket={ticket}
             name={name}
             usn={usn}
@@ -237,7 +237,7 @@ function BookTicket(props) {
             messageAlert={messageAlert}
             thisCollege={thisCollege}
             price={price}
-          />
+          /> */}
         </div>
       ) : null}
       {m1 ? <br /> : null}

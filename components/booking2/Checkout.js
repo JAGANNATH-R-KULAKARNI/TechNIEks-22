@@ -66,7 +66,13 @@ export default function Checkout(props) {
           />
         );
       case 1:
-        return <ModifyUI />;
+        return (
+          <ModifyUI
+            no={props.no}
+            setNo={props.setNo}
+            totalAmount={props.totalAmount}
+          />
+        );
       case 2:
         return <Review />;
       default:
@@ -101,6 +107,7 @@ export default function Checkout(props) {
             p: { xs: 2, md: 3 },
             backgroundColor: c.c2,
             color: c.c1,
+            borderRadius: "50px",
           }}
         >
           <Typography
@@ -234,7 +241,12 @@ export default function Checkout(props) {
                   <Button
                     variant="contained"
                     onClick={handleNext}
-                    sx={{ mt: 3, ml: 1, backgroundColor: c.c1 }}
+                    sx={{
+                      mt: 3,
+                      ml: 1,
+                      backgroundColor: c.c1,
+                      borderRadius: "10px",
+                    }}
                   >
                     {activeStep === steps.length - 1 ? "Place order" : "Next"}
                   </Button>
