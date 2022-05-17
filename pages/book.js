@@ -58,9 +58,9 @@ function BookTicket(props) {
 
   React.useEffect(() => {
     // alert(props.router.query.type);
-    // setInterval(function () {
-    fetchTheProfile();
-    // }, 100);
+    setInterval(function () {
+      fetchTheProfile();
+    }, 100);
 
     // console.log("ok here it is");
     // console.log(JSON.parse(props.router.query.datab));
@@ -229,12 +229,12 @@ function BookTicket(props) {
 
 export default withRouter(BookTicket);
 
-export async function getServerSideProps({ req }) {
-  const { user } = await supabase.auth.api.getUserByCookie(req);
+// export async function getServerSideProps({ req }) {
+//   const { user } = await supabase.auth.api.getUserByCookie(req);
 
-  if (!user) {
-    return { props: {}, redirect: { destination: "/who_r_u" } };
-  }
+//   if (!user) {
+//     return { props: {}, redirect: { destination: "/who_r_u" } };
+//   }
 
-  return { props: { user } };
-}
+//   return { props: { user } };
+// }
