@@ -4,13 +4,12 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { supabase } from "../utils/SupabaseClient";
 import React from "react";
 import { useRouter } from "next/router";
-// import BookingUI from "../components/booking/Booking";
+import BookingUI from "../components/booking/Booking";
 import { withRouter } from "next/router";
 import MuiAlert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 import useSWR from "swr";
 import DontCloseUI from "../components/booking/DontClose";
-import CheckOutUI from "../components/booking2/Checkout";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -58,9 +57,15 @@ function BookTicket(props) {
   // }, []);
 
   React.useEffect(() => {
+    // alert(props.router.query.type);
     setInterval(function () {
       fetchTheProfile();
     }, 100);
+
+    // console.log("ok here it is");
+    // console.log(JSON.parse(props.router.query.datab));
+
+    // alert("here");
   }, []);
 
   async function fetchTicketDetails() {
@@ -82,6 +87,10 @@ function BookTicket(props) {
 
       if (data) {
         // alert("here3");
+        if (data[0].type == 1) {
+          router.push("/sports");
+        }
+
         if (/nie.ac.in$/.test(user.email)) {
           setPrice(data[0].price);
           setThisCollege(true);
@@ -118,7 +127,7 @@ function BookTicket(props) {
 
     if (data) {
       setEmail(data.email);
-      // const temp = JSON.parse(props.router.query.data);
+      // const temp = JSON.parse(props.router.query.datab);
       // if (/nie.ac.in$/.test(data.email)) {
       //   setPrice(temp.price);
       //   setThisCollege(true);
@@ -189,7 +198,7 @@ function BookTicket(props) {
           <h1 style={{ paddingTop: m1 ? "10%" : "35%" }}>Loading...</h1>
         </div>
       ) : null}
-      {/* {price && ticket ? (
+      {price && ticket ? (
         <BookingUI
           ticket={ticket}
           name={name}
@@ -212,35 +221,7 @@ function BookTicket(props) {
           setCategory={setCategory}
           type={0}
         />
-      ) : null} */}
-      {ticket ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            paddingLeft: "2%",
-            paddingRight: "2%",
-          }}
-        >
-          {" "}
-          <CheckOutUI
-            ticket={ticket}
-            name={name}
-            usn={usn}
-            no={no}
-            email={email}
-            totalAmount={totalAmount}
-            setName={setName}
-            setUsn={setUSN}
-            setNo={setNo}
-            messageAlertForPayments={messageAlertForPayments}
-            messageAlert={messageAlert}
-            thisCollege={thisCollege}
-            price={price}
-          />
-        </div>
       ) : null}
-      {m1 ? <br /> : null}
       <Footer />
     </div>
   );

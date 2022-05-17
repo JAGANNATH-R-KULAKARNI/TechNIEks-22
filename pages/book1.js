@@ -87,6 +87,10 @@ function BookTicket(props) {
 
       if (data) {
         // alert("here3");
+        if (data[0].type == 0) {
+          router.push("/events");
+        }
+
         if (/nie.ac.in$/.test(user.email)) {
           setPrice(data[0].price);
           setThisCollege(true);
