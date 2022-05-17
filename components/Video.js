@@ -8,7 +8,7 @@ function Video(props) {
 
   return (
     <>
-      <h1
+      {/* <h1
         variant="h4"
         component="div"
         gutterBottom
@@ -26,7 +26,13 @@ function Video(props) {
         }}
       >
         {props.heading}
-      </h1>
+      </h1> */}
+      <div
+        style={{
+          height: m1 ? "110px" : "0px",
+          marginTop: m1 ? "0px" : "-50px",
+        }}
+      ></div>
       {/* <div style={{ display: "flex", justifyContent: "center" }}>
         <ButtonUI />
       </div> */}

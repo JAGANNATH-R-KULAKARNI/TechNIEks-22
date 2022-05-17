@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import UserD from "./User";
 import ModifyUI from "./Modify";
 import Review from "./Review";
+import * as c from "../../utils/Colors";
 
 function Copyright() {
   return (
@@ -78,15 +79,34 @@ export default function Checkout(props) {
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper
           variant="outlined"
-          sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
+          sx={{
+            my: { xs: 3, md: 6 },
+            p: { xs: 2, md: 3 },
+            backgroundColor: c.c2,
+            color: c.c1,
+          }}
         >
-          <Typography component="h1" variant="h4" align="center">
+          <Typography
+            component="h1"
+            variant="h4"
+            align="center"
+            style={{
+              backgroundColor: c.c1,
+              color: c.c2,
+              borderRadius: "50px",
+              paddingLeft: "20%",
+              paddingRight: "20%",
+            }}
+          >
             {props.ticket.name}
           </Typography>
+
           <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
             {steps.map((label) => (
               <Step key={label}>
-                <StepLabel>{label}</StepLabel>
+                <StepLabel>
+                  <span style={{ color: c.c1 }}>{label}</span>
+                </StepLabel>
               </Step>
             ))}
           </Stepper>
@@ -115,7 +135,7 @@ export default function Checkout(props) {
                   <Button
                     variant="contained"
                     onClick={handleNext}
-                    sx={{ mt: 3, ml: 1 }}
+                    sx={{ mt: 3, ml: 1, backgroundColor: c.c1 }}
                   >
                     {activeStep === steps.length - 1 ? "Place order" : "Next"}
                   </Button>
