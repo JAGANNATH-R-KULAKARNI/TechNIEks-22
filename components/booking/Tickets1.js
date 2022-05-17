@@ -118,7 +118,7 @@ export default function Tickets(props) {
                             card.id
                           }; expires=${new Date(9999, 0, 1).toUTCString()}`;
                           router.push({
-                            pathname: "/book1",
+                            pathname: "/book",
                             query: { id: card.id },
                           });
                         }}

@@ -229,12 +229,12 @@ function BookTicket(props) {
 
 export default withRouter(BookTicket);
 
-export async function getServerSideProps({ req }) {
-  const { user } = await supabase.auth.api.getUserByCookie(req);
+// export async function getServerSideProps({ req }) {
+//   const { user } = await supabase.auth.api.getUserByCookie(req);
 
-  if (!user) {
-    return { props: {}, redirect: { destination: "/who_r_u" } };
-  }
+//   if (!user) {
+//     return { props: {}, redirect: { destination: "/who_r_u" } };
+//   }
 
-  return { props: { user } };
-}
+//   return { props: { user } };
+// }

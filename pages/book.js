@@ -217,7 +217,7 @@ function BookTicket(props) {
           setShirt={setShirt}
           category={category}
           setCategory={setCategory}
-          type={0}
+          type={ticket.type}
         />
       ) : null}
       <Footer />
