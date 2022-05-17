@@ -28,9 +28,9 @@ export default function Events() {
   }, []);
 
   React.useEffect(() => {
-    setInterval(function () {
-      fetchTheProfile();
-    }, 100);
+    // setInterval(function () {
+    fetchTheProfile();
+    // }, 100);
   }, []);
 
   const changeIt = () => {
@@ -52,12 +52,6 @@ export default function Events() {
   async function fetchTheProfile() {
     const data = await supabase.auth.user();
     setStatus(data ? true : false);
-
-    if (data && Cookies.get("whichroute")) {
-      const coo = Cookies.get("whichroute");
-      Cookies.remove("whichroute");
-      router.push(coo);
-    }
   }
 
   async function fetchEvents() {
