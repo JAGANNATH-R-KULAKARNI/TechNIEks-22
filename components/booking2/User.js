@@ -4,108 +4,199 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import Avatar from "@mui/material/Avatar";
+import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import * as c from "../../utils/Colors";
+import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import FormControl from "@mui/material/FormControl";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+import Radio from "@mui/material/Radio";
+import Button from "@mui/material/Button";
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import ShareIcon from "@mui/icons-material/Share";
+import { PeopleSharp, Share } from "@mui/icons-material";
+import ModalUI from "./Dialog";
 
-export default function AddressForm() {
+export default function UserForm(props) {
+  const m1 = useMediaQuery("(min-width:600px)");
+
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Shipping address
-      </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="firstName"
-            name="firstName"
-            label="First name"
-            fullWidth
-            autoComplete="given-name"
-            variant="standard"
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <img
+          src={props.ticket.image}
+          style={{
+            width: "auto",
+            height: "150px",
+            borderRadius: "50px",
+          }}
+        />
+      </div>
+      <br />
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <FormControl
+          variant="outlined"
+          style={{
+            color: c.c1,
+            minWidth: m1 ? "370px" : "100%",
+          }}
+          sx={{
+            input: {
+              color: c.c1,
+            },
+            "& .MuiOutlinedInput-root": {
+              "& > fieldset": {
+                borderColor: c.c1,
+              },
+            },
+            "& .MuiOutlinedInput-root:hover": {
+              "& > fieldset": {
+                borderColor: c.c1,
+              },
+            },
+            "& .MuiFormLabel-root": { color: c.c1, fontWeight: 100 },
+            fontFamily: "Bungee",
+          }}
+        >
+          <InputLabel
+            htmlFor="outlined-adornment-password"
+            style={{ fontFamily: "Bungee" }}
+          >
+            Name
+          </InputLabel>
+          <OutlinedInput
+            id="name book"
+            type="name"
+            value={props.name}
+            onChange={(e) => {
+              if (e.target.value.length > 20) return;
+
+              props.setName(e.target.value);
+            }}
+            label="Name"
+            placeholder="Jagannath R K"
+            sx={{
+              fontFamily: "Bungee",
+              input: {
+                color: c.c1,
+              },
+              borderColor: c.c1,
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": {
+                  borderColor: c.c1,
+                },
+              },
+              "& .MuiOutlinedInput-root:hover": {
+                "& > fieldset": {
+                  borderColor: c.c1,
+                },
+              },
+              "& .MuiFormLabel-root": {
+                color: c.c1,
+                fontWeight: 100,
+              },
+              "& .MuiFormLabel-root&:hover": {
+                color: c.c1,
+                fontWeight: 100,
+              },
+              "& label.Mui-focused": {
+                color: c.c1,
+              },
+              "& .MuiOutlinedInput-root": {
+                "&.Mui-focused fieldset": {
+                  borderColor: c.c1,
+                },
+              },
+            }}
           />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="lastName"
-            name="lastName"
-            label="Last name"
-            fullWidth
-            autoComplete="family-name"
-            variant="standard"
+        </FormControl>
+      </div>
+      <br />
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <FormControl
+          variant="outlined"
+          style={{
+            color: c.c1,
+            minWidth: m1 ? "370px" : "100%",
+          }}
+          sx={{
+            input: {
+              color: c.c1,
+            },
+            "& .MuiOutlinedInput-root": {
+              "& > fieldset": {
+                borderColor: c.c1,
+              },
+            },
+            "& .MuiOutlinedInput-root:hover": {
+              "& > fieldset": {
+                borderColor: c.c1,
+              },
+            },
+            "& .MuiFormLabel-root": { color: c.c1, fontWeight: 100 },
+            fontFamily: "Bungee",
+          }}
+        >
+          <InputLabel
+            htmlFor="outlined-adornment-password"
+            style={{ fontFamily: "Bungee" }}
+          >
+            {props.thisCollege ? "USN" : "College"}
+          </InputLabel>
+          <OutlinedInput
+            id="usnbro"
+            type="name"
+            value={props.usn}
+            onChange={(e) => {
+              if (e.target.value.length > 20) return;
+              props.setUsn(e.target.value);
+            }}
+            label="Name"
+            placeholder={props.thisCollege ? "4NI19IS***" : "NIE College"}
+            sx={{
+              fontFamily: "Bungee",
+              input: {
+                color: c.c1,
+              },
+              borderColor: c.c1,
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": {
+                  borderColor: c.c1,
+                },
+              },
+              "& .MuiOutlinedInput-root:hover": {
+                "& > fieldset": {
+                  borderColor: c.c1,
+                },
+              },
+              "& .MuiFormLabel-root": {
+                color: c.c1,
+                fontWeight: 100,
+              },
+              "& .MuiFormLabel-root&:hover": {
+                color: c.c1,
+                fontWeight: 100,
+              },
+              "& label.Mui-focused": {
+                color: c.c1,
+              },
+              "& .MuiOutlinedInput-root": {
+                "&.Mui-focused fieldset": {
+                  borderColor: c.c1,
+                },
+              },
+            }}
           />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            required
-            id="address1"
-            name="address1"
-            label="Address line 1"
-            fullWidth
-            autoComplete="shipping address-line1"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            id="address2"
-            name="address2"
-            label="Address line 2"
-            fullWidth
-            autoComplete="shipping address-line2"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="city"
-            name="city"
-            label="City"
-            fullWidth
-            autoComplete="shipping address-level2"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            id="state"
-            name="state"
-            label="State/Province/Region"
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="zip"
-            name="zip"
-            label="Zip / Postal code"
-            fullWidth
-            autoComplete="shipping postal-code"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="country"
-            name="country"
-            label="Country"
-            fullWidth
-            autoComplete="shipping country"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <FormControlLabel
-            control={
-              <Checkbox color="secondary" name="saveAddress" value="yes" />
-            }
-            label="Use this address for payment details"
-          />
-        </Grid>
-      </Grid>
+        </FormControl>
+      </div>
     </React.Fragment>
   );
 }

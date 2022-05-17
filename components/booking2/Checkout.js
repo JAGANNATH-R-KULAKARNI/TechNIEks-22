@@ -16,39 +16,67 @@ import UserD from "./User";
 import ModifyUI from "./Modify";
 import Review from "./Review";
 import * as c from "../../utils/Colors";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import ShareIcon from "@mui/icons-material/Share";
+import { Share } from "@mui/icons-material";
+import ModalUI from "./Dialog";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import Grid from "@mui/material/Grid";
+import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import FormControl from "@mui/material/FormControl";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+import Radio from "@mui/material/Radio";
 
 const steps = ["User", "Modify", "Review"];
-
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <UserD />;
-    case 1:
-      return <ModifyUI />;
-    case 2:
-      return <Review />;
-    default:
-      throw new Error("Unknown step");
-  }
-}
 
 const theme = createTheme();
 
 export default function Checkout(props) {
+  function Copyright() {
+    return (
+      <Typography variant="body2" color="text.secondary" align="center">
+        {"Copyright © "}
+        <Link color="inherit" href="https://mui.com/">
+          Your Website
+        </Link>{" "}
+        {new Date().getFullYear()}
+        {"."}
+      </Typography>
+    );
+  }
+
+  function getStepContent(step) {
+    switch (step) {
+      case 0:
+        return (
+          <UserD
+            ticket={props.ticket}
+            name={props.name}
+            usn={props.usn}
+            setName={props.setName}
+            setUsn={props.setUsn}
+            messageAlert={props.messageAlert}
+            thisCollege={props.thisCollege}
+          />
+        );
+      case 1:
+        return <ModifyUI />;
+      case 2:
+        return <Review />;
+      default:
+        throw new Error("Unknown step");
+    }
+  }
+
   const [activeStep, setActiveStep] = React.useState(0);
+  const [modal, modalStatus] = React.useState(false);
+  const m1 = useMediaQuery("(min-width:600px)");
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -60,22 +88,11 @@ export default function Checkout(props) {
 
   return (
     <ThemeProvider theme={theme}>
+      {modal ? (
+        <ModalUI modalStatus={modalStatus} ticket={props.ticket} />
+      ) : null}
       <CssBaseline />
-      {/* <AppBar
-        position="absolute"
-        color="default"
-        elevation={0}
-        sx={{
-          position: "relative",
-          borderBottom: (t) => `1px solid ${t.palette.divider}`,
-        }}
-      >
-        <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            Company name
-          </Typography>
-        </Toolbar>
-      </AppBar> */}
+
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper
           variant="outlined"
@@ -87,8 +104,8 @@ export default function Checkout(props) {
           }}
         >
           <Typography
-            component="h1"
-            variant="h4"
+            component="h2"
+            variant={m1 ? "h4" : "h5"}
             align="center"
             style={{
               backgroundColor: c.c1,
@@ -96,16 +113,98 @@ export default function Checkout(props) {
               borderRadius: "50px",
               paddingLeft: "20%",
               paddingRight: "20%",
+              textAlign: "center",
+              fontFamily: "Bungee",
             }}
           >
             {props.ticket.name}
           </Typography>
-
+          <br />
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              variant="contained"
+              endIcon={m1 ? <ShareIcon /> : null}
+              style={{
+                backgroundColor: c.c3,
+                borderBottomLeftRadius: m1 ? "20px" : "5px",
+                borderTopRightRadius: m1 ? "20px" : "5px",
+                fontSize: "12px",
+                maxHeight: "35px",
+              }}
+              onClick={() => {
+                navigator.clipboard.writeText(window.location.href);
+                alert("Link is Copied To Clipboard");
+              }}
+            >
+              Share
+            </Button>
+            <div
+              style={{
+                width: "50%",
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "-25px",
+              }}
+            >
+              {m1 ? (
+                <h4 style={{ fontSize: "20px" }}>
+                  ₹{" "}
+                  <span
+                    style={{
+                      fontSize: "40px",
+                      fontWeight: 900,
+                    }}
+                  >
+                    {props.price}
+                  </span>{" "}
+                  / Person
+                </h4>
+              ) : (
+                <h4 style={{ fontSize: "20px", textAlign: "center" }}>
+                  ₹{" "}
+                  <span
+                    style={{
+                      fontSize: "35px",
+                      fontWeight: 900,
+                    }}
+                  >
+                    {props.price}
+                  </span>{" "}
+                  <br />
+                  {"/ Person"}
+                </h4>
+              )}
+            </div>
+            <Button
+              variant="contained"
+              endIcon={m1 ? <AutoStoriesIcon /> : null}
+              style={{
+                backgroundColor: c.c3,
+                borderTopLeftRadius: m1 ? "20px" : "5px",
+                borderBottomRightRadius: m1 ? "20px" : "5px",
+                fontSize: "12px",
+                maxHeight: "35px",
+              }}
+              onClick={() => {
+                modalStatus(true);
+              }}
+            >
+              Details
+            </Button>
+          </div>
           <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
             {steps.map((label) => (
               <Step key={label}>
-                <StepLabel>
-                  <span style={{ color: c.c1 }}>{label}</span>
+                <StepLabel
+                  style={{
+                    backgroundColor: "black",
+                    color: "white",
+                    padding: "7px",
+                    borderRadius: "15px",
+                    paddingRight: "10px",
+                  }}
+                >
+                  <span style={{ color: c.c2 }}>{label}</span>
                 </StepLabel>
               </Step>
             ))}

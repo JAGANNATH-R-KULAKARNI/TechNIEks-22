@@ -41,19 +41,39 @@ export default function Home(props) {
     router.reload(window.location.pathname);
   }
 
+  const changeLogo = () => {
+    const ok = document.getElementById("benki");
+    var heightvro = window.scrollY;
+    if (heightvro > 80) ok.style.backgroundImage = "url(/images/logo3.png)";
+    else ok.style.backgroundImage = "url(/images/logo.png)";
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", changeLogo);
+    return () => window.removeEventListener("scroll", changeLogo);
+  }, []);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      const ok = document.getElementById("benki");
+      ok.style.backgroundImage = "url(/images/logo.png)";
+      // ok.style.backgroundSize = m1 ? "550px 550px" : "250px 250px";
+    }, 10000);
+  }, []);
   return (
     <div
       style={{
         backgroundColor: "#000000",
         color: "white",
         minWidth: "100%",
-        backgroundImage: "url(/images/tatata.gif)",
-        backgroundPosition: m1 ? "center 40px" : "center 65px",
-        backgroundSize: m1 ? "1155px 650px" : "533px 300px",
+        backgroundImage: "url(/images/aaa.gif)",
+        backgroundPosition: m1 ? "center 65px" : "center 65px",
+        backgroundSize: m1 ? "600px 600px" : "300px 300px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
         scrollBehavior: "smooth",
       }}
+      id="benki"
     >
       <NavBar code={0} logOut={logOut} status={status} />
       <div

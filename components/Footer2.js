@@ -16,10 +16,10 @@ function Footer() {
         <div className={styles.contents_why}>
           <div className={styles.img_conatiner}>
             <Image
-              src="/images/man1.png"
+              src="/images/marathon.png"
               alt=""
-              width="576px"
-              height="433px"
+              width="477px"
+              height="523px"
             ></Image>
           </div>
           <div className={styles.desc}>
@@ -30,6 +30,7 @@ function Footer() {
                 letterSpacing: "2px",
                 fontSize: 34,
                 fontWeight: "bold",
+                marginTop: m1 ? "0px" : "-100px",
               }}
             >
               Marathon
@@ -48,6 +49,22 @@ function Footer() {
           </div>
         </div>
         <div className={styles.contents_why}>
+          {!m1 ? (
+            <div
+              className={styles.img_conatiner}
+              style={{ marginTop: "-150px" }}
+            >
+              <img
+                src="/images/akcent.png"
+                alt=""
+                style={{
+                  height: m1 ? "400px" : "300px",
+                  width: "auto",
+                  marginTop: m1 ? "0px" : "100px",
+                }}
+              ></img>
+            </div>
+          ) : null}
           <div className={styles.desc}>
             <h1
               style={{
@@ -56,31 +73,32 @@ function Footer() {
                 letterSpacing: "2px",
                 fontSize: 34,
                 fontWeight: "bold",
+                marginTop: m1 ? "0px" : "-50px",
               }}
             >
-              Cyclothon
+              Concert
             </h1>
             <br />
             <p style={{ lineHeight: 1.7, wordSpacing: "5px" }}>
-              Cyclothon is a sporting event, that aims to highlight fitness,
-              health, charity and fun at the same time. Cyclists can showcase
-              their skills to the fullest.After 3 long years the Cyclothon is
-              back with full force and is being conducted on the same day as the
-              marathon. Whatever proceeds we obtain from the event would be
-              donated to Shaktidhama founded by Puneet Raj Kumar.
+              The concept of concert is a live musical performance or mutual
+              agreement. Concert can be a venue where you can listen to your
+              favorite musician. NIE concert promises to be a fun event where
+              you can enjoy the performance of your favorite musician.
             </p>
           </div>
-          <div className={styles.img_conatiner}>
-            <img
-              src="/images/cg.gif"
-              alt=""
-              style={{
-                height: m1 ? "400px" : "300px",
-                width: "auto",
-                marginTop: m1 ? "0px" : "100px",
-              }}
-            ></img>
-          </div>
+          {m1 ? (
+            <div className={styles.img_conatiner}>
+              <img
+                src="/images/akcent.png"
+                alt=""
+                style={{
+                  height: m1 ? "400px" : "300px",
+                  width: "auto",
+                  marginTop: m1 ? "0px" : "100px",
+                }}
+              ></img>
+            </div>
+          ) : null}
         </div>
 
         {/* ---------------------------- */}

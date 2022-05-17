@@ -59,22 +59,20 @@ function Footer() {
               </h3>
               <p
                 style={{
-                  fontSize: m1 ? "10px" : "10px",
+                  fontSize: m1 ? "11px" : "10px",
                   lineHeight: 1.7,
                   wordSpacing: m1 ? "5px" : "3px",
 
                   fontStyle: "italic",
                 }}
               >
-                The marathon was one of the original modern Olympic events in
-                1896. In honor of this legendary sport National Institute of
-                Engineering conducts Marathon every year as part of techNIEks
-                techno- cultural fest. The marathon is usually conducted for a
-                cause (last year data) and this year its been conducted to
-                empower the distressed women. After 3 long years the Cyclothon
-                is back with full force and is being conducted on the same day.
-                Whatever proceeds we obtain from the event would be donated to
-                Shaktidhama founded by Puneet Raj Kumar
+                The New Year Trayagnie promises a period of joy and celebrations
+                unlike the past two years Sarvari and Plava where people faced
+                the Corona pandemic and loss of life. This year is best for
+                performing auspicious events like weddings, construction of new
+                homes, housewarming etc. People born in this Trayagnie year will
+                be principled ones. trying to do good to others. They will also
+                learn many sciences and live long.
               </p>
             </div>
           </Grid>

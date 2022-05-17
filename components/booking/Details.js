@@ -54,15 +54,6 @@ export default function Details(props) {
             alignItems: "center",
           }}
         >
-          {/* <Avatar
-            sx={{
-              m: 1,
-              bgcolor: "secondary.main",
-              backgroundColor: c.c4,
-            }}
-          >
-            <ConfirmationNumberIcon />
-          </Avatar> */}
           <Typography
             component="h1"
             variant="h4"
