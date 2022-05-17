@@ -10,6 +10,7 @@ import * as c from "../utils/Colors";
 import Cookies from "js-cookie";
 import styles from "../styles/Footer1.module.css";
 import Image from "next/image";
+import ButtonUI from "../components/Button2";
 
 export default function Events() {
   const m1 = useMediaQuery("(min-width:600px)");
@@ -24,6 +25,10 @@ export default function Events() {
     fetchTheProfile
   );
 
+  const routeToBook = () => {
+    router.push("/sports");
+  };
+
   React.useEffect(() => {
     fetchTheProfile();
     fetchEvents();
@@ -33,6 +38,19 @@ export default function Events() {
     setInterval(function () {
       fetchTheProfile();
     }, 100);
+  }, []);
+
+  const changeIt = () => {
+    const ok = document.getElementById("marathon_page");
+    var heightvro = window.scrollY;
+    if (heightvro > 150)
+      ok.style.backgroundImage = "url(/images/marathon3.png)";
+    else ok.style.backgroundImage = "url(/images/marathon.png)";
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", changeIt);
+    return () => window.removeEventListener("scroll", changeIt);
   }, []);
 
   async function fetchTheProfile() {
@@ -77,13 +95,15 @@ export default function Events() {
         color: c.c2,
         backgroundImage: "url(/images/marathon.png)",
         backgroundPosition: m1 ? "center 100px" : "center 85px",
-        backgroundSize: m1 ? "450px 450px" : "250px 250px",
+        backgroundSize: m1 ? "550px 550px" : "250px 250px",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
         scrollBehavior: "smooth",
       }}
+      id="marathon_page"
     >
       <NavBar code={0} logOut={logOut} status={status} />
+      <div style={{ height: m1 ? "570px" : "250px" }}></div>
       <div className={styles.contents_why}>
         <div className={styles.img_conatiner}>
           <Image
@@ -118,6 +138,19 @@ export default function Events() {
         </div>
       </div>
       <div className={styles.contents_why}>
+        {!m1 ? (
+          <div className={styles.img_conatiner} style={{ marginTop: "-120px" }}>
+            <img
+              src="/images/cg.gif"
+              alt=""
+              style={{
+                height: m1 ? "400px" : "300px",
+                width: "auto",
+                marginTop: m1 ? "0px" : "100px",
+              }}
+            ></img>
+          </div>
+        ) : null}
         <div className={styles.desc}>
           <h1
             style={{
@@ -140,24 +173,23 @@ export default function Events() {
             donated to Shaktidhama founded by Puneet Raj Kumar.
           </p>
         </div>
-        <div className={styles.img_conatiner}>
-          <img
-            src="/images/cg.gif"
-            alt=""
-            style={{
-              height: m1 ? "400px" : "300px",
-              width: "auto",
-              marginTop: m1 ? "0px" : "100px",
-            }}
-          ></img>
-        </div>
+        {m1 ? (
+          <div className={styles.img_conatiner}>
+            <img
+              src="/images/cg.gif"
+              alt=""
+              style={{
+                height: m1 ? "400px" : "300px",
+                width: "auto",
+                marginTop: m1 ? "0px" : "100px",
+              }}
+            ></img>
+          </div>
+        ) : null}
       </div>
-
       {/* ---------------------------- */}
-
       {/* ---------------------------- */}
-
-      <TicketsUI events={events} status={status} />
+      {/* <TicketsUI events={events} status={status} />
       {events.length > 0 ? null : (
         <div
           style={{ display: "flex", justifyContent: "center", height: "500px" }}
@@ -169,7 +201,25 @@ export default function Events() {
           </h1>
         </div>
       )}
-      {events.length > 0 ? null : <div style={{ height: "130px" }}></div>}
+      {events.length > 0 ? null : <div style={{ height: "130px" }}></div>} */}
+      <br />
+      <br />
+      <ButtonUI text="Book Now" clicked={routeToBook} />
+      {m1 ? (
+        <div>
+          <br />
+          <br /> <br />
+          <br />
+          <br />
+          <br />
+        </div>
+      ) : (
+        <div>
+          <br />
+          <br />
+          <br />
+        </div>
+      )}
       <Footer />
     </div>
   );

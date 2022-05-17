@@ -9,7 +9,7 @@ export default function Body() {
   const router = useRouter();
 
   const bookTickets = () => {
-    router.push("/sports");
+    router.push("/marathon");
   };
 
   const bookTickets2 = () => {

@@ -165,7 +165,7 @@
 @media screen and (max-width: 768px) {
   .contents_why {
     flex-direction: column-reverse;
-    display: none;
+    /* display: none; */
   }
   .contents_bottom {
     flex-direction: column;

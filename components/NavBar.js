@@ -15,7 +15,7 @@ import { useRouter } from "next/router";
 import styles2 from "../styles/Hover.module.css";
 
 const pages = ["Marathon", "Cultural", "My Tickets"];
-const ids = ["sports", "events", "ticket"];
+const ids = ["marathon", "events", "ticket"];
 
 const NavBarUI = (props) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

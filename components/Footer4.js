@@ -15,7 +15,7 @@ function Footer() {
         <div className={styles.img_container}>
           <div className={styles.img_absolute} style={{ marginTop: "-150px" }}>
             <img
-              src="/images/cg.gif"
+              src="/images/dance2.webp"
               alt=""
               style={{
                 height: m1 ? "400px" : "300px",
