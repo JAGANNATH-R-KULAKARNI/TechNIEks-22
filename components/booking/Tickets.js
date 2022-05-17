@@ -130,9 +130,9 @@ export default function Tickets(props) {
                           backgroundColor: c.c4,
                           fontFamily: "Bungee",
                         }}
-                        startIcon={card.open == 0 ? <InfoIcon /> : null}
+                        startIcon={card.open1 == 0 ? <InfoIcon /> : null}
                         onClick={() => {
-                          if (card.open == 0) {
+                          if (card.open1 == 0) {
                             return;
                           }
                           if (!props.status) {
@@ -152,7 +152,7 @@ export default function Tickets(props) {
                           });
                         }}
                       >
-                        {card.open ? "Book Now" : "Coming Soon"}
+                        {card.open1 ? "Book Now" : "Coming Soon"}
                       </Button>
                     </CardActions>
                   </Card>
