@@ -30,7 +30,7 @@ function Footer() {
                 letterSpacing: "2px",
                 fontSize: 34,
                 fontWeight: "bold",
-                marginTop: m1 ? "0px" : "-100px",
+                marginTop: m1 ? "0px" : "-80px",
               }}
             >
               Marathon
