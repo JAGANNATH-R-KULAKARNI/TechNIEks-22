@@ -152,7 +152,7 @@ export default function Details(props) {
                     props.setName(e.target.value);
                   }}
                   label="name"
-                  placeholder="Jagannath R Kulakarni"
+                  placeholder="Your Name"
                   sx={{
                     input: {
                       color: c.c2,

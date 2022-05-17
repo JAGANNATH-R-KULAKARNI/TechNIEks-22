@@ -146,7 +146,7 @@ export default function Details(props) {
                       props.setName(e.target.value);
                     }}
                     label="Name"
-                    placeholder="Jagannath R K"
+                    placeholder="Your Name"
                     sx={{
                       fontFamily: "Bungee",
                       input: {
