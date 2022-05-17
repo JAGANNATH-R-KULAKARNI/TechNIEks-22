@@ -58,9 +58,9 @@ function BookTicket(props) {
 
   React.useEffect(() => {
     // alert(props.router.query.type);
-    setInterval(function () {
-      fetchTheProfile();
-    }, 100);
+    // setInterval(function () {
+    fetchTheProfile();
+    // }, 100);
 
     // console.log("ok here it is");
     // console.log(JSON.parse(props.router.query.datab));
