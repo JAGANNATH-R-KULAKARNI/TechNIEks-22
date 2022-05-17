@@ -28,26 +28,26 @@ export default function Events() {
   }, []);
 
   React.useEffect(() => {
-    // setInterval(function () {
-    fetchTheProfile();
-    // }, 100);
+    setInterval(function () {
+      fetchTheProfile();
+    }, 100);
   }, []);
 
-  const changeIt = () => {
-    const ok = document.getElementById("sports_page");
+  // const changeIt = () => {
+  //   const ok = document.getElementById("sports_page");
 
-    if (ok) {
-      var heightvro = window.scrollY;
-      if (heightvro > 150)
-        ok.style.backgroundImage = "url(/images/marathon3.png)";
-      else ok.style.backgroundImage = "url(/images/marathon.png)";
-    }
-  };
+  //   if (ok) {
+  //     var heightvro = window.scrollY;
+  //     if (heightvro > 150)
+  //       ok.style.backgroundImage = "url(/images/marathon3.png)";
+  //     else ok.style.backgroundImage = "url(/images/marathon.png)";
+  //   }
+  // };
 
-  React.useEffect(() => {
-    window.addEventListener("scroll", changeIt);
-    return () => window.removeEventListener("scroll", changeIt);
-  }, []);
+  // React.useEffect(() => {
+  //   window.addEventListener("scroll", changeIt);
+  //   return () => window.removeEventListener("scroll", changeIt);
+  // }, []);
 
   async function fetchTheProfile() {
     const data = await supabase.auth.user();
