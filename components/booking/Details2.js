@@ -83,7 +83,7 @@ export default function Details(props) {
               onClick={() => {
                 // navigator.clipboard.writeText(window.location.href);
                 copy(window.location.href);
-                props.messageAlert("Link is Copied");
+                props.messageAlert("Link is Copied", "success", 2000);
               }}
             >
               Share
