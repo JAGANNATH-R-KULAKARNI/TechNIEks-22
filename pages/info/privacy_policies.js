@@ -75,9 +75,9 @@ export default function PrivacyPolicies() {
             Consent
           </h3>
           <p>
-            Your privacy is important to us. It is Marathon and Cyclothon's policy to respect
+            Your privacy is important to us. It is Technieks,Marathon and Cyclothon's policy to respect
             your privacy regarding any information we may collect from you
-            across our website, Marathon and Cyclothon, and other sites we own and operate.
+            across our website,Technieks, Marathon and Cyclothon, and other sites we own and operate.
           </p>
           <div style={{ height: m1 ? "3px" : "1px" }}></div>
           <h3

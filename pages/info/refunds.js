@@ -77,7 +77,7 @@ export default function Refunds() {
             Ticket
           </h3>
           <p>
-            ticket of marathon and Cyclothon event you want to buy can be bought on this
+            ticket of Technieks,marathon and Cyclothon event you want to buy can be bought on this
             website. We use Razorpay payment system which is a secure payment
             system
           </p>
@@ -97,7 +97,7 @@ export default function Refunds() {
             will be processed.
           </p>
           <p>
-            Marathon and Cyclothon strives to ensure that you are happy with the ticket you
+            Marathon and Cyclothon as well as Technieks strives to ensure that you are happy with the ticket you
             have purchased. For Refunds contact us at
             <i
               style={{
