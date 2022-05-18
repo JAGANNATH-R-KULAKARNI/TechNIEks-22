@@ -31,6 +31,7 @@ function BookTicket(props) {
   const [category, setCategory] = React.useState("female");
 
   const [name, setName] = React.useState("");
+  const [phno, setPhno] = React.useState("");
   const [usn, setUSN] = React.useState("");
   const [no, setNo] = React.useState(1);
   const [enjoy, setEnjoy] = React.useState(false);
@@ -218,6 +219,8 @@ function BookTicket(props) {
           category={category}
           setCategory={setCategory}
           type={ticket.type}
+          phno={phno}
+          setPhno={setPhno}
         />
       ) : null}
       <Footer />

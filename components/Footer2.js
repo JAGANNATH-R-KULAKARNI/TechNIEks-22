@@ -16,7 +16,7 @@ function Footer() {
         <div className={styles.contents_why}>
           <div className={styles.img_conatiner}>
             <Image
-              src="/images/marathon.png"
+              src="/images/marathona.png"
               alt=""
               width="477px"
               height="523px"

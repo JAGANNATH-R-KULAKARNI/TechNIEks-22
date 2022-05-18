@@ -54,6 +54,8 @@ export default function Booking(props) {
                 setCategory={props.setCategory}
                 type={props.type}
                 messageAlert={props.messageAlert}
+                phno={props.phno}
+                setPhno={props.setPhno}
               />
             </div>
           </Grid>
@@ -125,7 +127,10 @@ export default function Booking(props) {
                     messageAlert={props.messageAlert}
                     price={props.price}
                     shirt={props.shirt}
+                    type={props.type}
                     category={props.category}
+                    phno={props.phno}
+                    setPhno={props.setPhno}
                   />
                 </div>
               </div>
@@ -172,6 +177,8 @@ export default function Booking(props) {
           setCategory={props.setCategory}
           type={props.type}
           messageAlert={props.messageAlert}
+          phno={props.phno}
+          setPhno={props.setPhno}
         />
       </div>
       <div
@@ -241,11 +248,14 @@ export default function Booking(props) {
                 messageAlertForPayments={props.messageAlertForPayments}
                 messageAlert={props.messageAlert}
                 loading={loading}
+                type={props.type}
                 setTheLoading={setTheLoading}
                 thisCollege={props.thisCollege}
                 price={props.price}
                 shirt={props.shirt}
                 category={props.category}
+                phno={props.phno}
+                setPhno={props.setPhno}
               />
             </div>
             <br />

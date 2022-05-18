@@ -5,6 +5,7 @@ import { supabase } from "../../utils/SupabaseClient";
 import { useRouter } from "next/router";
 import * as c from "../../utils/Colors";
 import ButtonUI from "./Button";
+import logo from "../../public/images/logo.png";
 
 const RazorPayButton = (props) => {
   const theme = createTheme();
@@ -58,6 +59,7 @@ const RazorPayButton = (props) => {
         college: props.usn,
         shirt: props.ticket.type == 1 ? props.shirt : "Not Applicable",
         category: props.ticket.type == 1 ? props.category : "Not Applicable",
+        phno: props.phno,
       },
     ]);
 
@@ -111,9 +113,21 @@ const RazorPayButton = (props) => {
       return;
     }
 
-    if (props.usn.length == 0) {
+    if (props.type == 0 && props.usn.length == 0) {
       props.messageAlert(
         props.thisCollege ? "USN is required" : "College Name is required",
+        "error",
+        3000
+      );
+
+      return;
+    }
+
+    if (props.type == 1 && props.phno.length != 10) {
+      props.messageAlert(
+        props.phno.length > 0
+          ? "Mobile Number is Invalid"
+          : "Mobile Number is Required",
         "error",
         3000
       );
@@ -157,9 +171,10 @@ const RazorPayButton = (props) => {
       key: key_id,
       amount: amount.toString(),
       currency: currency,
-      name: "ಶುಭಕೃತ್",
-      description: "TechNIEks'22 Ticket Booking",
-      //image: { logo },
+      name: "ತ್ರಯಾಗ್ನಿ 2022",
+      description: "TechNIEks 2022",
+      image:
+        "https://ijnoktvcinmxqgvdtucg.supabase.co/storage/v1/object/public/logo/aaa.gif?t=2022-05-18T19:15:27.928Z",
       order_id: id,
       handler: async function (response) {
         const data = {

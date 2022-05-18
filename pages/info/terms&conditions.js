@@ -96,32 +96,32 @@ export default function TermasAndConditions() {
               Lohith C
             </i>
             . Throughout the site, the terms “we”, “us” and “our” refer to
-            Marathon as well as Cyclothon. Marathon and Cyclothon offers this
-            website, including all information, tools and services available
-            from this site to you, the user, conditioned upon your acceptance of
-            all terms, conditions, policies and notices stated here. By visiting
-            our site and/ or purchasing something from us, you engage in our
-            “Service” and agree to be bound by the following terms and
-            conditions (“Terms of Service”, “Terms”), including those additional
-            terms and conditions and policies referenced herein and/or available
-            by hyperlink. These Terms of Service apply to all users of the site,
-            including without limitation users who are browsers, vendors,
-            customers, merchants, and/ or contributors of content. Please read
-            these Terms of Service carefully before accessing or using our
-            website. By accessing or using any part of the site, you agree to be
-            bound by these Terms of Service. If you do not agree to all the
-            terms and conditions of this agreement, then you may not access the
-            website or use any services. If these Terms of Service are
-            considered an offer, acceptance is expressly limited to these Terms
-            of Service. Any new features or tools which are added to the current
-            store shall also be subject to the Terms of Service. You can review
-            the most current version of the Terms of Service at any time on this
-            page. We reserve the right to update, change or replace any part of
-            these Terms of Service by posting updates and/or changes to our
-            website. It is your responsibility to check this page periodically
-            for changes. Your continued use of or access to the website
-            following the posting of any changes constitutes acceptance of those
-            changes.
+            Technieks as well as Marathon and Cyclothon.Technieks, Marathon and
+            Cyclothon offer this website, including all information, tools and
+            services available from this site to you, the user, conditioned upon
+            your acceptance of all terms, conditions, policies and notices
+            stated here. By visiting our site and/ or purchasing something from
+            us, you engage in our “Service” and agree to be bound by the
+            following terms and conditions (“Terms of Service”, “Terms”),
+            including those additional terms and conditions and policies
+            referenced herein and/or available by hyperlink. These Terms of
+            Service apply to all users of the site, including without limitation
+            users who are browsers, vendors, customers, merchants, and/ or
+            contributors of content. Please read these Terms of Service
+            carefully before accessing or using our website. By accessing or
+            using any part of the site, you agree to be bound by these Terms of
+            Service. If you do not agree to all the terms and conditions of this
+            agreement, then you may not access the website or use any services.
+            If these Terms of Service are considered an offer, acceptance is
+            expressly limited to these Terms of Service. Any new features or
+            tools which are added to the current store shall also be subject to
+            the Terms of Service. You can review the most current version of the
+            Terms of Service at any time on this page. We reserve the right to
+            update, change or replace any part of these Terms of Service by
+            posting updates and/or changes to our website. It is your
+            responsibility to check this page periodically for changes. Your
+            continued use of or access to the website following the posting of
+            any changes constitutes acceptance of those changes.
           </p>
           <div style={{ height: m1 ? "3px" : "1px" }}></div>
           <h3
@@ -134,20 +134,21 @@ export default function TermasAndConditions() {
             Disclaimer
           </h3>
           <p>
-            The materials on NIEs Marathon and Cyclothon website are provided on
-            an {"'as is'"}
-            basis. Marathon as well as Cyclothon makes no warranties, expressed
-            or implied, and hereby disclaims and negates all other warranties
-            including, without limitation, implied warranties or conditions of
-            merchantability, fitness for a particular purpose, or
+            The materials on NIEs Technieks as well as Marathon and Cyclothon
+            website are provided on an {"'as is'"}
+            basis. Technieks,Marathon and Cyclothon make no warranties,
+            expressed or implied, and hereby disclaims and negates all other
+            warranties including, without limitation, implied warranties or
+            conditions of merchantability, fitness for a particular purpose, or
             non-infringement of intellectual property or other violation of
             rights.
           </p>
           <p>
-            Further, Marathon as well as Cyclothon does not warrant or make any
-            representations concerning the accuracy, likely results, or
-            reliability of the use of the materials on its website or otherwise
-            relating to such materials or on any sites linked to this site.
+            Further, Technieks as well as Marathon and Cyclothon do not warrant
+            or make any representations concerning the accuracy, likely results,
+            or reliability of the use of the materials on its website or
+            otherwise relating to such materials or on any sites linked to this
+            site.
           </p>
           <div style={{ height: m1 ? "3px" : "1px" }}></div>
           <h3
@@ -160,16 +161,16 @@ export default function TermasAndConditions() {
             Limitations
           </h3>
           <p>
-            In no event shall Marathon and Cyclothon or their suppliers be
-            liable for any damages (including, without limitation, damages for
-            loss of data or profit, or due to business interruption) arising out
-            of the use or inability to use the materials on Marathon and
-            Cyclothons website, even if Marathon and Cyclothon or a Marathon and
-            Cyclothons authorised representative has been notified orally or in
-            writing of the possibility of such damage. Because some
-            jurisdictions do not allow limitations on implied warranties, or
-            limitations of liability for consequential or incidental damages,
-            these limitations may not apply to you.
+            In no event shall Technieks,Marathon and Cyclothon or their
+            suppliers be liable for any damages (including, without limitation,
+            damages for loss of data or profit, or due to business interruption)
+            arising out of the use or inability to use the materials on
+            Technieks,Marathon and Cyclothons website, even if
+            Technieks,Marathon and Cyclothon or their authorised representative
+            has been notified orally or in writing of the possibility of such
+            damage. Because some jurisdictions do not allow limitations on
+            implied warranties, or limitations of liability for consequential or
+            incidental damages, these limitations may not apply to you.
           </p>
           <div style={{ height: m1 ? "3px" : "1px" }}></div>
           <h3
@@ -182,13 +183,14 @@ export default function TermasAndConditions() {
             Accuracy of materials
           </h3>
           <p>
-            The materials appearing on Marathon and Cyclothon s website could
-            include technical, typographical, or photographic errors. Marathon
-            and Cyclothon does not warrant that any of the materials on its
-            website are accurate, complete or current. Marathon as well as
-            Cyclothon may make changes to the materials contained on its website
-            at any time without notice. However Marathon as well as Cyclothon
-            does not make any commitment to update the materials.
+            The materials appearing on Technieks,Marathon and Cyclothons website
+            could include technical, typographical, or photographic errors.
+            Technieks as well as Marathon and Cyclothon do not warrant that any
+            of the materials on its website are accurate, complete or
+            current.Technieks, Marathon and Cyclothon may make changes to the
+            materials contained on its website at any time without notice.
+            However Technieks,Marathon and Cyclothon does not make any
+            commitment to update the materials.
           </p>
           <div style={{ height: m1 ? "3px" : "1px" }}></div>
           <h3
@@ -201,10 +203,10 @@ export default function TermasAndConditions() {
             Modifications
           </h3>
           <p>
-            Marathon as well as Cyclothon may revise these terms of service for
-            its website at any time without notice. By using this website you
-            are agreeing to be bound by the then current version of these terms
-            of service.
+            Technieks as well as Marathon and Cyclothon may revise these terms
+            of service for its website at any time without notice. By using this
+            website you are agreeing to be bound by the then current version of
+            these terms of service.
           </p>
           <div style={{ height: m1 ? "3px" : "1px" }}></div>
           <h3
@@ -218,7 +220,7 @@ export default function TermasAndConditions() {
           </h3>
           <p>
             These terms and conditions are governed by and construed in
-            accordance with the laws of Marathon and Cyclothon and you
+            accordance with the laws of Technieks,Marathon and Cyclothon and you
             irrevocably submit to the exclusive jurisdiction of the courts in
             that State or location.
           </p>

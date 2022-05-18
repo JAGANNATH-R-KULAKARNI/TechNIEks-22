@@ -46,8 +46,8 @@ export default function Events() {
     if (ok) {
       var heightvro = window.scrollY;
       if (heightvro > 150)
-        ok.style.backgroundImage = "url(/images/marathon3.png)";
-      else ok.style.backgroundImage = "url(/images/marathon.png)";
+        ok.style.backgroundImage = "url(/images/marathona2.png)";
+      else ok.style.backgroundImage = "url(/images/marathona.png)";
     }
   };
 
@@ -96,7 +96,7 @@ export default function Events() {
       style={{
         backgroundColor: c.c1,
         color: c.c2,
-        backgroundImage: "url(/images/marathon.png)",
+        backgroundImage: "url(/images/marathona.png)",
         backgroundPosition: m1 ? "center 100px" : "center 85px",
         backgroundSize: m1 ? "550px 550px" : "250px 250px",
         backgroundRepeat: "no-repeat",

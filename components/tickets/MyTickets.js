@@ -204,14 +204,7 @@ export default function Tickets(props) {
                           backgroundColor: c.c1,
                         }}
                       >
-                        <div
-                          style={
-                            {
-                              // display: "flex",
-                              // justifyContent: "center",
-                            }
-                          }
-                        >
+                        <div>
                           <i
                             style={{
                               width: "50%",
@@ -229,13 +222,18 @@ export default function Tickets(props) {
                           >
                             <b> {card.usn} </b>{" "}
                             <b
-                              style={{ paddingLeft: "100px", fontSize: "20px" }}
+                              style={{
+                                paddingLeft:
+                                  card.events.type != 1 ? "100px" : "0px",
+                                fontSize: "20px",
+                              }}
                             >
                               {" "}
                               ID : {card.id}
                             </b>
                           </i>
                         </div>
+
                         <div
                           style={{
                             display: "flex",
@@ -259,6 +257,7 @@ export default function Tickets(props) {
                             <i style={{ width: "100%", fontSize: "12px" }}>
                               <b> Ticket_id :</b> {card.order_id}{" "}
                             </i>
+
                             <br />
                             <i style={{ width: "100%", fontSize: "12px" }}>
                               <b> Payment_id :</b> {card.payment_id}{" "}
@@ -288,7 +287,7 @@ export default function Tickets(props) {
                           );
                         }}
                       >
-                        {glitch ? "ತ್ರಾಯಾಗ್ನಿ 2022" : "Print It"}
+                        {glitch ? "ತ್ರಯಾಗ್ನಿ 2022" : "Print It"}
                       </Button>
                     </CardActions>
                   </Card>

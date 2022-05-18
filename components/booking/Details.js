@@ -79,7 +79,7 @@ export default function Details(props) {
               onClick={() => {
                 // navigator.clipboard.writeText(window.location.href);
                 copy(window.location.href);
-                props.messageAlert("Link is Copied", "success", 2000);
+                props.messageAlert("Link is Copied", "success", 1000);
               }}
             >
               Share
@@ -223,18 +223,27 @@ export default function Details(props) {
                       htmlFor="outlined-adornment-password"
                       style={{ fontFamily: "Bungee" }}
                     >
-                      {props.thisCollege ? "USN" : "College"}
+                      {props.type == 1
+                        ? "Mobile Number"
+                        : props.thisCollege
+                        ? "USN"
+                        : "College"}
                     </InputLabel>
                     <OutlinedInput
                       id="usnbro"
-                      type="name"
-                      value={props.usn}
+                      type={props.type == 1 ? "number" : "name"}
+                      value={props.type == 1 ? props.phno : props.usn}
                       onChange={(e) => {
-                        props.setUsn(e.target.value);
+                        if (props.type == 1) props.setPhno(e.target.value);
+                        else props.setUsn(e.target.value);
                       }}
                       label="USN"
                       placeholder={
-                        props.thisCollege ? "4NI19IS***" : "NIE College"
+                        props.type == 1
+                          ? "+91"
+                          : props.thisCollege
+                          ? "4NI19IS***"
+                          : "NIE College"
                       }
                       sx={{
                         fontFamily: "Bungee",
@@ -543,37 +552,46 @@ export default function Details(props) {
                         />
                         <br />
 
-                        <div
-                          style={{ display: "flex", justifyContent: "center" }}
-                        >
-                          <FormControlLabel
-                            control={<Radio style={{ color: "white" }} />}
-                            label={
-                              <p
-                                style={{
-                                  fontFamily: "Bungee",
-                                  fontSize: "14px",
-                                  color: "white",
-                                }}
-                              >
-                                Veteren
-                              </p>
-                            }
-                            checked={props.category == "veteren" ? true : false}
-                            onChange={(e) => {
-                              props.setCategory("veteren");
-                            }}
+                        {props.ticket.id != 8 ? (
+                          <div
                             style={{
-                              minWidth: "140px",
-                              backgroundColor:
-                                props.category == "veteren" ? c.c4 : "black",
-                              color:
-                                props.category == "veteren" ? "black" : "white",
-                              paddingRight: "10px",
-                              borderRadius: "20px",
+                              display: "flex",
+                              justifyContent: "center",
                             }}
-                          />
-                        </div>
+                          >
+                            <FormControlLabel
+                              control={<Radio style={{ color: "white" }} />}
+                              label={
+                                <p
+                                  style={{
+                                    fontFamily: "Bungee",
+                                    fontSize: "14px",
+                                    color: "white",
+                                  }}
+                                >
+                                  Veteren
+                                </p>
+                              }
+                              checked={
+                                props.category == "veteren" ? true : false
+                              }
+                              onChange={(e) => {
+                                props.setCategory("veteren");
+                              }}
+                              style={{
+                                minWidth: "140px",
+                                backgroundColor:
+                                  props.category == "veteren" ? c.c4 : "black",
+                                color:
+                                  props.category == "veteren"
+                                    ? "black"
+                                    : "white",
+                                paddingRight: "10px",
+                                borderRadius: "20px",
+                              }}
+                            />
+                          </div>
+                        ) : null}
                       </div>
                       <br />
                     </div>
