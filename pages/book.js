@@ -53,10 +53,10 @@ function BookTicket(props) {
   };
 
   React.useEffect(() => {
-    setInterval(function () {
-      fetchTheProfile();
-      fetchTicketDetails();
-    }, 100);
+    // setInterval(function () {
+    fetchTheProfile();
+    fetchTicketDetails();
+    // }, 100);
   }, []);
 
   React.useEffect(() => {
