@@ -228,7 +228,7 @@ function Footer() {
                   }}
                 >
                   <a
-                    href="https://www.instagram.com/technieks2020/?hl=en"
+                    href="https://www.instagram.com/technieks_2022/?hl=en"
                     passHref={true}
                     rel="noreferrer"
                     target="_blank"
@@ -241,7 +241,7 @@ function Footer() {
                       className={styles.footer}
                     />
                   </a>
-                  <a
+                  {/* <a
                     href="https://www.linkedin.com/in/jagannath-r-kulakarni-a465841a7/"
                     passHref={true}
                     rel="noreferrer"
@@ -254,7 +254,7 @@ function Footer() {
                       }}
                       className={styles.footer}
                     />
-                  </a>
+                  </a> */}
                   <a
                     href="https://www.youtube.com/channel/UC0Ky30GAIfdtGccczVNUIqA"
                     passHref={true}

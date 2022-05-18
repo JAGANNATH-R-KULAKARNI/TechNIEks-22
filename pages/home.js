@@ -46,8 +46,8 @@ export default function Home(props) {
 
     if (ok) {
       var heightvro = window.scrollY;
-      if (heightvro > 80) ok.style.backgroundImage = "url(/images/logo3.png)";
-      else ok.style.backgroundImage = "url(/images/logo.png)";
+      if (heightvro > 900) ok.style.backgroundImage = "url(/images/logo3.png)";
+      else ok.style.backgroundImage = "url(/images/aaa.gif)";
     }
   };
 
