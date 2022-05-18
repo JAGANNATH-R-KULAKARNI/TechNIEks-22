@@ -53,6 +53,7 @@ export default function Booking(props) {
                 category={props.category}
                 setCategory={props.setCategory}
                 type={props.type}
+                messageAlert={props.messageAlert}
               />
             </div>
           </Grid>
@@ -170,6 +171,7 @@ export default function Booking(props) {
           category={props.category}
           setCategory={props.setCategory}
           type={props.type}
+          messageAlert={props.messageAlert}
         />
       </div>
       <div

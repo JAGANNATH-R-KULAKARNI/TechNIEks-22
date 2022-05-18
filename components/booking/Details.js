@@ -23,6 +23,7 @@ import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import ShareIcon from "@mui/icons-material/Share";
 import { Share } from "@mui/icons-material";
 import ModalUI from "./Dialog";
+import copy from "copy-to-clipboard";
 
 const theme = createTheme();
 
@@ -76,8 +77,9 @@ export default function Details(props) {
               endIcon={<ShareIcon />}
               style={{ backgroundColor: c.c3 }}
               onClick={() => {
-                navigator.clipboard.writeText(window.location.href);
-                alert("Link is Copied To Clipboard");
+                // navigator.clipboard.writeText(window.location.href);
+                copy(window.location.href);
+                props.messageAlert("Link is Copied");
               }}
             >
               Share
