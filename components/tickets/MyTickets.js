@@ -16,6 +16,14 @@ import domtoimage from "dom-to-image";
 
 const theme = createTheme();
 
+const shirtsType = {
+  S: "Small",
+  M: "Medium",
+  L: "Large",
+  XL: "X Large",
+  XLL: "XX Large",
+  XLLL: "XXX Large",
+};
 export default function Tickets(props) {
   const m1 = useMediaQuery("(min-width:600px)");
   const { Canvas } = useQRCode();
@@ -124,7 +132,7 @@ export default function Tickets(props) {
                       <div
                         style={{
                           minWidth: "170px",
-                          maxHeight: "170px",
+                          maxHeight: "180px",
                           maxWidth: "170px",
                           minHeight: "170px",
                           marginTop: "-100px",
@@ -217,14 +225,19 @@ export default function Tickets(props) {
                           <i
                             style={{
                               width: "50%",
-                              fontSize: "13px",
+                              fontSize: card.events.type == 1 ? "18px" : "13px",
                             }}
                           >
-                            <b> {card.usn} </b>{" "}
+                            <b>
+                              {" "}
+                              {card.events.type == 1
+                                ? `${card.phno}`
+                                : card.usn}{" "}
+                            </b>{" "}
                             <b
                               style={{
                                 paddingLeft:
-                                  card.events.type != 1 ? "100px" : "0px",
+                                  card.events.type != 1 ? "100px" : "50px",
                                 fontSize: "20px",
                               }}
                             >
@@ -233,7 +246,33 @@ export default function Tickets(props) {
                             </b>
                           </i>
                         </div>
-
+                        {card.events.type == 1 ? (
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <i
+                              style={{
+                                width: "50%",
+                                fontSize: "15px",
+                                fontWeight: 700,
+                              }}
+                            >
+                              Shirt Size :
+                            </i>
+                            <i
+                              style={{
+                                width: "50%",
+                                fontSize: "15px",
+                                fontWeight: 500,
+                              }}
+                            >
+                              {shirtsType[card.shirt]}{" "}
+                            </i>
+                          </div>
+                        ) : null}
                         <div
                           style={{
                             display: "flex",

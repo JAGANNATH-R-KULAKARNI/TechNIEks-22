@@ -48,7 +48,7 @@ handler.post(async (req, res) => {
     from: {
       email: "jagannathrkulakarni.171845@gmail.com",
     },
-    bcc: ["technieks22@gmail.com", "mailto:swo@nie.ac.in"],
+    // bcc: ["technieks22@gmail.com", "mailto:swo@nie.ac.in"],
     subject: "TechNIEks22",
     personalizations: [
       {
