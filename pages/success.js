@@ -12,6 +12,7 @@ import * as c from "../utils/Colors";
 import { useRouter } from "next/router";
 import { supabase } from "../utils/SupabaseClient";
 import useSWR from "swr";
+import copy from "copy-to-clipboard";
 
 function Success(props) {
   const m1 = useMediaQuery("(min-width:450px)");
@@ -22,12 +23,13 @@ function Success(props) {
   );
 
   const [status, setStatus] = React.useState(false);
+  const [copied, setCopied] = React.useState(false);
 
   React.useEffect(() => {
     // fetchTheProfile();
 
     if (!props.router.query.status) {
-      router.push("/home");
+      // router.push("/home");
     }
   }, []);
 
@@ -102,13 +104,35 @@ function Success(props) {
               d="M14.1 27.2l7.1 7.2 16.7-16.8"
             />
           </svg>
-
           <Button
             variant="contained"
             style={{ backgroundColor: c.c3, fontFamily: "Bungee" }}
           >
             <Link href="/ticket"> Print The Ticket</Link>
           </Button>
+          <br />
+          <br />
+          <Button
+            variant="outlined"
+            style={{
+              color: "white",
+              fontFamily: "Bungee",
+              border: "1px solid white",
+            }}
+            onClick={() => {
+              copy(props.router.query.text);
+              setCopied(true);
+
+              setTimeout(() => {
+                setCopied(false);
+              }, 1000);
+            }}
+          >
+            Copy Invitation
+          </Button>
+          <br />
+          <div style={{ height: "10px" }}></div>
+          {copied ? <div style={{ height: "0px" }}>copied</div> : null}
         </div>
       </Box>
       <br />
