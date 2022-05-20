@@ -71,7 +71,7 @@ export default function Booking(props) {
             <Paper
               style={{
                 width: "29%",
-                height: "250px",
+                height: "350px",
                 marginTop: "0px",
                 borderRadius: "75px",
                 fontFamily: "Bungee",
@@ -192,7 +192,7 @@ export default function Booking(props) {
         <Paper
           style={{
             width: "100%",
-            height: "220px",
+            height: "300px",
             marginTop: "0px",
             borderRadius: "70px",
             fontFamily: "Bungee",

@@ -5,12 +5,13 @@ import { supabase } from "../../utils/SupabaseClient";
 import { useRouter } from "next/router";
 import * as c from "../../utils/Colors";
 import ButtonUI from "./Button";
-import logo from "../../public/images/logo.png";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const RazorPayButton = (props) => {
   const theme = createTheme();
   const router = useRouter();
   const [loading, setLoading] = React.useState(false);
+  const m1 = useMediaQuery("(min-width:430px)");
 
   function loadScript(src) {
     return new Promise((resolve) => {
@@ -225,6 +226,18 @@ const RazorPayButton = (props) => {
   return (
     <ThemeProvider theme={theme}>
       <div onClick={displayRazorPay}>
+        <p
+          style={{
+            fontSize: m1 ? "12px" : "10px",
+            border: "2px solid black",
+            borderRadius: "20px",
+            paddingBottom: "5px",
+            padding: "2px",
+          }}
+        >
+          After Payment is done please wait for 10 seconds. Do not close the
+          tabs or else ticket will not be generated
+        </p>
         <ButtonUI text={loading ? "Loading..." : `Pay ₹ ${props.amount}`} />
       </div>
     </ThemeProvider>
