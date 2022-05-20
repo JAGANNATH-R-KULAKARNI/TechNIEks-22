@@ -165,15 +165,22 @@ export default function SignUp() {
             {loading == false && sent == false && "Sign Up/In"}
             {sent && "Check Your Email"}
           </Typography>
-          {/* {m1 ? <br /> : null} */}
-          <Box component="form" noValidate sx={{ mt: 3 }}>
-            {/* <div style={{ display: "flex", justifyContent: "center" }}>
-              <img
-                src="/images/google.webp"
-                alt="Google"
-                style={{ width: "200px", height: "100px" }}
-              />
-            </div> */}
+          <br />
+          <h4
+            style={{
+              backgroundColor: "white",
+              color: "black",
+              borderRadius: "20px",
+              fontSize: m1 ? "13px" : "9px",
+              padding: "10px",
+            }}
+          >
+            <span style={{ marginBottom: m1 ? "0px" : "-100px" }}>
+              If you are a student, then login with your University email
+            </span>
+          </h4>
+
+          <Box component="form" noValidate sx={{ mt: 3, marginTop: "-10px" }}>
             <Button
               fullWidth
               variant="contained"
