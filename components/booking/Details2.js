@@ -50,15 +50,6 @@ export default function Details(props) {
             alignItems: "center",
           }}
         >
-          {/* <Avatar
-            sx={{
-              m: 1,
-              bgcolor: "secondary.main",
-              backgroundColor: c.c4,
-            }}
-          >
-            <ConfirmationNumberIcon />
-          </Avatar> */}
           <Typography
             component="h1"
             variant="h5"
@@ -82,7 +73,12 @@ export default function Details(props) {
               style={{ backgroundColor: c.c3 }}
               onClick={() => {
                 // navigator.clipboard.writeText(window.location.href);
-                copy(window.location.href);
+                copy(
+                  window.location.href.substr(
+                    0,
+                    window.location.href.length - 9
+                  ) + "events"
+                );
                 props.messageAlert("Link is Copied", "success", 1000);
               }}
             >

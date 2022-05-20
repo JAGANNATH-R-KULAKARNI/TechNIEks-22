@@ -98,6 +98,7 @@ const RazorPayButton = (props) => {
         pathname: "/success",
         query: {
           status: 1,
+          phno: props.phno,
           text:
             props.ticket.type == 1
               ? `ನಮಸ್ಕಾರಗಳು,ಟೆಕ್ ನೀಕ್ಸ್-22 ಗೆ ಸುಸ್ವಾಗತ,

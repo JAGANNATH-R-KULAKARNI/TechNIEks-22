@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 import { supabase } from "../utils/SupabaseClient";
 import useSWR from "swr";
 import copy from "copy-to-clipboard";
+import ButtonGroup from "@mui/material/ButtonGroup";
 
 function Success(props) {
   const m1 = useMediaQuery("(min-width:450px)");
@@ -112,7 +113,7 @@ function Success(props) {
           </Button>
           <br />
           <br />
-          <Button
+          {/* <Button
             variant="outlined"
             style={{
               color: "white",
@@ -129,7 +130,53 @@ function Success(props) {
             }}
           >
             Copy Invitation
-          </Button>
+          </Button> */}
+          <ButtonGroup
+            disableElevation
+            variant="contained"
+            style={{ width: "170px" }}
+          >
+            {props.router.query.phno.length != 0 ? (
+              <Button
+                style={{
+                  width: props.router.query.phno.length != 0 ? "85px" : "0px",
+                  backgroundColor: "black",
+                  color: "white",
+                  border: "1px solid white",
+                  fontSize: "10px",
+                }}
+                onClick={() => {
+                  copy(props.router.query.phno);
+                  setCopied(true);
+
+                  setTimeout(() => {
+                    setCopied(false);
+                  }, 1000);
+                }}
+              >
+                Phnum
+              </Button>
+            ) : null}
+            <Button
+              style={{
+                width: props.router.query.phno.length != 0 ? "85px" : "170px",
+                backgroundColor: "black",
+                color: "white",
+                border: "1px solid white",
+                fontSize: "10px",
+              }}
+              onClick={() => {
+                copy(props.router.query.text);
+                setCopied(true);
+
+                setTimeout(() => {
+                  setCopied(false);
+                }, 1000);
+              }}
+            >
+              Invititation
+            </Button>
+          </ButtonGroup>
           <br />
           <div style={{ height: "10px" }}></div>
           {copied ? <div style={{ height: "0px" }}>copied</div> : null}

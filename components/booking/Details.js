@@ -78,7 +78,12 @@ export default function Details(props) {
               style={{ backgroundColor: c.c3 }}
               onClick={() => {
                 // navigator.clipboard.writeText(window.location.href);
-                copy(window.location.href);
+                copy(
+                  window.location.href.substr(
+                    0,
+                    window.location.href.length - 9
+                  ) + "events"
+                );
                 props.messageAlert("Link is Copied", "success", 1000);
               }}
             >
