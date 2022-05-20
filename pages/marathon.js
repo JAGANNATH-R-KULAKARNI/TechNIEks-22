@@ -144,7 +144,7 @@ export default function Events() {
         {!m1 ? (
           <div className={styles.img_conatiner} style={{ marginTop: "-120px" }}>
             <img
-              src="/images/akcent.png"
+              src="/images/puneeth.png"
               alt=""
               style={{
                 height: m1 ? "400px" : "300px",
@@ -167,7 +167,9 @@ export default function Events() {
             Concert
           </h1>
           <br />
-          <p style={{ lineHeight: 1.7, wordSpacing: "5px" }}>
+          <p
+            style={{ lineHeight: 1.7, wordSpacing: "5px", textAlign: "center" }}
+          >
             The concept of concert is a live musical performance or mutual
             agreement. Concert can be a venue where you can listen to your
             favorite musician. NIE concert promises to be a fun event where you
@@ -177,7 +179,7 @@ export default function Events() {
         {m1 ? (
           <div className={styles.img_conatiner}>
             <img
-              src="/images/akcent.png"
+              src="/images/puneeth.png"
               alt=""
               style={{
                 height: m1 ? "400px" : "300px",
@@ -205,21 +207,18 @@ export default function Events() {
       {events.length > 0 ? null : <div style={{ height: "130px" }}></div>} */}
       <br />
       <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <ButtonUI text="Book Now" clicked={routeToBook} />
       {m1 ? (
         <div>
           <br />
           <br /> <br />
-          <br />
-          <br />
-          <br />
         </div>
       ) : (
-        <div>
-          <br />
-          <br />
-          <br />
-        </div>
+        <div></div>
       )}
       <Footer />
     </div>

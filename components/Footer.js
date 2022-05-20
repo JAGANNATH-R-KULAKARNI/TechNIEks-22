@@ -119,6 +119,18 @@ function Footer() {
                 >
                   {"Creaters"}
                 </li>
+                <a
+                  href="https://forms.gle/WKNV2sCTZDhpr2TC7"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <li
+                    className={styles.footer}
+                    onClick={() => router.push("/info/creaters")}
+                  >
+                    {"Help"}
+                  </li>
+                </a>
               </ul>
             </div>
           </Grid>

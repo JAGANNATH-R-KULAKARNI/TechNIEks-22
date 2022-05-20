@@ -558,40 +558,42 @@ export default function Details(props) {
                       />
                       <br />
 
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <FormControlLabel
-                          control={<Radio style={{ color: "white" }} />}
-                          label={
-                            <p
-                              style={{
-                                fontFamily: "Bungee",
-                                fontSize: "14px",
-                                color: "white",
-                              }}
-                            >
-                              Veteren
-                            </p>
-                          }
-                          checked={props.category == "veteren" ? true : false}
-                          onChange={(e) => {
-                            props.setCategory("veteren");
-                          }}
+                      {props.ticket.id != 8 ? (
+                        <div
                           style={{
-                            minWidth: "140px",
-                            backgroundColor:
-                              props.category == "veteren" ? c.c4 : "black",
-                            color:
-                              props.category == "veteren" ? "black" : "white",
-                            paddingRight: "10px",
-                            borderRadius: "20px",
+                            display: "flex",
+                            justifyContent: "center",
                           }}
-                        />
-                      </div>
+                        >
+                          <FormControlLabel
+                            control={<Radio style={{ color: "white" }} />}
+                            label={
+                              <p
+                                style={{
+                                  fontFamily: "Bungee",
+                                  fontSize: "14px",
+                                  color: "white",
+                                }}
+                              >
+                                Veteren
+                              </p>
+                            }
+                            checked={props.category == "veteren" ? true : false}
+                            onChange={(e) => {
+                              props.setCategory("veteren");
+                            }}
+                            style={{
+                              minWidth: "140px",
+                              backgroundColor:
+                                props.category == "veteren" ? c.c4 : "black",
+                              color:
+                                props.category == "veteren" ? "black" : "white",
+                              paddingRight: "10px",
+                              borderRadius: "20px",
+                            }}
+                          />
+                        </div>
+                      ) : null}
                     </div>
                     <br />
                   </div>
@@ -612,7 +614,7 @@ export default function Details(props) {
                   justifyContent: "center",
                 }}
               >
-                {!props.thisCollege ? (
+                {false ? (
                   <Fab
                     color="primary"
                     aria-label="add"
@@ -656,7 +658,7 @@ export default function Details(props) {
                   </div>
                 </div>
 
-                {!props.thisCollege ? (
+                {false ? (
                   <Fab
                     color="primary"
                     aria-label="add"

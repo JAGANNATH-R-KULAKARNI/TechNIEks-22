@@ -8,6 +8,8 @@ import useSWR from "swr";
 import Skeleton from "@mui/material/Skeleton";
 import * as c from "../utils/Colors";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import ButtonUI from "../components/Button3";
+import SnackbarContent from "@mui/material/SnackbarContent";
 
 export default function Ticket() {
   const [status, setStatus] = React.useState(false);
@@ -17,6 +19,24 @@ export default function Ticket() {
 
   const router = useRouter();
   const m1 = useMediaQuery("(min-width:600px)");
+  const action = (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        marginLeft: m1 ? "0px" : "-5%",
+        paddingBottom: m1 ? "0px" : "10px",
+      }}
+    >
+      <a
+        href="https://forms.gle/WKNV2sCTZDhpr2TC7"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <ButtonUI text="Contact Us" />
+      </a>
+    </div>
+  );
 
   const { ticketCache, errorCache } = useSWR("payments", fetchTickets);
   const { profileCache, errorProfileCache } = useSWR(
@@ -97,25 +117,60 @@ export default function Ticket() {
 
       {tickets.length > 0 ? null : (
         <div
-          style={{ display: "flex", justifyContent: "center", height: "500px" }}
+          style={{ display: "flex", justifyContent: "center", height: "100px" }}
         >
-          <h1 style={{ paddingTop: m1 ? "0px" : "60px", textAlign: "center" }}>
+          <h1 style={{ textAlign: "center", marginTop: m1 ? "0px" : "-50px" }}>
             {gotit ? "No Tickets" : "Loading..."}
           </h1>
         </div>
       )}
-      {tickets.length > 0 ? null : <div style={{ height: "130px" }}></div>}
+      {/* <br /> */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          paddingLeft: m1 ? "0%" : "10%",
+          paddingRight: m1 ? "0%" : "10%",
+          marginTop: m1 ? "0px" : "-30px",
+        }}
+      >
+        <SnackbarContent
+          message={
+            <h6>
+              {" "}
+              If you have done the payment, but still the ticket is not
+              generated then
+            </h6>
+          }
+          action={action}
+          style={{ maxWidth: m1 ? "60%" : "100%", borderRadius: "30px" }}
+        />
+      </div>
+      <br />
+
+      <br />
+      <br />
+      <br />
+      <br />
+      {tickets.length > 0 ? null : (
+        <div
+          style={{
+            height: m1 ? "30px" : "0px",
+            marginTop: m1 ? "0px" : "-70px",
+          }}
+        ></div>
+      )}
       <Footer />
     </div>
   );
 }
 
-export async function getServerSideProps({ req }) {
-  const { user } = await supabase.auth.api.getUserByCookie(req);
+// export async function getServerSideProps({ req }) {
+//   const { user } = await supabase.auth.api.getUserByCookie(req);
 
-  if (!user) {
-    return { props: {}, redirect: { destination: "/who_r_u" } };
-  }
+//   if (!user) {
+//     return { props: {}, redirect: { destination: "/who_r_u" } };
+//   }
 
-  return { props: { user } };
-}
+//   return { props: { user } };
+// }

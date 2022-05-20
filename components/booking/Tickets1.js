@@ -96,7 +96,7 @@ export default function Tickets(props) {
                         }}
                       >
                         <Typography>
-                          <i>{card.description}</i>
+                          <i>{card.description.substr(0, 190)}</i>...
                         </Typography>
                       </div>
                     </CardContent>

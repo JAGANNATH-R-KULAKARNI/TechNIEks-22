@@ -108,7 +108,7 @@ export default function Tickets(props) {
                           padding: "5px",
                         }}
                       >
-                        <i>{card.description}</i>
+                        <i>{card.description.substr(0, 190)}</i>...
                       </Typography>
                     </CardContent>
                     <CardActions>

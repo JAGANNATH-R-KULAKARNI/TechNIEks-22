@@ -17,7 +17,8 @@ function AButton(props) {
         style={{
           backgroundColor: "#E68E06",
           fontFamily: "Bungee",
-          width: m1 ? "400px" : "80%",
+          width: props.width,
+          fontSize: "10px",
         }}
       >
         {props.text ? props.text : null}
