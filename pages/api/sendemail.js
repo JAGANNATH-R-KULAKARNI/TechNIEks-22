@@ -48,6 +48,7 @@ handler.post(async (req, res) => {
     from: {
       email: "jagannathrkulakarni.171845@gmail.com",
     },
+     bcc : ["swo@nie.ac.in"],
     subject: "TechNIEks22",
     text: message,
     html: message.replace(/\r\n/g, "<br />"),
