@@ -44,13 +44,32 @@ handler.post(async (req, res) => {
   }
 
   const info = {
-    to: `${data.email}`,
+    // to: `${data.email}`,
     from: {
       email: "jagannathrkulakarni.171845@gmail.com",
     },
+    bcc: ["technieks22@gmail.com"],
     subject: "TechNIEks22",
+    personalizations: [
+      {
+        to: [
+          {
+            email: `${data.email}`,
+          },
+        ],
+        dynamic_template_data: {
+          amount: data.amount,
+          my_name: data.name,
+          ticket: data.no == 1 ? "1  Ticket has" : `${data.no} Tickets have`,
+          event: data.show,
+          payment_id: data.id,
+          order_id: data.order_id,
+        },
+      },
+    ],
     text: message,
     html: message.replace(/\r\n/g, "<br />"),
+    template_id: "d-b746779c52b44a71bf70e6d8bebde358",
   };
 
   await mail

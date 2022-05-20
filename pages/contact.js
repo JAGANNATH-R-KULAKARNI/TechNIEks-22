@@ -65,7 +65,7 @@ export default function Contact() {
       </div>
       <br />
       <p style={{ textAlign: "center" }}>Illi Design madu maccha</p>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

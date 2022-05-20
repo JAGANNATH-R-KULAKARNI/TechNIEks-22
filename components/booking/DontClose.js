@@ -36,7 +36,7 @@ export default function FullScreenDialog() {
         onClose={handleClose}
         TransitionComponent={Transition}
         style={{
-          backgroundColor: "#000000",
+          backgroundColor: "#33CC99",
           color: "white",
         }}
       >
