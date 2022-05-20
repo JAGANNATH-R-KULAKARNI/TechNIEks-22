@@ -36,7 +36,7 @@ function BookTicket(props) {
   const [no, setNo] = React.useState(1);
   const [enjoy, setEnjoy] = React.useState(false);
   const [totalAmount, setTotalAmount] = React.useState();
-  const [successTab, setSuccessTab] = React.useState(true);
+  const [successTab, setSuccessTab] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
 
   const { dataEvents: errorEvents } = useSWR("eventBook", fetchTicketDetails);
