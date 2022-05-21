@@ -212,6 +212,13 @@ export default function Events() {
       <br />
       <br />
       <ButtonUI text="Book Now" clicked={routeToBook} />
+      <br />
+      <br />
+      <br />
+      <br />
+      {/* <br />
+      <br />
+      <br /> */}
       {m1 ? (
         <div>
           <br />
