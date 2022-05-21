@@ -194,6 +194,13 @@ function Success(props) {
 ನಮಸ್ಕಾರಗಳು,ಟೆಕ್ ನೀಕ್ಸ್-22 ಗೆ ಸುಸ್ವಾಗತ,
 ನಿಮ್ಮ "${ticket.events.name}" ನ ಟಿಕೆಟ್ ದೃಢೀಕರಿಸಲಾಗಿದೆ.
 ನಿಮ್ಮ ಒಂದು ಟಿಕೆಟಿನ ಮೊತ್ತ - "₹${ticket.amountpaid}".
+
+Hello “${ticket.name}”,
+Welcome to “Technieks22”
+Your ticket for “${ticket.events.name}”  has been confirmed
+${ticket.nooftickets} Ticket has been booked for ₹ “${ticket.amountpaid}”
+Enjoy “TechNIEks22” at the fullest
+
 Name: ${ticket.name}
 Ph No: ${ticket.phno}
 Payment_ID: ${ticket.payment_id}
@@ -209,6 +216,13 @@ Category : ${ticket.category}
 ನಮಸ್ಕಾರಗಳು,ಟೆಕ್ ನೀಕ್ಸ್-22 ಗೆ ಸುಸ್ವಾಗತ,
 ನಿಮ್ಮ "${ticket.events.name}" ನ ಟಿಕೆಟ್ ದೃಢೀಕರಿಸಲಾಗಿದೆ.
 ನಿಮ್ಮ ಒಂದು ಟಿಕೆಟಿನ ಮೊತ್ತ - "₹${ticket.amountpaid}".
+
+Hello “${ticket.name}”,
+Welcome to “Technieks22”
+Your ticket for “${ticket.events.name}”  has been confirmed
+${ticket.nooftickets} Ticket has been booked for ₹ “${ticket.amountpaid}”
+Enjoy “TechNIEks22” at the fullest
+
 Name: ${ticket.name}
 Payment_ID: ${ticket.payment_id}
 Ticket_ID: ${ticket.order_id}
