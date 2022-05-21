@@ -144,7 +144,7 @@ export default function Events() {
         {!m1 ? (
           <div className={styles.img_conatiner} style={{ marginTop: "-120px" }}>
             <img
-              src="/images/puneeth.png"
+              src="/images/appu.png"
               alt=""
               style={{
                 height: m1 ? "400px" : "300px",
@@ -178,7 +178,7 @@ export default function Events() {
         {m1 ? (
           <div className={styles.img_conatiner}>
             <img
-              src="/images/puneeth.png"
+              src="/images/appu.png"
               alt=""
               style={{
                 height: m1 ? "400px" : "300px",

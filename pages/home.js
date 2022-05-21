@@ -46,7 +46,7 @@ export default function Home(props) {
 
     if (ok) {
       var heightvro = window.scrollY;
-      if (heightvro > 900) ok.style.backgroundImage = "url(/images/logo3.png)";
+      if (heightvro > 550) ok.style.backgroundImage = "url(/images/logo3.png)";
       else ok.style.backgroundImage = "url(/images/aaa.gif)";
     }
   };
@@ -58,11 +58,10 @@ export default function Home(props) {
 
   React.useEffect(() => {
     try {
-      setTimeout(() => {
-        const ok = document.getElementById("benki");
-
-        if (ok) ok.style.backgroundImage = "url(/images/logo.png)";
-      }, 10000);
+      // setTimeout(() => {
+      //   const ok = document.getElementById("benki");
+      //   if (ok) ok.style.backgroundImage = "url(/images/logo.png)";
+      // }, 10000);
     } catch (err) {
       console.log("scroll error home page");
     }

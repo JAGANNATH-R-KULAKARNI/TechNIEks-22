@@ -8,7 +8,10 @@ function Video(props) {
 
   return (
     <>
-      {/* <h1
+      <div
+        style={{ backgroundColor: "black", marginTop: m1 ? "70px" : "25px" }}
+      >
+        {/* <h1
         variant="h4"
         component="div"
         gutterBottom
@@ -27,53 +30,58 @@ function Video(props) {
       >
         {props.heading}
       </h1> */}
-      <div
-        style={{
-          height: m1 ? "110px" : "0px",
-          marginTop: m1 ? "0px" : "-50px",
-        }}
-      ></div>
-      {/* <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            height: m1 ? "110px" : "0px",
+            marginTop: m1 ? "0px" : "-50px",
+          }}
+        ></div>
+        {/* <div style={{ display: "flex", justifyContent: "center" }}>
         <ButtonUI />
       </div> */}
 
-      <br />
-      <br />
-      <br />
-      <div className={styles.outer}>
-        <div className={styles.desc}>
-          <p
-            className={styles.text}
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              lineHeight: 1.7,
-              wordSpacing: "5px",
-            }}
-          >
-            <i>
-              “ The New Year Trayagnie promises a period of joy and celebrations
-              unlike the past two years Sarvari and Plava where people faced the
-              Corona pandemic and loss of life. This year is best for performing
-              auspicious events like weddings, construction of new homes,
-              housewarming etc. People born in this Trayagnie year will be
-              principled ones. trying to do good to others. They will also learn
-              many sciences and live long. ”
-            </i>
-          </p>
-        </div>
-        <div className={styles.container}>
-          <div className={styles.video_container} style={{ display: "block" }}>
-            <iframe
-              src={props.src}
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen={true}
-            ></iframe>
+        {/* <br />
+        <br />
+        <br /> */}
+        <br />
+        <div className={styles.outer}>
+          <div className={styles.desc}>
+            <p
+              className={styles.text}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                lineHeight: 1.7,
+                wordSpacing: "5px",
+              }}
+            >
+              <i>
+                “ The New Year Trayagnie promises a period of joy and
+                celebrations unlike the past two years Sarvari and Plava where
+                people faced the Corona pandemic and loss of life. This year is
+                best for performing auspicious events like weddings,
+                construction of new homes, housewarming etc. People born in this
+                Trayagnie year will be principled ones. trying to do good to
+                others. They will also learn many sciences and live long. ”
+              </i>
+            </p>
+          </div>
+          <div className={styles.container}>
+            <div
+              className={styles.video_container}
+              style={{ display: "block" }}
+            >
+              <iframe
+                src={props.src}
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen={true}
+              ></iframe>
+            </div>
           </div>
         </div>
+        <br />
       </div>
-      <br />
     </>
   );
 }

@@ -30,7 +30,7 @@ function Footer() {
                 letterSpacing: "2px",
                 fontSize: 34,
                 fontWeight: "bold",
-                marginTop: m1 ? "0px" : "-80px",
+                marginTop: m1 ? "0px" : "-50px",
               }}
             >
               Marathon
@@ -52,10 +52,10 @@ function Footer() {
           {!m1 ? (
             <div
               className={styles.img_conatiner}
-              style={{ marginTop: "-150px" }}
+              style={{ marginTop: "-130px" }}
             >
               <img
-                src="/images/akcent.png"
+                src="/images/appu.png"
                 alt=""
                 style={{
                   height: m1 ? "400px" : "300px",
@@ -89,7 +89,7 @@ function Footer() {
           {m1 ? (
             <div className={styles.img_conatiner}>
               <img
-                src="/images/puneeth.png"
+                src="/images/appu.png"
                 alt=""
                 style={{
                   height: m1 ? "400px" : "300px",
