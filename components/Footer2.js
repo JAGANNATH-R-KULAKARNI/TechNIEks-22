@@ -81,8 +81,8 @@ function Footer() {
             <br />
             <p style={{ lineHeight: 1.7, wordSpacing: "5px" }}>
               Run for Appu As you all know that beside being a great actor, he
-              was a good runner and a hobbyist of cycling. In memory of him,
-              let's make this Maracyclothon a great success. ಜೊತೆಗಿರದ ಜೀವ ಎಂದಿಗೂ
+              was a good runner and a hobbyist of cycling. In memory of him, let
+              s make this Maracyclothon a great success. ಜೊತೆಗಿರದ ಜೀವ ಎಂದಿಗೂ
               ಜೀವಂತ...
             </p>
           </div>
