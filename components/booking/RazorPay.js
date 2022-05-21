@@ -98,6 +98,7 @@ const RazorPayButton = (props) => {
         pathname: "/success",
         query: {
           status: 1,
+          type: props.ticket.type,
           phno: props.phno,
           text:
             props.ticket.type == 1
