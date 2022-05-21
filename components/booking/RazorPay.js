@@ -155,7 +155,7 @@ const RazorPayButton = (props) => {
       return;
     }
 
-    if (props.type == 1 && props.phno.length != 10) {
+    if (props.phno.length != 10) {
       props.messageAlert(
         props.phno.length > 0
           ? "Mobile Number is Invalid"
@@ -269,7 +269,7 @@ const RazorPayButton = (props) => {
           }}
         >
           After Payment is done please wait for 10 seconds. Do not close the
-          tabs or else ticket will not be generated. If you got into any problem
+          tabs or else ticket will not be generated. If you get into any problem
           then{" "}
           <a
             href="https://forms.gle/WKNV2sCTZDhpr2TC7"

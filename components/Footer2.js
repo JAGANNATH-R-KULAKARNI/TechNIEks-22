@@ -76,14 +76,14 @@ function Footer() {
                 marginTop: m1 ? "0px" : "-50px",
               }}
             >
-              rUN fOR aPPU
+              Concert
             </h1>
             <br />
             <p style={{ lineHeight: 1.7, wordSpacing: "5px" }}>
-              Run for Appu As you all know that beside being a great actor, he
-              was a good runner and a hobbyist of cycling. In memory of him, let
-              s make this Maracyclothon a great success. ಜೊತೆಗಿರದ ಜೀವ ಎಂದಿಗೂ
-              ಜೀವಂತ...
+              The concept of concert is a live musical performance or mutual
+              agreement. Concert can be a venue where you can listen to your
+              favorite musician. NIE concert promises to be a fun event where
+              you can enjoy the performance of your favorite musician.
             </p>
           </div>
           {m1 ? (

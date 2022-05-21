@@ -287,6 +287,96 @@ export default function Details(props) {
                 />
               </FormControl>
             </div>
+            {props.type == 0 ? <div style={{ height: "10px" }}></div> : null}
+
+            {props.type == 0 ? (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  maxWidth: "100%",
+                  paddingLeft: props.type == 1 ? "5%" : "0%",
+                  paddingRight: props.type == 1 ? "5%" : "0%",
+                }}
+              >
+                <FormControl
+                  variant="outlined"
+                  style={{
+                    color: c.c1,
+                    minWidth: m1 ? "370px" : "100%",
+                    fontFamily: "Bungee",
+                  }}
+                  sx={{
+                    input: {
+                      color: c.c4,
+                    },
+                    "& .MuiOutlinedInput-root": {
+                      "& > fieldset": {
+                        borderColor: c.c4,
+                      },
+                    },
+                    "& .MuiOutlinedInput-root:hover": {
+                      "& > fieldset": {
+                        borderColor: c.c2,
+                      },
+                    },
+                    "& .MuiFormLabel-root": { color: c.c4, fontWeight: 100 },
+                    fontFamily: "Bungee",
+                  }}
+                >
+                  <InputLabel
+                    htmlFor="outlined-adornment-password"
+                    style={{ fontFamily: "Bungee" }}
+                  >
+                    {"Mobile Number"}
+                  </InputLabel>
+                  <OutlinedInput
+                    id="phnumbro"
+                    type="number"
+                    value={props.phno}
+                    onChange={(e) => {
+                      props.setPhno(e.target.value);
+                    }}
+                    label="Phone Number"
+                    placeholder={"+91"}
+                    sx={{
+                      input: {
+                        color: c.c2,
+                        fontFamily: "Bungee",
+                      },
+                      borderColor: c.c4,
+                      "& .MuiOutlinedInput-root": {
+                        "& > fieldset": {
+                          borderColor: c.c4,
+                        },
+                      },
+                      "& .MuiOutlinedInput-root:hover": {
+                        "& > fieldset": {
+                          borderColor: c.c2,
+                        },
+                      },
+                      "& .MuiFormLabel-root": {
+                        color: c.c4,
+                        fontWeight: 100,
+                      },
+                      "& .MuiFormLabel-root&:hover": {
+                        color: c.c4,
+                        fontWeight: 100,
+                      },
+                      "& label.Mui-focused": {
+                        color: c.c4,
+                      },
+                      "& .MuiOutlinedInput-root": {
+                        "&.Mui-focused fieldset": {
+                          borderColor: c.c4,
+                        },
+                      },
+                      fontFamily: "Bungee",
+                    }}
+                  />
+                </FormControl>
+              </div>
+            ) : null}
             <div style={{ height: "10px" }}></div>
             <br />
             {props.type == 1 ? (

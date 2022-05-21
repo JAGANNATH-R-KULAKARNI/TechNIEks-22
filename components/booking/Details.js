@@ -290,6 +290,95 @@ export default function Details(props) {
               <br />
               <br />
               <br />
+              {props.type == 0 ? (
+                <div style={{}}>
+                  <div
+                    style={{
+                      paddingLeft: "8%",
+                    }}
+                  >
+                    <FormControl
+                      variant="outlined"
+                      style={{
+                        color: c.c1,
+                        minWidth: m1 ? "370px" : "90%",
+                        fontFamily: "Bungee",
+                      }}
+                      sx={{
+                        input: {
+                          color: c.c4,
+                        },
+                        "& .MuiOutlinedInput-root": {
+                          "& > fieldset": {
+                            borderColor: c.c4,
+                          },
+                        },
+                        "& .MuiOutlinedInput-root:hover": {
+                          "& > fieldset": {
+                            borderColor: c.c2,
+                          },
+                        },
+                        "& .MuiFormLabel-root": {
+                          color: c.c4,
+                          fontWeight: 100,
+                        },
+                        fontFamily: "Bungee",
+                      }}
+                    >
+                      <InputLabel
+                        htmlFor="outlined-adornment-password"
+                        style={{ fontFamily: "Bungee" }}
+                      >
+                        {"Phone Number"}
+                      </InputLabel>
+                      <OutlinedInput
+                        id="phnumberbro"
+                        type="number"
+                        value={props.phno}
+                        onChange={(e) => {
+                          props.setPhno(e.target.value);
+                        }}
+                        label="Phone Number"
+                        placeholder={"+91"}
+                        sx={{
+                          fontFamily: "Bungee",
+                          input: {
+                            color: c.c2,
+                          },
+                          borderColor: c.c4,
+                          "& .MuiOutlinedInput-root": {
+                            "& > fieldset": {
+                              borderColor: c.c4,
+                            },
+                          },
+                          "& .MuiOutlinedInput-root:hover": {
+                            "& > fieldset": {
+                              borderColor: c.c2,
+                            },
+                          },
+                          "& .MuiFormLabel-root": {
+                            color: c.c4,
+                            fontWeight: 100,
+                          },
+                          "& .MuiFormLabel-root&:hover": {
+                            color: c.c4,
+                            fontWeight: 100,
+                          },
+                          "& label.Mui-focused": {
+                            color: c.c4,
+                          },
+                          "& .MuiOutlinedInput-root": {
+                            "&.Mui-focused fieldset": {
+                              borderColor: c.c4,
+                            },
+                          },
+                        }}
+                      />
+                    </FormControl>
+                  </div>
+                </div>
+              ) : null}
+              <br />
               <br />
               {props.type == 1 ? (
                 <div
@@ -604,7 +693,6 @@ export default function Details(props) {
                 </div>
               ) : null}
               <br />
-
               {props.type == 1 ? (
                 <div>
                   {" "}
