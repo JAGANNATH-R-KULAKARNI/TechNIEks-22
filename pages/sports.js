@@ -83,7 +83,7 @@ export default function Events() {
       style={{
         backgroundColor: c.c1,
         color: c.c2,
-        backgroundImage: "url(/images/marathon.png)",
+        backgroundImage: "url(/images/marathona.png)",
         backgroundPosition: m1 ? "center 100px" : "center 85px",
         backgroundSize: m1 ? "450px 450px" : "250px 250px",
         backgroundRepeat: "no-repeat",

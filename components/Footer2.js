@@ -76,7 +76,7 @@ function Footer() {
                 marginTop: m1 ? "0px" : "-50px",
               }}
             >
-              Concert
+              rUN fOR aPPU
             </h1>
             <br />
             <p style={{ lineHeight: 1.7, wordSpacing: "5px" }}>
@@ -89,7 +89,7 @@ function Footer() {
           {m1 ? (
             <div className={styles.img_conatiner}>
               <img
-                src="/images/akcent.png"
+                src="/images/puneeth.png"
                 alt=""
                 style={{
                   height: m1 ? "400px" : "300px",

@@ -574,7 +574,7 @@ export default function Details(props) {
                                     color: "white",
                                   }}
                                 >
-                                  Veteren
+                                  Veteran [50+]
                                 </p>
                               }
                               checked={
