@@ -24,7 +24,7 @@ export default function CarddBro(props) {
       sx={{
         maxWidth: 250,
         minWidth: m1 ? 250 : "20%",
-        maxHeight: m1 ? 580 : 465,
+        maxHeight: m1 ? 580 : 475,
         borderTopLeftRadius: props.code == 1 ? "100px" : "0px",
         borderBottomLeftRadius: props.code == 1 ? "15px" : "0px",
         borderTopRightRadius: props.code == 5 ? "100px" : "0px",
