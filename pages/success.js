@@ -136,10 +136,14 @@ function Success(props) {
             variant="contained"
             style={{ width: "170px" }}
           >
-            {props.router.query.phno.length != 0 ? (
+            {props.router.query.phno && props.router.query.phno.length != 0 ? (
               <Button
                 style={{
-                  width: props.router.query.phno.length != 0 ? "85px" : "0px",
+                  width:
+                    props.router.query.phno &&
+                    props.router.query.phno.length != 0
+                      ? "85px"
+                      : "0px",
                   backgroundColor: "black",
                   color: "white",
                   border: "1px solid white",
@@ -159,7 +163,10 @@ function Success(props) {
             ) : null}
             <Button
               style={{
-                width: props.router.query.phno.length != 0 ? "85px" : "170px",
+                width:
+                  props.router.query.phno && props.router.query.phno.length != 0
+                    ? "85px"
+                    : "170px",
                 backgroundColor: "black",
                 color: "white",
                 border: "1px solid white",
