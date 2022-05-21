@@ -205,9 +205,9 @@ Name: ${ticket.name}
 Ph No: ${ticket.phno}
 Payment_ID: ${ticket.payment_id}
 Ticket_ID: ${ticket.order_id}
-Size : ${
+Shirt Size : ${
                           props.router.query.type == 1
-                            ? shirtsType[props.shirt]
+                            ? shirtsType[ticket.shirt]
                             : "Not Applicable"
                         }
 Category : ${ticket.category}
