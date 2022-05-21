@@ -188,6 +188,7 @@ const RazorPayButton = (props) => {
       name: props.name,
       usn: props.usn,
       email: props.email,
+      Ttype: props.ticket.type,
     });
 
     if (!result) {
@@ -214,6 +215,7 @@ const RazorPayButton = (props) => {
           razorpayPaymentId: response.razorpay_payment_id,
           razorpayOrderId: response.razorpay_order_id,
           razorpaySignature: response.razorpay_signature,
+          Ttype: props.ticket.type,
         };
         const result = await axios.post("/api/verify", data);
         if (result["data"]["msg"] === "success") {
@@ -267,7 +269,16 @@ const RazorPayButton = (props) => {
           }}
         >
           After Payment is done please wait for 10 seconds. Do not close the
-          tabs or else ticket will not be generated
+          tabs or else ticket will not be generated. If you got into any problem
+          then{" "}
+          <a
+            href="https://forms.gle/WKNV2sCTZDhpr2TC7"
+            target="_blank"
+            rel="noreferrer"
+            style={{ textDecoration: "underline", fontSize: "13px" }}
+          >
+            Click here
+          </a>
         </p>
         <ButtonUI text={loading ? "Loading..." : `Pay ₹ ${props.amount}`} />
       </div>

@@ -1,11 +1,17 @@
 const Razorpay = require("razorpay");
 import { Receipt } from "../../utils/Receipt";
 
-const createOrder = async ({ amount, name, usn, email }) => {
+const createOrder = async ({ amount, name, usn, email, Ttype }) => {
   try {
     const instance = new Razorpay({
-      key_id: process.env.RAZORPAY_KEY_ID,
-      key_secret: process.env.RAZORPAY_SECRET,
+      key_id:
+        Ttype == 1
+          ? process.env.RAZORPAY_KEY_ID_NIE
+          : process.env.RAZORPAY_KEY_ID,
+      key_secret:
+        Ttype == 1
+          ? process.env.RAZORPAY_SECRET_NIE
+          : process.env.RAZORPAY_SECRET,
     });
     const receipt = await Receipt.generate("" + name + usn + email + amount);
     const options = {
@@ -30,19 +36,23 @@ const createOrder = async ({ amount, name, usn, email }) => {
 
 const handler = async (req, res) => {
   if (req.method === "POST") {
-    const { amount, name, usn, email } = req.body;
+    const { amount, name, usn, email, Ttype } = req.body;
     const { order, receipt } = await createOrder({
       amount,
       name,
       usn,
       email,
+      Ttype,
     });
 
     return res.status(200).json({
       id: order.id,
       amount: order.amount,
       currency: order.currency,
-      key_id: process.env.RAZORPAY_KEY_ID,
+      key_id:
+        Ttype == 1
+          ? process.env.RAZORPAY_KEY_ID_NIE
+          : process.env.RAZORPAY_KEY_ID,
       receipt: receipt,
     });
   }

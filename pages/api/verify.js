@@ -8,9 +8,13 @@ const handler = async (req, res) => {
       razorpayPaymentId,
       razorpayOrderId,
       razorpaySignature,
+      Ttype,
     } = req.body;
 
-    const shasum = crypto.createHmac("sha256", process.env.RAZORPAY_SECRET);
+    const shasum = crypto.createHmac(
+      "sha256",
+      Ttype == 1 ? process.env.RAZORPAY_SECRET_NIE : process.env.RAZORPAY_SECRET
+    );
     shasum.update(`${orderCreationId}|${razorpayPaymentId}`);
     const digest = shasum.digest("hex");
 
