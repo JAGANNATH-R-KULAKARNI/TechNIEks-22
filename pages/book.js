@@ -101,6 +101,9 @@ function BookTicket(props) {
         setTicket(data[0]);
         setTotalAmount(data[0].price * no);
         setLoading(false);
+        console.log("----------------------");
+
+        if (data[0].open == 0) router.push("/sports");
       }
 
       if (error) {
