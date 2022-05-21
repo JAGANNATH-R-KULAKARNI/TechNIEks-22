@@ -136,7 +136,7 @@ export default function Events() {
             fest. The marathon is usually conducted for a cause (last year data)
             and this year its been conducted to empower the distressed women.
             Whatever proceeds we obtain from the marathon would be donated to
-            Shaktidhama founded by Puneet Raj Kumar
+            Shaktidhama founded by Parvathamma Rajkumar and Dr Rajkumar
           </p>
         </div>
       </div>
@@ -164,16 +164,14 @@ export default function Events() {
               fontWeight: "bold",
             }}
           >
-            Concert
+            Run For Appu
           </h1>
           <br />
           <p
             style={{ lineHeight: 1.7, wordSpacing: "5px", textAlign: "center" }}
           >
-            The concept of concert is a live musical performance or mutual
-            agreement. Concert can be a venue where you can listen to your
-            favorite musician. NIE concert promises to be a fun event where you
-            can enjoy the performance of your favorite musician.
+            As you all know that beside being a great actor, he was a good runner and a hobbyist of cycling.
+            In memory of him, let's make this Maracyclothon a great success.  ಜೊತೆಗಿರದ ಜೀವ ಎಂದಿಗೂ ಜೀವಂತ...
           </p>
         </div>
         {m1 ? (
