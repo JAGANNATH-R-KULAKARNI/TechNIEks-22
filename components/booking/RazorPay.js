@@ -98,27 +98,28 @@ const RazorPayButton = (props) => {
         pathname: "/success",
         query: {
           status: 1,
+          pay_id: id,
           type: props.ticket.type,
           phno: props.phno,
-          text:
-            props.ticket.type == 1
-              ? `ನಮಸ್ಕಾರಗಳು,ಟೆಕ್ ನೀಕ್ಸ್-22 ಗೆ ಸುಸ್ವಾಗತ,
-ನಿಮ್ಮ "${props.ticket.name}" ನ ಟಿಕೆಟ್ ದೃಢೀಕರಿಸಲಾಗಿದೆ.
-ನಿಮ್ಮ ಒಂದು ಟಿಕೆಟಿನ ಮೊತ್ತ - "₹${props.amount}".
-Name: ${props.name}
-Ph No: ${props.phno}
-Payment_ID: ${id}
-Ticket_ID: ${order_id}
-Size : ${props.ticket.type == 1 ? shirtsType[props.shirt] : "Not Applicable"}
-Category : ${props.ticket.type == 1 ? props.category : "Not Applicable"}
-ದಯವಿಟ್ಟು "event" ಗೆ ಆಗಮಿಸಿ, ಈ ಸಂಭ್ರಮವನ್ನು ಯಶಸ್ವಿ ಗೊಳಿಸಬೇಕಾಗಿ ಕೋರಿ ಕೊಳ್ಳುತ್ತೇವೆ.`
-              : `ನಮಸ್ಕಾರಗಳು,ಟೆಕ್ ನೀಕ್ಸ್-22 ಗೆ ಸುಸ್ವಾಗತ,
-ನಿಮ್ಮ "${props.ticket.name}" ನ ಟಿಕೆಟ್ ದೃಢೀಕರಿಸಲಾಗಿದೆ.
-ನಿಮ್ಮ ಒಂದು ಟಿಕೆಟಿನ ಮೊತ್ತ - "₹${props.amount}".
-Name: ${props.name}
-Payment_ID: ${id}
-Ticket_ID: ${order_id}
-ದಯವಿಟ್ಟು "event" ಗೆ ಆಗಮಿಸಿ, ಈ ಸಂಭ್ರಮವನ್ನು ಯಶಸ್ವಿ ಗೊಳಿಸಬೇಕಾಗಿ ಕೋರಿ ಕೊಳ್ಳುತ್ತೇವೆ.`,
+          //           text:
+          //             props.ticket.type == 1
+          //               ? `ನಮಸ್ಕಾರಗಳು,ಟೆಕ್ ನೀಕ್ಸ್-22 ಗೆ ಸುಸ್ವಾಗತ,
+          // ನಿಮ್ಮ "${props.ticket.name}" ನ ಟಿಕೆಟ್ ದೃಢೀಕರಿಸಲಾಗಿದೆ.
+          // ನಿಮ್ಮ ಒಂದು ಟಿಕೆಟಿನ ಮೊತ್ತ - "₹${props.amount}".
+          // Name: ${props.name}
+          // Ph No: ${props.phno}
+          // Payment_ID: ${id}
+          // Ticket_ID: ${order_id}
+          // Size : ${props.ticket.type == 1 ? shirtsType[props.shirt] : "Not Applicable"}
+          // Category : ${props.ticket.type == 1 ? props.category : "Not Applicable"}
+          // ದಯವಿಟ್ಟು "event" ಗೆ ಆಗಮಿಸಿ, ಈ ಸಂಭ್ರಮವನ್ನು ಯಶಸ್ವಿ ಗೊಳಿಸಬೇಕಾಗಿ ಕೋರಿ ಕೊಳ್ಳುತ್ತೇವೆ.`
+          //               : `ನಮಸ್ಕಾರಗಳು,ಟೆಕ್ ನೀಕ್ಸ್-22 ಗೆ ಸುಸ್ವಾಗತ,
+          // ನಿಮ್ಮ "${props.ticket.name}" ನ ಟಿಕೆಟ್ ದೃಢೀಕರಿಸಲಾಗಿದೆ.
+          // ನಿಮ್ಮ ಒಂದು ಟಿಕೆಟಿನ ಮೊತ್ತ - "₹${props.amount}".
+          // Name: ${props.name}
+          // Payment_ID: ${id}
+          // Ticket_ID: ${order_id}
+          // ದಯವಿಟ್ಟು "event" ಗೆ ಆಗಮಿಸಿ, ಈ ಸಂಭ್ರಮವನ್ನು ಯಶಸ್ವಿ ಗೊಳಿಸಬೇಕಾಗಿ ಕೋರಿ ಕೊಳ್ಳುತ್ತೇವೆ.`,
         },
       });
     }

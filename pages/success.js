@@ -15,6 +15,15 @@ import useSWR from "swr";
 import copy from "copy-to-clipboard";
 import ButtonGroup from "@mui/material/ButtonGroup";
 
+const shirtsType = {
+  S: "Small",
+  M: "Medium",
+  L: "Large",
+  XL: "X Large",
+  XLL: "XX Large",
+  XLLL: "XXX Large",
+};
+
 function Success(props) {
   const m1 = useMediaQuery("(min-width:450px)");
   const router = useRouter();
@@ -25,6 +34,7 @@ function Success(props) {
 
   const [status, setStatus] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
+  const [ticket, setTicket] = React.useState(null);
 
   React.useEffect(() => {
     // fetchTheProfile();
@@ -37,13 +47,41 @@ function Success(props) {
   React.useEffect(() => {
     setInterval(function () {
       fetchTheProfile();
-    }, 100);
+      fetchTickets();
+    }, 500);
   }, []);
 
   async function fetchTheProfile() {
     const data = await supabase.auth.user();
 
     setStatus(data ? true : false);
+  }
+
+  async function fetchTickets() {
+    if (!props.router.query.pay_id) return;
+
+    const userData = await supabase.auth.user();
+
+    if (userData) {
+      const { data, error } = await supabase
+        .from("payments")
+        .select(`*,events(*)`)
+        .eq("payment_id", props.router.query.pay_id);
+      // .order("created_at", { ascending: false });
+
+      if (data) {
+        // setTickets(data);
+        // setGotit(true);
+        // console.log("tickets");
+        // console.log(props.router.query.pay_id);
+        // console.log(data);
+        setTicket(data[0]);
+      }
+
+      if (error) {
+        router.push("/ticket");
+      }
+    }
   }
 
   async function logOut() {
@@ -113,40 +151,70 @@ function Success(props) {
           </Button>
           <br />
           <br />
-          {/* <Button
-            variant="outlined"
-            style={{
-              color: "white",
-              fontFamily: "Bungee",
-              border: "1px solid white",
-            }}
-            onClick={() => {
-              copy(props.router.query.text);
-              setCopied(true);
 
-              setTimeout(() => {
-                setCopied(false);
-              }, 1000);
-            }}
-          >
-            Copy Invitation
-          </Button> */}
-          <ButtonGroup
-            disableElevation
-            variant="contained"
-            style={{ width: "170px" }}
-          >
-            {props.router.query.type == 1 ? (
+          {ticket ? (
+            <ButtonGroup
+              disableElevation
+              variant="contained"
+              style={{ width: "170px" }}
+            >
+              {props.router.query.type == 1 ? (
+                <Button
+                  style={{
+                    width: props.router.query.type == 1 ? "85px" : "0px",
+                    backgroundColor: "black",
+                    color: "white",
+                    border: "1px solid white",
+                    fontSize: "10px",
+                  }}
+                  onClick={() => {
+                    copy(props.router.query.phno);
+                    setCopied(true);
+
+                    setTimeout(() => {
+                      setCopied(false);
+                    }, 1000);
+                  }}
+                >
+                  Phnum
+                </Button>
+              ) : null}
               <Button
                 style={{
-                  width: props.router.query.type == 1 ? "85px" : "0px",
+                  width: props.router.query.type == 1 ? "85px" : "170px",
                   backgroundColor: "black",
                   color: "white",
                   border: "1px solid white",
                   fontSize: "10px",
                 }}
                 onClick={() => {
-                  copy(props.router.query.phno);
+                  const textbro =
+                    props.router.query.type == 1
+                      ? `------ ID : ${ticket.id} ------
+ನಮಸ್ಕಾರಗಳು,ಟೆಕ್ ನೀಕ್ಸ್-22 ಗೆ ಸುಸ್ವಾಗತ,
+ನಿಮ್ಮ "${ticket.events.name}" ನ ಟಿಕೆಟ್ ದೃಢೀಕರಿಸಲಾಗಿದೆ.
+ನಿಮ್ಮ ಒಂದು ಟಿಕೆಟಿನ ಮೊತ್ತ - "₹${ticket.amountpaid}".
+Name: ${ticket.name}
+Ph No: ${ticket.phno}
+Payment_ID: ${ticket.payment_id}
+Ticket_ID: ${ticket.order_id}
+Size : ${
+                          props.router.query.type == 1
+                            ? shirtsType[props.shirt]
+                            : "Not Applicable"
+                        }
+Category : ${ticket.category}
+ದಯವಿಟ್ಟು "event" ಗೆ ಆಗಮಿಸಿ, ಈ ಸಂಭ್ರಮವನ್ನು ಯಶಸ್ವಿ ಗೊಳಿಸಬೇಕಾಗಿ ಕೋರಿ ಕೊಳ್ಳುತ್ತೇವೆ.`
+                      : `------ ID : ${ticket.id} ------
+ನಮಸ್ಕಾರಗಳು,ಟೆಕ್ ನೀಕ್ಸ್-22 ಗೆ ಸುಸ್ವಾಗತ,
+ನಿಮ್ಮ "${ticket.events.name}" ನ ಟಿಕೆಟ್ ದೃಢೀಕರಿಸಲಾಗಿದೆ.
+ನಿಮ್ಮ ಒಂದು ಟಿಕೆಟಿನ ಮೊತ್ತ - "₹${ticket.amountpaid}".
+Name: ${ticket.name}
+Payment_ID: ${ticket.payment_id}
+Ticket_ID: ${ticket.order_id}
+ದಯವಿಟ್ಟು "event" ಗೆ ಆಗಮಿಸಿ, ಈ ಸಂಭ್ರಮವನ್ನು ಯಶಸ್ವಿ ಗೊಳಿಸಬೇಕಾಗಿ ಕೋರಿ ಕೊಳ್ಳುತ್ತೇವೆ.`;
+
+                  copy(textbro);
                   setCopied(true);
 
                   setTimeout(() => {
@@ -154,29 +222,10 @@ function Success(props) {
                   }, 1000);
                 }}
               >
-                Phnum
+                Invititation
               </Button>
-            ) : null}
-            <Button
-              style={{
-                width: props.router.query.type == 1 ? "85px" : "170px",
-                backgroundColor: "black",
-                color: "white",
-                border: "1px solid white",
-                fontSize: "10px",
-              }}
-              onClick={() => {
-                copy(props.router.query.text);
-                setCopied(true);
-
-                setTimeout(() => {
-                  setCopied(false);
-                }, 1000);
-              }}
-            >
-              Invititation
-            </Button>
-          </ButtonGroup>
+            </ButtonGroup>
+          ) : null}
           <br />
           <div style={{ height: "10px" }}></div>
           {copied ? <div style={{ height: "0px" }}>copied</div> : null}
