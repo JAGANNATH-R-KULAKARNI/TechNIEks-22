@@ -106,7 +106,8 @@ export default function Events() {
       id="marathon_page"
     >
       <NavBar code={0} logOut={logOut} status={status} />
-      <div style={{ height: m1 ? "570px" : "250px" }}></div>
+      <div style={{ height: m1 ? "600px" : "300px" }}></div>
+      {/* <ButtonUI text="Book Now" clicked={routeToBook} /> */}
       <div className={styles.contents_why}>
         <div className={styles.img_conatiner}>
           <Image
@@ -116,6 +117,7 @@ export default function Events() {
             height="433px"
           ></Image>
         </div>
+
         <div className={styles.desc}>
           <h1
             style={{
@@ -124,6 +126,7 @@ export default function Events() {
               letterSpacing: "2px",
               fontSize: 34,
               fontWeight: "bold",
+              marginTop: m1 ? "0px" : "-50px",
             }}
           >
             Marathon
@@ -138,6 +141,20 @@ export default function Events() {
             Whatever proceeds we obtain from the marathon would be donated to
             Shaktidhama founded by Parvathamma Rajkumar and Dr Rajkumar
           </p>
+          <br />
+          <div
+            style={{
+              // display: "flex",
+              justifyContent: "center",
+              width: "100%",
+              paddingLeft: "7%",
+              paddingRight: "5%",
+              width: "100%",
+              marginTop: "-20px",
+            }}
+          >
+            <ButtonUI text="Book Now" clicked={routeToBook} />
+          </div>
         </div>
       </div>
       <div className={styles.contents_why}>
@@ -174,6 +191,20 @@ export default function Events() {
             runner and a hobbyist of cycling. In memory of him, let s make this
             Maracyclothon a great success. ಜೊತೆಗಿರದ ಜೀವ ಎಂದಿಗೂ ಜೀವಂತ...
           </p>
+          <br />
+          <div
+            style={{
+              // display: "flex",
+              justifyContent: "center",
+              width: "100%",
+              paddingLeft: "7%",
+              paddingRight: "5%",
+              width: "100%",
+              marginTop: "-20px",
+            }}
+          >
+            <ButtonUI text="Book Now" clicked={routeToBook} />
+          </div>
         </div>
         {m1 ? (
           <div className={styles.img_conatiner}>
@@ -204,13 +235,13 @@ export default function Events() {
         </div>
       )}
       {events.length > 0 ? null : <div style={{ height: "130px" }}></div>} */}
+      {/* <br />
       <br />
       <br />
       <br />
       <br />
       <br />
-      <br />
-      <ButtonUI text="Book Now" clicked={routeToBook} />
+      <ButtonUI text="Book Now" clicked={routeToBook} /> */}
       <br />
       <br />
       <br />
