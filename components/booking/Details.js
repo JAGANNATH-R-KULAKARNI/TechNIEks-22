@@ -82,7 +82,11 @@ export default function Details(props) {
                   window.location.href.substr(
                     0,
                     window.location.href.length - 9
-                  ) + "events"
+                  ) +
+                    props.type ==
+                    1
+                    ? "sports"
+                    : "events"
                 );
                 props.messageAlert("Link is Copied", "success", 1000);
               }}
