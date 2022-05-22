@@ -42,7 +42,9 @@ export default function Events() {
     const { data, error } = await supabase
       .from("events")
       .select("*")
-      .eq("type", 0);
+      .eq("type", 0)
+      .order("date", { ascending: true });
+
     console.log("fetch events");
     if (data) {
       setEvents(data);

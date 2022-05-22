@@ -22,16 +22,16 @@ export default function Home(props) {
 
         if (event === "SIGNED_IN") {
           setStatus(true);
-          Router.push("/home");
+          Router.push("/sports");
         }
         if (event === "SIGNED_OUT") {
           setStatus(false);
-          Router.push("/home");
+          Router.push("/sports");
         }
       }
     );
     checkUser();
-    Router.push("/home");
+    Router.push("/sports");
     fetchTheProfile();
     return () => {
       authListener.unsubscribe();
