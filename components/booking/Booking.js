@@ -56,6 +56,8 @@ export default function Booking(props) {
                 messageAlert={props.messageAlert}
                 phno={props.phno}
                 setPhno={props.setPhno}
+                footlose={props.footlose}
+                setFootlose={props.setFootlose}
               />
             </div>
           </Grid>
@@ -75,7 +77,12 @@ export default function Booking(props) {
                 marginTop: "0px",
                 borderRadius: "75px",
                 fontFamily: "Bungee",
-                marginTop: props.type == 1 ? "120px" : "0px",
+                marginTop:
+                  props.type == 1
+                    ? "120px"
+                    : props.ticket.id == 9
+                    ? "180px"
+                    : "0px",
               }}
               elevation={1}
             >
@@ -179,6 +186,8 @@ export default function Booking(props) {
           messageAlert={props.messageAlert}
           phno={props.phno}
           setPhno={props.setPhno}
+          footlose={props.footlose}
+          setFootlose={props.setFootlose}
         />
       </div>
       <div

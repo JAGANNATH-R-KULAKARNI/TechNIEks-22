@@ -38,6 +38,7 @@ function BookTicket(props) {
   const [totalAmount, setTotalAmount] = React.useState();
   const [successTab, setSuccessTab] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
+  const [footlose, setFootlose] = React.useState("solo");
 
   const { dataEvents: errorEvents } = useSWR("eventBook", fetchTicketDetails);
   const { dataProfile: errorProfile } = useSWR("profileBook", fetchTheProfile);
@@ -52,6 +53,16 @@ function BookTicket(props) {
     }, t);
     return;
   };
+
+  React.useEffect(() => {
+    if (!ticket) return;
+
+    if (footlose == "solo") {
+      setTotalAmount(ticket.price * no);
+    } else {
+      setTotalAmount(ticket.price1 * no);
+    }
+  }, [footlose]);
 
   React.useEffect(() => {
     // setInterval(function () {
@@ -216,7 +227,15 @@ function BookTicket(props) {
           messageAlertForPayments={messageAlertForPayments}
           messageAlert={messageAlert}
           thisCollege={thisCollege}
-          price={price}
+          price={
+            ticket.id == 9
+              ? footlose == "solo"
+                ? ticket.price
+                : ticket.price1
+              : price
+          }
+          footlose={footlose}
+          setFootlose={setFootlose}
           shirt={shirt}
           setShirt={setShirt}
           category={category}
