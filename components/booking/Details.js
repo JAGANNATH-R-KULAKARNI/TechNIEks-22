@@ -718,8 +718,7 @@ export default function Details(props) {
                       Category
                     </Typography>
                     <br />
-                    {/* footlose={props.footlose}
-                    setFootlose={props.setFootlose} */}
+
                     <div style={{ marginLeft: "40px" }}>
                       <FormControlLabel
                         control={<Radio style={{ color: "white" }} />}
@@ -777,7 +776,7 @@ export default function Details(props) {
                       <br />
                     </div>
                     <br />
-                    <br />
+
                     <br />
                   </div>
                 </div>

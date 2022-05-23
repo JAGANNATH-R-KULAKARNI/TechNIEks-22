@@ -690,6 +690,88 @@ export default function Details(props) {
                 </div>
               </div>
             ) : null}
+
+            {props.ticket.id == 9 ? (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  minWidth: "100%",
+                }}
+              >
+                <div>
+                  <Typography
+                    component="h1"
+                    variant="h5"
+                    style={{
+                      fontFamily: "Bungee",
+                      textAlign: "center",
+                    }}
+                  >
+                    Category
+                  </Typography>
+                  <br />
+
+                  <div style={{ marginLeft: "40px" }}>
+                    <FormControlLabel
+                      control={<Radio style={{ color: "white" }} />}
+                      label={
+                        <p
+                          style={{
+                            fontFamily: "Bungee",
+                            fontSize: "14px",
+                            color: "white",
+                          }}
+                        >
+                          Solo
+                        </p>
+                      }
+                      checked={props.footlose == "solo" ? true : false}
+                      onChange={(e) => {
+                        props.setFootlose("solo");
+                      }}
+                      style={{
+                        minWidth: "140px",
+                        backgroundColor:
+                          props.footlose == "solo" ? c.c4 : "black",
+                        color: props.footlose == "solo" ? "black" : "white",
+                        paddingRight: "10px",
+                        borderRadius: "20px",
+                      }}
+                    />
+                    <br />
+                    <FormControlLabel
+                      control={<Radio style={{ color: "white" }} />}
+                      label={
+                        <p
+                          style={{
+                            fontFamily: "Bungee",
+                            fontSize: "14px",
+                            color: "white",
+                          }}
+                        >
+                          Duo
+                        </p>
+                      }
+                      checked={props.footlose == "duo" ? true : false}
+                      onChange={(e) => {
+                        props.setFootlose("duo");
+                      }}
+                      style={{
+                        minWidth: "140px",
+                        backgroundColor:
+                          props.footlose == "duo" ? c.c4 : "black",
+                        color: props.footlose == "duo" ? "black" : "white",
+                        paddingRight: "10px",
+                        borderRadius: "20px",
+                      }}
+                    />
+                    <br />
+                  </div>
+                </div>
+              </div>
+            ) : null}
+            <br />
             <div
               style={{
                 display: "flex",

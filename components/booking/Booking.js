@@ -81,7 +81,7 @@ export default function Booking(props) {
                   props.type == 1
                     ? "120px"
                     : props.ticket.id == 9
-                    ? "180px"
+                    ? "130px"
                     : "0px",
               }}
               elevation={1}
