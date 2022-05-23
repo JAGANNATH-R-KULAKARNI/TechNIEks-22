@@ -58,7 +58,17 @@ const NavBarUI = (props) => {
               className={styles2.hoverr}
               onClick={() => router.push("/home")}
             >
-              TechNIEks 22
+              Tech
+              <span
+                style={{
+                  color: "#E68E06",
+                  fontSize: "35px",
+                  marginTop: "-5px",
+                }}
+              >
+                NIE
+              </span>
+              ks 22
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
@@ -127,11 +137,22 @@ const NavBarUI = (props) => {
                 marginLeft: "-13%",
                 fontFamily: "Bungee",
                 fontSize: "20px",
+                paddingLeft: "10px",
               }}
               className={styles2.hoverr}
               onClick={() => router.push("/home")}
             >
-              TechNIEks 22
+              Tech
+              <span
+                style={{
+                  color: "#E68E06",
+                  fontSize: "25px",
+                  marginTop: "-5px",
+                }}
+              >
+                NIE
+              </span>
+              ks 22
             </Typography>
             <Box
               sx={{
