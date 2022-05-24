@@ -26,6 +26,7 @@ function Footer() {
           paddingRight: "10%",
           // color: c.c3,
           backgroundColor: "black",
+          marginTop: "-25px",
         }}
       >
         <Grid container spacing={0}>

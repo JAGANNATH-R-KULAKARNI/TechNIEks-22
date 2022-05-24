@@ -1,9 +1,10 @@
 import NavBar from "../components/NavBar";
-import Footer from "../components/Footer3";
+import Footer from "../components/Footer";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { supabase } from "../utils/SupabaseClient";
 import React from "react";
 import { useRouter } from "next/router";
+import CouncilUI from "../components/Council";
 
 export default function About() {
   const [status, setStatus] = React.useState(false);
@@ -33,7 +34,7 @@ export default function About() {
       style={{
         backgroundColor: "#000000",
         color: "white",
-        backgroundImage: "url(/images/logo.png)",
+        backgroundImage: "url(/images/logo3.png)",
         backgroundPosition: m1 ? "center 80px" : "center 85px",
         backgroundSize: m1 ? "450px 450px" : "250px 250px",
         backgroundRepeat: "no-repeat",
@@ -42,7 +43,8 @@ export default function About() {
       }}
     >
       <NavBar code={0} logOut={logOut} status={status} />
-      <div style={{ marginTop: m1 ? "34%" : "100%" }}></div>
+      <div style={{ height: "10px" }}></div>
+      <CouncilUI />
       <Footer />
     </div>
   );
