@@ -104,16 +104,17 @@ function Footer() {
                 </h3>
                 <li
                   className={styles.footer}
-                  onClick={() => router.push("/about")}
-                >
-                  {"Council Core"}
-                </li>
-                <li
-                  className={styles.footer}
                   onClick={() => router.push("/info/creaters")}
                 >
                   {"Creaters"}
                 </li>
+                <li
+                  className={styles.footer}
+                  onClick={() => router.push("/about")}
+                >
+                  {"Council Core"}
+                </li>
+
                 <li
                   className={styles.footer}
                   style={{ fontSize: m1 ? "15px" : "9px" }}
@@ -174,6 +175,14 @@ function Footer() {
                   {" "}
                   {"Designers"}
                 </h3>
+                <a
+                  href="https://www.instagram.com/mala.sanjay/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  <li className={styles.footer}>Smt C K Vanamala </li>
+                </a>
                 <a
                   href="https://www.linkedin.com/in/jagannath-r-kulakarni-a465841a7/"
                   target="_blank"

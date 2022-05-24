@@ -86,6 +86,61 @@ export default function Creaters() {
       </h1>
       <br />
 
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <img
+          src="/images/vanamala_mam.jpeg"
+          style={{
+            width: m1 ? "25%" : "80%",
+            height: "auto",
+            borderRadius: "30%",
+          }}
+        />
+      </div>
+      <br />
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Paper
+          style={{
+            height: m1 ? "80px" : "95px",
+            minWidth: m1 ? "25%" : "20%",
+            maxWidth: m1 ? "80%" : "77%",
+            backgroundColor: "white",
+            borderRadius: "20px",
+            color: "black",
+            padding: "0px",
+            border: "0px solid black",
+            display: "flex",
+            justifyContent: "center",
+            width: m1 ? "25%" : "80%",
+          }}
+        >
+          <div style={{}}>
+            <p
+              style={{
+                textAlign: "center",
+                fontSize: m1 ? "17px" : "17px",
+                backgroundColor: m1 ? "black" : "white",
+                color: m1 ? "white" : "red",
+                borderRadius: "10px",
+              }}
+            >
+              C K Vanamala
+            </p>
+
+            <p
+              style={{
+                textAlign: "center",
+                marginTop: "-13px",
+                fontSize: m1 ? "13px" : "12px",
+              }}
+            >
+              Cultural Coordinator &{m1 ? null : <br />}
+              Our Mentor
+            </p>
+          </div>
+        </Paper>
+      </div>
+      <br />
+      <br />
       <div
         style={{
           display: "flex",
