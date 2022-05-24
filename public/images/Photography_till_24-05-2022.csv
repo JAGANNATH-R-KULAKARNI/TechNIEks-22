@@ -1,0 +1,2 @@
+id,created_at,payment_id,order_id,name,usn,nooftickets,amountpaid,email,ticket_id,ticketprice,user_id,college,shirt,category,phno
+270,2022-05-23 13:21:40.044593+00,pay_JYgRSW39l4VaaY,order_JYgR9MQ6uJBPmC,Abhinav NB,4ni21cs001,1,75,2021cs_abhinavnb_a@nie.ac.in,5,75,28313418-8be5-470c-b05e-b0aea5bec1a8,4ni21cs001,Not Applicable,Not Applicable,8277123450

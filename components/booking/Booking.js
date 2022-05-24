@@ -123,22 +123,47 @@ export default function Booking(props) {
                 </div>
 
                 <div style={{ marginTop: "-25px" }}>
-                  <RazorPayButtonUI
-                    amount={props.ticket ? props.price * props.no : 0}
-                    name={props.name}
-                    usn={props.usn}
-                    email={props.email}
-                    ticket={props.ticket}
-                    no={props.no}
-                    messageAlertForPayments={props.messageAlertForPayments}
-                    messageAlert={props.messageAlert}
-                    price={props.price}
-                    shirt={props.shirt}
-                    type={props.type}
-                    category={props.category}
-                    phno={props.phno}
-                    setPhno={props.setPhno}
-                  />
+                  {props.ticket && props.ticket.id != 3 ? (
+                    <RazorPayButtonUI
+                      amount={props.ticket ? props.price * props.no : 0}
+                      name={props.name}
+                      usn={props.usn}
+                      email={props.email}
+                      ticket={props.ticket}
+                      no={props.no}
+                      messageAlertForPayments={props.messageAlertForPayments}
+                      messageAlert={props.messageAlert}
+                      price={props.price}
+                      shirt={props.shirt}
+                      type={props.type}
+                      category={props.category}
+                      phno={props.phno}
+                      setPhno={props.setPhno}
+                    />
+                  ) : (
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                      <div>
+                        <br />
+                        <h5 style={{ fontFamily: "inherit" }}>
+                          Please fill this form to book this event.
+                        </h5>
+                        <div style={{ height: "10px" }}></div>
+                        <a
+                          href="https://forms.gle/gUak3F7AT8qaV6sJ7"
+                          target="_blank"
+                          rel="noreferrer"
+                          style={{
+                            color: c.c3,
+                            backgroundColor: "black",
+                            padding: "7px",
+                            borderRadius: "10px",
+                          }}
+                        >
+                          Click here
+                        </a>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </Paper>
@@ -247,25 +272,50 @@ export default function Booking(props) {
             </div>
 
             <div style={{ marginTop: "-20px" }}>
-              <RazorPayButtonUI
-                amount={props.ticket ? props.price * props.no : 0}
-                name={props.name}
-                usn={props.usn}
-                email={props.email}
-                no={props.no}
-                ticket={props.ticket}
-                messageAlertForPayments={props.messageAlertForPayments}
-                messageAlert={props.messageAlert}
-                loading={loading}
-                type={props.type}
-                setTheLoading={setTheLoading}
-                thisCollege={props.thisCollege}
-                price={props.price}
-                shirt={props.shirt}
-                category={props.category}
-                phno={props.phno}
-                setPhno={props.setPhno}
-              />
+              {props.ticket && props.ticket.id != 3 ? (
+                <RazorPayButtonUI
+                  amount={props.ticket ? props.price * props.no : 0}
+                  name={props.name}
+                  usn={props.usn}
+                  email={props.email}
+                  no={props.no}
+                  ticket={props.ticket}
+                  messageAlertForPayments={props.messageAlertForPayments}
+                  messageAlert={props.messageAlert}
+                  loading={loading}
+                  type={props.type}
+                  setTheLoading={setTheLoading}
+                  thisCollege={props.thisCollege}
+                  price={props.price}
+                  shirt={props.shirt}
+                  category={props.category}
+                  phno={props.phno}
+                  setPhno={props.setPhno}
+                />
+              ) : (
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <div>
+                    <br />
+                    <h5 style={{ fontFamily: "inherit" }}>
+                      Please fill this form to book this event.
+                    </h5>
+                    <div style={{ height: "10px" }}></div>
+                    <a
+                      href="https://forms.gle/gUak3F7AT8qaV6sJ7"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{
+                        color: c.c3,
+                        backgroundColor: "black",
+                        padding: "7px",
+                        borderRadius: "10px",
+                      }}
+                    >
+                      Click here
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
             <br />
           </div>
