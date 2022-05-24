@@ -102,7 +102,18 @@ function Footer() {
                   {" "}
                   Legal Info
                 </h3>
-
+                <li
+                  className={styles.footer}
+                  onClick={() => router.push("/about")}
+                >
+                  {"Council Core"}
+                </li>
+                <li
+                  className={styles.footer}
+                  onClick={() => router.push("/info/creaters")}
+                >
+                  {"Creaters"}
+                </li>
                 <li
                   className={styles.footer}
                   style={{ fontSize: m1 ? "15px" : "9px" }}
@@ -122,18 +133,7 @@ function Footer() {
                 >
                   {"Refunds"}
                 </li>
-                <li
-                  className={styles.footer}
-                  onClick={() => router.push("/about")}
-                >
-                  {"About"}
-                </li>
-                <li
-                  className={styles.footer}
-                  onClick={() => router.push("/info/creaters")}
-                >
-                  {"Creaters"}
-                </li>
+
                 <a
                   href="https://forms.gle/WKNV2sCTZDhpr2TC7"
                   target="_blank"
