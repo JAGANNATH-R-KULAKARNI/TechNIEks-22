@@ -13,6 +13,11 @@ import * as c from "../../utils/Colors";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useQRCode } from "next-qrcode";
 import domtoimage from "dom-to-image";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import ButtonUI from "../Button2";
+import { supabase } from "../../utils/SupabaseClient";
 
 const theme = createTheme();
 
@@ -28,25 +33,6 @@ export default function Tickets(props) {
   const m1 = useMediaQuery("(min-width:600px)");
   const { Canvas } = useQRCode();
   const [glitch, setGlitch] = React.useState(false);
-
-  // const generateTicket = (id) => {
-  //   const doc = new jsPDF();
-
-  //   //get table html
-  //   const pdfTable = document.getElementById(id);
-  //   //html to pdf format
-  //   var html = htmlToPdfmake(pdfTable.innerHTML);
-
-  //   const documentDefinition = { content: html };
-  //   pdfMake.vfs = pdfFonts.pdfMake.vfs;
-  //   pdfMake.createPdf(documentDefinition).open();
-  // };
-
-  // const generatePdf = (i) => {
-  //   const doc = new jsPDF("portrait", "pt", "a4", "true");
-  //   doc.addImage(i, "JPEG", 10, 30, 360, 640);
-  //   doc.save("Invoice.pdf");
-  // };
 
   const generateJpeg = (id, name, usn) => {
     setGlitch(true);
@@ -76,6 +62,28 @@ export default function Tickets(props) {
         }, 700);
       });
   };
+
+  const validateTheTicket = async (idbro) => {
+    try {
+      const { data, error } = await supabase
+        .from("payments")
+        .update({ expired: 1 })
+        .match({ id: idbro });
+
+      if (data) {
+        alert("Validated Successfully");
+      }
+
+      if (error) {
+        alert("Not Validated");
+      }
+    } catch (err) {
+      alert("Something happened :(");
+    }
+
+    window.location.reload();
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -90,9 +98,281 @@ export default function Tickets(props) {
             fontFamily: "Bungee",
           }}
         >
-          My Tickets
+          Admins Only
         </h1>
       </div>
+      <br />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          paddingLeft: "10%",
+          paddingRight: "10%",
+        }}
+      >
+        <FormControl
+          variant="outlined"
+          style={{
+            color: c.c1,
+            minWidth: m1 ? "370px" : "90%",
+            fontFamily: "Bungee",
+          }}
+          sx={{
+            input: {
+              color: c.c4,
+            },
+            "& .MuiOutlinedInput-root": {
+              "& > fieldset": {
+                borderColor: c.c4,
+              },
+            },
+            "& .MuiOutlinedInput-root:hover": {
+              "& > fieldset": {
+                borderColor: c.c2,
+              },
+            },
+            "& .MuiFormLabel-root": {
+              color: c.c4,
+              fontWeight: 100,
+            },
+            fontFamily: "Bungee",
+          }}
+        >
+          <InputLabel
+            htmlFor="outlined-adornment-password"
+            style={{ fontFamily: "Bungee" }}
+          >
+            {"ID"}
+          </InputLabel>
+          <OutlinedInput
+            id="idbro"
+            type="number"
+            value={props.idbro}
+            onChange={(e) => {
+              props.setIDBro(e.target.value);
+            }}
+            label="ID"
+            placeholder={"Ask For Id"}
+            sx={{
+              fontFamily: "Bungee",
+              input: {
+                color: c.c2,
+              },
+              borderColor: c.c4,
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": {
+                  borderColor: c.c4,
+                },
+              },
+              "& .MuiOutlinedInput-root:hover": {
+                "& > fieldset": {
+                  borderColor: c.c2,
+                },
+              },
+              "& .MuiFormLabel-root": {
+                color: c.c4,
+                fontWeight: 100,
+              },
+              "& .MuiFormLabel-root&:hover": {
+                color: c.c4,
+                fontWeight: 100,
+              },
+              "& label.Mui-focused": {
+                color: c.c4,
+              },
+              "& .MuiOutlinedInput-root": {
+                "&.Mui-focused fieldset": {
+                  borderColor: c.c4,
+                },
+              },
+            }}
+          />
+        </FormControl>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          paddingLeft: "10%",
+          paddingRight: "10%",
+          marginTop: "10px",
+        }}
+      >
+        <FormControl
+          variant="outlined"
+          style={{
+            color: c.c1,
+            minWidth: m1 ? "370px" : "90%",
+            fontFamily: "Bungee",
+          }}
+          sx={{
+            input: {
+              color: c.c4,
+            },
+            "& .MuiOutlinedInput-root": {
+              "& > fieldset": {
+                borderColor: c.c4,
+              },
+            },
+            "& .MuiOutlinedInput-root:hover": {
+              "& > fieldset": {
+                borderColor: c.c2,
+              },
+            },
+            "& .MuiFormLabel-root": {
+              color: c.c4,
+              fontWeight: 100,
+            },
+            fontFamily: "Bungee",
+          }}
+        >
+          <InputLabel
+            htmlFor="outlined-adornment-password"
+            style={{ fontFamily: "Bungee" }}
+          >
+            {"Phone Number"}
+          </InputLabel>
+          <OutlinedInput
+            id="phnumberbro"
+            type="number"
+            value={props.phnum}
+            onChange={(e) => {
+              props.setPhnum(e.target.value);
+            }}
+            label="Phone Number"
+            placeholder={"+91"}
+            sx={{
+              fontFamily: "Bungee",
+              input: {
+                color: c.c2,
+              },
+              borderColor: c.c4,
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": {
+                  borderColor: c.c4,
+                },
+              },
+              "& .MuiOutlinedInput-root:hover": {
+                "& > fieldset": {
+                  borderColor: c.c2,
+                },
+              },
+              "& .MuiFormLabel-root": {
+                color: c.c4,
+                fontWeight: 100,
+              },
+              "& .MuiFormLabel-root&:hover": {
+                color: c.c4,
+                fontWeight: 100,
+              },
+              "& label.Mui-focused": {
+                color: c.c4,
+              },
+              "& .MuiOutlinedInput-root": {
+                "&.Mui-focused fieldset": {
+                  borderColor: c.c4,
+                },
+              },
+            }}
+          />
+        </FormControl>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          paddingLeft: "10%",
+          paddingRight: "10%",
+          marginTop: "10px",
+        }}
+      >
+        <FormControl
+          variant="outlined"
+          style={{
+            color: c.c1,
+            minWidth: m1 ? "370px" : "90%",
+            fontFamily: "Bungee",
+          }}
+          sx={{
+            input: {
+              color: c.c4,
+            },
+            "& .MuiOutlinedInput-root": {
+              "& > fieldset": {
+                borderColor: c.c4,
+              },
+            },
+            "& .MuiOutlinedInput-root:hover": {
+              "& > fieldset": {
+                borderColor: c.c2,
+              },
+            },
+            "& .MuiFormLabel-root": {
+              color: c.c4,
+              fontWeight: 100,
+            },
+            fontFamily: "Bungee",
+          }}
+        >
+          <InputLabel
+            htmlFor="outlined-adornment-password"
+            style={{ fontFamily: "Bungee" }}
+          >
+            {"Payment_Id"}
+          </InputLabel>
+          <OutlinedInput
+            id="pay_id_bro"
+            type="text"
+            value={props.payment_id}
+            onChange={(e) => {
+              props.setPaymentId(e.target.value);
+            }}
+            label="Payment ID"
+            placeholder={"Ask For Payment ID"}
+            sx={{
+              fontFamily: "Bungee",
+              input: {
+                color: c.c2,
+              },
+              borderColor: c.c4,
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": {
+                  borderColor: c.c4,
+                },
+              },
+              "& .MuiOutlinedInput-root:hover": {
+                "& > fieldset": {
+                  borderColor: c.c2,
+                },
+              },
+              "& .MuiFormLabel-root": {
+                color: c.c4,
+                fontWeight: 100,
+              },
+              "& .MuiFormLabel-root&:hover": {
+                color: c.c4,
+                fontWeight: 100,
+              },
+              "& label.Mui-focused": {
+                color: c.c4,
+              },
+              "& .MuiOutlinedInput-root": {
+                "&.Mui-focused fieldset": {
+                  borderColor: c.c4,
+                },
+              },
+            }}
+          />
+        </FormControl>
+      </div>
+      <br />
+
+      <ButtonUI text="Search" clicked={props.filterTheTicket} />
+
+      <br />
+      <br />
       <br />
       {m1 ? <br /> : null}
       <main>
@@ -107,6 +387,7 @@ export default function Tickets(props) {
                   sm={6}
                   md={4}
                   id={`${card.name + index}`}
+                  style={{ opacity: 1 }}
                 >
                   <Card
                     sx={{
@@ -329,14 +610,12 @@ export default function Tickets(props) {
                           fontFamily: "Bungee",
                         }}
                         onClick={() => {
-                          generateJpeg(
-                            `${card.name + index}`,
-                            card.name,
-                            card.usn
-                          );
+                          if (card.expired) {
+                            window.location.reload();
+                          } else validateTheTicket(card.id);
                         }}
                       >
-                        {glitch ? "ತ್ರಯಾಗ್ನಿ 2022" : "Print It"}
+                        {card.expired == 1 ? "Refresh !" : "Validate"}
                       </Button>
                     </CardActions>
                   </Card>

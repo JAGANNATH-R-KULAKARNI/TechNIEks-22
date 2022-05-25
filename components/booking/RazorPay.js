@@ -70,6 +70,7 @@ const RazorPayButton = (props) => {
         shirt: props.ticket.type == 1 ? props.shirt : "Not Applicable",
         category: props.ticket.type == 1 ? props.category : "Not Applicable",
         phno: props.phno,
+        expired: 0,
       },
     ]);
 
