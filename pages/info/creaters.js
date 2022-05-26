@@ -123,7 +123,7 @@ export default function Creaters() {
                 borderRadius: "10px",
               }}
             >
-              C K Vanamala
+              Smt. C K Vanamala
             </p>
 
             <p
