@@ -133,8 +133,8 @@ export default function Creaters() {
                 fontSize: m1 ? "13px" : "12px",
               }}
             >
-              Cultural Coordinator &{m1 ? null : <br />}
-              Our Mentor
+              Cultural Coordinator & {m1 ? null : <br />}
+              Team Mentor
             </p>
           </div>
         </Paper>
