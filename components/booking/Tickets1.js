@@ -123,7 +123,7 @@ export default function Tickets(props) {
                           });
                         }}
                       >
-                        {card.open ? "Book Now" : "Coming Soon"}
+                        {card.open ? "Book Now" : "Booking Closed !"}
                       </Button>
                     </CardActions>
                   </Card>
