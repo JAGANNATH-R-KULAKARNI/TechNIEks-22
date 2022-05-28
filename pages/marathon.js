@@ -139,7 +139,8 @@ export default function Events() {
             fest. The marathon is usually conducted for a cause (last year data)
             and this year its been conducted to empower the distressed women.
             Whatever proceeds we obtain from the marathon would be donated to
-            Shaktidhama founded by Parvathamma Rajkumar and Dr Rajkumar
+            Shaktidhama a charity organisation that was founded by Dr Rajkumar
+            and Parvathamma Rajkumar
           </p>
           <br />
           <div
