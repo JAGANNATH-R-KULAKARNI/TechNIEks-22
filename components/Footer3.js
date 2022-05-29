@@ -23,7 +23,7 @@ function Footer() {
         <Video
           heading="ತ್ರಯಾಗ್ನಿ 2022"
           img="/images/subha.webp"
-          src="https://youtube.be/embed/YR9iyeWNF58?rel=0"
+          src="https://youtu.be/embed/buunBFb7PYw?rel=0"
         />
       </div>
       <Footer2 />
